@@ -1,11 +1,6 @@
+import Router from './Router/Router'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
-}
+const App = () => <Router />
 
 export default App;
