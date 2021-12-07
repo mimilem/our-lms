@@ -3,7 +3,6 @@
     and Navigation Tab.
 */
 
-import React from 'react';
 import './header.css';
 
 

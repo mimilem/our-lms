@@ -1,4 +1,7 @@
-import React from 'react';
+/*
+    Using react-router-dom@v5  
+    Declare and set the exact path to every page component
+*/
 
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 
