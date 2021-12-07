@@ -18,7 +18,7 @@
   padding-left: 1.9%;
 }
 .logo {
-  background-image: url(./VincoColorEng.svg);
+  background-image: url(../../../../assets/VincoColorEng.svg);
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
@@ -31,10 +31,25 @@
   top: 25px;
   color: #000;
 }
+.loginInputContainer input {
+  width: 160px;
+  height: 20px;
+  margin-left: 15px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+.loginInputContainer button {
+  width: 115px;
+  height: 25px;
+  margin-left: 15px;
+  border-width: 1px;
+  background-color: #5d8aa8;
+  color: #fff;
+}
 .tabElementsContainer {
   list-style: none;
   font-size: 15px;
-  top: 14%;
+  top: 14.5%;
   right: 0;
   position: absolute;
   width: 80%;
