@@ -2,41 +2,83 @@
     Here we organize and style the elements of the header 
     and Navigation Tab.
 */
-
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import BackgroundAnimation from '../BackgroundAnimation';
 import './header.css';
 
 
 function Header() {
+
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+    
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu)
+    }
+    useEffect(() => {
+    const changeWidth = () => {
+        setScreenWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', changeWidth)
+    return () => {
+        window.removeEventListener('resize', changeWidth)
+    }
+    }, [])
+
     return (
-        <header className='container'>
+        <div className='container'>
+            
+            <BackgroundAnimation />
+
             <div className='logoContainer'>
                 <div className='logo'/>
             </div>
 
-            {/* Staff Login Form */}
-            <div className='loginInputContainer'>
-                Staff login: 
-                <input
-                    placeholder="Username"
-                />
-                <input
-                    placeholder="Password"
-                />
-                <button>Login</button>
-            </div>
+            {(
+            toggleMenu || screenWidth > 709) && (
+                <>
 
-            {/* Navigation Bar */}
-            <div className="navContainer">
-                <ul className="tabElementsContainer">
-                    <li className="tabElement">Home</li>
-                    <li className="tabElement">Courses</li>
-                    <li className="tabElement">About Us</li>
-                    <li className="tabElement">Contact Us</li>
-                    <li className="tabElement">Register</li>
-                    <li className="tabElement">Student Portal</li>
-                </ul>
-            </div>
-        </header>
+                    {/* Staff Login Form */}
+                    <div className='loginInputContainer'>
+                        Staff login: 
+                        <input placeholder="Username"/>
+                        <input placeholder="Password"/>
+                        <button>Login</button>
+                    </div>
+
+                    {/* Navigation Bar */}
+                    <div className="navContainer">
+                        <ul className="tabElementsContainer">
+                            <Link to='/'>
+                                <li className="tabElement">Home</li>
+                            </Link>
+                            <Link to='/'>
+                                <li className="tabElement">Courses</li>
+                            </Link>
+                            <Link to='/'>
+                                <li className="tabElement">About</li>
+                            </Link>
+                            <Link to='/' >
+                                <li className="tabElement">Register</li>
+                            </Link>
+                            <Link to='/'>
+                                <li className="tabElement">Get In Touch</li>
+                            </Link>
+                            <Link  to='/'>
+                                <li
+                                    className="StudentPortailTabElement"
+                                >
+                                    Student Portal
+                                </li>
+                            </Link>
+                        </ul>                    
+                    </div>
+                </>
+            )}
+            <button onClick={toggleNav} className="btn">Open</button>
+        </div>
     );
 }
 
