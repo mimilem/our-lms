@@ -30,4 +30,5 @@
   color: #fff;
   border-color: #5d8aa8;
   background: #000;
+  transition: all 0.9s ease 0s;
 }

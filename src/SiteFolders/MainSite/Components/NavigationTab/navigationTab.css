@@ -1,0 +1,69 @@
+.tabElementsContainer {
+  font-size: 15px;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 80%;
+}
+.tabElement {
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: underline;
+  text-decoration-color: #5d8aa8;
+  text-decoration-thickness: 1.4px;
+}
+.tabElement:hover {
+  background: #5d8aa8;
+  color: #fff;
+  text-decoration-color: #dbe9f5;
+  transition: all 0.9s ease 0s;
+}
+.activeTabElement {
+  background: #5d8aa8;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: underline;
+  text-decoration-color: #dbe9f5;
+  text-decoration-thickness: 1.4px;
+}
+
+.StudentPortailTabElement {
+  background: #353a3b;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-left: 5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 1.4px;
+}
+.StudentPortailTabElement:hover {
+  background: #000;
+  transition: all 0.9s ease 0s;
+}

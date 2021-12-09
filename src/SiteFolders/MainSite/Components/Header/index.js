@@ -5,6 +5,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import BackgroundAnimation from '../BackgroundAnimation';
+import NavigationTab from '../NavigationTab';
 import Presentation from '../Presentation';
 import './header.css';
 
@@ -13,7 +14,7 @@ function Header() {
 
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
+    const [activeTab, setActiveTab] = useState("tab1");
     
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
@@ -27,6 +28,15 @@ function Header() {
         window.removeEventListener('resize', changeWidth)
     }
     }, [])
+
+    const handleTab1 = () => {
+        // update the state to tab1
+        setActiveTab("tab1");
+      };
+    const handleTab2 = () => {
+        // update the state to tab2
+        setActiveTab("tab2");
+    };
 
     return (
         <div className='container'>
@@ -50,34 +60,12 @@ function Header() {
                     </div>
 
                     {/* Navigation Bar */}
-                    <div className="navContainer">
-                        <ul className="tabElementsContainer">
-                            <Link to='/'>
-                                <li className="tabElement">Home</li>
-                            </Link>
-                            <Link to='/'>
-                                <li className="tabElement">Courses</li>
-                            </Link>
-                            <Link to='/'>
-                                <li className="tabElement">About</li>
-                            </Link>
-                            <Link to='/' >
-                                <li className="tabElement">Register</li>
-                            </Link>
-                            <Link to='/'>
-                                <li className="tabElement">Get In Touch</li>
-                            </Link>
-                            <Link  to='/'>
-                                <li className="StudentPortailTabElement">Student Portal</li>
-                            </Link>
-                        </ul>                    
-                    
-                    </div>
+                    <NavigationTab />
                 </>
             )}
-                        <div>
-                            <Presentation />    
-                        </div>
+            <div>
+                <Presentation />    
+            </div>
             <button onClick={toggleNav} className="btn">Open</button>
         </div>
     );
