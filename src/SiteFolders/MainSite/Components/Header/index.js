@@ -5,6 +5,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import BackgroundAnimation from '../BackgroundAnimation';
+import Presentation from '../Presentation';
 import './header.css';
 
 
@@ -67,16 +68,16 @@ function Header() {
                                 <li className="tabElement">Get In Touch</li>
                             </Link>
                             <Link  to='/'>
-                                <li
-                                    className="StudentPortailTabElement"
-                                >
-                                    Student Portal
-                                </li>
+                                <li className="StudentPortailTabElement">Student Portal</li>
                             </Link>
                         </ul>                    
+                    
                     </div>
                 </>
             )}
+                        <div>
+                            <Presentation />    
+                        </div>
             <button onClick={toggleNav} className="btn">Open</button>
         </div>
     );
