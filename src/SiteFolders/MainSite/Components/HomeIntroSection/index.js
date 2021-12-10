@@ -1,7 +1,7 @@
 import React from 'react';
-import './presentation.css'
+import './homeIntroSection.css'
 
-function Presentation() {
+function HomeIntroSection() {
     return (
         <>
         <div className="presentation-container">
@@ -28,4 +28,4 @@ function Presentation() {
     );
 }
 
-export default Presentation;
+export default HomeIntroSection;

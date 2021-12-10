@@ -1,4 +1,5 @@
-import '../Header/header.css'
+import React from 'react'
+import './backgroundAnimation.css'
 
 function BackgroundAnimation() {
     return (

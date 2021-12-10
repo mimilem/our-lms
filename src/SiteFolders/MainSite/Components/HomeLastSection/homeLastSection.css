@@ -1,0 +1,13 @@
+.homeLastSection-contain {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 5vh;
+  margin-right: auto;
+  padding-left: 25px;
+  position: absolute;
+  width: 100%;
+}

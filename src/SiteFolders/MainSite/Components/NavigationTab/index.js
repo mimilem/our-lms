@@ -32,7 +32,7 @@ function NavigationTab() {
                         className={activeTab === 'tab3' ? 'activeTabElement' : "tabElement" }
                         onClick={() => setActiveTab("tab3")}
                     >
-                        About
+                        Admission
                     </li>
                 </Link>
                 <Link to='/' >
@@ -40,7 +40,7 @@ function NavigationTab() {
                         className={activeTab === 'tab4' ? 'activeTabElement' : "tabElement" }
                         onClick={() => setActiveTab("tab4")}
                     >
-                        Register
+                        About
                     </li>
                 </Link>
                 <Link to='/'>

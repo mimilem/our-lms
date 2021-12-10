@@ -6,7 +6,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import BackgroundAnimation from '../BackgroundAnimation';
 import NavigationTab from '../NavigationTab';
-import Presentation from '../Presentation';
+import HomeIntroSection from '../HomeIntroSection';
 import './header.css';
 
 
@@ -14,7 +14,6 @@ function Header() {
 
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    const [activeTab, setActiveTab] = useState("tab1");
     
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
@@ -29,15 +28,6 @@ function Header() {
     }
     }, [])
 
-    const handleTab1 = () => {
-        // update the state to tab1
-        setActiveTab("tab1");
-      };
-    const handleTab2 = () => {
-        // update the state to tab2
-        setActiveTab("tab2");
-    };
-
     return (
         <div className='container'>
             
@@ -50,21 +40,25 @@ function Header() {
             {(
             toggleMenu || screenWidth > 709) && (
                 <>
-
                     {/* Staff Login Form */}
                     <div className='loginInputContainer'>
                         Staff login: 
-                        <input placeholder="Username"/>
-                        <input placeholder="Password"/>
+                        <input 
+                            placeholder="Username"
+                            type='email'    
+                        />
+                        <input 
+                            placeholder="Password"
+                            type='password'    
+                        />
                         <button>Login</button>
                     </div>
-
                     {/* Navigation Bar */}
                     <NavigationTab />
                 </>
             )}
             <div>
-                <Presentation />    
+                <HomeIntroSection />    
             </div>
             <button onClick={toggleNav} className="btn">Open</button>
         </div>

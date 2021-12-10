@@ -1,0 +1,43 @@
+.news-section-container {
+  background: linear-gradient(#dbe9f5, #fff);
+  display: inline-block;
+  margin-top: 100vh;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+}
+.news-container {
+  align-items: center;
+  background-image: url(../../../../assets/stthomas-st-paul-north-campus-plaza.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+}
+.cards-container {
+  color: #fff;
+  display: inline;
+  flex-direction: row;
+  left: auto;
+  right: auto;
+  width: 100%;
+}
+.card {
+  display: inline-block;
+  background-color: #5d8aa8;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 250px;
+  margin-left: 25px;
+  top: 25px;
+  transition: transform 0.5s; /* Animation */
+  width: 20%;
+}
+.card:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}

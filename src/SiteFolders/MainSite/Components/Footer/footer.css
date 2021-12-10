@@ -1,0 +1,34 @@
+.footer-container {
+  background-color: #353a3b;
+  color: #fff;
+  display: flex;
+  height: 35vh;
+  margin-top: 5vh;
+  top: 75vh;
+  position: relative;
+  min-width: 100%;
+}
+.footer-logoContainer {
+  height: 200px;
+  padding-left: 1.9%;
+  padding-right: 1.99%;
+  position: absolute;
+  width: 13%;
+}
+.footer-logo {
+  background-image: url(../../../../assets/VincoColorEng.svg);
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+}
+.address {
+  position: absolute;
+  right: 5vh;
+  top: 2vh;
+}
+.original-text {
+  margin-top: 30vh;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
