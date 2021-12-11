@@ -9,19 +9,6 @@
   min-width: 100%;
   min-height: 100%;
 }
-.logoContainer {
-  margin-top: -15px;
-  height: 200px;
-  padding-left: 1.9%;
-  padding-right: 1.99%;
-  width: 13%;
-}
-.logo {
-  background-image: url(../../../../assets/VincoColorEng.svg);
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-}
 .loginInputContainer {
   color: #000;
   position: absolute;

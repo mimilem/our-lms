@@ -18,7 +18,7 @@
 .explore-button {
   bottom: 150px;
   border: 2px solid;
-  border-color: #000;
+  border-color: #353a3b;
   padding: 15px;
   padding-left: 75px;
   padding-right: 75px;
@@ -28,7 +28,7 @@
 }
 .explore-button:hover {
   color: #fff;
-  border-color: #5d8aa8;
-  background: #000;
+  border-color: #353a3b;
+  background: #353a3b; /*5d8aa8*/
   transition: all 0.9s ease 0s;
 }

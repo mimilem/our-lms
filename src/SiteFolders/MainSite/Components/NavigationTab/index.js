@@ -9,6 +9,11 @@ function NavigationTab() {
     const [activeTab, setActiveTab] = useState("tab1");
 
     return (
+        <>
+        <div className='logoContainer'>
+            <div className='logo'/>
+        </div>
+
         <div className="navContainer">
             <ul className="tabElementsContainer">
                 <Link to='/'>
@@ -56,6 +61,7 @@ function NavigationTab() {
                 </Link>
             </ul>   
         </div>
+        </>
     );
 }
 

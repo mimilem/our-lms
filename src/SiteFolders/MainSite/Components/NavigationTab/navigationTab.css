@@ -45,7 +45,6 @@
   text-decoration-color: #dbe9f5;
   text-decoration-thickness: 1.4px;
 }
-
 .StudentPortailTabElement {
   background: #353a3b;
   color: #fff;
@@ -66,4 +65,18 @@
 .StudentPortailTabElement:hover {
   background: #000;
   transition: all 0.9s ease 0s;
+}
+
+.logoContainer {
+  margin-top: -15px;
+  height: 200px;
+  padding-left: 1.9%;
+  padding-right: 1.99%;
+  width: 13%;
+}
+.logo {
+  background-image: url(../../../../assets/VincoColorEng.svg);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }

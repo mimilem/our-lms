@@ -33,10 +33,6 @@ function Header() {
             
             <BackgroundAnimation />
 
-            <div className='logoContainer'>
-                <div className='logo'/>
-            </div>
-
             {(
             toggleMenu || screenWidth > 709) && (
                 <>

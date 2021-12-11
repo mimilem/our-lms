@@ -32,7 +32,7 @@ function Footer() {
             </div>
 
             <div className='original-text'>
-                All rights reserved Ngoma Digitech
+            © 2021 Ngoma Digitech. All rights reserved.
             </div>
         </div>
     );
