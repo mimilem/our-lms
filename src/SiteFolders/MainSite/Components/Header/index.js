@@ -30,32 +30,20 @@ function Header() {
 
     return (
         <div className='container'>
-            
             <BackgroundAnimation />
-
+            
             {(
             toggleMenu || screenWidth > 709) && (
                 <>
-                    {/* Staff Login Form */}
-                    <div className='loginInputContainer'>
-                        Staff login: 
-                        <input 
-                            placeholder="Username"
-                            type='email'    
-                        />
-                        <input 
-                            placeholder="Password"
-                            type='password'    
-                        />
-                        <button>Login</button>
-                    </div>
                     {/* Navigation Bar */}
-                    <NavigationTab />
+                   <NavigationTab />
                 </>
             )}
+            
             <div>
                 <HomeIntroSection />    
             </div>
+            
             <button onClick={toggleNav} className="btn">Open</button>
         </div>
     );

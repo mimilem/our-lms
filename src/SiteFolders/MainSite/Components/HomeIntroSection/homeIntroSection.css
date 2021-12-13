@@ -1,30 +1,35 @@
-.presentation-container {
+.presentation-title {
   font-size: 30px;
   left: 25px;
   margin-top: 25vh;
   position: absolute;
+  top: 0vh;
   width: 50%;
 }
 .presentation-text {
   font-size: 18px;
   right: 0px;
-  margin-top: 25vh;
+  margin-top: 0vh;
   position: absolute;
+  top: 25vh;
   width: 50%;
 }
 .color-Over {
   background-color: #ffffe0;
 }
 .explore-button {
-  bottom: 150px;
   border: 2px solid;
   border-color: #353a3b;
+  cursor: pointer;
+  height: 25px;
+  width: 200px;
   padding: 15px;
+  top: 65vh;
+  left: 20vh;
   padding-left: 75px;
   padding-right: 75px;
-  position: absolute;
+  position: relative;
   text-align: center;
-  cursor: pointer;
 }
 .explore-button:hover {
   color: #fff;

@@ -1,7 +1,42 @@
+.nav-Container {
+  background: linear-gradient(#fff);
+  font-family: "Open Sans", sans-serif;
+  height: 20vh;
+  min-width: 100%;
+  min-height: 20vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.loginInputContainer {
+  color: #000;
+  position: absolute;
+  right: 0.5%;
+  top: 10px;
+}
+.loginInputContainer input {
+  border-radius: 10px;
+  border-width: 1px;
+  height: 20px;
+  margin-left: 15px;
+  width: 160px;
+}
+.loginInputContainer button {
+  background-color: #5d8aa8;
+  border-width: 1px;
+  color: #fff;
+  height: 20px;
+  margin-left: 15px;
+  width: 115px;
+}
+
 .tabElementsContainer {
   font-size: 15px;
   list-style: none;
   position: absolute;
+  display: block;
   right: 0;
   top: 40px;
   width: 80%;

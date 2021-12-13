@@ -4,6 +4,7 @@
 */
 
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
+import ContactPage from '../SiteFolders/MainSite/Pages/Contact';
 
 //import the MainSite pages
 import Home from '../SiteFolders/MainSite/Pages/Home';
@@ -14,6 +15,7 @@ function Router() {
         <Routers>
             <Switch>           
                 <Route exact path='/' component={Home} />
+                <Route exact path='/Contact' component={ContactPage} />
             </Switch>
         </Routers>
     );

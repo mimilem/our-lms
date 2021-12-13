@@ -1,0 +1,10 @@
+.contact-container {
+  background: linear-gradient(#fff, #dbe9f5);
+  position: absolute;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  top: 0;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}

@@ -1,6 +1,6 @@
 .news-section-container {
   background: linear-gradient(#dbe9f5, #fff);
-  display: inline-block;
+  display: flex;
   margin-top: 100vh;
   bottom: 0;
   width: 100%;
@@ -17,13 +17,20 @@
   margin-top: 50px;
   text-align: center;
 }
+
 .vinco-news-title {
   text-align: left;
-  padding-left: 25px;
   width: 100%;
   background-color: #5d8aa8;
   color: #fff;
+  top: -30px;
+  height: 60px;
+  padding-bottom: 0.1;
+  padding-top: 0.1;
+  padding-left: 10px;
+  position: relative;
 }
+
 .card-container {
   color: #fff;
   display: inline;
@@ -31,6 +38,7 @@
   left: auto;
   right: auto;
   width: 100%;
+  position: relative;
 }
 .card {
   display: inline-block;
@@ -48,6 +56,7 @@
   -webkit-transform: scale(1.05); /* Safari 3-8 */
   transform: scale(1.05);
 }
+
 .news-image-container {
   position: relative;
   width: 100%;
