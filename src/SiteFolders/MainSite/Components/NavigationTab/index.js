@@ -98,7 +98,7 @@ function NavigationTab() {
                             Get In Touch
                         </li>
                     </Link>
-                    <Link  to='/'>
+                    <Link  to='/student-login'>
                         <li className="StudentPortailTabElement">Student Portal</li>
                     </Link>
                 </ul>   

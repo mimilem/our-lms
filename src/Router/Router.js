@@ -4,10 +4,12 @@
 */
 
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
-import ContactPage from '../SiteFolders/MainSite/Pages/Contact';
+
+import Login from '../Authentication/Login';
 
 //import the MainSite pages
 import Home from '../SiteFolders/MainSite/Pages/Home';
+import ContactPage from '../SiteFolders/MainSite/Pages/Contact';
 
 
 function Router() {
@@ -16,6 +18,7 @@ function Router() {
             <Switch>           
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Contact' component={ContactPage} />
+                <Route exact path='/student-login' component={Login} />
             </Switch>
         </Routers>
     );

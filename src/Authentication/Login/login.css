@@ -1,0 +1,150 @@
+.login-container {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.backgroundImage {
+  background-image: url(../../assets/pexels-pixabay-356065.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+.content-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 8;
+}
+.login-card {
+  height: 35rem;
+  width: 30rem;
+  margin: auto;
+  margin-top: 2rem;
+  background-color: #5d8aa8;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loginImage {
+  border-radius: 80px;
+  height: 20vh;
+  width: 20vh;
+  margin-top: 2rem;
+}
+
+.login-text {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 1rem;
+}
+
+.login-form {
+  margin-bottom: 5%;
+  margin-top: 5vh;
+}
+.login-form input {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  margin-bottom: 20px;
+  height: 2.5rem;
+  width: 70%;
+  padding-left: 20px;
+}
+.login-form input::placeholder {
+  color: #fff;
+}
+.login-form input:focus {
+  border-width: none;
+  border-color: #dedede;
+  outline: none;
+}
+.login-form input:focus::placeholder {
+  color: transparent;
+  transition: all 0.2s ease 0s;
+}
+
+.smallText {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+.showpassword-password {
+  display: flex;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 5vh;
+  text-align: left;
+  width: 30%;
+  left: 0;
+}
+.showpassword-password:hover {
+  color: #dedede;
+}
+
+.showpassword-password input {
+  width: 20px;
+  height: 20px;
+  top: 20px;
+}
+
+.forgot-password {
+  color: #fff;
+  cursor: pointer;
+  margin-top: -20px;
+  margin-right: 5vh;
+  text-align: right;
+  width: 30%;
+  right: 0;
+}
+.forgot-password:hover {
+  color: #dedede;
+}
+
+.login-button {
+  background-color: #fff;
+  border-radius: 50px;
+  color: #353a3b;
+  cursor: pointer;
+  display: flex;
+  font-size: 24px;
+  font-weight: normal;
+  height: 3rem;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 20vh;
+}
+.login-button:hover {
+  background-color: #dedede;
+  transition: all 0.5s ease 0s;
+}
+
+.go-back {
+  color: #fff;
+  text-decoration: none;
+  top: 0;
+  text-align: center;
+  font-size: 24px;
+}
