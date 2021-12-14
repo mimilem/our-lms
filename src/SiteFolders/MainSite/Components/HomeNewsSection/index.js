@@ -18,7 +18,7 @@ function HomeNewsSection() {
                         <div className='news-image-container'>
                             <img src={imageNews}
                                 className='news-image' alt=''/>
-                            <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ function HomeNewsSection() {
                         <div className='news-image-container'>
                             <img src={imageNews}
                                 className='news-image' alt=''/>
-                            <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ function HomeNewsSection() {
                         <div className='news-image-container'>
                             <img src={imageNews}
                                 className='news-image' alt=''/>
-                            <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ function HomeNewsSection() {
                             <div className='news-image-container'>
                                 <img src={imageNews}
                                     className='news-image' alt=''/>
-                                <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ function HomeNewsSection() {
                             <div className='news-image-container'>
                                 <img src={imageNews}
                                     className='news-image' alt=''/>
-                                <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ function HomeNewsSection() {
                             <div className='news-image-container'>
                                 <img src={imageNews}
                                     className='news-image' alt=''/>
-                                <div style={{textDecoration:'underline'}}>The World Is Going Digital And It's just the beginning</div>
+                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
                             </div>
                         </div>
                     </div>

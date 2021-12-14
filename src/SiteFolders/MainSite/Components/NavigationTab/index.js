@@ -7,7 +7,7 @@ import './navigationTab.css'
 function NavigationTab() {
     
     const [activeTab, setActiveTab] = useState("tab1");
-
+    
     return (
         <div className='nav-Container'>
 
@@ -40,34 +40,56 @@ function NavigationTab() {
                         </li>
                     </Link>
                     <Link to='/'>
-                        {/* <div className='dropdown'> */}
+                        <div className='dropdown'> 
                             <li 
                                 className={activeTab === 'tab2' ? 'activeTabElement' : "tabElement" }
                                 onClick={() => setActiveTab("tab2")}
                             >
                                 Courses
                             </li>
-                            {/* <div className='dropdown-menu'>
-                                Dropdown Content
+                            <div className='dropdown-menu'>
+                                <div>Full-Time</div>
+                                <hr/>
+                                <div>Flexi-Learning</div>
+                                <hr/>
+                                <div>Hybrid-Learning</div>
                             </div> 
-                        </div>*/}
+                        </div>
                     </Link>
                     <Link to='/'>
-                        <li 
-                            className={activeTab === 'tab3' ? 'activeTabElement' : "tabElement" }
-                            onClick={() => setActiveTab("tab3")}
-                        >
-                            Admission
-                        </li>
+                        <div className='dropdown'> 
+                            <li 
+                                className={activeTab === 'tab3' ? 'activeTabElement' : "tabElement" }
+                                onClick={() => setActiveTab("tab3")}
+                            >
+                                Admission
+                            </li>
+                            <div className='dropdown-menu'>
+                                <div>Apply</div>
+                                <hr/>
+                                <div>International student</div>
+                                <hr/>
+                                <div>Tuition fees</div>
+                            </div> 
+                        </div>
                     </Link>
-                    <Link to='/' >
-                        <li 
-                            className={activeTab === 'tab4' ? 'activeTabElement' : "tabElement" }
-                            onClick={() => setActiveTab("tab4")}
-                        >
-                            About
-                        </li>
-                    </Link>
+                        <div className='dropdown'> 
+                            <li 
+                                className={activeTab === 'tab4' ? 'activeTabElement' : "tabElement" }
+                                onClick={() => setActiveTab("tab4")}
+                            >
+                                About
+                            </li>
+                            <div className='dropdown-menu'>
+                                <a href='#'>About us</a>
+                                <hr/>
+                                <a href='#'>Media</a>
+                                <hr/>
+                                <a href='#'>Campus life</a>
+                                <hr/>
+                                <a href='#'>Governance</a>
+                            </div> 
+                        </div>
                     <Link to='/contact'>
                         <li 
                             className={activeTab === 'tab5' ? 'activeTabElement' : "tabElement" }
