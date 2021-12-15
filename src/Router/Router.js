@@ -6,9 +6,9 @@
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 
 
-//import the MainSite pages
-import Home from '../SiteFolders/MainSite/Pages/Home';
-import ContactPage from '../SiteFolders/MainSite/Pages/Contact';
+//import the HomeSite pages
+import Home from '../SiteFolders/HomeSite/Pages/Home';
+import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
 
 //import the StudentPortal site pages
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
