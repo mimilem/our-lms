@@ -5,7 +5,6 @@
 
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 
-
 //import the HomeSite pages
 import Home from '../SiteFolders/HomeSite/Pages/Home';
 import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
