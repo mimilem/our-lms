@@ -2,8 +2,7 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import './login.css';
-import loginImage from '../../assets/graduate-cap.png'
-import { height } from 'dom-helpers';
+import loginImage from '../../../../assets/graduate-cap.png'
 
 
 function Login() {
@@ -50,9 +49,8 @@ function Login() {
                                 id="thePassword"
                             />
                             <div className='smallText'>
-                                <div className='showpassword-password'>
+                                <div className='show-password'>
                                     <input  
-                                    label=''
                                         type="checkbox" 
                                         onClick={showPassword}/>
                                     Show Password 

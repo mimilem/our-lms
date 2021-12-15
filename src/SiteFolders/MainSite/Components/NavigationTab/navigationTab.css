@@ -1,30 +1,47 @@
-.nav-Container {
+.navigation-container {
+  background: linear-gradient(#fff, #fff, transparent, transparent);
   font-family: "Open Sans", sans-serif;
-  height: 45vh;
-  min-width: 100%;
+  height: 40vh;
   min-height: 20vh;
+  min-width: 100%;
   overflow: hidden;
   position: fixed;
-  background: linear-gradient(#fff, #fff, transparent, transparent);
   top: 0;
   width: 100%;
   z-index: 9;
 }
 
-.loginInputContainer {
+.home-site-logo-container {
+  height: 200px;
+  margin-top: -15px;
+  padding-left: 1.9%;
+  padding-right: 1.99%;
+  width: 13%;
+}
+.home-site-logo {
+  background-image: url(../../../../assets/VincoColorEng.svg);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+  Staff login styling
+*/
+.staff-login-form-container {
   color: #000;
   position: absolute;
   right: 0.5%;
   top: 10px;
 }
-.loginInputContainer input {
+.staff-login-form-container input {
   border-radius: 10px;
   border-width: 1px;
   height: 20px;
   margin-left: 15px;
   width: 160px;
 }
-.loginInputContainer button {
+.staff-login-form-container button {
   background-color: #5d8aa8;
   border-width: 1px;
   color: #fff;
@@ -33,23 +50,26 @@
   width: 115px;
 }
 
-.tabElementsContainer {
+/*
+  Tab navigation elements styling
+*/
+.tab-list-container {
+  display: block;
   font-size: 15px;
   list-style: none;
   position: absolute;
-  display: block;
   right: 0;
   top: 40px;
   width: 80%;
 }
-.tabElement {
+.tab-element {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: #000;
   cursor: pointer;
   display: inline-block;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
   margin: 5px;
   padding: 10px;
   padding-left: 25px;
@@ -58,21 +78,21 @@
   text-decoration-color: #5d8aa8;
   text-decoration-thickness: 1.4px;
 }
-.tabElement:hover {
+.tab-element:hover {
   background: #5d8aa8;
   color: #fff;
   text-decoration-color: #dbe9f5;
   transition: all 0.9s ease 0s;
 }
-.activeTabElement {
+.active-tab-element {
   background: #5d8aa8;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
   margin: 5px;
   padding: 10px;
   padding-left: 25px;
@@ -81,15 +101,15 @@
   text-decoration-color: #dbe9f5;
   text-decoration-thickness: 1.4px;
 }
-.StudentPortailTabElement {
+.student-portail-tab-element {
   background: #353a3b;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
   margin-left: 5px;
   padding: 10px;
   padding-left: 25px;
@@ -98,53 +118,42 @@
   text-decoration-color: #fff;
   text-decoration-thickness: 1.4px;
 }
-.StudentPortailTabElement:hover {
+.student-portail-tab-element:hover {
   background: #000;
   transition: all 0.9s ease 0s;
 }
 
-.logoContainer {
-  margin-top: -15px;
-  height: 200px;
-  padding-left: 1.9%;
-  padding-right: 1.99%;
-  width: 13%;
-}
-.logo {
-  background-image: url(../../../../assets/VincoColorEng.svg);
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-}
-
+/* 
+  Dropdown styling
+*/
 .dropdown {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  color: #000;
-  width: 200px;
-  top: calc(100% + 0.25rem);
   background-color: #fff;
-  padding: 0.75rem;
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  color: #000;
+  display: none;
+  left: 0;
+  margin-bottom: 50px;
   opacity: 0;
+  padding: 0.75rem;
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + 0.25rem);
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-  pointer-events: none;
-  margin-bottom: 50px;
+  width: 200px;
   z-index: 1;
 }
-.dropdown > .tabElement:hover + .dropdown-menu {
+.dropdown > .tab-element:hover + .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
   pointer-events: none;
 }
-.dropdown > .activeTabElement:hover + .dropdown-menu {
+.dropdown > .active-tab-element:hover + .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
   pointer-events: none;
@@ -160,12 +169,8 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
-hr {
-  height: 2px;
+.dropdown-menu hr {
   background: #5d8aa8;
   border-width: 0;
-}
-.show {
-  display: block;
+  height: 2px;
 }

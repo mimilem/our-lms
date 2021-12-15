@@ -4,7 +4,7 @@
   width: 100%;
 }
 .backgroundImage {
-  background-image: url(../../assets/pexels-pixabay-356065.jpg);
+  background-image: url(../../../../assets/pexels-pixabay-356065.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -87,23 +87,21 @@
   width: 100%;
   align-items: center;
 }
-.showpassword-password {
+.show-password {
   display: flex;
   color: #fff;
-  cursor: pointer;
+  cursor: context-menu;
   margin-left: 5vh;
   text-align: left;
   width: 30%;
   left: 0;
 }
-.showpassword-password:hover {
-  color: #dedede;
-}
 
-.showpassword-password input {
-  width: 20px;
+.show-password input {
+  cursor: pointer;
   height: 20px;
   top: 20px;
+  width: 20px;
 }
 
 .forgot-password {

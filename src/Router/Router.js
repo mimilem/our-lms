@@ -1,15 +1,17 @@
 /*
     Using react-router-dom@v5  
-    Declare and set the exact path to every page component
+    Declare and set the exact path to every page component.
 */
 
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 
-import Login from '../Authentication/Login';
 
 //import the MainSite pages
 import Home from '../SiteFolders/MainSite/Pages/Home';
 import ContactPage from '../SiteFolders/MainSite/Pages/Contact';
+
+//import the StudentPortal site pages
+import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 
 function Router() {
