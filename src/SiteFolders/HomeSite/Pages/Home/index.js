@@ -7,6 +7,7 @@ import HomeNewsSection from '../../Components/HomeNewsSection';
 
 function Home() {
 
+    //Set the document title of the page when it loads.
     useEffect(() => {
         document.title = "Vinco-elearning"
      }, []);

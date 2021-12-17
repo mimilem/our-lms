@@ -7,6 +7,7 @@ import './contact.css'
 
 function ContactPage() {
 
+    //Set the document title of the page when it loads.
     useEffect(() => {
         document.title = "Get in touch | Vinco-elearning"
      }, []);

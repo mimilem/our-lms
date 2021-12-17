@@ -60,13 +60,13 @@ function NavigationTab() {
                         >
                             Courses
                         </li>
-                        <div className='dropdown-menu'>
-                            <div>Full-Time</div>
+                        <ul className='dropdown-menu'>
+                            <li>Full-Time</li>
                             <hr/>
-                            <div>Flexi-Learning</div>
+                            <li>Flexi-Learning</li>
                             <hr/>
-                            <div>Hybrid-Learning</div>
-                        </div> 
+                            <li>Hybrid-Learning</li>
+                        </ul> 
                     </div>
 
                     <div className='dropdown'> 
@@ -76,13 +76,13 @@ function NavigationTab() {
                         >
                             Admission
                         </li>
-                        <div className='dropdown-menu'>
-                            <div>Apply</div>
+                        <ul className='dropdown-menu'>
+                            <li>Apply</li>
                             <hr/>
-                            <div>International student</div>
+                            <li>International student</li>
                             <hr/>
-                            <div>Tuition fees</div>
-                        </div> 
+                            <li>Tuition fees</li>
+                        </ul> 
                     </div>
                     
                     <div className='dropdown'> 
@@ -92,13 +92,13 @@ function NavigationTab() {
                         >
                             About
                         </li>
-                        <div className='dropdown-menu'>
-                            <div>About us</div>
+                        <ul className='dropdown-menu'>
+                            <li>About us</li>
                             <hr/>
-                            <div>Media</div>
+                            <li>Media</li>
                             <hr/>
-                            <div>Campus life</div>
-                        </div> 
+                            <li>Campus life</li>
+                        </ul> 
                     </div>
 
                     <Link to='/contact'>

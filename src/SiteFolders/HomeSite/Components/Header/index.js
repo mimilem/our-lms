@@ -3,10 +3,14 @@
     and Navigation Tab.
 */
 import React, {useState, useEffect} from 'react';
+
 import { Link } from 'react-router-dom';
+
+//import the components to be displayed in header. 
 import BackgroundAnimation from '../BackgroundAnimation';
 import NavigationTab from '../NavigationTab';
 import HomeIntroSection from '../HomeIntroSection';
+//import styling
 import './header.css';
 
 

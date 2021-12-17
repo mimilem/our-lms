@@ -1,0 +1,24 @@
+.article-container {
+  background: linear-gradient(#fff, #dbe9f5);
+  font-family: "Open Sans", sans-serif;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.path-to-article {
+  display: flex;
+  margin: 2rem;
+  position: absolute;
+}
+.path-to-article Link {
+  cursor: pointer;
+  font-size: 15px;
+}
+.path-to-article div {
+  color: #5d8aa8;
+  cursor: context-menu;
+}
+.bref {
+}

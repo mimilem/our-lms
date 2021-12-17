@@ -1,22 +1,22 @@
 .container {
   background: linear-gradient(#fff, #dbe9f5);
-  position: absolute;
   font-family: "Open Sans", sans-serif;
   height: 100vh;
-  top: 0;
-  width: 100%;
   min-width: 100%;
   min-height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .btn {
+  color: #000;
   display: none;
+  font-size: 18px;
+  padding: 5px;
   position: absolute;
   right: 10px;
   top: 7px;
-  padding: 5px;
-  color: #000;
-  font-size: 18px;
 }
 
 @media screen and (max-width: 709px) {
@@ -29,11 +29,11 @@
     margin-top: 50px;
   }
   .tabElement {
-    width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.555);
-    text-align: center;
     margin-right: 0px;
     padding: 20px 0;
+    text-align: center;
+    width: 100%;
   }
   .btn {
     display: block;

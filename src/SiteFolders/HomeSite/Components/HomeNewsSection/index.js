@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+import mediaData from '../data/MediaData' 
+//import styling
 import './homeNewsSection.css'
-import imageNews from '../../../../assets/pexels-mike-van-schoonderwalt-5505690.jpg'
+
 
 function HomeNewsSection() {
 
@@ -13,62 +16,26 @@ function HomeNewsSection() {
                     </h1>
                 </div>
 
-                <div className='card-container'>
-                    <div className='card'>
-                        <div className='news-image-container'>
-                            <img src={imageNews}
-                                className='news-image' alt=''/>
-                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
-                        </div>
-                    </div>
-                </div>
-                <div className='card-container'>
-                    <div className='card'>
-                        <div className='news-image-container'>
-                            <img src={imageNews}
-                                className='news-image' alt=''/>
-                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
-                        </div>
-                    </div>
-                </div>
-                <div className='card-container'>
-                    <div className='card'>
-                        <div className='news-image-container'>
-                            <img src={imageNews}
-                                className='news-image' alt=''/>
-                            <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <div style={{marginTop: 25}}>
-                    <div className='card-container'>
-                        <div className='card'>
-                            <div className='news-image-container'>
-                                <img src={imageNews}
-                                    className='news-image' alt=''/>
-                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
+                <div className='home-news-list'>
+                    {mediaData.slice(0,6).map((item) => (
+                        <Link to='/Media/Article'>
+                            <div className='card-container'>
+                                <div className='card'>
+                                    <div className='news-image-container'>
+                                        <img src={item.image}
+                                            className='news-image' alt=''/>
+                                        <div className='article-title' title={item.title}>
+                                            {item.title.slice(0, 35).concat('...')}
+                                        </div>
+                                        
+                                    </div>
+                                        <div className='date-of-publication' title={item.dateOfPublication}>
+                                            Published: {item.dateOfPublication}
+                                        </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className='card-container'>
-                        <div className='card'>
-                            <div className='news-image-container'>
-                                <img src={imageNews}
-                                    className='news-image' alt=''/>
-                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card-container'>
-                        <div className='card'>
-                            <div className='news-image-container'>
-                                <img src={imageNews}
-                                    className='news-image' alt=''/>
-                                <div className='article-title'>The World Is Going Digital And It's just the beginning</div>
-                            </div>
-                        </div>
-                    </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
-import React from 'react';
 import BackgroundAnimation from '../BackgroundAnimation';
+//import styling
 import './homeLastSection.css'
 
 function HomeLastSection() {

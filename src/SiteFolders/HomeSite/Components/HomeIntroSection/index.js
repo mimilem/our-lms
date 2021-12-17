@@ -1,5 +1,6 @@
-import React from 'react';
+//import styling
 import './homeIntroSection.css'
+
 
 function HomeIntroSection() {
     return (
