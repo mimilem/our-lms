@@ -98,6 +98,8 @@ function NavigationTab() {
                             <li>Media</li>
                             <hr/>
                             <li>Campus life</li>
+                            <hr/>
+                            <li>Governance</li>
                         </ul> 
                     </div>
 

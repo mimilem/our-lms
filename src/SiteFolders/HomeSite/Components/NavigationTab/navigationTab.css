@@ -1,7 +1,18 @@
 .navigation-container {
-  background: linear-gradient(#fff, #fff, transparent, transparent);
+  background: linear-gradient(
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    transparent
+  );
   font-family: "Open Sans", sans-serif;
-  height: 40vh;
+  height: 20vh;
   min-height: 20vh;
   min-width: 100%;
   overflow: hidden;
@@ -57,7 +68,7 @@
   display: block;
   font-size: 15px;
   list-style: none;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 40px;
   width: 80%;
