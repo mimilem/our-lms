@@ -19,10 +19,17 @@ function SideNavigation() {
                 <div className='modules-icon'/>
                 <div className='side-navigation-text'>Module Shelf</div>
             </a>
+
+            <a href="#services" >
+                <div className='students-icon'/>
+                <div className='side-navigation-text'>Students</div>
+            </a>
+
             <a href="#contact" >
                 <div className='exam-icon'/>
                 <div className='side-navigation-text'>Exams</div>
             </a>
+
             <a href="#contact" >
                 <div className='time-table-icon'/>
                 <div className='side-navigation-text'>Time Table</div>
@@ -32,6 +39,7 @@ function SideNavigation() {
                 <div className='events-icon'/>
                 <div className='side-navigation-text'>Events</div>
             </a>
+
             <a href="#contact" >
                 <div className='report-icon'/>    
                 <div className='side-navigation-text'>Reports</div>
