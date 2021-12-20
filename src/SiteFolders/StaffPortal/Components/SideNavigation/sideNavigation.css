@@ -1,0 +1,128 @@
+.side-navigation-container {
+  height: 100%;
+  width: 16rem;
+  position: fixed;
+  z-index: 1;
+  top: 3.5rem;
+  left: 0;
+  background: linear-gradient(#dbe9f5, #fff);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.side-navigation-container a {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 8px 6px 16px;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.side-navigation-container a:hover {
+  background-color: #5d8aa8;
+  color: #fff;
+  transition: all 0.6s ease 0s;
+}
+
+.side-navigation-container .active {
+  background-color: #96a9b6;
+  color: #fff;
+}
+
+.side-navigation-container .log-out {
+  background: transparent;
+  color: red;
+  margin-top: 3rem;
+}
+.side-navigation-container .log-out:hover {
+  background: transparent;
+  color: #dc143c;
+}
+
+.dashboard-icon {
+  background-image: url("../../../../assets/dashboard.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.lecture-icon {
+  background-image: url("../../../../assets/learning.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.modules-icon {
+  background-image: url("../../../../assets/modules.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.exam-icon {
+  background-image: url("../../../../assets/test.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.time-table-icon {
+  background-image: url("../../../../assets/calendar.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.events-icon {
+  background-image: url("../../../../assets/event.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.report-icon {
+  background-image: url("../../../../assets/report.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.log-out {
+  width: 100%;
+}
+.logout-icon {
+  background-image: url("../../../../assets/log-out.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+.side-navigation-text {
+  align-items: center;
+  display: inline-block;
+  justify-content: center;
+  margin-left: 0.5rem;
+  width: auto;
+}

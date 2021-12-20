@@ -30,7 +30,7 @@ function Header() {
             <div className='path-container'>
                 {(screenWidth > 700) && (
                     <div className='path'>
-                        Overview / Dashboard
+                        Staff / Dashboard
                     </div>
                 )}
             </div>
