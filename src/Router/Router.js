@@ -6,13 +6,16 @@
 import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 
 //import the HomeSite pages
-import Home from '../SiteFolders/HomeSite/Pages/Home';
-import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
-import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import Article from '../SiteFolders/HomeSite/Pages/Media/Article';
+import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
+import Home from '../SiteFolders/HomeSite/Pages/Home';
+import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 
 //import the StudentPortal site pages
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
+
+//import the StaffPortal site pages
+import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 
 
 function Router() {
@@ -20,10 +23,15 @@ function Router() {
         <Routers>
             <Switch>           
                 <Route exact path='/' component={Home} />
+
+                {/* Home Site Routes path */}
                 <Route exact path='/Contact' component={ContactPage} />
-                <Route exact path='/student-login' component={Login} />
                 <Route exact path='/Media' component={MediaPage} />
                 <Route exact path='/Media/Article' component={Article}/>
+                <Route exact path='/student-login' component={Login} />
+
+                {/* Staff Portail Routes path */}
+                <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
             </Switch>
         </Routers>
     );

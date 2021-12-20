@@ -38,7 +38,11 @@ function NavigationTab() {
                     placeholder="Password"
                     type='password'    
                 />
-                <button>Login</button>
+                <Link to='/Staff/Dashboard'>
+                    <button style={{cursor: 'pointer'}}>
+                        Login
+                    </button>
+                </Link>
             </div>
 
             {/* Tab navigation list and dropdown menus */}
@@ -55,7 +59,7 @@ function NavigationTab() {
 
                     <div className='dropdown'> 
                         <li 
-                            className={activeTab === 'tab2' ? 'active-tab-element' : "tab-element" }
+                            className="tab-element"/*{activeTab === 'tab2' ? 'active-tab-element' :} */ 
                             onClick={() => setActiveTab("tab2")}
                         >
                             Courses
