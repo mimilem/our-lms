@@ -1,10 +1,20 @@
+/*
+
+  The styling component of the staff Header component.  
+  
+  Every class Name container here starting with 'staff',
+  to avoid conflicts between styling components.   
+
+*/
+
 .staff-header-container {
   align-items: center;
   background: #fff;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   height: 3.5rem;
   width: 100%;
+  z-index: 999;
 }
 
 .staff-header-logo-container {
@@ -23,11 +33,7 @@
 
 .institution-name {
   font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.path-container {
-  margin-left: 1rem;
+  margin-left: 0.2rem;
 }
 
 .user-settings {

@@ -1,14 +1,21 @@
+/*
+    The header container of the staff portail.
+*/
+
 import React, {useState, useEffect} from 'react';
-import './header.css'
+
+import './header.css';
 
 
 function Header() {
 
+    // Initiate the window size.
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+    // On Screen size change, update the initiale Screen size state.
     useEffect(() => {
         const changeWidth = () => {
-            setScreenWidth(window.innerWidth);
+            setScreenWidth(window.innerWidth)
         }
         window.addEventListener('resize', changeWidth)
         return () => {
@@ -27,13 +34,13 @@ function Header() {
                 Vinco-eLearning
             </div>
 
-            <div className='path-container'>
+            {/* <div className='path-container'>
                 {(screenWidth > 700) && (
                     <div className='path'>
                         Staff / Dashboard
                     </div>
                 )}
-            </div>
+            </div> */}
 
             <div className='user-settings'>
                 <div className='user-avatar' />

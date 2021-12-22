@@ -1,55 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/*
+    A directory to display one of the two 
+    types of navigation.
+*/
+
+import React, {useState} from 'react';
+
+// Import the styling component.
 import './sideNavigation.css';
 
+// Import the side navigation bars.
+import FullSideNavigation from './FullSideNavigation';
+import ToggledSideNavigation from './ToggledSideNavigation';
+
+
 function SideNavigation() {
+
+    // Initiate a boolean state to check weither 
+    // the bar is toggled.
+
+    const [toggledBar, setToggledBar] = useState(false);
+
     return (
-        <div className="side-navigation-container">
-            <a className='active' >
-                <div className='dashboard-icon'/>
-                <div className='side-navigation-text'>Dashboard</div>
-            </a>
-
-            <a href="#services" >
-                <div className='lecture-icon'/>
-                <div className='side-navigation-text'>Classes</div>
-            </a>
-
-            <a href="#clients" >
-                <div className='modules-icon'/>
-                <div className='side-navigation-text'>Module Shelf</div>
-            </a>
-
-            <a href="#services" >
-                <div className='students-icon'/>
-                <div className='side-navigation-text'>Students</div>
-            </a>
-
-            <a href="#contact" >
-                <div className='exam-icon'/>
-                <div className='side-navigation-text'>Exams</div>
-            </a>
-
-            <a href="#contact" >
-                <div className='time-table-icon'/>
-                <div className='side-navigation-text'>Time Table</div>
-            </a>
-
-            <a href="#contact" >
-                <div className='events-icon'/>
-                <div className='side-navigation-text'>Events</div>
-            </a>
-
-            <a href="#contact" >
-                <div className='report-icon'/>    
-                <div className='side-navigation-text'>Reports</div>
-            </a>
-
-            <Link to='/' className='log-out'>
-                <div className='logout-icon'/>
-                <div className='side-navigation-text'>Log Out</div>
-            </Link>
-        </div>
+    <>
+        {
+            toggledBar === false ? 
+                <FullSideNavigation/> : <ToggledSideNavigation/> 
+        }
+    </>
     );
 }
 

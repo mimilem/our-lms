@@ -1,0 +1,66 @@
+/*
+
+  The styling component of the 'ToggledSideNavigation' component.  
+  
+  Every class Name container here starting with 'toggled-side',
+  to avoid conflicts between styling components.   
+
+*/
+
+.toggled-side-navigation-container {
+  background: linear-gradient(#dbe9f5, #fff);
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  position: fixed;
+  top: 3.5rem;
+  transition: 0.3s;
+  width: 4rem;
+  z-index: 1;
+}
+
+.toggled-side-navigation-container a {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+}
+.toggled-side-navigation-container a:hover {
+  background-color: #5d8aa8;
+  color: #fff;
+  transition: all 0.4s ease 0s;
+}
+
+.toggled-side-navigation-container .active {
+  background-color: #96a9b6;
+  color: #fff;
+}
+
+.toggled-side-navigation-container .logout-container {
+  background: transparent;
+  bottom: 0;
+  color: red;
+}
+.toggled-side-navigation-container .logout-container:hover {
+  background: #96a9b6;
+  color: #dc143c;
+}
+
+.toggled-side-navigation-icon {
+  background-image: url("../../../../../assets/double-right-arrows-symbol.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.5rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  width: 1.5rem;
+}
