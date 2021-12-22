@@ -34,6 +34,8 @@ function Header() {
                 Vinco-eLearning
             </div>
 
+            {/* DON'T TOUCH */}
+
             {/* <div className='path-container'>
                 {(screenWidth > 700) && (
                     <div className='path'>
