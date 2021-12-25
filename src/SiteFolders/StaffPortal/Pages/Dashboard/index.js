@@ -15,19 +15,19 @@ function StaffDashboard() {
     return (
         <div className="staff-dashboard-container">
 
-                <Header />
+            <Header />
 
-                <div 
-                    className={
-                        toggledBar === false ? 
-                            'full-side-navigation-container' 
-                            : 
-                            'toggled-side-navigation-container' 
-                    }>
-                    <SideNavigation 
-                        toggledBar={toggledBar} 
-                        setToggledBar={setToggledBar} />
-                </div>
+            <div 
+                className={
+                    toggledBar === false ? 
+                        'full-side-navigation-container' 
+                        : 
+                        'toggled-side-navigation-container' 
+                }>
+                <SideNavigation 
+                    toggledBar={toggledBar} 
+                    setToggledBar={setToggledBar} />
+            </div>
 
             <div className='staff-dashboard-content'>
                 This is the Dashboard<br/>

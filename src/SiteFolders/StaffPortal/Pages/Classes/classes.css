@@ -1,10 +1,12 @@
-.sideNav-and-window-container {
+.staff-classes-container {
+  background: linear-gradient(#96a9b6, #5d8aa8);
   display: flex;
-  position: absolute;
-}
-.classes-container {
+  height: 100%;
   position: relative;
-  top: 0rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  width: 100%;
+}
+.staff-classes-content {
+  margin-left: 1rem;
+  margin-top: 4rem;
+  width: 100%;
 }

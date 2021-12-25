@@ -20,8 +20,7 @@ function SideNavigation({toggledBar, setToggledBar}) {
         <div className='sideNav-container'>
             <FullSideNavigation 
                 toggledBar={toggledBar} 
-                setToggledBar={setToggledBar}
-            /> 
+                setToggledBar={setToggledBar} /> 
         </div>
     );
 }
