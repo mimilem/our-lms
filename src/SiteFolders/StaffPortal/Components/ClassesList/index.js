@@ -33,6 +33,30 @@ function ClassesList(props) {
                     Alevel
                 </div>
             </div>
+            <br/>
+            <div className='class-card-container'>
+                <div className='class-card'>
+                    Alevel
+                </div>
+                <div className='class-card'>
+                    Alevel
+                </div>
+                <div className='class-card'>
+                    Alevel
+                </div>
+            </div>
+            <br/>
+            <div className='class-card-container'>
+                <div className='class-card'>
+                    Alevel
+                </div>
+                <div className='class-card'>
+                    Alevel
+                </div>
+                <div className='class-card'>
+                    Alevel
+                </div>
+            </div>
         </div>
     );
 }
