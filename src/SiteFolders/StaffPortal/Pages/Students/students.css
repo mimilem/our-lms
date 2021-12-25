@@ -1,0 +1,10 @@
+.sideNav-and-window-container {
+  display: flex;
+  position: absolute;
+}
+.students-container {
+  position: relative;
+  top: 0rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}

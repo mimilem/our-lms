@@ -8,7 +8,7 @@
 
 */
 
-import React, {useState} from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -16,55 +16,50 @@ import './ToggledSideNavigation.css';
 import FullSideNavigation from '../FullSideNavigation';
 
 
-function ToggledSideNavigation() {
-
-    // Initiate a boolean state to check weither 
-    // the bar is toggled.
-    const [fullBar, setFullBar] = useState(false);
+function ToggledSideNavigation({toggledBar, setToggledBar}) {
 
     // Change the initiale state for when the 'Show 
     // Full Bar' button is clicked on.
     const handleFullBar = () => {
-        setFullBar(true)
+        setToggledBar(false)
     }
 
     return (
-        <>
-            {fullBar === false ?
+        toggledBar === true ?
 
             <div className="toggled-side-navigation-container">
                 
-                <a className='active' title='Dashboard'>
+                <Link to='/Staff/Dashboard' className='active' title='Dashboard'>
                     <div className='dashboard-icon'/>
-                </a>
+                </Link>
 
-                <a href="#services" title='Classes'>
+                <Link to='' title='Classes'>
                     <div className='classes-icon'/>
-                </a>
+                </Link>
 
-                <a href="#clients" title='Modules'>
+                <Link to='' title='Modules'>
                     <div className='module-icon'/>
-                </a>
+                </Link>
 
-                <a href="#services" title='Students'>
+                <Link to='' title='Students'>
                     <div className='students-icon'/>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='' >
                     <div className='exams-icon' title='Exams'/>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='' >
                     <div className='time-table-icon' title='Time Table'/>
-                </a>
+                </Link>
 
-                <a href="#contact" title='Events'>
+                <Link to='' title='Events'>
                     <div className='events-icon'/>
-                </a>
+                </Link>
 
-                <a href="#contact" title='Report'>
+                <Link to='' title='Report'>
                     <div className='reports-icon'/>    
-                </a>
+                </Link>
 
                 <Link to='/' className='logout-container' title='Log-out'>
                     <div className='logout-icon'/>
@@ -79,9 +74,6 @@ function ToggledSideNavigation() {
             : 
 
             <FullSideNavigation />
-            
-            }
-        </>
     );
 }
 

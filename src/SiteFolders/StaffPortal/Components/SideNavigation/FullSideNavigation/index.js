@@ -8,7 +8,7 @@
 
 */
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -16,80 +16,92 @@ import './fullSideNavigation.css';
 import ToggledSideNavigation from '../ToggledSideNavigation';
 
 
-function FullSideNavigation() {
+function FullSideNavigation(props) {
 
-    // Initiate a boolean state to check weither 
-    // the bar is toggled.
-    const [toggledBar, setToggled] = useState(false);
+    const { toggledBar, setToggledBar } = props;
+
+    const [activeTab, setActiveTab] = useState('dashboard')
 
     // Change the initiale state for when the toggle 
     // button is clicked on. 
     const handleToggledBar = () => {
-        setToggled(true)
+        setToggledBar(true)
+    }
+
+    const handleDashboard = () => {
+        setActiveTab('dashboard')
+    }
+    const handleClasses = () => {
+        setActiveTab('classes')
     }
 
     return (
-        <>
-            {toggledBar === false ?
-
+        toggledBar === false ?
             <div className="full-side-navigation-container">
                 
-                <a href="#services" className='active'>
+                <Link to='/Staff/Dashboard' 
+                    onClick={handleDashboard} 
+                    className={activeTab === 'dashboard' ? 'active' : ''} 
+                >
                     <div className='dashboard-icon'/>
                     <div className='side-navigation-text'>Dashboard</div>
-                </a>
+                </Link>
 
-                <a href="#services" >
-                    <div className='classes-icon'/>
-                    <div className='side-navigation-text'>Classes</div>
-                </a>
+                <Link to='/Staff/Classes'
+                    onClick={handleClasses} 
+                    className={activeTab === 'classes' ? 'active' : ''} 
+                >
+                        <div className='classes-icon'/>
+                        <div className='side-navigation-text'>Classes</div>
+                </Link>
 
-                <a href="#clients" >
+                <Link to='/Staff/Modules-Shelf'>
                     <div className='module-icon'/>
                     <div className='side-navigation-text'>Module Shelf</div>
-                </a>
+                </Link>
 
-                <a href="#services" >
+                <Link to='/Staff/Students'>
                     <div className='students-icon'/>
                     <div className='side-navigation-text'>Students</div>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='/Staff/Exams'>
                     <div className='exams-icon'/>
                     <div className='side-navigation-text'>Exams</div>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='/Staff/Exams'>
                     <div className='time-table-icon'/>
                     <div className='side-navigation-text'>Time Table</div>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='/Staff/Exams'>
                     <div className='events-icon'/>
                     <div className='side-navigation-text'>Events</div>
-                </a>
+                </Link>
 
-                <a href="#contact" >
+                <Link to='/Staff/Exams'>
                     <div className='reports-icon'/>    
                     <div className='side-navigation-text'>Reports</div>
-                </a>
+                </Link>
 
                 <Link to='/' className='logout-container'>
                     <div className='logout-icon'/>
                     <div className='side-navigation-text'>Log Out</div>
-                </Link>
-                
+                </Link> 
+
                 <div 
                     onClick={handleToggledBar}
                     className='toggle-icon'
-                    title='Show less information' />
+                    title='Show less information' 
+                />
             </div>
-
+            
             : 
             
-            <ToggledSideNavigation />
-            }
-        </>
+            <ToggledSideNavigation 
+                toggledBar={toggledBar} 
+                setToggledBar={setToggledBar}/>
     );
 }
 

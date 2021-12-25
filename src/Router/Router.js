@@ -15,7 +15,12 @@ import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
+import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
+import ClassesPage from '../SiteFolders/StaffPortal/Pages/Classes';
+import Module from '../SiteFolders/StaffPortal/Pages/Module';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
+import Students from '../SiteFolders/StaffPortal/Pages/Students';
+import Exams from '../SiteFolders/StaffPortal/Pages/Exams';
 
 
 function Router() {
@@ -32,6 +37,10 @@ function Router() {
 
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
+                <Route exact path='/Staff/Classes' component={ClassesPage}/>
+                <Route exact path='/Staff/Modules-Shelf' component={Module}/>
+                <Route exact path='/Staff/Students' component={Students}/>
+                <Route exact path='/Staff/Exams' component={Exams}/>
             </Switch>
         </Routers>
     );

@@ -8,17 +8,7 @@
 */
 
 .full-side-navigation-container {
-  background: linear-gradient(#dbe9f5, #fff);
-  display: block;
-  height: 100%;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-  position: fixed;
-  top: 3.5rem;
-  transition: 0.3s;
   width: 16rem;
-  z-index: 1;
 }
 
 .full-side-navigation-container a {
@@ -26,6 +16,7 @@
   cursor: pointer;
   display: block;
   font-size: 1.2rem;
+  list-style: none;
   text-decoration: none;
   padding-bottom: 1rem;
   padding-left: 1.5rem;
@@ -46,6 +37,7 @@
   background: transparent;
   bottom: 0;
   color: red;
+  width: 100%;
 }
 .full-side-navigation-container .logout-container:hover {
   background: #96a9b6;

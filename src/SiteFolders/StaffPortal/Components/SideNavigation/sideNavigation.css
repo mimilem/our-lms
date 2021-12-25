@@ -9,12 +9,28 @@
 
 */
 
+.sideNav-container {
+  background: linear-gradient(#dbe9f5, #fff);
+  display: flex;
+  float: left;
+  height: 100%;
+  left: 0;
+  margin-top: 3rem;
+  overflow-x: hidden;
+  padding-top: 20px;
+  top: 0;
+  transition: 0.3s;
+  position: fixed;
+  z-index: 9;
+}
+
 .side-navigation-text {
   align-items: center;
   display: inline-block;
   justify-content: center;
   margin-left: 0.5rem;
   width: auto;
+  z-index: 1;
 }
 
 .dashboard-icon {

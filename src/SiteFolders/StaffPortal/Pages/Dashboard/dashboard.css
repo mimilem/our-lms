@@ -1,0 +1,8 @@
+.staff-dashboard-container {
+  display: flex;
+  position: relative;
+}
+.staff-dashboard-content {
+  margin-left: 1rem;
+  margin-top: 4rem;
+}
