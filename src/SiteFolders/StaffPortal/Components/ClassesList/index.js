@@ -24,7 +24,45 @@ function ClassesList() {
             </div>
                 <hr />
 
-            <div className='class-card-container'>
+            <div className='class-card-container' title='View Class'>
+                <div className='class-card'>
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 5
+                    </div>
+                    <div className='classType-text'>
+                        Junior
+                    </div>
+                    <div className='subjects-text' title='View subjects'>
+                        8 Subjects
+                    </div>
+                    <div className='students-text' title='View students'>
+                        24 Students
+                    </div>
+                </div>
+                <div className='class-card'>
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 6
+                    </div>
+                    <div className='classType-text'>
+                        Junior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Subjects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
+                </div>
                 <div className='class-card'>
                     <img 
                         src={editIcon}
@@ -63,6 +101,11 @@ function ClassesList() {
                         24 Students
                     </div>
                 </div>
+            </div>
+
+            <br/>
+
+            <div className='class-card-container'>
                 <div className='class-card'>
                     <img 
                         src={editIcon}
@@ -82,11 +125,6 @@ function ClassesList() {
                         24 Students
                     </div>
                 </div>
-            </div>
-
-            <br/>
-
-            <div className='class-card-container'>
                 <div className='class-card'>
                     <img 
                         src={editIcon}
