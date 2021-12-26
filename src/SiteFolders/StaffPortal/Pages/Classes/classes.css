@@ -10,3 +10,11 @@
   margin-top: 4rem;
   width: 100%;
 }
+
+.addButton-icon {
+  cursor: pointer;
+  float: right;
+  height: 3rem;
+  margin-right: 4rem;
+  width: 3rem;
+}

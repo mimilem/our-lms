@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
-import './classes.css'
+import './classes.css';
+
+import addButton from '../../../../assets/plus.png'
 
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
@@ -31,6 +33,11 @@ function ClassesPage() {
             </div>    
 
             <div className='staff-classes-content'>
+                <img 
+                    src={addButton}
+                    alt=''
+                    className='addButton-icon'
+                    title='Add a new class'/>
                 <ClassesList/>
             </div>
         </div>

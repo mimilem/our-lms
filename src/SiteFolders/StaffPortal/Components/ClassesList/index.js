@@ -1,9 +1,11 @@
 import React from 'react';
 
-import './classesList.css'
+import './classesList.css';
+
+import editIcon from '../../../../assets/edit.png';
 
 
-function ClassesList(props) {
+function ClassesList() {
     return (
         <div className='classesList-container'>
             <div className='classesList-hearder'>
@@ -24,37 +26,123 @@ function ClassesList(props) {
 
             <div className='class-card-container'>
                 <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 7
+                    </div>
+                    <div className='classType-text'>
+                        Junior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
                 <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 8
+                    </div>
+                    <div className='classType-text'>
+                        Junior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
                 <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 9
+                    </div>
+                    <div className='classType-text'>
+                        Junior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
             </div>
+
             <br/>
+
             <div className='class-card-container'>
                 <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 10
+                    </div>
+                    <div className='classType-text'>
+                        Senior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
                 <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 11
+                    </div>
+                    <div className='classType-text'>
+                        Senior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
                 <div className='class-card'>
-                    Alevel
-                </div>
-            </div>
-            <br/>
-            <div className='class-card-container'>
-                <div className='class-card'>
-                    Alevel
-                </div>
-                <div className='class-card'>
-                    Alevel
-                </div>
-                <div className='class-card'>
-                    Alevel
+                    <img 
+                        src={editIcon}
+                        alt=''
+                        className='edit-icon'
+                        title='Edit'/>
+                    <div className='grade-text'>
+                        Grade 12
+                    </div>
+                    <div className='classType-text'>
+                        Senior
+                    </div>
+                    <div className='subjects-text'>
+                        8 Sujects
+                    </div>
+                    <div className='students-text'>
+                        24 Students
+                    </div>
                 </div>
             </div>
         </div>
