@@ -75,16 +75,23 @@ hr {
   top: 0;
   width: 1.5rem;
 }
+.edit-icon:hover {
+  box-shadow: 2px 2px 12px rgba(33, 33, 33, 0.2);
+  transform: scale(1.05);
+}
+
 .grade-text {
   font-size: 25px;
   margin-top: 20%;
   text-align: center;
 }
+
 .classType-text {
   font-size: 18px;
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
 }
+
 .subjects-text {
   background: linear-gradient(to right, #5d8aa8, #96a9b6);
   color: #fff;
@@ -93,7 +100,13 @@ hr {
   height: 2rem;
   margin-top: 15%;
   text-align: center;
+  transition: transform 0.3s;
 }
+.subjects-text:hover {
+  box-shadow: 1px 1px 1px rgba(33, 33, 33, 0.2);
+  transform: scale(1.02);
+}
+
 .students-text {
   background: linear-gradient(to right, #96a9b6, #5d8aa8);
   color: #fff;
@@ -102,4 +115,9 @@ hr {
   height: 2rem;
   margin-top: 5%;
   text-align: center;
+  transition: transform 0.3s;
+}
+.students-text:hover {
+  box-shadow: 1px 1px 1px rgba(33, 33, 33, 0.2);
+  transform: scale(1.02);
 }

@@ -38,7 +38,7 @@ function ClassesList() {
                         Junior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
@@ -57,7 +57,7 @@ function ClassesList() {
                         Junior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
@@ -76,7 +76,7 @@ function ClassesList() {
                         Junior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
@@ -100,7 +100,7 @@ function ClassesList() {
                         Senior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
@@ -119,7 +119,7 @@ function ClassesList() {
                         Senior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
@@ -138,7 +138,7 @@ function ClassesList() {
                         Senior
                     </div>
                     <div className='subjects-text'>
-                        8 Sujects
+                        8 Subjects
                     </div>
                     <div className='students-text'>
                         24 Students
