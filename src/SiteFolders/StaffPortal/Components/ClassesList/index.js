@@ -183,6 +183,8 @@ function ClassesList() {
                     </div>
                 </div>
             </div>
+
+            <div style={{marginTop: 20, paddingBottom: 20, marginLeft:'3%'}}>More and stuff</div>
         </div>
     );
 }

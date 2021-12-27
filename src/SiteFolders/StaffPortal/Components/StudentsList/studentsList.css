@@ -1,0 +1,66 @@
+.studentList-container {
+}
+
+.studentList-header {
+  display: flex;
+}
+
+.allStudents-button {
+  background-color: #96a9b6;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.allStudents-button:hover {
+  background-color: #63e093;
+}
+
+.allStudents-active-button {
+  background-color: #32cd32;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.allStudents-active-button:hover {
+  background-color: #63e093;
+}
+
+.pendingStudents-button {
+  background-color: #96a9b6;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.pendingStudents-button:hover {
+  background-color: red;
+}
+
+.pendingStudents-active-button {
+  background-color: #dc143c;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.pendingStudents-active-button:hover {
+  background-color: red;
+}

@@ -1,10 +1,11 @@
-.sideNav-and-window-container {
+.staff-module-container {
   display: flex;
-  position: absolute;
-}
-.module-container {
+  height: 100%;
   position: relative;
-  top: 0rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  width: 100%;
+}
+.staff-module-content {
+  margin-left: 4rem;
+  margin-top: 4rem;
+  width: 100%;
 }
