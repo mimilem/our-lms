@@ -15,15 +15,19 @@ import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
-import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
 import ClassesPage from '../SiteFolders/StaffPortal/Pages/Classes';
-import Module from '../SiteFolders/StaffPortal/Pages/Module';
+import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
+import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
-import Students from '../SiteFolders/StaffPortal/Pages/Students';
-import Exams from '../SiteFolders/StaffPortal/Pages/Exams';
+import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
+import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
+import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 
 
 function Router() {
+    
+    const studentName = 'Nephthali-Salam'
+
     return (
         <Routers>
             <Switch>           
@@ -36,11 +40,12 @@ function Router() {
                 <Route exact path='/student-login' component={Login} />
 
                 {/* Staff Portail Routes path */}
-                <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
                 <Route exact path='/Staff/Classes' component={ClassesPage}/>
-                <Route exact path='/Staff/Modules-Shelf' component={Module}/>
-                <Route exact path='/Staff/Students' component={Students}/>
-                <Route exact path='/Staff/Exams' component={Exams}/>
+                <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
+                <Route exact path='/Staff/Exams' component={ExamsPage}/>
+                <Route exact path='/Staff/Modules-Shelf' component={ModulePage}/>
+                <Route exact path='/Staff/Students' component={StudentsPage}/>
+                <Route exact path={'/Staff/Students/Profile='+ studentName} component={StudentsProfile}/>
             </Switch>
         </Routers>
     );

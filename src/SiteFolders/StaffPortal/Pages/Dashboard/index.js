@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
 
+//import the styling compnent(s).
+import './dashboard.css';
+import '../staffPages.css';
+
+//import all components that will be 
+//displayed on the pages.
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
-import './dashboard.css';
 
 
 function StaffDashboard() {
@@ -13,7 +18,7 @@ function StaffDashboard() {
     const [toggledBar, setToggledBar] = useState(false);
 
     return (
-        <div className="staff-dashboard-container">
+        <div className="staff-pages-container">
 
             <Header />
 
@@ -29,7 +34,7 @@ function StaffDashboard() {
                     setToggledBar={setToggledBar} />
             </div>
 
-            <div className='staff-dashboard-content'>
+            <div className='staff-pages-content'>
                 This is the Dashboard<br/>
             </div>
         </div>

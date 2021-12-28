@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
 
+//import the styling compnent(s).
 import './classes.css';
+import '../staffPages.css';
 
+//import all assets.
 import addButton from '../../../../assets/plus.png'
 
+//import all components that will be 
+//displayed on the pages.
+import ClassesList from '../../Components/ClassesList';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
-import ClassesList from '../../Components/ClassesList';
 
 
 function ClassesPage() {
@@ -16,7 +21,7 @@ function ClassesPage() {
     const [toggledBar, setToggledBar] = useState(false);
 
     return (
-        <div className="staff-classes-container">
+        <div className="staff-pages-container">
             
             <Header />
             
@@ -32,13 +37,15 @@ function ClassesPage() {
                     setToggledBar={setToggledBar} />
             </div>    
 
-            <div className='staff-classes-content'>
+            <div className='staff-pages-content'>
                 <img 
                     src={addButton}
                     alt=''
                     className='addButton-icon'
                     title='Add a new class'/>
+
                 <ClassesList/>
+
             </div>
         </div>
     );

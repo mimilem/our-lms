@@ -1,0 +1,18 @@
+/*
+  The styling component when the same properties 
+  are applied to all the pages components
+  of the StaffPortal.
+*/
+
+.staff-pages-container {
+  background: #c5ced2;
+  display: flex;
+  height: 100rem;
+  position: relative;
+  width: 100%;
+}
+.staff-pages-content {
+  margin-left: 4rem;
+  margin-top: 5rem;
+  width: 100%;
+}

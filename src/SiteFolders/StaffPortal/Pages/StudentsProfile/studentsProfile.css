@@ -1,0 +1,65 @@
+.staff-Studentprofile-container {
+  background: #f5f5f5;
+  display: flex;
+  height: 100rem;
+  position: relative;
+  width: 100%;
+}
+
+.staff-Studentprofile-content {
+  margin-left: 4rem;
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.studentAvatar-container {
+  background-color: #00ff00;
+  border-radius: 100px;
+  display: flex;
+  float: top;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+}
+.studentAvatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100px;
+  height: 97%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 97%;
+}
+
+.personnal-information-container {
+  background: linear-gradient(#dbe9f5, #fff);
+  border-radius: 10px;
+  display: block;
+  color: #000;
+  display: block;
+  float: center;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 30rem;
+}
+.personnal-information-text {
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.personnal-information-details {
+  margin-top: 15px;
+  font-size: 18px;
+}
+.personnal-information-details div {
+  margin: 15px;
+}

@@ -39,17 +39,23 @@
 }
 
 .user-settings {
+  background: linear-gradient(to left, green, red, orange);
+  border-radius: 50px;
+  cursor: pointer;
   height: 3rem;
   margin-right: 1rem;
+  padding: 0.1rem;
   position: absolute;
   right: 0;
   width: 3rem;
 }
 .user-avatar {
-  background-image: url("../../../../assets/user-avatar.png");
+  background-image: url("../../../../assets/ThatsMeSalam.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 50px;
   height: 100%;
+  margin: auto;
   width: 100%;
 }

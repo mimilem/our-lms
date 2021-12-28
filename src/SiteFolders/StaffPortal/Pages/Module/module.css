@@ -1,11 +1,3 @@
-.staff-module-container {
-  display: flex;
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-.staff-module-content {
-  margin-left: 4rem;
-  margin-top: 4rem;
-  width: 100%;
-}
+/*
+  ModulePage styling component.
+*/

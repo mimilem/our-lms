@@ -1,20 +1,24 @@
 import React, {useState} from 'react';
 
-import './students.css'
+//import the styling compnent(s).
+import './students.css';
+import '../staffPages.css';
 
+//import all components that will be 
+//displayed on the pages.
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 import StudentsList from '../../Components/StudentsList';
 
 
-function Students() {
+function StudentsPage() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
 
     return (
-        <div className="staff-students-container">
+        <div className="staff-pages-container">
 
             <Header />
             
@@ -30,9 +34,9 @@ function Students() {
                     setToggledBar={setToggledBar} />
             </div> 
 
-            <div className='staff-students-content'>
+            <div className='staff-pages-content'>
 
-                <div className='search-students-header'>
+                <div className='students-page-header'>
                     <div className='search-students-container'>
                         <input
                             type='text'
@@ -57,4 +61,4 @@ function Students() {
     );
 }
 
-export default Students;
+export default StudentsPage;

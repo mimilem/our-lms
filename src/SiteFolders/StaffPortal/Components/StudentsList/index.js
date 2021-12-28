@@ -17,7 +17,7 @@ function StudentsList() {
                 <button 
                     onClick={()=> {setActiveTab('allStudents')}}
                     className={activeTab === 'allStudents' ? 'allStudents-active-button' : 'allStudents-button'}>
-                    All Students
+                    Active Students
                 </button>
                 <button 
                     onClick={()=> {setActiveTab('pendingStudents')}}

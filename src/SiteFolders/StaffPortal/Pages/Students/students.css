@@ -1,17 +1,8 @@
-.staff-students-container {
-  background: #c5ced2;
-  display: flex;
-  height: 100rem;
-  position: relative;
-  width: 100%;
-}
-.staff-students-content {
-  margin-left: 4rem;
-  padding-top: 5rem;
-  width: 100%;
-}
+/*
+  ClassesPage styling component.
+*/
 
-.search-students-header {
+.students-page-header {
   display: flex;
 }
 
@@ -39,7 +30,7 @@
   width: 100%;
 }
 .register-button {
-  background-color: red;
+  background-color: #4169e1;
   border: 0;
   border-radius: 10px;
   color: #fff;
@@ -48,5 +39,9 @@
   font-size: 18px;
   height: 2rem;
   margin-right: 2rem;
+  transition: 0.3s;
   width: 40%;
+}
+.register-button:hover {
+  background-color: #4682b4;
 }

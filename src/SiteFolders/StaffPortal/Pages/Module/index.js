@@ -1,19 +1,23 @@
 import React, {useState} from 'react';
 
+//import the styling compnent(s).
 import './module.css';
+import '../staffPages.css';
 
+//import all components that will be 
+//displayed on the pages.
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
 
-function Module() {
+function ModulePage() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
 
     return (
-        <div  className="staff-module-container">
+        <div  className="staff-pages-container">
             <Header />
             
             <div 
@@ -28,11 +32,11 @@ function Module() {
                     setToggledBar={setToggledBar} />
             </div>  
                 
-            <div className='staff-module-content'>
-                Display The Module
+            <div className='staff-pages-content'>
+                Display The ModulePage
             </div>
         </div>
     );
 }
 
-export default Module;
+export default ModulePage;
