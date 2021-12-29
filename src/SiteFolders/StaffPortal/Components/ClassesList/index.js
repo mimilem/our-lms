@@ -8,7 +8,7 @@ import editIcon from '../../../../assets/edit.png';
 function ClassesList() {
     return (
         <div className='classesList-container'>
-            <div className='classesList-hearder'>
+            <div className='classesList-header'>
                 <div className='allClasses-text'>
                     All Classes
                 </div>
@@ -20,9 +20,9 @@ function ClassesList() {
                         className='search-class'
                     />
                 </div>
-
             </div>
-                <hr />
+            
+            <hr />
 
             <div className='class-card-container' title='View Class'>
                 <div className='class-card'>

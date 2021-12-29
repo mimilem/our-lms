@@ -1,6 +1,7 @@
-/*
-  ExamCalendar styling component.
-*/
+.exams-calendar-header-tilte {
+  font-size: 40px;
+  margin-left: 2rem;
+}
 
 .exams-calendar-container {
   display: block;

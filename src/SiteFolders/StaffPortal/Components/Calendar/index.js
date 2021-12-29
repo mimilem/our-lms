@@ -6,7 +6,7 @@ import { css } from "@emotion/react";
 import './calendar.css';
 
 
-function CalendarCpmnt() {
+function StaffExamsCalendar() {
 
     const API_KEY = "AIzaSyDze7dgAysNngoDi0Q6IH8zH1-tqED7Ve4";
 
@@ -47,4 +47,4 @@ function CalendarCpmnt() {
       )
 }
 
-export default CalendarCpmnt;
+export default StaffExamsCalendar;

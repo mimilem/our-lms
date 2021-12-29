@@ -1,8 +1,57 @@
 /*
   ExamsPage styling component.
 */
-
-.exams-header-tilte {
-  font-size: 50px;
+.exams-calendar-tilte {
+  background-color: #353839;
+  color: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  float: left;
+  font-size: 25px;
+  height: 2.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
   margin-left: 2rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+  width: 91.8%;
+}
+.exams-calendar-tilte:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.02);
+}
+.access {
+  margin-right: 2rem;
+}
+
+.exams-classes-tilte {
+  background-color: #353839;
+  color: #fff;
+  cursor: context-menu;
+  display: block;
+  float: left;
+  font-size: 25px;
+  height: 2.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+  width: 91.8%;
+}
+
+.class-list-container {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  font-size: 20px;
+  margin-left: -1rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  width: 100%;
 }

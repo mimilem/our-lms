@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 //import the styling compnent(s).
 import './exams.css';
@@ -6,9 +7,9 @@ import '../staffPages.css';
 
 //import all components that will be 
 //displayed on the pages.
-import ExamCalendar from '../../Components/ExamCalendar';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
+import ClassesList from '../../Components/ClassesList'
 
 
 function ExamsPage() {
@@ -35,16 +36,20 @@ function ExamsPage() {
             </div>
 
             <div className='staff-pages-content'>
-            
-                <div className='exams-header-tilte'>Exams Calendar</div>
-                <hr/>
-
-                <div className='choose-class-filter'>
-                    <ExamCalendar />
-                </div>
+                <div className='exams-calendar-header-tilte'>Exams</div>
+                <hr />
                 
-            </div>
+                <Link to='/Staff/Exams/Calendar' className='exams-calendar-tilte'>
+                    Access the exams calendar <div className='access'>{'>>'}</div>
+                </Link>
 
+                <div className='exams-classes-tilte'>
+                    Select a class 
+                    <div className='class-list-container'>
+                        
+                    </div>
+                </div>
+            </div>
             
         </div>
     );
