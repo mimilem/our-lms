@@ -24,6 +24,7 @@ import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
 import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
+import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
 
 
 function Router() {
@@ -50,6 +51,7 @@ function Router() {
                 <Route exact path='/Staff/Students' component={StudentsPage}/>
                 <Route exact path={'/Staff/Students/Profile='+ studentName} component={StudentsProfile}/>
                 <Route exact path='/Staff/Exams/Subject' component={SubjectSelection}/>
+                <Route exact path='/Staff/Time-Table' component={TimeTablePage}/>
                 
             </Switch>
         </Routers>

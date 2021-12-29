@@ -83,6 +83,29 @@
   transform: scale(1.05);
 }
 
+.exam-class-card-container6 {
+  align-items: center;
+  background: linear-gradient(to right, #4568dc, #b06ab3);
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  height: 10rem;
+  justify-content: center;
+  margin-right: 2rem;
+  opacity: 0.8;
+  width: 10rem;
+  transition: transform 0.3s;
+}
+.exam-class-card-container6:hover {
+  background: linear-gradient(#4568dc, #b06ab3);
+  color: #000;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .bgimage-exam-class-card {
   align-items: center;
   background-image: url("../../../../assets/calendar.png");

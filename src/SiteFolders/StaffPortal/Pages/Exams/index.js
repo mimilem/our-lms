@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 //import the styling compnent(s).
 import './exams.css';
 import '../staffPages.css';
-import '../TimeTable/timeTable.css';
 
 //import all components that will be 
 //displayed on the pages.

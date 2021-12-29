@@ -70,7 +70,7 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Exams</div>
                 </Link>
 
-                <Link to='/Staff/Exams'>
+                <Link to='/Staff/Time-Table'>
                     <div className='time-table-icon'/>
                     <div className='side-navigation-text'>Time Table</div>
                 </Link>
