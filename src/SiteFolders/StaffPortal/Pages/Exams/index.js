@@ -6,6 +6,7 @@ import '../staffPages.css';
 
 //import all components that will be 
 //displayed on the pages.
+import ExamCalendar from '../../Components/ExamCalendar';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
@@ -34,8 +35,16 @@ function ExamsPage() {
             </div>
 
             <div className='staff-pages-content'>
-                Display Exams YIKES!
+            
+                <div className='exams-header-tilte'>Exams Calendar</div>
+                <hr/>
+
+                <div className='choose-class-filter'>
+                    <ExamCalendar />
+                </div>
+                
             </div>
+
             
         </div>
     );

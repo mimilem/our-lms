@@ -18,6 +18,7 @@ function ModulePage() {
 
     return (
         <div  className="staff-pages-container">
+
             <Header />
             
             <div 
@@ -35,6 +36,7 @@ function ModulePage() {
             <div className='staff-pages-content'>
                 Display The ModulePage
             </div>
+            
         </div>
     );
 }

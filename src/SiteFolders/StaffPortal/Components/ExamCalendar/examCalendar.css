@@ -1,0 +1,32 @@
+/*
+  ExamCalendar styling component.
+*/
+
+.exams-calendar-container {
+  display: block;
+}
+
+.class-filter-container {
+  align-items: center;
+  background: transparent;
+  color: #000;
+  display: flex;
+  font-size: 20px;
+  height: 2rem;
+  justify-content: left;
+  margin-left: 4rem;
+  padding-right: 0.5rem;
+  width: 12rem;
+}
+.class-filter-checkbox {
+  float: left;
+  height: 1.5rem;
+  outline: none;
+  width: 1.5rem;
+}
+.class-filter-text {
+  text-transform: capitalize;
+}
+
+.calendar-container {
+}
