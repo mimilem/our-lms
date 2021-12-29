@@ -15,6 +15,7 @@ import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
+import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
 import ClassesPage from '../SiteFolders/StaffPortal/Pages/Classes';
 import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
 import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
@@ -22,7 +23,7 @@ import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
 import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
-import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
+import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
 
 
 function Router() {
@@ -48,6 +49,7 @@ function Router() {
                 <Route exact path='/Staff/Modules-Shelf' component={ModulePage}/>
                 <Route exact path='/Staff/Students' component={StudentsPage}/>
                 <Route exact path={'/Staff/Students/Profile='+ studentName} component={StudentsProfile}/>
+                <Route exact path='/Staff/Exams/Subject' component={SubjectSelection}/>
                 
             </Switch>
         </Routers>

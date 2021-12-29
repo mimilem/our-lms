@@ -11,8 +11,14 @@
   position: relative;
   width: 100%;
 }
+
 .staff-pages-content {
   margin-left: 4rem;
   margin-top: 5rem;
   width: 100%;
+}
+
+.staff-pages-header-tilte {
+  font-size: 40px;
+  margin-left: 2rem;
 }

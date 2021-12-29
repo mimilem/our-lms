@@ -34,7 +34,7 @@ function CalendarPage() {
             
             <div  className='staff-pages-content'>
                 
-                <div className='exams-calendar-header-tilte'>Exams Calendar</div>
+                <div className='staff-pages-header-tilte'>Exams Calendar</div>
                 <hr/>
 
                 <div className='choose-class-filter'>
@@ -44,7 +44,7 @@ function CalendarPage() {
                             <input  
                                 type="checkbox" 
                                 className='class-filter-checkbox'/>
-                            <div className='class-filter-text'>
+                            <div className='class-filter-label'>
                                 Show All Classes
                             </div> 
                         </div>
