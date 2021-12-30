@@ -59,7 +59,7 @@ function StudentsProfile() {
                     </div>
                 </div>
                     <br/>
-                    <hr/>
+                    <hr className='staff-page-hr'/>
                 <div className='personnal-information-container'>
                     <div className='personnal-information-text'>
                         Emergency Contact
@@ -73,7 +73,7 @@ function StudentsProfile() {
                     </div>
                 </div>
                     <br/>
-                    <hr/>
+                    <hr className='staff-page-hr'/>
                 <div className='personnal-information-container'>
                     <div className='personnal-information-text'>
                         Accademic Information

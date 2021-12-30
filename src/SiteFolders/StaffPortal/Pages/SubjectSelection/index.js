@@ -35,7 +35,7 @@ function SubjectSelection() {
                 
                 <div className='staff-pages-header-tilte'>Select a module</div>
  
-                <hr />
+                <hr className='staff-page-hr' />
 
                 <div className='exams-calendar-tilte'>
                     Mathematics <div className='access'>{'>>'}</div>

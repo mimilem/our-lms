@@ -35,7 +35,7 @@ function CalendarPage() {
             <div  className='staff-pages-content'>
                 
                 <div className='staff-pages-header-tilte'>Exams Calendar</div>
-                <hr/>
+                <hr className='staff-page-hr'/>
 
                 <div className='choose-class-filter'>
 

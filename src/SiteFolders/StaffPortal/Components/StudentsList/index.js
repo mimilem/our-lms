@@ -26,7 +26,7 @@ function StudentsList() {
                 </button>
             </div>
 
-            <hr style={{marginTop:10}}/>
+            <hr className='staff-page-hr' style={{marginTop:10}}/>
 
             { activeTab === 'allStudents' ? <AllStudentsList /> : <PendingStudentsList /> }
         </div>

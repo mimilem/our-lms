@@ -16,6 +16,10 @@ import './navigationTab.css'
 
 
 function NavigationTab() {
+
+    const [isShown, setIsShown] = useState(false);
+    const [isShown1, setIsShown1] = useState(false);
+    const [isShown2, setIsShown2] = useState(false);
     
     //declare the initial state of the active tab element.
     const [activeTab, setActiveTab] = useState("tab1");
@@ -57,54 +61,69 @@ function NavigationTab() {
                         </li>
                     </Link>
 
-                    <div className='dropdown'> 
+                    <div className='dropdown'
+                    onMouseEnter={() => setIsShown(true)}
+                    onMouseLeave={() => setIsShown(false)}
+                    > 
                         <li 
                             className="tab-element"/*{activeTab === 'tab2' ? 'active-tab-element' :} */ 
                             onClick={() => setActiveTab("tab2")}
                         >
                             Courses
                         </li>
+                        {isShown && (
                         <ul className='dropdown-menu'>
                             <li>Full-Time</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Flexi-Learning</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Hybrid-Learning</li>
                         </ul> 
+                        )}
                     </div>
 
-                    <div className='dropdown'> 
+                    <div className='dropdown'
+                        onMouseEnter={() => setIsShown1(true)}
+                        onMouseLeave={() => setIsShown1(false)}
+                    > 
                         <li 
                             className={activeTab === 'tab3' ? 'active-tab-element' : "tab-element" }
                             onClick={() => setActiveTab("tab3")}
                         >
                             Admission
                         </li>
+                        {isShown1 && (
                         <ul className='dropdown-menu'>
                             <li>Apply</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>International student</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Tuition fees</li>
                         </ul> 
+                        )}
                     </div>
                     
-                    <div className='dropdown'> 
+                    <div className='dropdown'
+                        onMouseEnter={() => setIsShown2(true)}
+                        onMouseLeave={() => setIsShown2(false)} 
+                    > 
                         <li 
                             className={activeTab === 'tab4' ? 'active-tab-element' : "tab-element" }
                             onClick={() => setActiveTab("tab4")}
                         >
                             About
                         </li>
+                        {isShown2 && (
                         <ul className='dropdown-menu'>
                             <li>About us</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Media</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Campus life</li>
-                            <hr/>
+                            <hr className='nav-tab-hr'/>
                             <li>Governance</li>
                         </ul> 
+                        )}
                     </div>
 
                     <Link to='/contact'>

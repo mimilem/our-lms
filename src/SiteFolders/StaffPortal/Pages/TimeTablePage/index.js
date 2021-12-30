@@ -1,7 +1,5 @@
 import React, {useEffect, useState}  from 'react';
 
-import { Link } from 'react-router-dom';
-
 //import the styling compnent(s).
 import './timeTable.css';
 import '../staffPages.css';
@@ -38,7 +36,8 @@ function TimeTablePage() {
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Time Table</div>
                 
-                <hr />
+                <hr className='staff-page-hr' />
+            
             </div>
         </div>
     );

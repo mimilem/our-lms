@@ -37,7 +37,7 @@ function ExamsPage() {
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Exams</div>
                 
-                <hr />
+                <hr className='staff-page-hr' />
                 
                 <Link to='/Staff/Exams/Calendar' className='exams-calendar-tilte'>
                     Access the exams calendar <div className='access'>{'>>'}</div>

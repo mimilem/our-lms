@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './classesList.css';
+import '../staffComponents.css';
+
 
 import editIcon from '../../../../assets/edit.png';
 
@@ -22,7 +24,7 @@ function ClassesList() {
                 </div>
             </div>
             
-            <hr />
+            <hr className='staff-page-hr' />
 
             <div className='class-card-container' title='View Class'>
                 <div className='class-card'>
