@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
 //import the styling compnent(s).
-import './classes.css';
+import './class.css';
 import '../staffPages.css';
 
 //import all assets.
@@ -15,9 +15,10 @@ import down from '../../../../assets/down.png'
 import ClassesList from '../../Components/ClassesList';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
+import ClassPageTopNavigation from '../../Components/ClassPageTopNavigation';
 
 
-function ClassesPage(props) {
+function ClassPage() {
 
     const [isShown, setIsShown] = useState(false);
 
@@ -51,7 +52,7 @@ function ClassesPage(props) {
                     onClick={() => setIsShown(true)} ref={ref} >
 
                     <div>
-                        <div className='staff-pages-header-tilte'>Bsc Accountancy 
+                        <div className='staff-pages-header-tilte'>Bsc Accountancy - First Year
                             <img 
                                 src={down}
                                 alt=''
@@ -61,29 +62,24 @@ function ClassesPage(props) {
                     </div>
                     {isShown && (
                             <ul className='staff-pages-header-dropdown-menu'>
-                                <li>Business Sciences</li>
+                                <li>Add a class</li>
                                 <hr className='nav-tab-hr'/>
-                                <li>Accountancy</li>
+                                <li>First Year</li>
                                 <hr className='nav-tab-hr'/>
-                                <li>Economics and Finance</li>
+                                <li>Second Year</li>
                                 <hr className='nav-tab-hr'/>
-                                <li>Law</li>
+                                <li>Third Year</li>
                             </ul> 
                         )}
                 </div>
+                
                 <hr className='staff-page-hr'/>
 
-                <img 
-                    src={addButton}
-                    alt=''
-                    className='addButton-icon'
-                    title='Add a new class'/>
-
-                <ClassesList/>
+                <ClassPageTopNavigation />
 
             </div>
         </div>
     );
 }
 
-export default ClassesPage;
+export default ClassPage;

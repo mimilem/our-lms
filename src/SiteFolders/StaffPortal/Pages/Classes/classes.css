@@ -1,11 +1,10 @@
-/*
-  ClassesPage styling component.
-*/
-
-.addButton-icon {
-  cursor: pointer;
-  float: right;
-  height: 3rem;
-  margin-right: 4rem;
-  width: 3rem;
+.down-icon {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin-left: 0.5rem;
+  padding-top: 2px;
+  position: absolute;
+  width: 30px;
 }

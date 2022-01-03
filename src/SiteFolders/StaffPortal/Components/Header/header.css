@@ -41,13 +41,15 @@
 .user-settings {
   background: linear-gradient(to left, green, red, orange);
   border-radius: 50px;
+  display: inline-block;
   cursor: pointer;
-  height: 3rem;
+  height: 2.5rem;
   margin-right: 1rem;
   padding: 0.1rem;
   position: absolute;
   right: 0;
-  width: 3rem;
+  top: 0.4rem;
+  width: 2.5rem;
 }
 .user-avatar {
   background-image: url("../../../../assets/ThatsMeSalam.jpg");
@@ -57,5 +59,33 @@
   border-radius: 50px;
   height: 100%;
   margin: auto;
+  position: relative;
   width: 100%;
+}
+.profile-dropdown-menu {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  display: block;
+  right: 0.5rem;
+  list-style: none;
+  padding: 0.75rem;
+  position: absolute;
+  top: 2.8rem;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
+  width: 10rem;
+  z-index: 99;
+}
+.profile-dropdown-menu li:hover {
+  color: #5d8aa8;
+  cursor: pointer;
+}
+.sign-out {
+  color: red;
+}
+.sign-out:hover {
+  color: #dc143c;
 }

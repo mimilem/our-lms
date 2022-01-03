@@ -36,6 +36,9 @@ function StudentsPage() {
 
             <div className='staff-pages-content'>
 
+            <div className='staff-pages-header-tilte'>Students</div>
+                <hr className='staff-page-hr'/>
+
                 <div className='students-page-header'>
                     <div className='search-students-container'>
                         <input

@@ -10,7 +10,8 @@
 */
 
 .sideNav-container {
-  background: linear-gradient(#dbe9f5, #fff);
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   float: left;
   height: 100%;

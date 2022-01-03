@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState}  from 'react';
 
 //import the styling compnent(s).
-import './dashboard.css';
+import './events.css';
 import '../staffPages.css';
 
 //import all components that will be 
@@ -10,18 +10,17 @@ import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
 
-
-function StaffDashboard() {
+function Events() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
 
     return (
-        <div className="staff-pages-container">
-
+        <div className='staff-pages-container'>
+            
             <Header />
-
+            
             <div 
                 className={
                     toggledBar === false ? 
@@ -35,11 +34,13 @@ function StaffDashboard() {
             </div>
 
             <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte'>Dashboard</div>
-                <hr className='staff-page-hr'/>
+                <div className='staff-pages-header-tilte'>Events</div>
+                
+                <hr className='staff-page-hr' />
+            
             </div>
         </div>
     );
 }
 
-export default StaffDashboard;
+export default Events;

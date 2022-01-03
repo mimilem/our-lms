@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './classesList.css';
 import '../staffComponents.css';
 
@@ -27,17 +29,17 @@ function ClassesList() {
             <hr className='staff-page-hr' />
 
             <div className='class-card-container' title='View Class'>
-                <div className='class-card'>
+                <Link to='/Staff/Class' className='class-card'>
                     <img 
                         src={editIcon}
                         alt=''
                         className='edit-icon'
                         title='Edit'/>
                     <div className='grade-text'>
-                        Grade 5
+                        First Year
                     </div>
                     <div className='classType-text'>
-                        Junior
+                        Undergraduate
                     </div>
                     <div className='subjects-text' title='View subjects'>
                         8 Subjects
@@ -45,7 +47,7 @@ function ClassesList() {
                     <div className='students-text' title='View students'>
                         24 Students
                     </div>
-                </div>
+                </Link>
                 <div className='class-card'>
                     <img 
                         src={editIcon}
@@ -53,10 +55,10 @@ function ClassesList() {
                         className='edit-icon'
                         title='Edit'/>
                     <div className='grade-text'>
-                        Grade 6
+                        Second Year
                     </div>
                     <div className='classType-text'>
-                        Junior
+                        Undergraduate
                     </div>
                     <div className='subjects-text'>
                         8 Subjects
@@ -72,110 +74,10 @@ function ClassesList() {
                         className='edit-icon'
                         title='Edit'/>
                     <div className='grade-text'>
-                        Grade 7
+                        Third Year
                     </div>
                     <div className='classType-text'>
-                        Junior
-                    </div>
-                    <div className='subjects-text'>
-                        8 Subjects
-                    </div>
-                    <div className='students-text'>
-                        24 Students
-                    </div>
-                </div>
-                <div className='class-card'>
-                    <img 
-                        src={editIcon}
-                        alt=''
-                        className='edit-icon'
-                        title='Edit'/>
-                    <div className='grade-text'>
-                        Grade 8
-                    </div>
-                    <div className='classType-text'>
-                        Junior
-                    </div>
-                    <div className='subjects-text'>
-                        8 Subjects
-                    </div>
-                    <div className='students-text'>
-                        24 Students
-                    </div>
-                </div>
-            </div>
-
-            <br/>
-
-            <div className='class-card-container'>
-                <div className='class-card'>
-                    <img 
-                        src={editIcon}
-                        alt=''
-                        className='edit-icon'
-                        title='Edit'/>
-                    <div className='grade-text'>
-                        Grade 9
-                    </div>
-                    <div className='classType-text'>
-                        Junior
-                    </div>
-                    <div className='subjects-text'>
-                        8 Subjects
-                    </div>
-                    <div className='students-text'>
-                        24 Students
-                    </div>
-                </div>
-                <div className='class-card'>
-                    <img 
-                        src={editIcon}
-                        alt=''
-                        className='edit-icon'
-                        title='Edit'/>
-                    <div className='grade-text'>
-                        Grade 10
-                    </div>
-                    <div className='classType-text'>
-                        Senior
-                    </div>
-                    <div className='subjects-text'>
-                        8 Subjects
-                    </div>
-                    <div className='students-text'>
-                        24 Students
-                    </div>
-                </div>
-                <div className='class-card'>
-                    <img 
-                        src={editIcon}
-                        alt=''
-                        className='edit-icon'
-                        title='Edit'/>
-                    <div className='grade-text'>
-                        Grade 11
-                    </div>
-                    <div className='classType-text'>
-                        Senior
-                    </div>
-                    <div className='subjects-text'>
-                        8 Subjects
-                    </div>
-                    <div className='students-text'>
-                        24 Students
-                    </div>
-                </div>
-                <div className='class-card'>
-                    <img 
-                        src={editIcon}
-                        alt=''
-                        className='edit-icon'
-                        title='Edit'/>
-                    <div className='grade-text'>
-                        Grade 12
-                    </div>
-                    <div className='classType-text'>
-                        Senior
+                        Undergraduate
                     </div>
                     <div className='subjects-text'>
                         8 Subjects

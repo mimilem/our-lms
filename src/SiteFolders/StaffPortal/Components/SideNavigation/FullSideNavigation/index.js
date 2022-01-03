@@ -47,12 +47,12 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Dashboard</div>
                 </Link>
 
-                <Link to='/Staff/Classes'
+                <Link to='/Staff/Departments'
                     onClick={handleClasses} 
                     className={activeTab === 'classes' ? 'active' : ''} 
                 >
                         <div className='classes-icon'/>
-                        <div className='side-navigation-text'>Classes</div>
+                        <div className='side-navigation-text'>Departments</div>
                 </Link>
 
                 <Link to='/Staff/Modules-Shelf'>
@@ -75,19 +75,19 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Time Table</div>
                 </Link>
 
-                <Link to='/Staff/Exams'>
+                <Link to='/Staff/Events'>
                     <div className='events-icon'/>
                     <div className='side-navigation-text'>Events</div>
                 </Link>
 
-                <Link to='/Staff/Exams'>
+                <Link to='/Staff/Reports'>
                     <div className='reports-icon'/>    
                     <div className='side-navigation-text'>Reports</div>
                 </Link>
 
                 <Link to='/' className='logout-container'>
                     <div className='logout-icon'/>
-                    <div className='side-navigation-text'>Log Out</div>
+                    <div className='side-navigation-text'>Sign Out</div>
                 </Link> 
 
                 <div 

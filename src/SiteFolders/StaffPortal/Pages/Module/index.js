@@ -34,7 +34,8 @@ function ModulePage() {
             </div>  
                 
             <div className='staff-pages-content'>
-                Display The ModulePage
+                <div className='staff-pages-header-tilte'>Module shelf</div>
+                <hr className='staff-page-hr'/>
             </div>
             
         </div>

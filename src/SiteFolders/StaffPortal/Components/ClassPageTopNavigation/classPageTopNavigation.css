@@ -1,0 +1,88 @@
+.class-top-navigation-container {
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  height: 20vh;
+  min-height: 20vh;
+  min-width: 100%;
+  overflow: hidden;
+  margin-left: 5rem;
+  margin-top: -2rem;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+.disabled-class-top-navigation-tab-element {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #999997;
+  cursor: context-menu;
+  font-size: 20px;
+  height: 2rem;
+  margin: 5px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  text-decoration: underline;
+  text-decoration-color: #999997;
+  text-decoration-thickness: 1.4px;
+}
+.class-top-navigation-tab-element {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  height: 2rem;
+  margin: 5px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  text-decoration: underline;
+  text-decoration-color: #000;
+  text-decoration-thickness: 1.4px;
+}
+.class-top-navigation-tab-element:hover {
+  color: #5d8aa8;
+  text-decoration-color: #5d8aa8;
+  transition: all 0.3s ease 0s;
+}
+
+.choose-tab-element {
+  display: flex;
+  font-size: 20px;
+  margin-right: 2rem;
+  position: absolute;
+  right: 0;
+  top: 4.5rem;
+}
+.choose-text {
+  padding-top: 0.5rem;
+}
+.choose-tab-element-dropdown {
+  background: #fff;
+  border: 1px solid;
+  border-color: #000;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 1rem;
+  margin: 5px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 1.4px;
+  width: 20rem;
+}

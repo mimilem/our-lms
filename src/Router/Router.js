@@ -17,6 +17,8 @@ import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 //import the StaffPortal site pages
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
 import ClassesPage from '../SiteFolders/StaffPortal/Pages/Classes';
+import DepartmentsPage from '../SiteFolders/StaffPortal/Pages/Departments';
+import Events from '../SiteFolders/StaffPortal/Pages/Events';
 import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
 import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
@@ -25,6 +27,8 @@ import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
+import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
+import ClassPage from '../SiteFolders/StaffPortal/Pages/Class';
 
 
 function Router() {
@@ -44,13 +48,17 @@ function Router() {
 
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/Classes' component={ClassesPage}/>
-                <Route exact path='/Staff/Exams/Calendar' component={CalendarPage}/>
+                <Route exact path='/Staff/Class' component={ClassPage}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
+                <Route exact path='/Staff/Departments' component={DepartmentsPage}/>
+                <Route exact path='/Staff/Events' component={Events}/>
                 <Route exact path='/Staff/Exams' component={ExamsPage}/>
+                <Route exact path='/Staff/Exams/Calendar' component={CalendarPage}/>
+                <Route exact path='/Staff/Exams/Subject' component={SubjectSelection}/>
                 <Route exact path='/Staff/Modules-Shelf' component={ModulePage}/>
+                <Route exact path='/Staff/Reports' component={Reports}/>
                 <Route exact path='/Staff/Students' component={StudentsPage}/>
                 <Route exact path={'/Staff/Students/Profile='+ studentName} component={StudentsProfile}/>
-                <Route exact path='/Staff/Exams/Subject' component={SubjectSelection}/>
                 <Route exact path='/Staff/Time-Table' component={TimeTablePage}/>
                 
             </Switch>

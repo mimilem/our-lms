@@ -18,7 +18,34 @@
   width: 100%;
 }
 
+.staff-pages-header-tilte-container {
+  text-decoration: underline;
+}
+
 .staff-pages-header-tilte {
-  font-size: 40px;
+  font-size: 25px;
   margin-left: 2rem;
+}
+
+.staff-pages-header-dropdown {
+  cursor: pointer;
+}
+
+.staff-pages-header-dropdown-menu {
+  background: #f5f5f5;
+  list-style: none;
+  padding-bottom: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 99999999;
+}
+
+.staff-pages-header-dropdown-menu li {
+  align-items: center;
+  display: flex;
+  font-size: 23px;
+  height: 40px;
+}
+.staff-pages-header-dropdown-menu li:hover {
+  color: #5d8aa8;
 }

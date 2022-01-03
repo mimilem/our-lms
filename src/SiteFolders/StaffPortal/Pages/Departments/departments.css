@@ -1,0 +1,14 @@
+/*
+  ClassesPage styling component.
+*/
+
+.addButton-icon {
+  cursor: pointer;
+  display: flex;
+  float: right;
+  height: 3rem;
+  margin-right: 4rem;
+  margin-top: -1.5rem;
+  top: 0;
+  width: 3rem;
+}

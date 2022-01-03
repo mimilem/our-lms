@@ -33,7 +33,7 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     <div className='dashboard-icon'/>
                 </Link>
 
-                <Link to='/Staff/Classes' title='Classes'>
+                <Link to='/Staff/Departments' title='Departments'>
                     <div className='classes-icon'/>
                 </Link>
 
@@ -53,11 +53,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     <div className='time-table-icon' title='Time Table'/>
                 </Link>
 
-                <Link to='/Staff/Time-Table' title='Events'>
+                <Link to='/Staff/Events' title='Events'>
                     <div className='events-icon'/>
                 </Link>
 
-                <Link to='/Staff/Time-Table' title='Report'>
+                <Link to='/Staff/Reports' title='Report'>
                     <div className='reports-icon'/>    
                 </Link>
 

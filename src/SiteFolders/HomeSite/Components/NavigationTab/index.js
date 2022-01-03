@@ -62,8 +62,8 @@ function NavigationTab() {
                     </Link>
 
                     <div className='dropdown'
-                    onMouseEnter={() => setIsShown(true)}
-                    onMouseLeave={() => setIsShown(false)}
+                        onMouseEnter={() => setIsShown(true)}
+                        onMouseLeave={() => setIsShown(false)}
                     > 
                         <li 
                             className="tab-element"/*{activeTab === 'tab2' ? 'active-tab-element' :} */ 
