@@ -5,7 +5,7 @@
   min-height: 20vh;
   min-width: 100%;
   overflow: hidden;
-  margin-left: 5rem;
+  margin-left: 1rem;
   margin-top: -2rem;
   position: relative;
   width: 100%;
@@ -56,10 +56,12 @@
 .choose-tab-element {
   display: flex;
   font-size: 20px;
-  margin-right: 2rem;
+  margin-right: 3rem;
   position: absolute;
   right: 0;
   top: 4.5rem;
+  width: 15rem;
+  z-index: 10;
 }
 .choose-text {
   padding-top: 0.5rem;
@@ -68,14 +70,10 @@
   background: #fff;
   border: 1px solid;
   border-color: #000;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
-  height: 1rem;
+  height: 0.5rem;
   margin: 5px;
   padding-bottom: 10px;
   padding-left: 25px;
@@ -84,5 +82,5 @@
   text-decoration: underline;
   text-decoration-color: #fff;
   text-decoration-thickness: 1.4px;
-  width: 20rem;
+  width: 18rem;
 }

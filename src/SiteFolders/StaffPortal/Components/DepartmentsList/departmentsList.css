@@ -1,0 +1,43 @@
+.this-container {
+  margin-top: 2rem;
+}
+.departments-list-container {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 20px;
+  justify-content: center;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  position: relative;
+  width: 91.8%;
+}
+.class-exams-calendar-tilte {
+  background-color: #353839;
+  color: #f5f5f5;
+  cursor: context-menu;
+  display: flex;
+  float: left;
+  font-size: 25px;
+  height: 2.5rem;
+  justify-content: space-between;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+  width: 91.8%;
+}
+
+.departments-list-container a {
+  text-decoration: none;
+}
+.departments-list-container ul li {
+  color: #000;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+.departments-list-container ul li:hover {
+  color: #5d8aa8;
+}

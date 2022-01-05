@@ -16,7 +16,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 99;
 }
 
 .staff-header-logo-container {
@@ -77,7 +77,6 @@
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
   width: 10rem;
-  z-index: 99;
 }
 .profile-dropdown-menu li:hover {
   color: #5d8aa8;

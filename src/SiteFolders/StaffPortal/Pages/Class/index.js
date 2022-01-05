@@ -15,7 +15,7 @@ import down from '../../../../assets/down.png'
 import ClassesList from '../../Components/ClassesList';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
-import ClassPageTopNavigation from '../../Components/ClassPageTopNavigation';
+import ClassPageTopNavigation from './Components/ClassPageTopNavigation';
 
 
 function ClassPage() {
@@ -61,16 +61,16 @@ function ClassPage() {
                         </div> 
                     </div>
                     {isShown && (
-                            <ul className='staff-pages-header-dropdown-menu'>
-                                <li>Add a class</li>
-                                <hr className='nav-tab-hr'/>
-                                <li>First Year</li>
-                                <hr className='nav-tab-hr'/>
-                                <li>Second Year</li>
-                                <hr className='nav-tab-hr'/>
-                                <li>Third Year</li>
-                            </ul> 
-                        )}
+                        <ul className='staff-pages-header-dropdown-menu'>
+                            <li>Add a class</li>
+                            <hr className='nav-tab-hr'/>
+                            <li>First Year</li>
+                            <hr className='nav-tab-hr'/>
+                            <li>Second Year</li>
+                            <hr className='nav-tab-hr'/>
+                            <li>Third Year</li>
+                        </ul> 
+                    )}
                 </div>
                 
                 <hr className='staff-page-hr'/>

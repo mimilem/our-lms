@@ -42,14 +42,6 @@ function DepartmentsPage() {
                 <div className='staff-pages-header-tilte'>Faculties and Schools</div>
                 <hr className='staff-page-hr'/>
 
-                {/*<img 
-                    src={addButton}
-                    alt=''
-                    className='addButton-icon'
-                    title='Add a new class'/>
-
-                <ClassesList/> */}
-
                 <DepartmentsList />
 
             </div>

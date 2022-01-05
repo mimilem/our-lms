@@ -77,13 +77,13 @@ function FullSideNavigation(props) {
 
                 <Link to='/Staff/Events'>
                     <div className='events-icon'/>
-                    <div className='side-navigation-text'>Events</div>
+                    <div className='side-navigation-text'>Media</div>
                 </Link>
 
-                <Link to='/Staff/Reports'>
+                {/* <Link to='/Staff/Reports'>
                     <div className='reports-icon'/>    
                     <div className='side-navigation-text'>Reports</div>
-                </Link>
+                </Link> */}
 
                 <Link to='/' className='logout-container'>
                     <div className='logout-icon'/>
