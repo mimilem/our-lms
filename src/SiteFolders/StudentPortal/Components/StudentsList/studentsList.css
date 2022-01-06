@@ -1,0 +1,18 @@
+.studentList-container {
+}
+
+.studentList-header {
+  display: flex;
+}
+
+.allStudents-active-button {
+  background-color: #96a9b6;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 2rem;
+  margin-top: 4rem;
+  padding: 10px;
+  text-transform: uppercase;
+}

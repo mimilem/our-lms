@@ -1,0 +1,73 @@
+.studentList-container {
+  margin-top: -2rem;
+}
+.allStudentsList-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+  width: 100%;
+}
+
+.student-card-container {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  height: 10rem;
+  margin-right: 4rem;
+  padding: 0.5rem;
+  width: 10.5rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+.student-card-container:hover {
+  box-shadow: 1px 1px 1px rgba(33, 33, 33, 0.2);
+  transform: scale(1.02);
+}
+
+.active-status {
+  background-color: #00ff00;
+  border-radius: 10px;
+  display: flex;
+  height: 0.5rem;
+  position: relative;
+  top: 0rem;
+  width: 0.5rem;
+}
+
+.userAvatar-icon-container {
+  background-color: #00ff00;
+  border-radius: 50px;
+  display: flex;
+  float: top;
+  height: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5rem;
+}
+.userAvatar-icon {
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  height: 95%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 95%;
+}
+
+.student-name-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}
+.student-class-text {
+  font-size: 18px;
+  margin-top: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}

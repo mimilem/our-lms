@@ -5,6 +5,7 @@ import Select from 'react-select';
 import './classPageTopNavigation.css'
 
 import Lessons from '../Lessons'
+import Students from '../Students';
 
 
 function ClassPageTopNavigation() {
@@ -120,7 +121,7 @@ function ClassPageTopNavigation() {
 
             <div>
             {tabContent === 'lessons' ? <Lessons />: []}
-            {tabContent === 'students' ? '<Students />': []}
+            {tabContent === 'students' ? <Students />: []}
             {tabContent === 'timeTable' ? 'time table biches': []}
             {tabContent === 'exams' ? 'that': []}
             {tabContent === 'reports' ? '<Reports />': []}
