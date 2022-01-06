@@ -18,14 +18,14 @@ function DepartmentsList() {
             <div className='this-container'>
                 { toggleDown1 === false ?
                     <div 
-                        className='class-exams-calendar-tilte' style={{marginBottom:'50px'}} 
+                        className='class-exams-calendar-tilte' style={{marginBottom:'25px'}} 
                         onClick={()=> setToggleDown1(true)}>
-                        Commerce, Law and Management <div className='access'>{'>>'}</div>
+                        Commerce, Law and Management <div className='access'>↓</div>
                     </div> 
                     :
                     <>
-                        <div className='class-exams-calendar-tilte' onClick={()=> setToggleDown1(false)}>
-                            Commerce, Law and Management <div className='access'>{'>>'}</div>
+                        <div className='active-class-exams-calendar-tilte' onClick={()=> setToggleDown1(false)}>
+                            Commerce, Law and Management <div className='access'>↑</div>
                         </div> 
                         <div className='departments-list-container'>
                             <ul>
@@ -50,14 +50,14 @@ function DepartmentsList() {
             <div className='this-container'>
                 { toggleDown2 === false ?
                     <div 
-                        className='class-exams-calendar-tilte' style={{marginBottom:'50px'}} 
+                        className='class-exams-calendar-tilte' style={{marginBottom:'25px'}} 
                         onClick={()=> setToggleDown2(true)}>
-                        Engineering and the Built Environment <div className='access'>{'>>'}</div>
+                        Engineering and the Built Environment <div className='access'>↓</div>
                     </div> 
                     :
                     <>
-                        <div className='class-exams-calendar-tilte' onClick={()=> setToggleDown2(false)}>
-                        Engineering and the Built Environment <div className='access'>{'>>'}</div>
+                        <div className='active-class-exams-calendar-tilte' onClick={()=> setToggleDown2(false)}>
+                        Engineering and the Built Environment <div className='access'>↑</div>
                         </div> 
                         <div className='departments-list-container'>
                             <ul>
@@ -82,14 +82,14 @@ function DepartmentsList() {
             <div className='this-container'>
                 { toggleDown3 === false ?
                     <div 
-                        className='class-exams-calendar-tilte' style={{marginBottom:'50px'}} 
+                        className='class-exams-calendar-tilte' style={{marginBottom:'25px'}} 
                         onClick={()=> setToggleDown3(true)}>
-                        Health Sciences <div className='access'>{'>>'}</div>
+                        Health Sciences <div className='access'>↓</div>
                     </div> 
                     :
                     <>
-                        <div className='class-exams-calendar-tilte' onClick={()=> setToggleDown3(false)}>
-                        Health Sciences <div className='access'>{'>>'}</div>
+                        <div className='active-class-exams-calendar-tilte' onClick={()=> setToggleDown3(false)}>
+                        Health Sciences <div className='access'>↑</div>
                         </div> 
                         <div className='departments-list-container'>
                             <ul>

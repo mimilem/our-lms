@@ -40,7 +40,7 @@ function ExamsPage() {
                 <hr className='staff-page-hr' />
                 
                 <Link to='/Staff/Exams/Calendar' className='exams-calendar-tilte'>
-                    Access the exams calendar <div className='access'>{'>>'}</div>
+                    Access the exams calendar <div className='access'>→</div>
                 </Link>
 
                 <div className='exams-classes-container'>

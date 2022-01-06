@@ -1,0 +1,33 @@
+.module-card-container {
+  align-items: center;
+  background: linear-gradient(to right, #396afc, #2948ff);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 7rem;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: transform 1s;
+  width: 20rem;
+}
+.module-card-container:hover {
+  background: linear-gradient(to right, #2948ff, #396afc);
+}
+
+.course-name {
+  align-items: center;
+  font-size: 22px;
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: absolute;
+}
+
+.lecturer-name {
+  bottom: 0rem;
+  right: 0.5rem;
+  font-size: 16px;
+  position: absolute;
+}

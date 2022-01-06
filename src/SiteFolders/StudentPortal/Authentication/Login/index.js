@@ -66,9 +66,11 @@ function Login() {
                         </div>
                     </div>
 
-                    <button className='login-button'>
-                        Login
-                    </button>
+                    <Link to='/Students/Dashboard'>
+                        <button className='login-button'>
+                            Login
+                        </button>
+                    </Link>
                 </div>
 
                 <Link to='/'>

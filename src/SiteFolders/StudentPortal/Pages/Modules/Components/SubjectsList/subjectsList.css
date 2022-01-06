@@ -1,0 +1,13 @@
+.subjects-list-container {
+  display: block;
+  margin-left: 2.5rem;
+  margin-top: -50px;
+}
+
+.first-subtitle {
+  font-size: 30px;
+}
+
+.subjects-list {
+  font-size: 18px;
+}

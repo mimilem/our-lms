@@ -1,0 +1,21 @@
+.class-reports-container {
+  margin-left: 2.5rem;
+  margin-top: -3rem;
+}
+
+.submission-info {
+  font-size: 18px;
+}
+
+.view-button {
+  /* background: lightblue; */
+  border-radius: 10px;
+  border-width: 0;
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+  height: 2rem;
+  margin-left: 2rem;
+  text-decoration: underline;
+  width: 7rem;
+}

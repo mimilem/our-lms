@@ -1,0 +1,31 @@
+.title {
+  align-items: center;
+  font-size: 40px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.chapter-semester-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+.chapter-container {
+  align-items: center;
+  background-color: #fff;
+  display: inline-block;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+  width: 70%;
+}
+.add-a-material {
+  cursor: pointer;
+  float: left;
+  margin-left: 2.5rem;
+  margin-top: 0rem;
+  left: auto;
+  padding-bottom: 30px;
+  right: auto;
+  width: 100%;
+}

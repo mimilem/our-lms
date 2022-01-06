@@ -1,0 +1,90 @@
+/*
+
+  The styling component of the students Header component.  
+  
+  Every class Name container here starting with 'students',
+  to avoid conflicts between styling components.   
+
+*/
+
+.students-header-container {
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  height: 3.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.students-header-logo-container {
+  height: 3.5rem;
+  margin-left: 1rem;
+  width: 3.5rem;
+}
+.students-header-logo {
+  background-image: url("../../../../assets/Vinco-Color-Icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.institution-name {
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
+}
+
+.user-settings {
+  background: linear-gradient(to left, green, red, orange);
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+  margin-right: 1rem;
+  padding: 0.1rem;
+  position: absolute;
+  right: 0;
+  top: 0.4rem;
+  width: 2.5rem;
+}
+.user-avatar {
+  background-image: url("../../../../assets/ThatsMeSalam.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+.profile-dropdown-menu {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  display: block;
+  right: 0.5rem;
+  list-style: none;
+  padding: 0.75rem;
+  position: absolute;
+  top: 2.8rem;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
+  width: 10rem;
+}
+.profile-dropdown-menu li:hover {
+  color: #5d8aa8;
+  cursor: pointer;
+}
+.sign-out {
+  color: red;
+}
+.sign-out:hover {
+  color: #dc143c;
+}

@@ -1,0 +1,45 @@
+/*
+
+  The styling component of the 'FullSideNavigation' component.  
+  
+  Every class Name container here starting with 'full-side',
+  to avoid conflicts between styling components.   
+
+*/
+
+.full-side-navigation-container {
+  width: 16rem;
+}
+
+.full-side-navigation-container a {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2rem;
+  list-style: none;
+  text-decoration: none;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+}
+.full-side-navigation-container a:hover {
+  background-color: #5d8aa8;
+  color: #fff;
+  transition: all 0.4s ease 0s;
+}
+
+.full-side-navigation-container .active {
+  background-color: #96a9b6;
+  color: #fff;
+}
+
+.full-side-navigation-container .logout-container {
+  background: transparent;
+  bottom: 0;
+  color: red;
+  width: 100%;
+}
+.full-side-navigation-container .logout-container:hover {
+  background: #96a9b6;
+  color: #dc143c;
+}
