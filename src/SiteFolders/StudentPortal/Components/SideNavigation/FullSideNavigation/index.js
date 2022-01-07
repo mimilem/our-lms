@@ -55,12 +55,12 @@ function FullSideNavigation(props) {
                         <div className='side-navigation-text'>Modules</div>
                 </Link>
 
-                <Link to='/Students/Modules-Shelf'>
+                <Link to='/Students/Module-Shelf'>
                     <div className='module-icon'/>
                     <div className='side-navigation-text'>Module Shelf</div>
                 </Link>
 
-                <Link to='/Staff/Exams'>
+                <Link to='/Students/Exams'>
                     <div className='exams-icon'/>
                     <div className='side-navigation-text'>Exams</div>
                 </Link>

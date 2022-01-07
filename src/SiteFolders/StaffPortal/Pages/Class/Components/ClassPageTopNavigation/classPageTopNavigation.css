@@ -84,3 +84,10 @@
   text-decoration-thickness: 1.4px;
   width: 18rem;
 }
+
+.not-available-msg {
+  color: lightgray;
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}

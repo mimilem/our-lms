@@ -150,10 +150,12 @@ function ClassPageTopNavigation() {
             {tabContent === 'subjects' ? <SubjectsList />: []}
             {tabContent === 'lessons' ? <Lessons />: []}
             {tabContent === 'students' ? <Students />: []}
-            {tabContent === 'timeTable' ? 'time table biches': []}
+            {tabContent === 'timeTable' ? 
+                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             {tabContent === 'exams' ? <Exams />: []}
             {tabContent === 'reports' ? <Reports />: []}
-            {tabContent === 'chatRoom' ? 'chatRoom biches': []}
+            {tabContent === 'chatRoom' ? 
+                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             </div>
         </div>
     );

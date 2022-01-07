@@ -29,9 +29,14 @@ import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection'
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
 import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
 import ClassPage from '../SiteFolders/StaffPortal/Pages/Class';
+
+//import the StudentPortal site pages
 import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
 import StudentsModules from '../SiteFolders/StudentPortal/Pages/Modules';
 import StudentsModule from '../SiteFolders/StudentPortal/Pages/Modules/Module';
+import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
+import StudentModuleShelf from '../SiteFolders/StudentPortal/Pages/ModuleShelf';
+import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 
 
 function Router() {
@@ -66,8 +71,11 @@ function Router() {
                 
                 {/* Students Portail Routes path */}
                 <Route exact path='/Students/Dashboard' component={StudentsDashboard}/>
+                <Route exact path='/Students/Exams' component={StudentPortailExamsPage}/>
                 <Route exact path='/Students/Modules' component={StudentsModules}/>
+                <Route exact path='/Students/Module-Shelf' component={StudentModuleShelf}/>
                 <Route exact path='/Students/Modules/Module' component={StudentsModule}/>
+                <Route exact path='/Students/Time-Table' component={StudentTimeTable}/>
                 
             </Switch>
         </Routers>

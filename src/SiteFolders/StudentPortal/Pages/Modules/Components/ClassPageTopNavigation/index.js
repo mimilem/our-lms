@@ -6,6 +6,7 @@ import './classPageTopNavigation.css'
 
 import Lessons from '../Lessons'
 import Students from '../Students';
+import Reports from '../Reports';
 
 
 function ClassPageTopNavigation() {
@@ -122,10 +123,13 @@ function ClassPageTopNavigation() {
             <div>
             {tabContent === 'lessons' ? <Lessons />: []}
             {tabContent === 'students' ? <Students />: []}
-            {tabContent === 'timeTable' ? 'time table biches': []}
-            {tabContent === 'exams' ? 'that': []}
-            {tabContent === 'reports' ? '<Reports />': []}
-            {tabContent === 'chatRoom' ? 'chatRoom biches': []}
+            {tabContent === 'timeTable' ? 
+                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+            {tabContent === 'exams' ? 
+                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+            {tabContent === 'reports' ? <Reports />: []}
+            {tabContent === 'chatRoom' ? 
+                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             </div>
         </div>
     );

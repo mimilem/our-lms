@@ -17,28 +17,34 @@ function Lessons() {
                         Chapter I : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material <br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                     <div to='/Staff/Class' className='exams-calendar-tilte'>
                         Chapter II : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material<br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                     <div to='/Staff/Class' className='exams-calendar-tilte'>
                         Chapter III : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material<br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                 </div>
             </div> 
@@ -50,28 +56,34 @@ function Lessons() {
                         Chapter I : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material<br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                     <div to='/Staff/Class' className='exams-calendar-tilte'>
                         Chapter II : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material<br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                     <div to='/Staff/Class' className='exams-calendar-tilte'>
                         Chapter III : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
-                        Add a material
+                        Add a material<br/>
+                        <input type='file'/>
                     </div>
                     <div className='add-a-material'>
-                        Add a test document
+                        Add a test document<br/>
+                        <input type='file'/>
                     </div>
                 </div>
             </div> 
