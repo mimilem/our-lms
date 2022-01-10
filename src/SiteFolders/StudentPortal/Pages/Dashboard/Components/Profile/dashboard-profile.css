@@ -1,0 +1,40 @@
+.dashboard-profile-container {
+  cursor: pointer;
+  margin-left: 3rem;
+}
+.dashboard-profile-container:hover {
+}
+
+.dashboard-profile-card {
+  background: #fff;
+  border-radius: 15px;
+  height: 13rem;
+  margin-left: 1.5rem;
+  width: 40rem;
+}
+.dashboard-profile-content {
+  padding: 0.5rem;
+}
+.dashboard-card-title {
+  font-size: 24px;
+  margin-left: 1.5rem;
+}
+
+.dashboard-profile-details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1rem;
+}
+.dashboard-profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+.dashboard-profile-status {
+  margin-right: 1.5rem;
+}
+.dashboard-class-details {
+  font-size: 18px;
+  margin-left: 1.5rem;
+}

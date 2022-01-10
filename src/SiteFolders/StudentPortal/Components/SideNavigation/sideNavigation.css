@@ -106,6 +106,15 @@
   height: 1rem;
   width: 1rem;
 }
+.myWork-icon {
+  background-image: url("../../../../assets/portfolio.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
 
 .logout-container {
   width: 100%;

@@ -15,7 +15,7 @@ function StudentPortailExamsPage() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
-    const [toggledBar, setToggledBar] = useState(false);
+    const [toggledBar, setToggledBar] = useState(true);
     
     return (
         <div className='staff-pages-container'>

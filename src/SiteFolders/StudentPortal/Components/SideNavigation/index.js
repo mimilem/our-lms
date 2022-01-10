@@ -14,13 +14,14 @@ import './sideNavigation.css';
 import FullSideNavigation from './FullSideNavigation';
 
 
-function SideNavigation({toggledBar, setToggledBar}) {
+function SideNavigation({toggledBar, setToggledBar, activeTab}) {
 
     return (
         <div className='sideNav-container'>
             <FullSideNavigation 
                 toggledBar={toggledBar} 
-                setToggledBar={setToggledBar} /> 
+                setToggledBar={setToggledBar} 
+                activeTab={activeTab}/> 
         </div>
     );
 }

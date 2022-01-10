@@ -109,14 +109,14 @@ function ClassPageTopNavigation() {
                 </div>
                 <div 
                     className={
-                        tabContent === 'chatRoom' ? 
+                        tabContent === 'discussion' ? 
                         "active-class-top-navigation-tab-element" 
                         : 
                         "class-top-navigation-tab-element"
                     }
-                    onClick={()=> setTabContent('chatRoom')}
+                    onClick={()=> setTabContent('discussion')}
                 >
-                    Chat Room
+                    Discussion
                 </div>
             </div>
 
@@ -128,7 +128,7 @@ function ClassPageTopNavigation() {
             {tabContent === 'exams' ? 
                 <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             {tabContent === 'reports' ? <Reports />: []}
-            {tabContent === 'chatRoom' ? 
+            {tabContent === 'discussion' ? 
                 <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             </div>
         </div>

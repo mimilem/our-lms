@@ -10,11 +10,12 @@ import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
 
-function StudentModuleShelf() {
+function StudentReports() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
+    const [activeTab, setActiveTab] = useState('reports');
 
     return (
         <div className='students-pages-container'>
@@ -30,7 +31,8 @@ function StudentModuleShelf() {
                 }>
                 <SideNavigation 
                     toggledBar={toggledBar} 
-                    setToggledBar={setToggledBar} />
+                    setToggledBar={setToggledBar}
+                    activeTab={activeTab} />
             </div>
 
             <div className='students-pages-content'>
@@ -40,4 +42,4 @@ function StudentModuleShelf() {
     );
 }
 
-export default StudentModuleShelf;
+export default StudentReports;

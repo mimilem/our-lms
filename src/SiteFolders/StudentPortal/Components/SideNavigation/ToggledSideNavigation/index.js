@@ -16,7 +16,7 @@ import './ToggledSideNavigation.css';
 import FullSideNavigation from '../FullSideNavigation';
 
 
-function ToggledSideNavigation({toggledBar, setToggledBar}) {
+function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
 
     // Change the initiale state for when the 'Show 
     // Full Bar' button is clicked on.
@@ -29,36 +29,67 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
 
             <div className="toggled-side-navigation-container">
                 
-                <Link to='/Students/Dashboard' className='active' title='Dashboard'>
+                <Link to='/Students/Dashboard' title='Dashboard' className={activeTab === 'dashboard' ? 'active' : ''}>
                     <div className='dashboard-icon'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
+                            Dashboard
+                        </div>
+                    </div>
                 </Link>
 
-                <Link to='/Students/Modules' title='Modules'>
+                <Link to='/Students/Modules' title='My Courses' className={activeTab === 'myCourses' ? 'active' : ''}>
                     <div className='classes-icon'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px',position: 'relative', left:'-17px', right:0}}>
+                            My Courses
+                        </div>
+                    </div>
+                </Link>
+                
+                <Link to='/Students/MyWork' title='My Work' className={activeTab === 'myWork' ? 'active' : ''}>
+                    <div className='myWork-icon'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
+                            My Work
+                        </div>
+                    </div>
                 </Link>
 
-                <Link to='/Students/Modules-Shelf' title='Modules'>
-                    <div className='module-icon'/>
-                </Link>
-
-                <Link to='/Students/Exams' >
-                    <div className='exams-icon' title='Exams'/>
-                </Link>
-
-                <Link to='/Students/Time-Table' >
+                <Link to='/Students/Time-Table' tile='Time Table' className={activeTab === 'timeTable' ? 'active' : ''} >
                     <div className='time-table-icon' title='Time Table'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px', position: 'relative', left:'-15px', right:0}}>
+                            Time Table
+                        </div>
+                    </div>
                 </Link>
 
-                <Link to='/Students/Events' title='Media'>
+                <Link to='/Students/Media' title='Media' className={activeTab === 'media' ? 'active' : ''}>
                     <div className='events-icon'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px', position: 'relative', left:'-6px', right:0}}>
+                            Media
+                        </div>
+                    </div>
                 </Link>
 
-                <Link to='/Students/Reports' title='Report'>
+                <Link to='/Students/Reports' title='Report' className={activeTab === 'reports' ? 'active' : ''}>
                     <div className='reports-icon'/>    
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px', position: 'relative', left:'-10px', right:0}}>
+                            Reports
+                        </div>
+                    </div>
                 </Link> 
 
                 <Link to='/' className='logout-container' title='Log-out'>
                     <div className='logout-icon'/>
+                    <div style={{position: 'absolute', width: '100%'}}>
+                        <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
+                            Sign out
+                        </div>
+                    </div>
                 </Link>
             
                 <div 

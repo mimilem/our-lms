@@ -142,7 +142,7 @@ function ClassPageTopNavigation() {
                     }
                     onClick={()=> setTabContent('chatRoom')}
                 >
-                    Chat Room
+                    Discussion
                 </div>
             </div>
 

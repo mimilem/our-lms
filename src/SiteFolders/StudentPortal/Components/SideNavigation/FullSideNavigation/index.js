@@ -8,39 +8,39 @@
 
 */
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import { Link } from 'react-router-dom';
 
+//import the styling compnent(s).
 import './fullSideNavigation.css';
 import ToggledSideNavigation from '../ToggledSideNavigation';
 
 
 function FullSideNavigation(props) {
 
-    const { toggledBar, setToggledBar } = props;
+    const { toggledBar, setToggledBar, activeTab } = props;
 
-    const [activeTab, setActiveTab] = useState('dashboard')
+    //const [activeTab, setActiveTab] = useState('dashboard')
 
     // Change the initiale state for when the toggle 
     // button is clicked on. 
     const handleToggledBar = () => {
         setToggledBar(true)
     }
-
+    /*
     const handleDashboard = () => {
         setActiveTab('dashboard')
     }
     const handleClasses = () => {
         setActiveTab('classes')
-    }
+    }*/
 
     return (
         toggledBar === false ?
             <div className="full-side-navigation-container">
                 
                 <Link to='/Students/Dashboard' 
-                    onClick={handleDashboard} 
                     className={activeTab === 'dashboard' ? 'active' : ''} 
                 >
                     <div className='dashboard-icon'/>
@@ -48,34 +48,36 @@ function FullSideNavigation(props) {
                 </Link>
 
                 <Link to='/Students/Modules'
-                    onClick={handleClasses} 
-                    className={activeTab === 'classes' ? 'active' : ''} 
+                    className={activeTab === 'myCourses' ? 'active' : ''} 
                 >
                         <div className='classes-icon'/>
-                        <div className='side-navigation-text'>Modules</div>
+                        <div className='side-navigation-text'>My Courses</div>
+                </Link>
+                
+                <Link to='/Students/MyWork' 
+                    className={activeTab === 'myWork' ? 'active' : ''} 
+                >
+                        <div className='myWork-icon'/>
+                        <div className='side-navigation-text'>My Work</div>
                 </Link>
 
-                <Link to='/Students/Module-Shelf'>
-                    <div className='module-icon'/>
-                    <div className='side-navigation-text'>Module Shelf</div>
-                </Link>
-
-                <Link to='/Students/Exams'>
-                    <div className='exams-icon'/>
-                    <div className='side-navigation-text'>Exams</div>
-                </Link>
-
-                <Link to='/Students/Time-Table'>
+                <Link to='/Students/Time-Table'
+                    className={activeTab === 'timeTable' ? 'active' : ''} 
+                >
                     <div className='time-table-icon'/>
                     <div className='side-navigation-text'>Time Table</div>
                 </Link>
 
-                <Link to='/Students/Events'>
+                <Link to='/Students/Media'
+                    className={activeTab === 'media' ? 'active' : ''} 
+                >
                     <div className='events-icon'/>
                     <div className='side-navigation-text'>Media</div>
                 </Link>
 
-                <Link to='/Staff/Reports'>
+                <Link to='/Students/Reports'
+                    className={activeTab === 'reports' ? 'active' : ''} 
+                >
                     <div className='reports-icon'/>    
                     <div className='side-navigation-text'>Reports</div>
                 </Link>
@@ -96,7 +98,8 @@ function FullSideNavigation(props) {
             
             <ToggledSideNavigation 
                 toggledBar={toggledBar} 
-                setToggledBar={setToggledBar}/>
+                setToggledBar={setToggledBar}
+                activeTab={activeTab}/>
     );
 }
 

@@ -16,6 +16,7 @@ function StudentsModules() {
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
+    const [activeTab, setActiveTab] = useState('myCourses');
 
     return (
         <div className='students-pages-container'>
@@ -31,7 +32,8 @@ function StudentsModules() {
                 }>
                 <SideNavigation 
                     toggledBar={toggledBar} 
-                    setToggledBar={setToggledBar} />
+                    setToggledBar={setToggledBar} 
+                    activeTab={activeTab} />
             </div>
 
             <div className='students-pages-content'>

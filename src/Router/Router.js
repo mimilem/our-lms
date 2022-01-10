@@ -35,8 +35,10 @@ import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
 import StudentsModules from '../SiteFolders/StudentPortal/Pages/Modules';
 import StudentsModule from '../SiteFolders/StudentPortal/Pages/Modules/Module';
 import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
-import StudentModuleShelf from '../SiteFolders/StudentPortal/Pages/ModuleShelf';
 import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
+import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
+import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
+import MyWorks from '../SiteFolders/StudentPortal/Pages/MyWork';
 
 
 function Router() {
@@ -72,10 +74,12 @@ function Router() {
                 {/* Students Portail Routes path */}
                 <Route exact path='/Students/Dashboard' component={StudentsDashboard}/>
                 <Route exact path='/Students/Exams' component={StudentPortailExamsPage}/>
+                <Route exact path='/Students/Media' component={StudentMedia}/>
                 <Route exact path='/Students/Modules' component={StudentsModules}/>
-                <Route exact path='/Students/Module-Shelf' component={StudentModuleShelf}/>
                 <Route exact path='/Students/Modules/Module' component={StudentsModule}/>
+                <Route exact path='/Students/Reports' component={StudentReports}/>
                 <Route exact path='/Students/Time-Table' component={StudentTimeTable}/>
+                <Route exact path='/Students/MyWork' component={MyWorks}/>
                 
             </Switch>
         </Routers>
