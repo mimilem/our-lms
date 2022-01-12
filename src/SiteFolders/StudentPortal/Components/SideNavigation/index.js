@@ -7,10 +7,10 @@
 
 import React from 'react';
 
-// Import the styling component.
+// Import the styling component(s).
 import './sideNavigation.css';
 
-// Import the side navigation bars.
+// Import the side navigation bar(s).
 import FullSideNavigation from './FullSideNavigation';
 
 
@@ -21,7 +21,7 @@ function SideNavigation({toggledBar, setToggledBar, activeTab}) {
             <FullSideNavigation 
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar} 
-                activeTab={activeTab}/> 
+                activeTab={activeTab} />  
         </div>
     );
 }

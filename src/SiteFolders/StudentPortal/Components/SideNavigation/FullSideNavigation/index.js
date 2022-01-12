@@ -8,12 +8,13 @@
 
 */
 
-import React, {useState} from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
 //import the styling compnent(s).
 import './fullSideNavigation.css';
+
 import ToggledSideNavigation from '../ToggledSideNavigation';
 
 
@@ -21,20 +22,9 @@ function FullSideNavigation(props) {
 
     const { toggledBar, setToggledBar, activeTab } = props;
 
-    //const [activeTab, setActiveTab] = useState('dashboard')
-
     // Change the initiale state for when the toggle 
     // button is clicked on. 
-    const handleToggledBar = () => {
-        setToggledBar(true)
-    }
-    /*
-    const handleDashboard = () => {
-        setActiveTab('dashboard')
-    }
-    const handleClasses = () => {
-        setActiveTab('classes')
-    }*/
+    const handleToggledBar = () => setToggledBar(!toggledBar)
 
     return (
         toggledBar === false ?

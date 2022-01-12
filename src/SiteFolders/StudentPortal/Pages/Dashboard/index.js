@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 //import the styling compnent(s).
 import './dashboard.css';
@@ -18,6 +18,7 @@ function StudentsDashboard() {
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
+    
     const [activeTab, setActiveTab] = useState('dashboard');
 
     return (
@@ -31,7 +32,7 @@ function StudentsDashboard() {
                         'full-side-navigation-container' 
                         : 
                         'toggled-side-navigation-container' 
-                }>
+            }>
                 <SideNavigation 
                     toggledBar={toggledBar} 
                     setToggledBar={setToggledBar} 

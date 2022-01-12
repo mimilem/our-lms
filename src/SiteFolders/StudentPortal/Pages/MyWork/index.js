@@ -1,5 +1,4 @@
-import React, {useEffect, useState}  from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState }  from 'react';
 
 //import the styling compnent(s).
 import './myWork.css';
@@ -16,6 +15,7 @@ function MyWorks() {
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
+    
     const [activeTab, setActiveTab] = useState('myWork');
 
     return (

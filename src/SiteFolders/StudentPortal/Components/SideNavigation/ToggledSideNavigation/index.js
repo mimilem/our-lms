@@ -12,8 +12,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+//import the styling compnent(s).
 import './ToggledSideNavigation.css';
-import FullSideNavigation from '../FullSideNavigation';
 
 
 function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
@@ -25,11 +25,14 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
     }
 
     return (
-        toggledBar === true ?
 
             <div className="toggled-side-navigation-container">
                 
-                <Link to='/Students/Dashboard' title='Dashboard' className={activeTab === 'dashboard' ? 'active' : ''}>
+                <Link 
+                    to='/Students/Dashboard' 
+                    title='Dashboard' 
+                    className={activeTab === 'dashboard' ? 'active' : ''}
+                >
                     <div className='dashboard-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
@@ -38,7 +41,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link>
 
-                <Link to='/Students/Modules' title='My Courses' className={activeTab === 'myCourses' ? 'active' : ''}>
+                <Link 
+                    to='/Students/Modules' 
+                    title='My Courses' 
+                    className={activeTab === 'myCourses' ? 'active' : ''}
+                >
                     <div className='classes-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-17px', right:0}}>
@@ -47,7 +54,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link>
                 
-                <Link to='/Students/MyWork' title='My Work' className={activeTab === 'myWork' ? 'active' : ''}>
+                <Link 
+                    to='/Students/MyWork' 
+                    title='My Work' 
+                    className={activeTab === 'myWork' ? 'active' : ''}
+                >
                     <div className='myWork-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
@@ -56,7 +67,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link>
 
-                <Link to='/Students/Time-Table' tile='Time Table' className={activeTab === 'timeTable' ? 'active' : ''} >
+                <Link 
+                    to='/Students/Time-Table' 
+                    title='Time Table' 
+                    className={activeTab === 'timeTable' ? 'active' : ''} 
+                >
                     <div className='time-table-icon' title='Time Table'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px', position: 'relative', left:'-15px', right:0}}>
@@ -65,7 +80,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link>
 
-                <Link to='/Students/Media' title='Media' className={activeTab === 'media' ? 'active' : ''}>
+                <Link 
+                    to='/Students/Media' 
+                    title='Media' 
+                    className={activeTab === 'media' ? 'active' : ''}
+                >
                     <div className='events-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px', position: 'relative', left:'-6px', right:0}}>
@@ -74,7 +93,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link>
 
-                <Link to='/Students/Reports' title='Report' className={activeTab === 'reports' ? 'active' : ''}>
+                <Link 
+                    to='/Students/Reports' 
+                    title='Report' 
+                    className={activeTab === 'reports' ? 'active' : ''}
+                >
                     <div className='reports-icon'/>    
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px', position: 'relative', left:'-10px', right:0}}>
@@ -83,7 +106,11 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     </div>
                 </Link> 
 
-                <Link to='/' className='logout-container' title='Log-out'>
+                <Link 
+                    to='/' 
+                    className='logout-container' 
+                    title='Log-out'
+                >
                     <div className='logout-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
@@ -97,10 +124,6 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                     className='toggled-side-navigation-icon' 
                     title='Show more information' />
             </div>
-
-            : 
-
-            <FullSideNavigation />
     );
 }
 
