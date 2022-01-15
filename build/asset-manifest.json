@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bd6b138d.chunk.css",
+    "main.js": "/static/js/main.30d21c21.chunk.js",
+    "main.js.map": "/static/js/main.30d21c21.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7dc64a68.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7dc64a68.js.map",
+    "static/css/2.512705c8.chunk.css": "/static/css/2.512705c8.chunk.css",
+    "static/js/2.0436d212.chunk.js": "/static/js/2.0436d212.chunk.js",
+    "static/js/2.0436d212.chunk.js.map": "/static/js/2.0436d212.chunk.js.map",
+    "static/js/3.ab023f22.chunk.js": "/static/js/3.ab023f22.chunk.js",
+    "static/js/3.ab023f22.chunk.js.map": "/static/js/3.ab023f22.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.512705c8.chunk.css.map": "/static/css/2.512705c8.chunk.css.map",
+    "static/css/main.bd6b138d.chunk.css.map": "/static/css/main.bd6b138d.chunk.css.map",
+    "static/js/2.0436d212.chunk.js.LICENSE.txt": "/static/js/2.0436d212.chunk.js.LICENSE.txt",
+    "static/media/AlainFoka.51d70631.jfif": "/static/media/AlainFoka.51d70631.jfif",
+    "static/media/header.css": "/static/media/Vinco-Color-Icon.2061bd84.svg",
+    "static/media/footer.css": "/static/media/VincoColorEng.72ed9c08.svg",
+    "static/media/dummyDataCyberAttacks.6c6e2155.jpg": "/static/media/dummyDataCyberAttacks.6c6e2155.jpg",
+    "static/media/dummyDataDigitalWorld.ca8708c9.jpg": "/static/media/dummyDataDigitalWorld.ca8708c9.jpg",
+    "static/media/dummyDataLivingInAPlane.67a1fbc5.jpg": "/static/media/dummyDataLivingInAPlane.67a1fbc5.jpg",
+    "static/media/dummyDataSpacexLaunch.e9bb1168.jpg": "/static/media/dummyDataSpacexLaunch.e9bb1168.jpg",
+    "static/media/dummyDataTechIsTakingOver.169a6619.jpg": "/static/media/dummyDataTechIsTakingOver.169a6619.jpg",
+    "static/media/dummyDataVaccination.c10997b1.jpg": "/static/media/dummyDataVaccination.c10997b1.jpg",
+    "static/media/graduate-cap.5f1fb348.png": "/static/media/graduate-cap.5f1fb348.png",
+    "static/media/sideNavigation.css": "/static/media/online-learning.aec70779.png",
+    "static/media/login.css": "/static/media/pexels-pixabay-356065.95beab80.jpg",
+    "static/media/homeNewsSection.css": "/static/media/stthomas-st-paul-north-campus-plaza.6861817e.jpg",
+    "static/media/userAvatar2.c585a957.jpg": "/static/media/userAvatar2.c585a957.jpg",
+    "static/media/userAvatar3.91755146.jpeg": "/static/media/userAvatar3.91755146.jpeg",
+    "static/media/userAvatar4.57919d06.jpg": "/static/media/userAvatar4.57919d06.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7dc64a68.js",
+    "static/css/2.512705c8.chunk.css",
+    "static/js/2.0436d212.chunk.js",
+    "static/css/main.bd6b138d.chunk.css",
+    "static/js/main.30d21c21.chunk.js"
+  ]
+}
