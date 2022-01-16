@@ -1,7 +1,9 @@
 /*
-  The styling component when the same properties 
-  are applied to all the pages components
-  of the StaffPortal.
+
+  The styling component of the StaffPortal pages.
+  each parameter starts with 'staff-pages'
+  to avoid conflicts with other  styling components.
+
 */
 
 .staff-pages-container {

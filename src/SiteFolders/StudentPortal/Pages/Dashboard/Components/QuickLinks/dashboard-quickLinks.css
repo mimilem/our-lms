@@ -1,0 +1,23 @@
+/*
+
+  The styling component of the quick links section in
+  the student dashboard page.
+  each property starts with 'studentDash-quickLinks'
+  to avoid conflicts with other  styling components.
+
+*/
+
+.studentDash-quickLinks-container {
+  margin-left: 5rem;
+  margin-top: 3rem;
+  width: 80%;
+}
+
+.studentDash-quickLinks-cards {
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-left: 1.5rem;
+}

@@ -1,18 +1,26 @@
-import React, {useState} from 'react';
 
+// This is the top navigation of a course compponent 
+// of the student portal.
+
+import React, { useState } from 'react';
 import Select from 'react-select';
 
-import './classPageTopNavigation.css'
+//import the styling compnent(s).
+import './classPageTopNavigation.css';
 
-import Lessons from '../Lessons'
+//import all components that will be 
+//displayed on the pages.
+import Lessons from '../Lessons';
 import Students from '../Students';
 import Reports from '../Reports';
 
 
 function ClassPageTopNavigation() {
 
+    //Set the state of the displayed content
     const [tabContent, setTabContent] = useState('lessons')
 
+    //list of courses of the select course dropdown
     const data = [
         {
           value: 1,
@@ -48,13 +56,10 @@ function ClassPageTopNavigation() {
                     options={data} // set list of the data
                     onChange={handleChange} // assign onChange function
                 />
-                {/* <input 
-                    className="choose-tab-element-dropdown" 
-                    placeholder='Choose a subject'/> */}
             </div>  
-            <div className='class-top-navigation-container'>
 
-                {/* Tab navigation list */}
+            <div className='class-top-navigation-container'>
+                {/* Top navigation list */}
                 <div 
                     className={
                         tabContent === 'lessons' ? 
@@ -120,16 +125,17 @@ function ClassPageTopNavigation() {
                 </div>
             </div>
 
+            {/* On change state display the correcponding content */}
             <div>
-            {tabContent === 'lessons' ? <Lessons />: []}
-            {tabContent === 'students' ? <Students />: []}
-            {tabContent === 'timeTable' ? 
-                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
-            {tabContent === 'exams' ? 
-                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
-            {tabContent === 'reports' ? <Reports />: []}
-            {tabContent === 'discussion' ? 
-                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+                {tabContent === 'lessons' ? <Lessons />: []}
+                {tabContent === 'students' ? <Students />: []}
+                {tabContent === 'timeTable' ? 
+                    <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+                {tabContent === 'exams' ? 
+                    <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+                {tabContent === 'reports' ? <Reports />: []}
+                {tabContent === 'discussion' ? 
+                    <h1 className='not-available-msg'>Not Yet Available</h1>: []}
             </div>
         </div>
     );

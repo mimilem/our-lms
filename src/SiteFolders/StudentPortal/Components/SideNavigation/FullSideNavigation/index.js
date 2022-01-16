@@ -37,7 +37,7 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Dashboard</div>
                 </Link>
 
-                <Link to='/Students/Modules'
+                <Link to='/Students/MyCourses'
                     className={activeTab === 'myCourses' ? 'active' : ''} 
                 >
                         <div className='classes-icon'/>
@@ -72,7 +72,7 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Reports</div>
                 </Link>
 
-                <Link to='/' className='logout-container'>
+                <Link to='/student-login' className='logout-container'>
                     <div className='logout-icon'/>
                     <div className='side-navigation-text'>Sign Out</div>
                 </Link> 

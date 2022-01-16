@@ -1,9 +1,13 @@
+
+// This is the 'MyCourses' page index component 
+// of the student portal.
+
 import React, {useEffect, useState}  from 'react';
 import { Link } from 'react-router-dom';
 
 //import the styling compnent(s).
-import './studentModules.css';
 import '../studentsPages.css';
+import '../../Components/studentsComponents.css';
 
 //import all components that will be 
 //displayed on the pages.
@@ -11,18 +15,24 @@ import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 
 
-function StudentsModules() {
+function StudentMyCourses() {
 
     // Initiate a boolean state to check weither 
     // the bar is toggled.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('myCourses');
 
+    //Set the document title of the page when it loads.
+    useEffect(() => {
+        document.title = "My Courses | Vinco-elearning"
+     }, []);
+
     return (
         <div className='students-pages-container'>
             
             <Header />
             
+            {/* Set conditions to display the full or toggle side navigation */}
             <div 
                 className={
                     toggledBar === false ? 
@@ -41,24 +51,24 @@ function StudentsModules() {
                 
                 <hr className='students-page-hr' />
 
-                <Link to='/Students/Modules/Module'>
-                    <div className='module-card-container'>
-                        <div className='course-name'>Programming 511</div>
-                        <div className='lecturer-name'>Lecturer: Leila Fourie</div>
+                <Link to='/Students/MyCourses/CourseName'>
+                    <div className='gradient-blue-card-container'>
+                        <div className='top-left-text'>Programming 511</div>
+                        <div className='bottom-right-text'>Lecturer: Leila Fourie</div>
                     </div>
                 </Link>
 
-                <div className='module-card-container'>
-                    <div className='course-name'>Network 511</div>
-                    <div className='lecturer-name'>Lecturer: Leila Fourie</div>
+                <div className='gradient-blue-card-container'>
+                    <div className='top-left-text'>Network 511</div>
+                    <div className='bottom-right-text'>Lecturer: Leila Fourie</div>
                 </div>
-                <div className='module-card-container'>
-                    <div className='course-name'>Network 511</div>
-                    <div className='lecturer-name'>Lecturer: Leila Fourie</div>
+                <div className='gradient-blue-card-container'>
+                    <div className='top-left-text'>Network 511</div>
+                    <div className='bottom-right-text'>Lecturer: Leila Fourie</div>
                 </div>
-                <div className='module-card-container'>
-                    <div className='course-name'>Network 511</div>
-                    <div className='lecturer-name'>Lecturer: Leila Fourie</div>
+                <div className='gradient-blue-card-container'>
+                    <div className='top-left-text'>Network 511</div>
+                    <div className='bottom-right-text'>Lecturer: Leila Fourie</div>
                 </div>
             
             </div>
@@ -66,4 +76,4 @@ function StudentsModules() {
     );
 }
 
-export default StudentsModules;
+export default StudentMyCourses;

@@ -32,8 +32,8 @@ import ClassPage from '../SiteFolders/StaffPortal/Pages/Class';
 
 //import the StudentPortal site pages
 import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
-import StudentsModules from '../SiteFolders/StudentPortal/Pages/Modules';
-import StudentsModule from '../SiteFolders/StudentPortal/Pages/Modules/Module';
+import StudentMyCourses from '../SiteFolders/StudentPortal/Pages/MyCourses';
+import StudentsModule from '../SiteFolders/StudentPortal/Pages/MyCourses/Module';
 import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
 import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
@@ -75,8 +75,8 @@ function Router() {
                 <Route exact path='/Students/Dashboard' component={StudentsDashboard}/>
                 <Route exact path='/Students/Exams' component={StudentPortailExamsPage}/>
                 <Route exact path='/Students/Media' component={StudentMedia}/>
-                <Route exact path='/Students/Modules' component={StudentsModules}/>
-                <Route exact path='/Students/Modules/Module' component={StudentsModule}/>
+                <Route exact path='/Students/MyCourses' component={StudentMyCourses}/>
+                <Route exact path='/Students/MyCourses/CourseName' component={StudentsModule}/>
                 <Route exact path='/Students/Reports' component={StudentReports}/>
                 <Route exact path='/Students/Time-Table' component={StudentTimeTable}/>
                 <Route exact path='/Students/MyWork' component={MyWorks}/>

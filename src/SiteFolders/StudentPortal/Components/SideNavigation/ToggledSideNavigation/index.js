@@ -42,7 +42,7 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                 </Link>
 
                 <Link 
-                    to='/Students/Modules' 
+                    to='/Students/MyCourses' 
                     title='My Courses' 
                     className={activeTab === 'myCourses' ? 'active' : ''}
                 >
@@ -107,7 +107,7 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
                 </Link> 
 
                 <Link 
-                    to='/' 
+                    to='/student-login' 
                     className='logout-container' 
                     title='Log-out'
                 >

@@ -1,3 +1,11 @@
+/*
+
+  The styling component of the student login page.
+  each property starts with 'student-loginPage'
+  to avoid conflicts with other  styling components.
+
+*/
+
 .student-loginPage-container {
   height: 100%;
   overflow: hidden;
@@ -87,7 +95,7 @@
   width: 100%;
 }
 
-.show-password {
+.student-login-show-password {
   color: #fff;
   cursor: context-menu;
   display: flex;
@@ -96,14 +104,14 @@
   text-align: left;
   width: 30%;
 }
-.show-password input {
+.student-login-show-password input {
   cursor: pointer;
   height: 20px;
   top: 20px;
   width: 20px;
 }
 
-.forgot-password {
+.student-login-forgot-password {
   color: #fff;
   cursor: pointer;
   margin-top: -20px;
@@ -112,11 +120,11 @@
   text-align: right;
   width: 30%;
 }
-.forgot-password:hover {
+.student-login-forgot-password:hover {
   color: #dedede;
 }
 
-.login-button {
+.student-login-login-button {
   align-items: center;
   background-color: #fff;
   border-radius: 50px;
@@ -134,12 +142,12 @@
   text-align: center;
   width: 20vh;
 }
-.login-button:hover {
+.student-login-login-button:hover {
   background-color: #dedede;
   transition: all 0.5s ease 0s;
 }
 
-.go-to-homeSite {
+.student-login-go-to-homeSite {
   color: #fff;
   font-size: 24px;
   text-align: center;

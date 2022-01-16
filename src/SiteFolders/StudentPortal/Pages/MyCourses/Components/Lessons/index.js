@@ -1,7 +1,9 @@
 import React from 'react';
 
+//import the styling compnent(s).
 import './lessons.css'; 
-import '../classComponent.css'
+import '../classComponent.css';
+import '../../../../Components/studentsComponents.css';
 
 
 function Lessons() {
@@ -13,7 +15,7 @@ function Lessons() {
                 <div className='first-subtitle'>First Semester</div>
 
                 <div className="chapter-container">
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter I : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
@@ -22,7 +24,7 @@ function Lessons() {
                     <div className='add-a-material'>
                         Download the test document
                     </div>
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter II : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
@@ -31,7 +33,7 @@ function Lessons() {
                     <div className='add-a-material'>
                         Download the test document
                     </div>
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter III : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
@@ -46,7 +48,7 @@ function Lessons() {
                 <div className='first-subtitle'>Second Semester</div>
 
                 <div className="chapter-container">
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter I : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
@@ -55,7 +57,7 @@ function Lessons() {
                     <div className='add-a-material'>
                         Download the test document
                     </div>
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter II : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>
@@ -64,7 +66,7 @@ function Lessons() {
                     <div className='add-a-material'>
                         Download the test document
                     </div>
-                    <div to='/Staff/Class' className='exams-calendar-tilte'>
+                    <div to='/Staff/Class' className='disabled-dark-horizontal-bar'>
                         Chapter III : Fundamental of accounting
                     </div>
                     <div className='add-a-material'>

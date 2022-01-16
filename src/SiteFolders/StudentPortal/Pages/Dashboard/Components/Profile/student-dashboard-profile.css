@@ -1,0 +1,49 @@
+/*
+
+  The styling component of the profile section in
+  the student dashboard page.
+  each property starts with 'studentDash-profile'
+  to avoid conflicts with other  styling components.
+
+*/
+
+.studentDash-profile-container {
+  cursor: pointer;
+  margin-left: 3rem;
+}
+.studentDash-profile-container:hover {
+}
+
+.studentDash-profile-card {
+  background: #fff;
+  border-radius: 15px;
+  height: 13rem;
+  margin-left: 1.5rem;
+  width: 40rem;
+}
+.studentDash-profile-content {
+  padding: 0.5rem;
+}
+.studentDash-card-title {
+  font-size: 24px;
+  margin-left: 1.5rem;
+}
+
+.studentDash-profile-details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1rem;
+}
+.studentDash-profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+.studentDash-profile-status {
+  margin-right: 1.5rem;
+}
+.studentDash-class-details {
+  font-size: 18px;
+  margin-left: 1.5rem;
+}

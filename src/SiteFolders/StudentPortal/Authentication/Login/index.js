@@ -1,15 +1,16 @@
-/*
- 
-*/
+
+// This is the login page component 
+// of the student portal.
+
 
 import React, {useEffect} from 'react';
-
 import { Link } from 'react-router-dom';
 
-//asset
-import studentLoginCardIcon from '../../../../assets/graduate-cap.png'
-//import styling
+//import the styling compnent(s).
 import './login.css';
+
+// import the asset(s).
+import studentLoginCardIcon from '../../../../assets/graduate-cap.png';
 
 
 function Login() {
@@ -54,27 +55,27 @@ function Login() {
                             type='password'
                             id="thePassword"/>
                         <div className='student-login-form-text'>
-                            <div className='show-password'>
+                            <div className='student-login-show-password'>
                                 <input  
                                     type="checkbox" 
                                     onClick={showPassword}/>
                                 Show Password 
                             </div>
-                            <div className='forgot-password'>
+                            <div className='student-login-forgot-password'>
                                 Password forgotten
                             </div>
                         </div>
                     </div>
 
                     <Link to='/Students/Dashboard'>
-                        <button className='login-button'>
+                        <button className='student-login-login-button'>
                             Login
                         </button>
                     </Link>
                 </div>
 
                 <Link to='/'>
-                    <div className="go-to-homeSite">Go to home</div>
+                    <div className="student-login-go-to-homeSite">Go to home</div>
                 </Link>
             </div>
 

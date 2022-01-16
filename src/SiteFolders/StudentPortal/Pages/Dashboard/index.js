@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+
+// This is the dashboard page component 
+// of the student portal.
+
+import React, { useEffect, useState } from 'react';
 
 //import the styling compnent(s).
-import './dashboard.css';
 import '../studentsPages.css';
 
 //import all components that will be 
@@ -9,23 +12,27 @@ import '../studentsPages.css';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 import DashboardProfife from './Components/Profile';
-import QuikLinks from './Components/QuikLinks';
-
+import QuickLinks from './Components/QuickLinks';
 
 
 function StudentsDashboard() {
 
     // Initiate a boolean state to check weither 
-    // the bar is toggled.
+    // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
-    
     const [activeTab, setActiveTab] = useState('dashboard');
+
+    //Set the document title of the page when it loads.
+    useEffect(() => {
+        document.title = "Dashboard | Vinco-elearning"
+     }, []);
 
     return (
         <div className="students-pages-container">
 
             <Header />
 
+            {/* Set conditions to display the full or toggle side navigation */}
             <div 
                 className={
                     toggledBar === false ? 
@@ -36,14 +43,14 @@ function StudentsDashboard() {
                 <SideNavigation 
                     toggledBar={toggledBar} 
                     setToggledBar={setToggledBar} 
-                    activeTab={activeTab}/>
+                    activeTab={activeTab} />
             </div>
 
             <div className='students-pages-content'>
                 <div className='students-pages-header-tilte'>Students Dashboard</div>
                 <hr className='students-page-hr'/>
                 <DashboardProfife />
-                <QuikLinks />
+                <QuickLinks />
             </div>
         </div>
     );
