@@ -7,15 +7,15 @@ import React, {useEffect, useState}  from 'react';
 import Select from 'react-select';
 
 // Time table
-import { 
-    Inject, 
-    ScheduleComponent, 
-    Day, 
-    WorkWeek, 
-    EventSettingsModel, 
-    ViewsDirective, 
-    ViewDirective
-} from '@syncfusion/ej2-react-schedule';
+//import { 
+   // Inject, 
+//    ScheduleComponent, 
+  //  Day, 
+//    WorkWeek, 
+  //  EventSettingsModel, 
+    //ViewsDirective, 
+    //ViewDirective
+//} from '@syncfusion/ej2-react-schedule';
 
 // Import the styling compnent(s).
 import '../studentsPages.css';
@@ -93,12 +93,12 @@ function StudentTimeTable() {
                 </div>
 
                 <div className='timeTable-container'>
-                    <ScheduleComponent currentView='WorkWeek' >
+                    {/* <ScheduleComponent currentView='WorkWeek' >
                         <Inject services={[Day, WorkWeek]} />
                         <ViewsDirective>
                             <ViewDirective option='WorkWeek' startHour='8:00' endHour='16:00'/>
                         </ViewsDirective>
-                    </ScheduleComponent>
+                    </ScheduleComponent> */}
                 </div>
             </div>
         </div>
