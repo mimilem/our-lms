@@ -1,0 +1,60 @@
+/*
+
+  The styling component of the MyWork index 
+  page component.
+  each property starts with 'studentWork'
+  to avoid conflicts with other styling components.
+
+*/
+
+.myWork-page-content {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.marks-percentage {
+  cursor: context-menu;
+  height: 10rem;
+  margin-left: 4rem;
+  margin-top: -3rem;
+  width: 10rem;
+}
+
+.text-value-container {
+  margin-right: 50%;
+  margin-top: -4%;
+  margin-bottom: 6rem;
+}
+.text-value {
+  float: right;
+  margin-left: 7%;
+  font-size: 20px;
+}
+
+.marks-details-title {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: space-around;
+}
+
+.subjects-and-marks-content {
+  display: flex;
+  font-size: 22px;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  position: relative;
+  width: 60%;
+}
+.myWork-subject-text {
+  float: left;
+  left: 0;
+  position: absolute;
+}
+.myWork-mark-text {
+  float: right;
+  right: 15px;
+  position: absolute;
+}
