@@ -1,6 +1,6 @@
 
 // This is the My Work page component 
-// of the student portal.
+//of the student portal.
 
 import React, { useState }  from 'react';
 
@@ -23,7 +23,7 @@ import SideNavigation from '../../Components/SideNavigation';
 function MyWorks({item}) {
 
     // Initiate a boolean state to check weither 
-    // the bar is toggled and weither the tab is active.
+    //the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('myWork');
 
@@ -46,7 +46,7 @@ function MyWorks({item}) {
         },
     ]
 
-    //list of courses of the select course dropdown
+    // List of courses of the select course dropdown.
     const data = [
         {
           value: 1,

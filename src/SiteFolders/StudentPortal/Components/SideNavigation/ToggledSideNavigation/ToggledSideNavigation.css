@@ -8,6 +8,7 @@
 */
 
 .toggled-side-navigation-container {
+  height: 100%;
   width: 4rem;
 }
 
@@ -47,10 +48,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  bottom: 20%;
   cursor: pointer;
   display: inline-block;
   height: 1.5rem;
   margin-left: 1rem;
-  margin-top: 1rem;
+  margin-top: 5rem;
   width: 1.5rem;
 }

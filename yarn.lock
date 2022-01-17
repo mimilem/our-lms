@@ -1107,14 +1107,14 @@
 
 "@babel/runtime@^7.10.3", "@babel/runtime@^7.13.10":
   version "7.16.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.5.tgz#7f3e34bf8bdbbadf03fbb7b1ea0d929569c9487a"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.16.5.tgz"
   integrity sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.12.0":
   version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.7.tgz#03ff99f64106588c9c403c6ecb8c3bafbbdff1fa"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.16.7.tgz"
   integrity sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==
   dependencies:
     regenerator-runtime "^0.13.4"
@@ -1177,7 +1177,7 @@
 
 "@emotion/cache@^11.4.0", "@emotion/cache@^11.7.1":
   version "11.7.1"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.7.1.tgz#08d080e396a42e0037848214e8aa7bf879065539"
+  resolved "https://registry.npmjs.org/@emotion/cache/-/cache-11.7.1.tgz"
   integrity sha512-r65Zy4Iljb8oyjtLeCuBH8Qjiy107dOYC6SJq7g7GV5UCQWMObY4SJDPGFjiiVpPrOJ2hmJOoBiYTC7hwx9E2A==
   dependencies:
     "@emotion/memoize" "^0.7.4"
@@ -1188,17 +1188,17 @@
 
 "@emotion/hash@^0.8.0":
   version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
+  resolved "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
 "@emotion/memoize@^0.7.4":
   version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
+  resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.5.tgz"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
 "@emotion/react@^11.1.1", "@emotion/react@^11.7.1":
   version "11.7.1"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.7.1.tgz#3f800ce9b20317c13e77b8489ac4a0b922b2fe07"
+  resolved "https://registry.npmjs.org/@emotion/react/-/react-11.7.1.tgz"
   integrity sha512-DV2Xe3yhkF1yT4uAUoJcYL1AmrnO5SVsdfvu+fBuS7IbByDeTVx9+wFmvx9Idzv7/78+9Mgx2Hcmr7Fex3tIyw==
   dependencies:
     "@babel/runtime" "^7.13.10"
@@ -1211,7 +1211,7 @@
 
 "@emotion/serialize@^1.0.2":
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.0.2.tgz#77cb21a0571c9f68eb66087754a65fa97bfcd965"
+  resolved "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.0.2.tgz"
   integrity sha512-95MgNJ9+/ajxU7QIAruiOAdYNjxZX7G2mhgrtDWswA21VviYIRP1R5QilZ/bDY42xiKsaktP4egJb3QdYQZi1A==
   dependencies:
     "@emotion/hash" "^0.8.0"
@@ -1222,27 +1222,27 @@
 
 "@emotion/sheet@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.1.0.tgz#56d99c41f0a1cda2726a05aa6a20afd4c63e58d2"
+  resolved "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.1.0.tgz"
   integrity sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==
 
 "@emotion/unitless@^0.7.5":
   version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
+  resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
 "@emotion/utils@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-1.0.0.tgz#abe06a83160b10570816c913990245813a2fd6af"
+  resolved "https://registry.npmjs.org/@emotion/utils/-/utils-1.0.0.tgz"
   integrity sha512-mQC2b3XLDs6QCW+pDQDiyO/EdGZYOygE8s5N5rrzjSI4M3IejPE/JPndCBwRT9z982aqQNi6beWs1UeayrQxxA==
 
 "@emotion/weak-memoize@^0.2.5":
   version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
+  resolved "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
 "@ericz1803/react-google-calendar@^4.2.1":
   version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@ericz1803/react-google-calendar/-/react-google-calendar-4.2.1.tgz#86273acb6e142ee41be5c650f5d3f0e67330b22b"
+  resolved "https://registry.npmjs.org/@ericz1803/react-google-calendar/-/react-google-calendar-4.2.1.tgz"
   integrity sha512-kHZNpUm6tbQUcPAMqRgXS/DSGhIGRw8MZUsPF3aG/Qe72SLAfjTHJJ9srEwBDSj424YnzE0L4n2M/I9GuuZLcA==
   dependencies:
     "@babel/runtime" "^7.10.3"
@@ -1556,26 +1556,26 @@
 
 "@react-pdf-viewer/attachment@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/attachment/-/attachment-3.0.0.tgz#7e242d2a083d2d9f6319a40af2c5716a498f1cd5"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/attachment/-/attachment-3.0.0.tgz"
   integrity sha512-cDFZK60IDOYK8Z+UV3rmRdxxW/kQ3Jd8G8eEtcn/oVXwg4oBjM+xw8t7KHOGCjWhwAWkgpeFJ7DdHUbziwGeHg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/bookmark@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/bookmark/-/bookmark-3.0.0.tgz#4103cf2598d24b0ab55a49d187cc8b1e2c6fa137"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/bookmark/-/bookmark-3.0.0.tgz"
   integrity sha512-GZYcXnIQ6tlGgh4YDt+YJGM+ZuixcTHbN3ITXn3CtX6NUtS9N9Lf7GTKi+MAHBYlWLsiiovnVgJXPIja0o7quA==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/core@3.0.0", "@react-pdf-viewer/core@^3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/core/-/core-3.0.0.tgz#d8d9cc24cab6b7d812573c13b1c99ad4e580e052"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/core/-/core-3.0.0.tgz"
   integrity sha512-Rx/FRlHkMb2PoY1oszsAEEWwYxlvSRKNYAS45no3sxG2toFgyEsxkcvyGApjtNlbPEQzo3pHKPIEpPazjXkpgQ==
 
 "@react-pdf-viewer/default-layout@^3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/default-layout/-/default-layout-3.0.0.tgz#86e17f6c954db27bd95399cabb96e9ef9a5f90e0"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/default-layout/-/default-layout-3.0.0.tgz"
   integrity sha512-mOYSP+1GAGPBXX+HkfeYwmluaLFK66+YBz65nIs0iqyauPY2BIQrFK/v4y7q4LJaU6l7TdNKihUIWiiilX9zVQ==
   dependencies:
     "@react-pdf-viewer/attachment" "3.0.0"
@@ -1586,91 +1586,91 @@
 
 "@react-pdf-viewer/full-screen@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/full-screen/-/full-screen-3.0.0.tgz#897e26202dddf702c7e58396fd570febed2616b3"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/full-screen/-/full-screen-3.0.0.tgz"
   integrity sha512-tlzlvo5kAqY88rq/0OFOTIpcWEr9+yNQA4kOwaYL6onjwuRgjou0YFzfFiBrU/ushAvRFaB7pE+4F430TrWYRw==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/get-file@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/get-file/-/get-file-3.0.0.tgz#1a0019c67fdc0f285411ab41d27401977d45f61b"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/get-file/-/get-file-3.0.0.tgz"
   integrity sha512-7H3ELryUh5WBXsKgkZWBlsZ7zfp5l+yVHBGp8d0+HLl1naGYDVJ1z18rlwtmqRETaZ93W3bmtyR7t3n6GqepfQ==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/open@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/open/-/open-3.0.0.tgz#f52a4b78a42fc418ed8183ad6ddfd768f8f45d6b"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/open/-/open-3.0.0.tgz"
   integrity sha512-WxcNGVYSpZVLHIrn+pBn6ZWtmT9iWdy6+zgkj/vmCoWrCnEAzogIHi+eiFZQ9Q+LPZa/YEBru835Z97j78jYtQ==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/page-navigation@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/page-navigation/-/page-navigation-3.0.0.tgz#6ddc73a1dbdb40fb0b06a72843170627c2a68679"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/page-navigation/-/page-navigation-3.0.0.tgz"
   integrity sha512-1AWi8Lv5ugXvP2TRtflmtfmxyQIg/HYhPX2nTRLC+PW77GNzG4GeqrIWuITN10snOZOi6rI6UgGKz+iUvkYpVg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/print@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/print/-/print-3.0.0.tgz#4687974d9b07d5ca75571f7c05f723ee0ae6ad45"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/print/-/print-3.0.0.tgz"
   integrity sha512-cs8gaRya8yiHHtYullIMNBLGy49gueY5x8NFGQW575ROBH4qba+K4UTYC8br/ituNPwQRGVsp+u8GLRPNR8AxQ==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/properties@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/properties/-/properties-3.0.0.tgz#83a79bf5de7ff95585e8c996103c4cbbf78b1732"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/properties/-/properties-3.0.0.tgz"
   integrity sha512-SZBpjE/UAdGY4joThFjO1z16iqlo6iPKivSP9jwb6VcNBoJTY3QPk+HQaW0UUJ5wfr88r8nyszKasKbOy4bzIg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/rotate@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/rotate/-/rotate-3.0.0.tgz#7be64b90ae5bee6c121920d62a2884315e388f24"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/rotate/-/rotate-3.0.0.tgz"
   integrity sha512-a54WMrCxbgfNur81o/YJ+L/s3bg9LLH+kmcpGRxlsAoWg1YCT08ksD+nTPNtldgEKbxfun/ruE/P01+A2DevtQ==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/scroll-mode@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/scroll-mode/-/scroll-mode-3.0.0.tgz#67dbd544150abb1afb0aa93bb869c9be333b8cb4"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/scroll-mode/-/scroll-mode-3.0.0.tgz"
   integrity sha512-3gD6Ao757SeYoOvTmdE/8TPYUAFJnSdA01L8O48pIhZq4A6sQzmpYY5MrKBimIdSvSeTRQO4yE+3CXRQlFL/WA==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/search@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/search/-/search-3.0.0.tgz#7c6457bf98eee8a062fc23e2c0d01d8f976197bb"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/search/-/search-3.0.0.tgz"
   integrity sha512-5pOAj5IOndVT9PJoEhOK7OB3KU/yI2vIlKLsHwp5hO8dSBUeYTx74U/y6ml+qJDJPCUj48SxiaLsu5t0ZeHGRg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/selection-mode@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/selection-mode/-/selection-mode-3.0.0.tgz#68062ca7b0bda7fe71f1259a2d7accfa0f731f15"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/selection-mode/-/selection-mode-3.0.0.tgz"
   integrity sha512-9beXJ4+uyJFKD9GMOv5FvD/1HAKoHoHPXmMNIC6pi9ZmQboO9T7R070pH6MN94jv76Ia4C3jJcuBQmGtMuhhsg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/theme@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/theme/-/theme-3.0.0.tgz#8bbcd5de1e1d1999e4937f0ce48eb420590af247"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/theme/-/theme-3.0.0.tgz"
   integrity sha512-8PVtd7mM2inuUFqLDZjUOgFxWaa16SDY6MS+ByZdpaxTSahfBg9doRTwW85rzhbb93SkdhNYi96rqdNTI71vog==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/thumbnail@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/thumbnail/-/thumbnail-3.0.0.tgz#b6f75979aeacdb91fbe0fca670341f990a0d00ee"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/thumbnail/-/thumbnail-3.0.0.tgz"
   integrity sha512-4ProUqQXkMf+nMhEiFZOgLsQ8Ha81H2Zkv8qOnxhrUep9r+Px+CaNbKspoGXul0RjKln2HWQU0Nkq99yde/wRg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
 
 "@react-pdf-viewer/toolbar@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/toolbar/-/toolbar-3.0.0.tgz#b6022d7a3c1357e6cfd7fe7258a3d6aebe92fca9"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/toolbar/-/toolbar-3.0.0.tgz"
   integrity sha512-ilaVldWz//9tarBc82phTFvxmx4vJ0xCzqTHqVwl2Ivvg9IVY5PHZKfoKanyxYVaOCr4Suo+pR+JKE69pY1Gug==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
@@ -1689,7 +1689,7 @@
 
 "@react-pdf-viewer/zoom@3.0.0":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf-viewer/zoom/-/zoom-3.0.0.tgz#184d5936a80f043ee4e4e2168e5d719e63012b35"
+  resolved "https://registry.npmjs.org/@react-pdf-viewer/zoom/-/zoom-3.0.0.tgz"
   integrity sha512-b+sf3GbpZDhZ5z1qFOmDyTVtCligRhQeLbQ2su403G6NRISUPTvb5NysIJP9cvI2gzNqJS+I7UVDf6xR2Cwlhg==
   dependencies:
     "@react-pdf-viewer/core" "3.0.0"
@@ -1881,6 +1881,154 @@
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
+
+"@syncfusion/ej2-base@~19.4.38", "@syncfusion/ej2-base@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-base/-/ej2-base-19.4.42.tgz#23187bffe388109626a80bd8dc34c4635ac3dd48"
+  integrity sha512-SiYT0/w8Ijo4o2WqHWBRm+2v5IojA032NHC08Hh4KJr6qU9tFPJBZhNy+5bZlmEczECr7944eEt27MPhginWAQ==
+  dependencies:
+    "@syncfusion/ej2-icons" "~19.4.38"
+
+"@syncfusion/ej2-buttons@~19.4.38", "@syncfusion/ej2-buttons@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-buttons/-/ej2-buttons-19.4.42.tgz#c160746330408ebe98b956a56fb57027bf445d25"
+  integrity sha512-L8O69Zb+qZ1N/1AasGzhV96+mdrMFySWLuRgYdzgRo+2j0umBaXLVSSq+SxGQIioANs4XF8bD3LvyRf8n618PQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+
+"@syncfusion/ej2-calendars@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-calendars/-/ej2-calendars-19.4.42.tgz#55b35a6e7c13a88a5abed1215bdf0c5f693410d1"
+  integrity sha512-T8z4SEVmF+fwfsy4T69lr0LCuFYEtU4RKvmQS2S6e/Y+VYsG8tfYhDbo/TCSrS12jyrF8NtQpWN9LlzIjRWbQw==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+    "@syncfusion/ej2-buttons" "~19.4.42"
+    "@syncfusion/ej2-inputs" "~19.4.42"
+    "@syncfusion/ej2-lists" "~19.4.38"
+    "@syncfusion/ej2-popups" "~19.4.41"
+
+"@syncfusion/ej2-compression@~19.4.38":
+  version "19.4.38"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-compression/-/ej2-compression-19.4.38.tgz#5d0dbd759761540578b728ec1b5b1f61eaa68435"
+  integrity sha512-0bFvA0qV9JqNCBC50QgySCziPAK3qrDmdWhVViPa4QwnUG/e2Z93Zz9YS3xNTIVPx7Fsm+NssT7GZ+U0bFHONg==
+  dependencies:
+    "@syncfusion/ej2-file-utils" "~19.4.38"
+
+"@syncfusion/ej2-data@~19.4.38", "@syncfusion/ej2-data@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-data/-/ej2-data-19.4.42.tgz#eb5b144e08a58628db7c42e13024f11ad5d870b6"
+  integrity sha512-alkBjA/s8IRhyuZfYjqrwtjS1YWNzBNhNY09hTH+M4oklh2YTNFLkPY8kDIjMVIjmDHWo6N5zJ8Uj88kfcSWJg==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+
+"@syncfusion/ej2-dropdowns@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-dropdowns/-/ej2-dropdowns-19.4.42.tgz#95293d19bd75f9ea378062e4323e6f3550bc2782"
+  integrity sha512-71TwqOGu7+kDjoWnKQso66z2cqHT7QpUx4WsmB5/ByV89TFhNdsqGkK5oNHRg2wtSXDiWZYtnwci6XEoTYE9PQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+    "@syncfusion/ej2-data" "~19.4.42"
+    "@syncfusion/ej2-inputs" "~19.4.42"
+    "@syncfusion/ej2-lists" "~19.4.38"
+    "@syncfusion/ej2-navigations" "~19.4.41"
+    "@syncfusion/ej2-popups" "~19.4.41"
+
+"@syncfusion/ej2-excel-export@~19.4.38":
+  version "19.4.38"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-excel-export/-/ej2-excel-export-19.4.38.tgz#ae4b7b307675dd88bbf71bb68c437a4fcf01eda4"
+  integrity sha512-q/+6rgh7gdzrwyN7DIztjLn6RrnmegIkfxrkRAq++VyB6/WM3318XS/wPLUZY7OVaCLBbNe39Ae2OZci9xpoUA==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.38"
+    "@syncfusion/ej2-compression" "~19.4.38"
+
+"@syncfusion/ej2-file-utils@~19.4.38":
+  version "19.4.38"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-file-utils/-/ej2-file-utils-19.4.38.tgz#8e3c688a9e6d815e7f5d8ac87e6732fb6fe8f2ae"
+  integrity sha512-VMK4HX1PJYCmgu4iLQyzaZtlR5YA/5Uufrm00dLgpG52TUX72b3zOSNQ+erbXqycF7f76VnDibMiyb45HJULjg==
+
+"@syncfusion/ej2-icons@~19.4.38":
+  version "19.4.38"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-icons/-/ej2-icons-19.4.38.tgz#2a0ca6f6e215530b6169646586319310694bba6a"
+  integrity sha512-7Uy1A76BkDBANdJpgxBRExrcYcz5YULhck9sYKqX4upAhdCubvcQzQslW+bKt0TZra4GLvC+iMG0rRMDzZQuxA==
+
+"@syncfusion/ej2-inputs@~19.4.41", "@syncfusion/ej2-inputs@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-inputs/-/ej2-inputs-19.4.42.tgz#2e77c30ed3a3b8fb0688c8f610fdb66a1ec18782"
+  integrity sha512-HvFKhNbotqkZFOCiKEs4kcGuSsPXkNGqcwpicDGWN5qQrK1gBad3sSIEWvJN0UcXc2+RU9Xg2gOnD/el5HL+NQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+    "@syncfusion/ej2-buttons" "~19.4.42"
+    "@syncfusion/ej2-popups" "~19.4.41"
+    "@syncfusion/ej2-splitbuttons" "~19.4.40"
+
+"@syncfusion/ej2-lists@~19.4.38":
+  version "19.4.38"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-lists/-/ej2-lists-19.4.38.tgz#2ca6d7349cc1b4fc2b057f74f806004daf2f1637"
+  integrity sha512-wxpIbfNKM37hgRpKIcEPnyiYcXZWvHLVCYg4K1QpkOFqhak6QGooLQVHpmNmChZPBYN4v3StvKB+i8SLVCMa+Q==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.38"
+    "@syncfusion/ej2-buttons" "~19.4.38"
+    "@syncfusion/ej2-data" "~19.4.38"
+
+"@syncfusion/ej2-navigations@~19.4.41":
+  version "19.4.41"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-navigations/-/ej2-navigations-19.4.41.tgz#50a2657d2258d0fdf0b165b9a0feae1f433f72bb"
+  integrity sha512-l9IDDkV8Oj5//Mr+NvoXX3kSsY5UQ6ZC3Skd1ts4leTaVUOnJceL16eo50LughJ2otidymZHgPvsFQRImpCYlw==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.38"
+    "@syncfusion/ej2-buttons" "~19.4.38"
+    "@syncfusion/ej2-data" "~19.4.38"
+    "@syncfusion/ej2-inputs" "~19.4.41"
+    "@syncfusion/ej2-lists" "~19.4.38"
+    "@syncfusion/ej2-popups" "~19.4.41"
+
+"@syncfusion/ej2-popups@~19.4.38", "@syncfusion/ej2-popups@~19.4.41":
+  version "19.4.41"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-popups/-/ej2-popups-19.4.41.tgz#9e75feab2da051e949548ef385ddf44cee317cdc"
+  integrity sha512-r6JEaIbkxLgFW9c3Xfxm8bERv8MVzfl8E2tZEwOqz+JPZ//BUxzi9imPZKfFdA3CXdNXhzED+PGftBF2qb1xLg==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.38"
+    "@syncfusion/ej2-buttons" "~19.4.38"
+
+"@syncfusion/ej2-react-base@~19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-react-base/-/ej2-react-base-19.4.42.tgz#56610fc45f759ce6417033c1aafad89bdcd2df75"
+  integrity sha512-2xpB3vNvhHhcjZ28bcHqXFvRqglKvMzaXUowSUyFhJBszhTm80K2WgRqfiHFiE2xaQSCQWL+Z33jyZkdbX/a3Q==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+
+"@syncfusion/ej2-react-schedule@^19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-react-schedule/-/ej2-react-schedule-19.4.42.tgz#32b90696f94df9f34aa25c2791d24b0dfbc06ca4"
+  integrity sha512-XNXnRG4tI4YKlng453XRYyXQQNDc0DRC1+AXWa8LgNwmCn9CXJgwfE7r7XI2krnFPc72F8wgnEFIW1g7I2SPuA==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+    "@syncfusion/ej2-react-base" "~19.4.42"
+    "@syncfusion/ej2-schedule" "19.4.42"
+
+"@syncfusion/ej2-schedule@19.4.42":
+  version "19.4.42"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-schedule/-/ej2-schedule-19.4.42.tgz#e5ad9d342b3ca633c65f95a54556019744ebf288"
+  integrity sha512-7k5qwrqEwei8XMfBb72ZeqYjiGKTSHHgIhLTSHlw8F4adI7TYGGUi1NmHciiEiPlk1xy8zkymskqD25YG2VOYQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.42"
+    "@syncfusion/ej2-buttons" "~19.4.42"
+    "@syncfusion/ej2-calendars" "~19.4.42"
+    "@syncfusion/ej2-data" "~19.4.42"
+    "@syncfusion/ej2-dropdowns" "~19.4.42"
+    "@syncfusion/ej2-excel-export" "~19.4.38"
+    "@syncfusion/ej2-inputs" "~19.4.42"
+    "@syncfusion/ej2-lists" "~19.4.38"
+    "@syncfusion/ej2-navigations" "~19.4.41"
+    "@syncfusion/ej2-popups" "~19.4.41"
+
+"@syncfusion/ej2-splitbuttons@~19.4.40":
+  version "19.4.40"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-splitbuttons/-/ej2-splitbuttons-19.4.40.tgz#d361b51305e2e7cdae9c4f62ba0c04307709bfa8"
+  integrity sha512-2CZwgIDPz3jx8mkPsi/A0Fs/ClWitMphJ3e/ww1KQ5BZ97+sur1jv1H7A5TavIPlSMHXmRzr8nrt2N528HaPkw==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.38"
+    "@syncfusion/ej2-popups" "~19.4.38"
 
 "@testing-library/dom@^7.28.1":
   version "7.31.2"
@@ -2624,7 +2772,7 @@ anymatch@^3.0.3, anymatch@~3.1.1:
 
 anymatch@~3.1.2:
   version "3.1.2"
-  resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
+  resolved "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz"
   integrity sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==
   dependencies:
     normalize-path "^3.0.0"
@@ -3496,7 +3644,7 @@ check-types@^11.1.1:
 
 "chokidar@>=3.0.0 <4.0.0":
   version "3.5.2"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
+  resolved "https://registry.npmjs.org/chokidar/-/chokidar-3.5.2.tgz"
   integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
   dependencies:
     anymatch "~3.1.2"
@@ -5602,7 +5750,7 @@ glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@~5.1.0:
 
 glob-parent@~5.1.2:
   version "5.1.2"
-  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
+  resolved "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz"
   integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
@@ -5694,7 +5842,7 @@ growly@^1.3.0:
 
 gud@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+  resolved "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz"
   integrity sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==
 
 gzip-size@5.1.1:
@@ -6056,7 +6204,7 @@ immer@8.0.1:
 
 immutable@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
+  resolved "https://registry.npmjs.org/immutable/-/immutable-4.0.0.tgz"
   integrity sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==
 
 import-cwd@^2.0.0:
@@ -7414,7 +7562,7 @@ lru-cache@^6.0.0:
 
 luxon@^1.21.3:
   version "1.28.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.28.0.tgz#e7f96daad3938c06a62de0fb027115d251251fbf"
+  resolved "https://registry.npmjs.org/luxon/-/luxon-1.28.0.tgz"
   integrity sha512-TfTiyvZhwBYM/7QdAVDh+7dBTBA29v4ik0Ce9zda3Mnf8on1S5KJI8P2jKFZ8+5C0jhmr0KwJEO/Wdpm0VeWJQ==
 
 lz-string@^1.4.4:
@@ -7489,7 +7637,7 @@ media-typer@0.3.0:
 
 memoize-one@^5.0.0:
   version "5.2.1"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
+  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
 
 memory-fs@^0.4.1:
@@ -7714,14 +7862,14 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
 
 moment-timezone@^0.5.31:
   version "0.5.34"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.34.tgz#a75938f7476b88f155d3504a9343f7519d9a405c"
+  resolved "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.34.tgz"
   integrity sha512-3zAEHh2hKUs3EXLESx/wsgw6IQdusOT8Bxm3D9UrHPQR7zlMmzwybC8zHEM1tQ4LJwP7fcxrWr8tuBg05fFCbg==
   dependencies:
     moment ">= 2.9.0"
 
 "moment@>= 2.9.0", moment@^2.26.0:
   version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 move-concurrently@^1.0.1:
@@ -8411,7 +8559,7 @@ pbkdf2@^3.0.3:
 
 pdfjs-dist@2.6.347:
   version "2.6.347"
-  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.6.347.tgz#f257ed66e83be900cd0fd28524a2187fb9e25cd5"
+  resolved "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-2.6.347.tgz"
   integrity sha512-QC+h7hG2su9v/nU1wEI3SnpPIrqJODL7GTDFvR74ANKGq1AFJW16PH8VWnhpiTi9YcLSFV9xLeWSgq+ckHLdVQ==
 
 performance-now@^2.1.0:
@@ -9266,7 +9414,7 @@ prop-types-extra@^1.1.0:
 
 prop-types@^15.6.0:
   version "15.8.0"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.0.tgz#d237e624c45a9846e469f5f31117f970017ff588"
+  resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.0.tgz"
   integrity sha512-fDGekdaHh65eI3lMi5OnErU6a8Ighg2KjcjQxO7m8VHyWjcPyj5kiOgV1LQDOOOgVy3+5FgjXvdSSX7B8/5/4g==
   dependencies:
     loose-envify "^1.4.0"
@@ -9474,12 +9622,12 @@ react-bootstrap@^2.0.3:
 
 react-circular-progressbar@^2.0.4:
   version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.4.tgz#5b04a9cf6be8c522c180e4e99ec6db63677335b0"
+  resolved "https://registry.npmjs.org/react-circular-progressbar/-/react-circular-progressbar-2.0.4.tgz"
   integrity sha512-OfX0ThSxRYEVGaQSt0DlXfyl5w4DbXHsXetyeivmoQrh9xA9bzVPHNf8aAhOIiwiaxX2WYWpLDB3gcpsDJ9oww==
 
 react-detect-click-outside@^1.1.2:
   version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-detect-click-outside/-/react-detect-click-outside-1.1.2.tgz#e47e5b850412380d8b3f504dea544ed97ec8c972"
+  resolved "https://registry.npmjs.org/react-detect-click-outside/-/react-detect-click-outside-1.1.2.tgz"
   integrity sha512-BYavS0DoZ7JzTgCDQiYnh3F8jWr6FONBNWLzpFICbupW3rE4IgPOzeqPn4zO0s1C10kXF8X8xiHe0C+mYSJz5g==
 
 react-dev-utils@^11.0.3:
@@ -9514,7 +9662,7 @@ react-dev-utils@^11.0.3:
 
 react-dom@^17.0.2:
   version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
   dependencies:
     loose-envify "^1.1.0"
@@ -9528,7 +9676,7 @@ react-error-overlay@^6.0.9:
 
 react-fast-compare@^3.0.1:
   version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
@@ -9548,7 +9696,7 @@ react-lifecycles-compat@^3.0.4:
 
 react-popper@^2.2.4:
   version "2.2.5"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.5.tgz#1214ef3cec86330a171671a4fbcbeeb65ee58e96"
+  resolved "https://registry.npmjs.org/react-popper/-/react-popper-2.2.5.tgz"
   integrity sha512-kxGkS80eQGtLl18+uig1UIf9MKixFSyPxglsgLBxlYnyDf65BiY9B3nZSc6C9XUNDgStROB0fMQlTEz1KxGddw==
   dependencies:
     react-fast-compare "^3.0.1"
@@ -9656,7 +9804,7 @@ react-scripts@4.0.3:
 
 react-select@^5.2.1:
   version "5.2.1"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-5.2.1.tgz#416c25c6b79b94687702374e019c4f2ed9d159d6"
+  resolved "https://registry.npmjs.org/react-select/-/react-select-5.2.1.tgz"
   integrity sha512-OOyNzfKrhOcw/BlembyGWgdlJ2ObZRaqmQppPFut1RptJO423j+Y+JIsmxkvsZ4D/3CpOmwIlCvWbbAWEdh12A==
   dependencies:
     "@babel/runtime" "^7.12.0"
@@ -9679,7 +9827,7 @@ react-transition-group@^4.3.0, react-transition-group@^4.4.1:
 
 react@^17.0.2:
   version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
@@ -9761,7 +9909,7 @@ readdirp@~3.5.0:
 
 readdirp@~3.6.0:
   version "3.6.0"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
+  resolved "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz"
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
@@ -10121,7 +10269,7 @@ rollup@^1.31.1:
 
 rrule@^2.6.4:
   version "2.6.8"
-  resolved "https://registry.yarnpkg.com/rrule/-/rrule-2.6.8.tgz#c61714f246e7676e8efa16c2baabac199f20f6db"
+  resolved "https://registry.npmjs.org/rrule/-/rrule-2.6.8.tgz"
   integrity sha512-cUaXuUPrz9d1wdyzHsBfT1hptKlGgABeCINFXFvulEPqh9Np9BnF3C3lrv9uO54IIr8VDb58tsSF3LhsW+4VRw==
   dependencies:
     tslib "^1.10.0"
@@ -10202,7 +10350,7 @@ sass-loader@^10.0.5:
 
 sass@^1.48.0:
   version "1.48.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.48.0.tgz#b53cfccc1b8ab4be375cc54f306fda9d4711162c"
+  resolved "https://registry.npmjs.org/sass/-/sass-1.48.0.tgz"
   integrity sha512-hQi5g4DcfjcipotoHZ80l7GNJHGqQS5LwMBjVYB/TaT0vcSSpbgM8Ad7cgfsB2M0MinbkEQQPO9+sjjSiwxqmw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
@@ -10528,7 +10676,7 @@ source-list-map@^2.0.0:
 
 "source-map-js@>=0.6.2 <2.0.0":
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.1.tgz#a1741c131e3c77d048252adfa24e23b908670caf"
+  resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.1.tgz"
   integrity sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==
 
 source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
@@ -10908,7 +11056,7 @@ stylehacks@^4.0.0:
 
 stylis@4.0.13:
   version "4.0.13"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.13.tgz#f5db332e376d13cc84ecfe5dace9a2a51d954c91"
+  resolved "https://registry.npmjs.org/stylis/-/stylis-4.0.13.tgz"
   integrity sha512-xGPXiFVl4YED9Jh7Euv2V220mriG9u4B2TA6Ybjc1catrstKD2PpIdU3U0RKpkVBC2EhmL/F0sPCr9vrFTNRag==
 
 supports-color@^5.3.0:
