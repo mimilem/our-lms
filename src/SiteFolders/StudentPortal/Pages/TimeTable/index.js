@@ -36,19 +36,19 @@ function StudentTimeTable() {
     const subjects = [
         {
           label: 'Programming 511',
-          value: 52
+          value: 1
         },
         {
           label: 'Network 511',
-          value: 60
+          value: 2
         },
         {
           label: 'Data science 511',
-          value: 48
+          value: 3
         },
         {
           label: 'Acounting 511',
-          value: 70
+          value: 4
         },
     ]
     const [selectedOption, setSelectedOption] = useState(null);
