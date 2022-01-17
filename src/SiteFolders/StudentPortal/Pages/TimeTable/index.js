@@ -84,6 +84,7 @@ function StudentTimeTable() {
                 </div>
 
                 <div className='timeTable-container'>
+                    <h1>In Progress</h1>
                 </div>
             </div>
         </div>
