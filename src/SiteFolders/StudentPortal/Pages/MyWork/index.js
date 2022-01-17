@@ -147,14 +147,13 @@ function MyWorks({item}) {
                     </div>
 
                     {
-                    marksData.map((item) => (
-                        <div className='subjects-and-marks-content'>
-                            <div className='myWork-subject-text'>{item.value}</div>
-                            <div className='myWork-mark-text'>{item.mark}%</div>
-                        </div>
-                    ))}
-                    )
-
+                        marksData.map((item) => (
+                            <div className='subjects-and-marks-content'>
+                                <div className='myWork-subject-text'>{item.value}</div>
+                                <div className='myWork-mark-text'>{item.mark}%</div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
