@@ -12,7 +12,6 @@ import {
     ScheduleComponent, 
     Day, 
     WorkWeek, 
-    EventSettingsModel, 
     ViewsDirective, 
     ViewDirective
 } from '@syncfusion/ej2-react-schedule';
