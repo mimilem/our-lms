@@ -13,6 +13,7 @@ import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 import DashboardProfife from './Components/Profile';
 import QuickLinks from './Components/QuickLinks';
+import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
 
 function StudentsDashboard() {
@@ -30,21 +31,12 @@ function StudentsDashboard() {
     return (
         <div className="students-pages-container">
 
-            <Header />
-
-            {/* Set conditions to display the full or toggle side navigation */}
-            <div 
-                className={
-                    toggledBar === false ? 
-                        'full-side-navigation-container' 
-                        : 
-                        'toggled-side-navigation-container' 
-            }>
-                <SideNavigation 
-                    toggledBar={toggledBar} 
-                    setToggledBar={setToggledBar} 
-                    activeTab={activeTab} />
-            </div>
+            <HeaderAndSideNav
+                toggledBar={toggledBar}
+                setToggledBar={setToggledBar}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+            />
 
             <div className='students-pages-content'>
                 <div className='students-pages-header-tilte'>Students Dashboard</div>

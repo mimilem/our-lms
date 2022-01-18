@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vincoelearning-dev-91021-authRole",
+      "UnauthRoleArn": "arn:aws:iam::755830341824:role/amplify-vincoelearning-dev-91021-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::755830341824:role/amplify-vincoelearning-dev-91021-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-vincoelearning-dev-91021-deployment",
+      "UnauthRoleName": "amplify-vincoelearning-dev-91021-unauthRole",
+      "StackName": "amplify-vincoelearning-dev-91021",
+      "StackId": "arn:aws:cloudformation:us-east-2:755830341824:stack/amplify-vincoelearning-dev-91021/b6650d20-782d-11ec-b3e3-06e6c25ba6e8",
+      "AmplifyAppId": "dsnv0g3y4nzaa"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+type Campus @model {
+  id: ID!
+  institutionName: String!
+  campusName: String!
+  faculties: [Faculty] @connection(keyName: "byCampus", fields: ["id"])
+}
+
+type Faculty
+  @model
+  @key(name: "byCampus", fields: ["campusID", "facultyName"]) {
+  id: ID!
+  facultyName: String!
+  campusID: ID!
+  campus: Campus @connection(fields: ["campusID"])
+  departments: [Department] @connection(keyName: "byFaculty", fields: ["id"])
+}
+
+type Department
+  @model
+  @key(name: "byFaculty", fields: ["facultyID", "departmentName"]) {
+  id: ID!
+  departmentName: String!
+  facultyID: ID!
+  faculty: Faculty @connection(fields: ["facultyID"])
+  classes: [Class] @connection(keyName: "byDepartment", fields: ["id"])
+}
+
+type Class
+  @model
+  @key(name: "byDepartment", fields: ["departmentID", "classYear"]) {
+  id: ID!
+  classYear: Int!
+  departmentID: ID!
+  department: Department @connection(fields: ["departmentID"])
+}
