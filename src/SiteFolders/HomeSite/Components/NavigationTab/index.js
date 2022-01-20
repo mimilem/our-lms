@@ -94,7 +94,11 @@ function NavigationTab() {
                         </li>
                         {isShown1 && (
                         <ul className='dropdown-menu'>
-                            <li>Apply</li>
+
+                            <Link to='/Register'>
+                                <li>Apply</li>
+                            </Link>
+                            
                             <hr className='nav-tab-hr'/>
                             <li>International student</li>
                             <hr className='nav-tab-hr'/>
