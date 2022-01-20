@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 // Let's import our GraphQl queries and extentions to fetch data from the API
-import { API, graphqlOperation } from 'aws-amplify';
-import * as queries from '../../../../graphql/queries';
+//import { API, graphqlOperation } from 'aws-amplify';
+//import * as queries from '../../../../graphql/queries';
 
 import Header from '../Header';
 import SideNavigation from '../../Components/SideNavigation';
@@ -13,7 +13,7 @@ function HeaderAndSideNav({toggledBar, setToggledBar, activeTab}) {
     const [campus, setCampus] = useState([])
 
     // fetch a campus
-    useEffect(() => {
+    /*useEffect(() => {
         const fetchCampus = async () => {
             try {
                 const campusResults = await API.graphql(
@@ -30,11 +30,11 @@ function HeaderAndSideNav({toggledBar, setToggledBar, activeTab}) {
         fetchCampus();
     }, [])
 
-    const campusName = campus.campusName
+    const campusName = campus.campusName*/
 
     return (
             <div>
-                <Header campusName={campusName} />
+                <Header/>
                 
                 {/* Set conditions to display the full or toggle side navigation */}
                 <div 
