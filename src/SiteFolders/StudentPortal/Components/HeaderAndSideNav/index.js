@@ -13,7 +13,7 @@ function HeaderAndSideNav({toggledBar, setToggledBar, activeTab}) {
     const [campus, setCampus] = useState([])
 
     // fetch a campus
-    useEffect(() => {
+    /*useEffect(() => {
         const fetchCampus = async () => {
             try {
                 const campusResults = await API.graphql(
@@ -30,11 +30,11 @@ function HeaderAndSideNav({toggledBar, setToggledBar, activeTab}) {
         fetchCampus();
     }, [])
 
-    const campusName = campus.campusName
+    const campusName = campus.campusName*/
 
     return (
             <div>
-                <Header campusName={campusName} />
+                <Header />
                 
                 {/* Set conditions to display the full or toggle side navigation */}
                 <div 
