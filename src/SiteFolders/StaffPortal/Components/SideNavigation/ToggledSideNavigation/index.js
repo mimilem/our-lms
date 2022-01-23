@@ -16,7 +16,7 @@ import './ToggledSideNavigation.css';
 import FullSideNavigation from '../FullSideNavigation';
 
 
-function ToggledSideNavigation({toggledBar, setToggledBar}) {
+function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDetails}) {
 
     // Change the initiale state for when the 'Show 
     // Full Bar' button is clicked on.
@@ -29,7 +29,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
 
             <div className="toggled-side-navigation-container">
                 
-                <Link to='/Staff/Dashboard' className='active' title='Dashboard'>
+                <Link to='/Staff/Dashboard' 
+                    className={activeTab === 'dashboard' ? 'active' : ''} 
+                    title='Dashboard' >
                     <div className='dashboard-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
@@ -38,7 +40,12 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>  
                 </Link>
 
-                <Link to='/Staff/Departments' title='Departments'>
+                <Link to={{     
+                        pathname:'/Staff/Departments',
+                        state: campusDetails
+                    }}
+                    className={activeTab === 'department' ? 'active' : ''}  
+                    title='Departments' >
                     <div className='classes-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-20px', right:0}}>
@@ -47,7 +54,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>
                 </Link>
 
-                <Link to='/Staff/Modules-Shelf' title='Modules'>
+                <Link to='/Staff/Modules-Shelf' 
+                    className={activeTab === 'moduleShelf' ? 'active' : ''} 
+                    title='Modules'>
                     <div className='module-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
@@ -56,7 +65,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>
                 </Link>
 
-                <Link to='/Staff/Students' title='Students'>
+                <Link to='/Staff/Students'
+                    className={activeTab === 'students' ? 'active' : ''} 
+                    title='Students'>
                     <div className='students-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
@@ -65,7 +76,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>
                 </Link>
 
-                <Link to='/Staff/Exams' >
+                <Link to='/Staff/Exams' 
+                    className={activeTab === 'exams' ? 'active' : ''}
+                    title='exams' >
                     <div className='exams-icon' title='Exams'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
@@ -74,7 +87,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>
                 </Link>
 
-                <Link to='/Staff/Time-Table' >
+                <Link to='/Staff/Time-Table'
+                    className={activeTab === 'timeTable' ? 'active' : ''}  
+                    title='Time Table' >
                     <div className='time-table-icon' title='Time Table'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
@@ -83,7 +98,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar}) {
                     </div>
                 </Link>
 
-                <Link to='/Staff/Events' title='Media'>
+                <Link to='/Staff/Events' 
+                    className={activeTab === 'Media' ? 'active' : ''} 
+                    title='Media' >
                     <div className='events-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>

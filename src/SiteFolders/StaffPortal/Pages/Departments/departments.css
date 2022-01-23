@@ -12,3 +12,65 @@
   top: 0;
   width: 3rem;
 }
+
+.pop-out-window {
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  height: auto;
+  left: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 6rem;
+  position: absolute;
+  top: 5%;
+  width: 60%;
+}
+
+.pop-up-title {
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.lg-pop-up-input {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  height: 2rem;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 2rem;
+  margin-right: auto;
+  padding-left: 1rem;
+  width: 70%;
+}
+
+.create-pop-up-button {
+  background-color: #353839;
+  bottom: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 2rem;
+  padding: 1rem;
+  position: absolute;
+  right: 6.5rem;
+}
+
+.close-pop-up-icon {
+  background-image: url("../../../../assets/close.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  height: 1rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1rem;
+}

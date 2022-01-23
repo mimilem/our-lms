@@ -16,5 +16,20 @@
         }
       }
     }
+  },
+  "auth": {
+    "vincoelearningd40f4111": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "function": {
+    "vincoelearning1e81a9b81e81a9b8PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }

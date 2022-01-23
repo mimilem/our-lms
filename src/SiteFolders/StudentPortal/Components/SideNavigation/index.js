@@ -14,7 +14,7 @@ import './sideNavigation.css';
 import FullSideNavigation from './FullSideNavigation';
 
 
-function SideNavigation({toggledBar, setToggledBar, activeTab}) {
+function SideNavigation({toggledBar, setToggledBar, activeTab }) {
 
     return (
         <div className='sideNav-container'>

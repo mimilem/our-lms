@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import './ToggledSideNavigation.css';
 
 
-function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
+function ToggledSideNavigation({ toggledBar, setToggledBar, activeTab }) {
 
     // Change the initiale state for when the 'Show 
     // Full Bar' button is clicked on.
@@ -28,8 +28,9 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab}) {
 
             <div className="toggled-side-navigation-container">
                 
-                <Link 
-                    to='/Students/Dashboard' 
+                <Link to={{     
+                        pathname:'/Students/Dashboard'
+                    }}
                     title='Dashboard' 
                     className={activeTab === 'dashboard' ? 'active' : ''}
                 >

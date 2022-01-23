@@ -28,7 +28,7 @@ function DashboardProfife() {
                     </div>
                     <div className='studentDash-class-details'>
                         <div>Student Number: 19992810</div>
-                        <div>Campus: Braamfontein</div>
+                        <div>Campus: </div>
                         <div>Departement: Computer Science</div>
                         <div>Year: 3</div>
                     </div>

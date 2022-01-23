@@ -9,7 +9,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 import './header.css';
 
 
-function Header() {
+function Header({signOut}) {
     
     const [isShown, setIsShown] = useState(false);
 
@@ -41,7 +41,7 @@ function Header() {
             </div>
             
             <div className='institution-name'>
-                Vinco-eLearning - {`Braamfontien Campus`} 
+                Vinco-eLearning - Name Campus 
             </div>
 
             {/* DON'T TOUCH */}
@@ -66,7 +66,10 @@ function Header() {
                                 <hr className='nav-tab-hr'/>
                                 <li>Settings</li>
                                 <hr className='nav-tab-hr'/>
-                                <Link to='/' className='sign-out'>Sign out</Link>
+                                <Link 
+                                    onClick={signOut}
+                                    className='sign-out'
+                                >Sign out</Link>
                             </ul> 
                         )}
                 

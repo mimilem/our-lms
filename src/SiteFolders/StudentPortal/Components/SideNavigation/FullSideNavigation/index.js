@@ -30,14 +30,18 @@ function FullSideNavigation(props) {
         toggledBar === false ?
             <div className="full-side-navigation-container">
                 
-                <Link to='/Students/Dashboard' 
+                <Link to={{     
+                        pathname:'/Students/Dashboard'
+                    }}
                     className={activeTab === 'dashboard' ? 'active' : ''} 
                 >
                     <div className='dashboard-icon'/>
                     <div className='side-navigation-text'>Dashboard</div>
                 </Link>
 
-                <Link to='/Students/MyCourses'
+                <Link to={{     
+                    pathname:'/Students/MyCourses'
+                }}
                     className={activeTab === 'myCourses' ? 'active' : ''} 
                 >
                         <div className='classes-icon'/>
@@ -89,7 +93,7 @@ function FullSideNavigation(props) {
             <ToggledSideNavigation 
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab}/>
+                activeTab={activeTab} />
     );
 }
 

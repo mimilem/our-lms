@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^2.1.9",
     "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@emotion/react": "^11.7.1",
     "@ericz1803/react-google-calendar": "^4.2.1",

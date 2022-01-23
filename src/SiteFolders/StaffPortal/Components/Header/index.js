@@ -9,7 +9,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 import './header.css';
 
 
-function Header() {
+function Header({ campusDetails }) {
     
     const [isShown, setIsShown] = useState(false);
 
@@ -41,7 +41,7 @@ function Header() {
             </div>
             
             <div className='institution-name'>
-                Vinco-eLearning - Braamfontein Campus
+                Vinco-eLearning - {campusDetails.campusName} Campus
             </div>
 
             {/* DON'T TOUCH */}
