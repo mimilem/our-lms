@@ -1,4 +1,4 @@
-import React, {useEffect, useState}  from 'react';
+import React, { useState }  from 'react';
 
 //import the styling compnent(s).
 import './timeTable.css';
@@ -6,32 +6,23 @@ import '../staffPages.css';
 
 //import all components that will be 
 //displayed on the pages.
-import Header from '../../Components/Header';
-import SideNavigation from '../../Components/SideNavigation';
+import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
 
 function TimeTablePage() {
 
     // Initiate a boolean state to check weither 
-    // the bar is toggled.
+    // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
+    const [activeTab, setActiveTab] = useState('timeTable');
 
     return (
         <div className='staff-pages-container'>
             
-            <Header />
-            
-            <div 
-                className={
-                    toggledBar === false ? 
-                        'full-side-navigation-container' 
-                        : 
-                        'toggled-side-navigation-container' 
-                }>
-                <SideNavigation 
-                    toggledBar={toggledBar} 
-                    setToggledBar={setToggledBar} />
-            </div>
+            <HeaderAndSideNav 
+                toggledBar={toggledBar} 
+                setToggledBar={setToggledBar}
+                activeTab={activeTab} />
 
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Time Table</div>

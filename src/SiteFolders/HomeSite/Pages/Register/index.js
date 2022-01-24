@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import './register-page.css';
 
-import BackgroundAnimation from '../../Components/BackgroundAnimation';
-import Footer from '../../Components/Footer';
 import NavigationTab from '../../Components/NavigationTab';
 import RegistrationForm from './Components/RegistrationForm';
 
@@ -18,7 +16,6 @@ function RegistrationIndexPage() {
     return (
         <div className='register-page-container'>
 
-            
             <NavigationTab />
 
             <div className='registration-form-background'>
@@ -27,7 +24,6 @@ function RegistrationIndexPage() {
                 </div>
             </div>
 
-            <Footer />
         </div>
     );
 }

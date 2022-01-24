@@ -24,6 +24,7 @@
   position: absolute;
   top: 5%;
   width: 60%;
+  z-index: 9999999999;
 }
 
 .pop-up-title {

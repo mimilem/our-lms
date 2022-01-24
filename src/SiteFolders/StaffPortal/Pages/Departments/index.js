@@ -26,12 +26,17 @@ function DepartmentsPage() {
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('department');
 
-    // State to keep and update the input value when the admin create the faculty name.
+    // State to keep and update the input value when the admin create 
+    // an instance.
     const [facultyNameInputValue, setFacultyNameInputValue] = useState('')
+    const [departmentNameInputValue, setDepartmentNameInputValue] = useState('')
 
     // Initial state to display the pop-out screens. 
+    const [showCreateFaculty, setShowCreateFaculty] = useState(false)
     const [showCreateDepartment, setShowCreateDepartment] = useState(false)
-    const [showCreateCourse, setShowCreateCourse] = useState(false)
+
+    // Update the state of the faculty ID
+    const [stateFacultyID, setStateFacultyID] = useState([])
 
     let location = useLocation()
     let locationCampusDetails = {
@@ -41,15 +46,29 @@ function DepartmentsPage() {
     // This Function is used to create a new faculty
     // then reload the page.
     const createNewFaculty = async () => {
-            const facultyDetails = {
-                facultyName: facultyNameInputValue,
-                campusID: locationCampusDetails.locationCampusID
-            };
-            const newFaculty = await API.graphql({ 
-                query: mutations.createFaculty, 
-                variables: {input: facultyDetails}
-            });
-            window.location.reload(false);
+        const facultyDetails = {
+            facultyName: facultyNameInputValue,
+            campusID: locationCampusDetails.locationCampusID
+        };
+        const newFaculty = await API.graphql({ 
+            query: mutations.createFaculty, 
+            variables: {input: facultyDetails}
+        });
+        window.location.reload(false);
+    }
+
+    // This Function is used to create a new department
+    // then reload the page.
+    const createNewDepartment = async () => {
+        const departmentDetails = {
+            departmentName: departmentNameInputValue,
+            facultyID: stateFacultyID
+        };
+        const newDepartment = await API.graphql({ 
+            query: mutations.createDepartment, 
+            variables: {input: departmentDetails}
+        });
+        window.location.reload(false);
     }
 
     return (
@@ -65,15 +84,17 @@ function DepartmentsPage() {
                 <hr className='staff-page-hr'/>
 
                 <DepartmentsList 
+                    setShowCreateFaculty={setShowCreateFaculty}
                     setShowCreateDepartment={setShowCreateDepartment}
-                    locationCampusDetails={locationCampusDetails} />
+                    locationCampusDetails={locationCampusDetails}
+                    setStateFacultyID={setStateFacultyID} />
 
                 {/* The Pup-out window that allows the admin to create */}
                 {/* a new faculty or school. */}
                 {/* By default the display is set to false */}
                 <div 
                     className='pop-out-window'
-                    style={{ display:showCreateDepartment === false ? 'none' : ''}} >
+                    style={{ display:showCreateFaculty === false ? 'none' : ''}} >
                         <div className='pop-up-title' >Create a new Faculty</div>
                         <input
                             className='lg-pop-up-input'
@@ -83,9 +104,35 @@ function DepartmentsPage() {
                         />
                         <div 
                             className='close-pop-up-icon' 
-                            onClick={ () => setShowCreateDepartment(false)} />
-                        <div onClick={ createNewFaculty } className='create-pop-up-button'>Create</div>
+                            onClick={ () => setShowCreateFaculty(false)} />
+                        <div 
+                            onClick={ createNewFaculty } 
+                            className='create-pop-up-button'
+                        >Create</div>
                 </div>
+
+                {/* The Pup-out window that allows the admin to create */}
+                {/* a new department. */}
+                {/* By default the display is set to false */}
+                <div 
+                    className='pop-out-window'
+                    style={{ display:showCreateDepartment === false ? 'none' : ''}} >
+                        <div className='pop-up-title'>Create a new Department</div>
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Faculty Name'
+                            value={departmentNameInputValue}
+                            onChange={e => setDepartmentNameInputValue(e.target.value)}
+                        />
+                        <div 
+                            className='close-pop-up-icon' 
+                            onClick={ () => setShowCreateDepartment(false)} />
+                        <div 
+                            onClick={ createNewDepartment } 
+                            className='create-pop-up-button'
+                        >Create</div>
+                </div>
+                
 
             </div>
         </div>

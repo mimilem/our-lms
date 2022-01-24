@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 //import the styling compnent(s).
 import './dashboard.css';
@@ -6,8 +6,6 @@ import '../staffPages.css';
 
 //import all components that will be 
 //displayed on the pages.
-import Header from '../../Components/Header';
-import SideNavigation from '../../Components/SideNavigation';
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
 

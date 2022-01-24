@@ -10,6 +10,8 @@ import Article from '../SiteFolders/HomeSite/Pages/Media/Article';
 import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
 import Home from '../SiteFolders/HomeSite/Pages/Home';
 import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
+import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
+import RegistrationFormPage2 from '../SiteFolders/HomeSite/Pages/Register/Components/RegistrationForm/RegistrationFormPage2';
 
 //import the StudentPortal site pages
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
@@ -39,7 +41,6 @@ import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
 import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
 import MyWorks from '../SiteFolders/StudentPortal/Pages/MyWork';
-import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
 
 
 function Router() {
@@ -54,8 +55,9 @@ function Router() {
                 {/* Home Site Routes path */}
                 <Route exact path='/Contact' component={ContactPage} />
                 <Route exact path='/Media' component={MediaPage} />
-                <Route exact path='/Media/Article' component={Article}/>
-                <Route exact path='/Register' component={RegistrationIndexPage}/>
+                <Route exact path='/Media/Article' component={Article} />
+                <Route exact path='/Register' component={RegistrationIndexPage} />
+                <Route exact path='/Registerpage=2' component={RegistrationFormPage2} /> 
                 <Route exact path='/student-login' component={Login} />
 
                 {/* Staff Portail Routes path */}

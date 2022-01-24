@@ -60,4 +60,4 @@ function StudentsDashboard({signOut}) {
     );
 }
 
-export default withAuthenticator(StudentsDashboard);
+export default StudentsDashboard;

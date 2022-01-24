@@ -3,27 +3,39 @@ import { Link } from 'react-router-dom';
 
 //import aws api and components to create new cart item
 import { API, graphqlOperation } from "aws-amplify";
-import { listFacultys } from '../../../../graphql/queries';
+import { listFacultys, listDepartments } from '../../../../graphql/queries';
 
 import './departmentsList.css' ;
 
 
-function DepartmentsList({ setShowCreateDepartment, locationCampusDetails }) {
+function DepartmentsList({ 
+    setShowCreateFaculty, 
+    setShowCreateDepartment,
+    setStateFacultyID,
+    locationCampusDetails 
+}) {
 
     const [toggleDown, setToggleDown1] = useState(false)
 
     const [ faculty, setFaculty ] = useState([])
+    const [department, setDepartment] = useState([])
 
-     /* fetch the API data of faculties */
+     /* fetch the API data of faculties and departements */
      useEffect( () => {
         const fetchFaculty = async () => {
             try {
-                    const facultyResults = await API.graphql(
-                        graphqlOperation(listFacultys)
-                    )
-                    const faculty = facultyResults.data.listFacultys.items
-                    setFaculty(faculty)
-                } 
+                const facultyResults = await API.graphql(
+                    graphqlOperation(listFacultys)
+                )
+                const faculty = facultyResults.data.listFacultys.items
+                setFaculty(faculty)
+
+                const departmentResults = await API.graphql(
+                    graphqlOperation(listDepartments)
+                )
+                const department = departmentResults.data.listDepartments.items
+                setDepartment(department)
+            } 
             catch (error) {
                 console.log(error)
             }
@@ -33,7 +45,7 @@ function DepartmentsList({ setShowCreateDepartment, locationCampusDetails }) {
 
     return (
         <div>
-            <div onClick={() => setShowCreateDepartment(true)} className='exams-calendar-tilte'>
+            <div onClick={() => setShowCreateFaculty(true)} className='exams-calendar-tilte'>
                 + Add a new department
             </div>  
 
@@ -45,7 +57,8 @@ function DepartmentsList({ setShowCreateDepartment, locationCampusDetails }) {
             <div className='this-container'>
                     { toggleDown === false ?
                         <div 
-                        className='class-exams-calendar-tilte' style={{marginBottom:'25px'}} 
+                        className='class-exams-calendar-tilte' 
+                        style={{marginBottom:'25px'}} 
                         onClick={()=> setToggleDown1(true)}>
                             {item.facultyName} <div className='access'>↓</div>
                         </div> 
@@ -56,12 +69,26 @@ function DepartmentsList({ setShowCreateDepartment, locationCampusDetails }) {
                             </div> 
                             <div className='departments-list-container'>
                                 <ul>
-                                    <Link to='/Staff/Class'>
-                                        <div style={{color: '#353839', cursor:'pointer'}}>+ Add a new course</div>
+                                    <Link>
+                                        <div 
+                                            style={{color: '#353839', cursor:'pointer'}}
+                                            onClick={() => {
+                                                setShowCreateDepartment(true)
+                                                setStateFacultyID(item.id)
+                                            }}
+                                        >+ Add a new course</div>
                                     </Link>
-                                    <Link to='/Staff/Class'>
-                                        <li>Financial accounting</li>
-                                    </Link>
+                                    { 
+                                    department.map((items) =>
+                                        items.facultyID === item.id ?
+                                        <Link to={{
+                                            pathname:'/Staff/Class',
+                                            state: items
+                                        }}>
+                                            <li>{items.departmentName}</li>
+                                        </Link>
+                                        : ''
+                                    )}
                                 </ul>
                             </div> 
                         </>

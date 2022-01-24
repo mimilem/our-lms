@@ -9,30 +9,23 @@ import '../staffPages.css';
 import Header from '../../Components/Header';
 import SideNavigation from '../../Components/SideNavigation';
 import StudentsList from '../../Components/StudentsList';
+import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
 
 function StudentsPage() {
 
     // Initiate a boolean state to check weither 
-    // the bar is toggled.
+    // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
+    const [activeTab, setActiveTab] = useState('students');
 
     return (
         <div className="staff-pages-container">
 
-            <Header />
-            
-            <div 
-                className={
-                    toggledBar === false ? 
-                        'full-side-navigation-container' 
-                        : 
-                        'toggled-side-navigation-container' 
-                }>
-                <SideNavigation 
-                    toggledBar={toggledBar} 
-                    setToggledBar={setToggledBar} />
-            </div> 
+            <HeaderAndSideNav 
+                toggledBar={toggledBar} 
+                setToggledBar={setToggledBar}
+                activeTab={activeTab} /> 
 
             <div className='staff-pages-content'>
 
