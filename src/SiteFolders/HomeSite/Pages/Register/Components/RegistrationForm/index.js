@@ -7,6 +7,8 @@ import './register-form.css';
 
 function RegistrationForm() {
 
+    const [next, setNext] =useState(false)
+
     const [campusName, setCampusName] = useState("Bryanston")
     const [yearOfStudy, setYearOfStudy] = useState('')
     const [studentTitle, setStudentTitle] = useState('')
@@ -35,6 +37,8 @@ function RegistrationForm() {
         studentHomeLanguage,
     }
 
+    let location = useLocation()
+
     return (
         <>
             <div className='registration-form-container'>
@@ -49,7 +53,8 @@ function RegistrationForm() {
                     placeholder='Year of Intended Study'
                     className='md-registration-form-input'
                     type='numeric'
-                    value={yearOfStudy }
+                    value={ location.state && location.state.back === true 
+                        ? location.state.studentYearOfStudy : yearOfStudy  }
                     onChange={e => setYearOfStudy(e.target.value)}
                 />
                 <input 
@@ -66,7 +71,8 @@ function RegistrationForm() {
                     placeholder='Title'
                     className='sm-registration-form-input'
                     type='text'
-                    value={studentTitle}
+                    value={location.state && location.state.back === true 
+                        ? location.state.studentTitle : studentTitle}
                     onChange={e => setStudentTitle(e.target.value)}
                 />
 
@@ -74,14 +80,16 @@ function RegistrationForm() {
                     placeholder='Full Names'
                     className='lg-registration-form-input'
                     type='text'
-                    value={studentFullName}
+                    value={location.state && location.state.back === true 
+                        ? location.state.studentFullName : studentFullName}
                     onChange={e => setStudentFullName(e.target.value)}
                 />
                 <input 
                     placeholder='Surname'
                     className='lg-registration-form-input'
                     type='text'
-                    value={studentSurname}
+                    value={ location.state && location.state.back === true 
+                        ? location.state.studentSurname : studentSurname}
                     onChange={e => setStudentSurname(e.target.value)}
                 />
                 <br/>
@@ -90,14 +98,16 @@ function RegistrationForm() {
                     placeholder='Phone Number'
                     className='lg-registration-form-input'
                     type='tel'
-                    value={studentPoneNumber}
+                    value={location.state && location.state.back === true 
+                        ? location.state.studentPhoneNumber : studentPoneNumber}
                     onChange={e => setStudentPhoneNumber(e.target.value)}
                 />
                 <input 
                     placeholder='Email'
                     className='lg-registration-form-input'
                     type='email'
-                    value={studentEmail}
+                    value={location.state && location.state.back === true 
+                        ? location.state.studentEmail : studentEmail}
                     onChange={e => setStudentEmail(e.target.value)}
                 />
                 <br/>
@@ -150,7 +160,7 @@ function RegistrationForm() {
                 <Link to={{
                     pathname: '/Registerpage=2',
                     state: registrationDetails }}>
-                    <button className='form-next-button'>
+                    <button className='form-next-button' onClick={() => setNext(true)}>
                         Next
                     </button>
                 </Link>

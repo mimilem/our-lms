@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^2.1.9",
     "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@emailjs/browser": "^3.4.0",
     "@emotion/react": "^11.7.1",
     "@ericz1803/react-google-calendar": "^4.2.1",
     "@react-pdf-viewer/core": "^3.0.0",

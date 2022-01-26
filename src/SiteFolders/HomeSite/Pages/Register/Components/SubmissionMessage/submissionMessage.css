@@ -1,0 +1,40 @@
+.submissionMsg-container {
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  height: auto;
+  left: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  position: fixed;
+  top: 30%;
+  width: 60%;
+  z-index: 9999999999;
+}
+
+.submissionMsg-image {
+  display: flex;
+  background-image: url(../../../../../../assets/check-mark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 95px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 95px;
+}
+
+.submissionMsg-title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.submissionMsg-message {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+}
