@@ -82,7 +82,7 @@ function DepartmentsList({
                                     department.map((items) =>
                                         items.facultyID === item.id ?
                                         <Link to={{
-                                            pathname:'/Staff/Class',
+                                            pathname:'/Staff/Departments/ModulesList',
                                             state: items
                                         }}>
                                             <li>{items.departmentName}</li>

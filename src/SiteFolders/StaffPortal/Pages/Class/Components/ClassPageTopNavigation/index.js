@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import Select from 'react-select';
 
 import './classPageTopNavigation.css'
 
 import ExamsPage from '../../../Exams';
-import SubjectsList from '../SubjectsList';
+import ModulesList from '../ModulesList';
 import StudentsList from '../../../../Components/StudentsList';
 import Lessons from '../Lessons';
-import Students from '../Students';
+import Students from '../ClassStudents';
 import Exams from '../Exams';
 import Reports from '../Reports';
 
 
-function ClassPageTopNavigation() {
-
-    const [tabContent, setTabContent] = useState('subjects')
+function ClassPageTopNavigation({ departmentDetails, tabContent, chosedModule, moduleDetails }) {
 
     const data = [
         {
@@ -55,8 +54,7 @@ function ClassPageTopNavigation() {
     }
         
     return (
-
-        <div>      
+        <>
             <div className="choose-tab-element">
                 <Select
                     placeholder="Choose a subject"
@@ -64,100 +62,131 @@ function ClassPageTopNavigation() {
                     options={data} // set list of the data
                     onChange={handleChange} // assign onChange function
                 />
-                {/* <input 
-                    className="choose-tab-element-dropdown" 
-                    placeholder='Choose a subject'/> */}
             </div>  
+
             <div className='class-top-navigation-container'>
 
                 {/* Tab navigation list */}
-                <div 
-                    className={
-                        tabContent === 'subjects' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('subjects')}>
-                    Subjects
-                </div>
-                <div 
-                    className={
-                        tabContent === 'lessons' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('lessons')}>
-                    lessons
-                </div>
-                <div 
-                    className={
-                        tabContent === 'students' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('students')}>
-                    Students
-                </div>
-                <div 
-                    className={
-                        tabContent === 'timeTable' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('timeTable')}>
-                    Time Table
-                </div>
-                <div 
-                    className={
-                        tabContent === 'exams' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('exams')}
-                >
-                    Exams
-                </div>
-                <div 
-                    className={
-                        tabContent === 'reports' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('reports')}
-                >
-                    Reports
-                </div>
-                <div 
-                    className={
-                        tabContent === 'chatRoom' ? 
-                        "active-class-top-navigation-tab-element" 
-                        : 
-                        "class-top-navigation-tab-element"
-                    }
-                    onClick={()=> setTabContent('chatRoom')}
-                >
-                    Discussion
-                </div>
-            </div>
+                <Link
+                    to={{     
+                        pathname:'/Staff/Departments/ModulesList',
+                        state: departmentDetails
+                    }}>
+                    <div 
+                        className={
+                            tabContent === 'modules' ? 
+                            "active-class-top-navigation-tab-element" 
+                            : 
+                            "class-top-navigation-tab-element"
+                        }>
+                        Modules
+                    </div>
+                </Link>
+                    
+                {
+                    chosedModule === false ? 
+                    <>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Chapters
+                        </div>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Students
+                        </div>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Time Table
+                        </div>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Exams
+                        </div>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Reports
+                        </div>
+                        <div className="dis-class-top-navigation-tab-element">
+                            Discussion
+                        </div>
+                    </>
+                    :
+                    <>
+                        <Link to={{     
+                            pathname:'/Staff/Departments/Lessons',
+                            state: {departmentDetails, moduleDetails}
+                        }} >
+                            <div 
+                                className={
+                                    tabContent === 'lessons' ? 
+                                    "active-class-top-navigation-tab-element" 
+                                    : 
+                                    "class-top-navigation-tab-element"
+                                }>
+                                Chapters
+                            </div>
+                        </Link>
+                        
+                        <Link to={{     
+                            pathname:'/Staff/Departments/TimeTable',
+                            state: departmentDetails
+                        }}>
+                            <div 
+                                className={
+                                    tabContent === 'timeTable' ? 
+                                    "active-class-top-navigation-tab-element" 
+                                    : 
+                                    "class-top-navigation-tab-element"
+                                }>
+                                Time Table
+                            </div>
+                        </Link>
 
-            <div>
-            {tabContent === 'subjects' ? <SubjectsList />: []}
-            {tabContent === 'lessons' ? <Lessons />: []}
-            {tabContent === 'students' ? <Students />: []}
-            {tabContent === 'timeTable' ? 
-                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
-            {tabContent === 'exams' ? <Exams />: []}
-            {tabContent === 'reports' ? <Reports />: []}
-            {tabContent === 'chatRoom' ? 
-                <h1 className='not-available-msg'>Not Yet Available</h1>: []}
+                        
+                        <div 
+                            className={
+                                tabContent === 'exams' ? 
+                                "active-class-top-navigation-tab-element" 
+                                : 
+                                "class-top-navigation-tab-element"
+                            }>
+                            Exams
+                        </div>
+                        
+                        <div 
+                            className={
+                                tabContent === 'reports' ? 
+                                "active-class-top-navigation-tab-element" 
+                                : 
+                                "class-top-navigation-tab-element"
+                            }>
+                            Reports
+                        </div>
+                        
+                        <Link to={{     
+                            pathname:'/Staff/Departments/Students',
+                            state: {departmentDetails, moduleDetails}
+                        }}>
+                            <div 
+                                className={
+                                    tabContent === 'students' ? 
+                                    "active-class-top-navigation-tab-element" 
+                                    : 
+                                    "class-top-navigation-tab-element"
+                                }>
+                                Students
+                            </div>
+                        </Link>
+                        
+                        <div 
+                            className={
+                                tabContent === 'chatRoom' ? 
+                                "active-class-top-navigation-tab-element" 
+                                : 
+                                "class-top-navigation-tab-element"
+                            }>
+                            Discussion
+                        </div>
+                    </>
+                }
             </div>
-        </div>
+        </>
+        
     );
 }
 

@@ -18,7 +18,7 @@ function AllStudentsList() {
         <>
             <div className='allStudentsList-container'>
                 
-                <Link to={'/Staff/Students/Profile='+studentName}
+                <Link to={'/Staff/Students/Profile='}
                     className='student-card-container' 
                     title='View Profile'>
                 
@@ -41,7 +41,7 @@ function AllStudentsList() {
 
                 </Link>
 
-                <Link to={'/Staff/Students/Profile='+studentName}
+                <Link to={'/Staff/Students/Profile='}
                     className='student-card-container' 
                     title='View Profile'>
                 
@@ -63,7 +63,7 @@ function AllStudentsList() {
                     </div>
 
                 </Link>
-                <Link to={'/Staff/Students/Profile='+studentName}
+                <Link to={'/Staff/Students/Profile='}
                     className='student-card-container' 
                     title='View Profile'>
                 
@@ -85,7 +85,7 @@ function AllStudentsList() {
                     </div>
 
                 </Link>
-                <Link to={'/Staff/Students/Profile='+studentName}
+                <Link to={'/Staff/Students/Profile='}
                     className='student-card-container' 
                     title='View Profile'>
                 

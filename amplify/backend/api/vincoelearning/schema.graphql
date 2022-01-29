@@ -32,4 +32,14 @@ type Class
   classYear: Int!
   departmentID: ID!
   department: Department @connection(fields: ["departmentID"])
+  modules: [ClassModule] @connection(keyName: "byClass", fields: ["id"])
+}
+
+type ClassModule
+  @model
+  @key(name: "byClass", fields: ["classID", "moduleName"]) {
+  id: ID!
+  moduleName: String!
+  classID: ID
+  class: Class @connection(fields: ["classID"])
 }

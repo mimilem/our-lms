@@ -1,7 +1,6 @@
 .subjects-list-container {
   display: block;
-  margin-left: 2.5rem;
-  margin-top: -50px;
+  margin-left: 0.5rem;
 }
 
 .first-subtitle {
@@ -10,4 +9,11 @@
 
 .subjects-list {
   font-size: 18px;
+}
+
+.add-new-module {
+  margin-bottom: 80px;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 9;
 }

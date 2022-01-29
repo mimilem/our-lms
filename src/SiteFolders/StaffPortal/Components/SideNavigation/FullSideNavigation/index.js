@@ -47,7 +47,10 @@ function FullSideNavigation(props) {
                         <div className='side-navigation-text'>Departments</div>
                 </Link>
 
-                <Link to='/Staff/Modules-Shelf'
+                <Link to={{     
+                    pathname:'/Staff/Modules-Shelf',
+                    state: campusDetails
+                }}
                     className={activeTab === 'moduleShelf' ? 'active' : ''} 
                 >
                     <div className='module-icon'/>

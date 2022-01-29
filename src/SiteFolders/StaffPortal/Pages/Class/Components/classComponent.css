@@ -7,3 +7,14 @@
 .first-subtitle {
   font-size: 30px;
 }
+
+.down-icon {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin-left: 0.5rem;
+  padding-top: 2px;
+  position: absolute;
+  width: 30px;
+}

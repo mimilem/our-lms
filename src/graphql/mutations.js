@@ -15,6 +15,26 @@ export const createCampus = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -39,6 +59,26 @@ export const updateCampus = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -63,6 +103,26 @@ export const deleteCampus = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -87,6 +147,23 @@ export const createFaculty = /* GraphQL */ `
         institutionName
         campusName
         faculties {
+          items {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -97,6 +174,33 @@ export const createFaculty = /* GraphQL */ `
           id
           departmentName
           facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -121,6 +225,23 @@ export const updateFaculty = /* GraphQL */ `
         institutionName
         campusName
         faculties {
+          items {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -131,6 +252,33 @@ export const updateFaculty = /* GraphQL */ `
           id
           departmentName
           facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -155,6 +303,23 @@ export const deleteFaculty = /* GraphQL */ `
         institutionName
         campusName
         faculties {
+          items {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -165,6 +330,33 @@ export const deleteFaculty = /* GraphQL */ `
           id
           departmentName
           facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -192,10 +384,37 @@ export const createDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          faculties {
+            items {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         departments {
+          items {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -206,6 +425,33 @@ export const createDepartment = /* GraphQL */ `
           id
           classYear
           departmentID
+          department {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          modules {
+            items {
+              id
+              moduleName
+              classID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -233,10 +479,37 @@ export const updateDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          faculties {
+            items {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         departments {
+          items {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -247,6 +520,33 @@ export const updateDepartment = /* GraphQL */ `
           id
           classYear
           departmentID
+          department {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          modules {
+            items {
+              id
+              moduleName
+              classID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -274,10 +574,37 @@ export const deleteDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          faculties {
+            items {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         departments {
+          items {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
@@ -288,6 +615,33 @@ export const deleteDepartment = /* GraphQL */ `
           id
           classYear
           departmentID
+          department {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          modules {
+            items {
+              id
+              moduleName
+              classID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -315,14 +669,78 @@ export const createClass = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         classes {
+          items {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
         updatedAt
+      }
+      modules {
+        items {
+          id
+          moduleName
+          classID
+          class {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -346,14 +764,78 @@ export const updateClass = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         classes {
+          items {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
         updatedAt
+      }
+      modules {
+        items {
+          id
+          moduleName
+          classID
+          class {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -377,10 +859,290 @@ export const deleteClass = /* GraphQL */ `
           id
           facultyName
           campusID
+          campus {
+            id
+            institutionName
+            campusName
+            faculties {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          departments {
+            items {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         classes {
+          items {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      modules {
+        items {
+          id
+          moduleName
+          classID
+          class {
+            id
+            classYear
+            departmentID
+            department {
+              id
+              departmentName
+              facultyID
+              createdAt
+              updatedAt
+            }
+            modules {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createClassModule = /* GraphQL */ `
+  mutation CreateClassModule(
+    $input: CreateClassModuleInput!
+    $condition: ModelClassModuleConditionInput
+  ) {
+    createClassModule(input: $input, condition: $condition) {
+      id
+      moduleName
+      classID
+      class {
+        id
+        classYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateClassModule = /* GraphQL */ `
+  mutation UpdateClassModule(
+    $input: UpdateClassModuleInput!
+    $condition: ModelClassModuleConditionInput
+  ) {
+    updateClassModule(input: $input, condition: $condition) {
+      id
+      moduleName
+      classID
+      class {
+        id
+        classYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteClassModule = /* GraphQL */ `
+  mutation DeleteClassModule(
+    $input: DeleteClassModuleInput!
+    $condition: ModelClassModuleConditionInput
+  ) {
+    deleteClassModule(input: $input, condition: $condition) {
+      id
+      moduleName
+      classID
+      class {
+        id
+        classYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              classYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt

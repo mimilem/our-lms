@@ -62,7 +62,11 @@ function Header({ campusDetails }) {
                         
                         {isShown && (
                             <ul className='profile-dropdown-menu'>
-                                <li>Profile</li>
+                                <Link to='/Staff/Students/Profile=' style={{textDecoration:'none'}}>
+                                    <li>
+                                        Profile
+                                    </li>
+                                </Link>
                                 <hr className='nav-tab-hr'/>
                                 <li>Settings</li>
                                 <hr className='nav-tab-hr'/>

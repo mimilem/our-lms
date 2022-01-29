@@ -18,19 +18,20 @@ import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
-import ClassesPage from '../SiteFolders/StaffPortal/Pages/Classes';
 import DepartmentsPage from '../SiteFolders/StaffPortal/Pages/Departments';
 import Events from '../SiteFolders/StaffPortal/Pages/Events';
 import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
 import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
+import ModulesList from '../SiteFolders/StaffPortal/Pages/Class/Components/ModulesList';
+import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
+import ClassStudents from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassStudents';
+import ClassTimeTable from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassTimeTable';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
-import StaffIndexView from '../SiteFolders/StaffPortal/StaffIndexView';
 import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
 import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
-import ClassPage from '../SiteFolders/StaffPortal/Pages/Class';
 
 //import the StudentPortal site pages
 import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
@@ -61,10 +62,12 @@ function Router() {
                 <Route exact path='/student-login' component={Login} />
 
                 {/* Staff Portail Routes path */}
-                <Route exact path='/Staff/Classes' component={ClassesPage}/>
-                <Route exact path='/Staff/Class' component={ClassPage}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
                 <Route exact path='/Staff/Departments' component={DepartmentsPage}/>
+                <Route exact path='/Staff/Departments/ModulesList' component={ModulesList}/>
+                <Route exact path='/Staff/Departments/Lessons' component={Lessons}/>
+                <Route exact path='/Staff/Departments/Students' component={ClassStudents}/>
+                <Route exact path='/Staff/Departments/TimeTable' component={ClassTimeTable}/>
                 <Route exact path='/Staff/Events' component={Events}/>
                 <Route exact path='/Staff/Exams' component={ExamsPage}/>
                 <Route exact path='/Staff/Exams/Calendar' component={CalendarPage}/>
@@ -72,7 +75,7 @@ function Router() {
                 <Route exact path='/Staff/Modules-Shelf' component={ModulePage}/>
                 <Route exact path='/Staff/Reports' component={Reports}/>
                 <Route exact path='/Staff/Students' component={StudentsPage}/>
-                <Route exact path={'/Staff/Students/Profile='+ studentName} component={StudentsProfile}/>
+                <Route exact path='/Staff/Students/Profile=' component={StudentsProfile}/>
                 <Route exact path='/Staff/Time-Table' component={TimeTablePage}/>
                 
                 {/* Students Portail Routes path */}

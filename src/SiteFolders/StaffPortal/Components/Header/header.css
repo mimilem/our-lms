@@ -78,6 +78,10 @@
   transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
   width: 10rem;
 }
+.profile-dropdown-menu li {
+  color: #000;
+  text-decoration: none;
+}
 .profile-dropdown-menu li:hover {
   color: #5d8aa8;
   cursor: pointer;
