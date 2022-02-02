@@ -6,7 +6,7 @@ import PendingStudentsList from './PendingStudentsList';
 import './studentsList.css';
 
 
-function StudentsList() {
+function StudentsList({ searchStudentsByNameFilter, studentFilterData, searchStudentByName }) {
 
     const [activeTab, setActiveTab] = useState('allStudents');
 
@@ -28,7 +28,8 @@ function StudentsList() {
 
             <hr className='staff-page-hr' style={{marginTop:10}}/>
 
-            { activeTab === 'allStudents' ? <AllStudentsList /> : <PendingStudentsList /> }
+            { activeTab === 'allStudents' ? 
+                <AllStudentsList studentFilterData={studentFilterData} /> : <PendingStudentsList /> }
         </div>
     );
 }

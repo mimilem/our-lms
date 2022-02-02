@@ -3,7 +3,7 @@ import React from 'react';
 import './submissionMessage.css';
 
 
-function SubmissionMessage(props) {
+function SubmissionMessage() {
     return (
         <div className='submissionMsg-container'>
             <div className=''>

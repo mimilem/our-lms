@@ -30,13 +30,18 @@ function DepartmentsPage() {
     // an instance.
     const [facultyNameInputValue, setFacultyNameInputValue] = useState('')
     const [departmentNameInputValue, setDepartmentNameInputValue] = useState('')
+    const [qualificationNameInputValue, setQualificationNameInputValue] = useState('')
+    const [qualificationLevelInputValue, setQualificationLevelInputValue] = useState('')
+    const [qualificationYearInputValue, setQualificationYearInputValue] = useState('')
 
     // Initial state to display the pop-out screens. 
     const [showCreateFaculty, setShowCreateFaculty] = useState(false)
     const [showCreateDepartment, setShowCreateDepartment] = useState(false)
+    const [showCreateQualification, setShowCreateQualification] = useState(false)
 
-    // Update the state of the faculty ID
+    // Update the state of the faculty and department ID
     const [stateFacultyID, setStateFacultyID] = useState([])
+    const [stateDepartmentID, setStateDepartmentID] = useState([])
 
     let location = useLocation()
     let locationCampusDetails = {
@@ -70,6 +75,22 @@ function DepartmentsPage() {
         });
         window.location.reload(false);
     }
+    
+    // This Function is used to create a new qualification
+    // then reload the page.
+    const createNewQualification = async () => {
+        const qualificationDetails = {
+            qualificationName: qualificationNameInputValue,
+            qualificationLevel: qualificationLevelInputValue,
+            qualificationYear: qualificationYearInputValue,
+            departmentID: stateDepartmentID,
+        };
+        const newQualification = await API.graphql({ 
+            query: mutations.createClass, 
+            variables: {input: qualificationDetails}
+        });
+        window.location.reload(false);
+    }
 
     return (
         <div className="staff-pages-container">
@@ -86,8 +107,10 @@ function DepartmentsPage() {
                 <DepartmentsList 
                     setShowCreateFaculty={setShowCreateFaculty}
                     setShowCreateDepartment={setShowCreateDepartment}
+                    setShowCreateQualification={setShowCreateQualification}
                     locationCampusDetails={locationCampusDetails}
-                    setStateFacultyID={setStateFacultyID} />
+                    setStateFacultyID={setStateFacultyID}
+                    setStateDepartmentID={setStateDepartmentID} />
 
                 {/* The Pup-out window that allows the admin to create */}
                 {/* a new faculty or school. */}
@@ -120,7 +143,7 @@ function DepartmentsPage() {
                         <div className='pop-up-title'>Create a new Department</div>
                         <input
                             className='lg-pop-up-input'
-                            placeholder='Faculty Name'
+                            placeholder='Department Name'
                             value={departmentNameInputValue}
                             onChange={e => setDepartmentNameInputValue(e.target.value)}
                         />
@@ -132,7 +155,40 @@ function DepartmentsPage() {
                             className='create-pop-up-button'
                         >Create</div>
                 </div>
-                
+
+                {/* The Pup-out window that allows the admin to create */}
+                {/* a new qualification. */}
+                {/* By default the display is set to false */}
+                <div 
+                    className='pop-out-window'
+                    style={{ display:showCreateQualification === false ? 'none' : ''}} >
+                        <div className='pop-up-title'>Create a new qualification</div>
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Qualification Name'
+                            value={qualificationNameInputValue}
+                            onChange={e => setQualificationNameInputValue(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Qualification Level'
+                            value={qualificationLevelInputValue}
+                            onChange={e => setQualificationLevelInputValue(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Qualification Year (number only)'
+                            value={qualificationYearInputValue}
+                            onChange={e => setQualificationYearInputValue(e.target.value)}
+                        />
+                        <div 
+                            className='close-pop-up-icon' 
+                            onClick={ () => setShowCreateQualification(false)} />
+                        <div 
+                            onClick={ createNewQualification } 
+                            className='create-pop-up-button'
+                        >Create</div>
+                </div>  
 
             </div>
         </div>

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import './module-list.css';
-
-import ClassHeader from '../ClassHeader';
-import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
-
 // Import the amplify API and components to handle the 
 // requests.
 import { API, graphqlOperation } from "aws-amplify";
 import { listClassModules } from '../../../../../../graphql/queries';
 import * as mutations from '../../../../../../graphql/mutations';
+
+//import the styling compnent(s).
+import './module-list.css';
+
+import ClassHeader from '../ClassHeader';
+import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 
 
 function ModulesList() {
@@ -28,38 +29,44 @@ function ModulesList() {
     const [moduleNameInputValue, setModuleNameInputValue] = useState('')
     // Initial state to display the pop-out screens. 
     const [showCreateModule, setShowCreateModule] = useState(false)
-
+    //used to create new ClassModule
     const [classModules, setClassModules] = useState([])
 
+    // Receive states from DepartmentList Component
     let location = useLocation();
 
-    const departmentDetails = {
-        departmentName: location.state.departmentName,
-        departmentID: location.state.id
+    const qualificationDetails = location.state.id !== undefined ? {
+            qualificationId: location.state.id,
+            departmentId: location.state.departmentID,
+            qualificationName: location.state.qualificationName,
+            qualificationLevel: location.state.qualificationLevel,
+            qualificationYear: location.state.qualificationYear,
+        }
+        : 
+        {
+            qualificationId:location.state.qualificationDetails.qualificationId,
+            departmentId: location.state.qualificationDetails.departmentID,
+            qualificationName: location.state.qualificationDetails.qualificationName,
+            qualificationLevel:location.state.qualificationDetails.qualificationLevel,
+            qualificationYear:location.state.qualificationDetails.qualificationYear,
+    } 
+    
+    console.log(qualificationDetails.qualificationId)
+    
+    const moduleDetails = location.state.moduleDetails && {
+        id: location.state.moduleDetails.id,
+        classID: location.state.moduleDetails.classID,
+        departmentId: location.state.moduleDetails.departmentId,
+        moduleName: location.state.moduleDetails.moduleName,
     }
 
-    /* fetch the API data of ClassModule*/
-    useEffect( () => {
-        const fetchModules = async () => {
-            try {
-                const departmentResults = await API.graphql(
-                    graphqlOperation(listClassModules)
-                )
-                const department = departmentResults.data.listClassModules.items
-                setClassModules(department)
-            } 
-            catch (error) {
-                console.log(error)
-            }
-        }
-        fetchModules();
-    }, [])
-
-    // This Function is used to create a new module
+    // This Function is used to create a new ClassModule
     // then reload the page.
     const createNewModule = async () => {
         const moduleDetails = {
-            moduleName: moduleNameInputValue
+            moduleName: moduleNameInputValue,
+            classID: qualificationDetails.qualificationId === '' ? '' 
+                : qualificationDetails.qualificationId
         };
         const newModule = await API.graphql({ 
             query: mutations.createClassModule, 
@@ -67,6 +74,24 @@ function ModulesList() {
         });
         window.location.reload(false);
     }
+
+    /* fetch the list of all ClassModule */
+    useEffect( () => {
+        const fetchModules = async () => {
+            try {
+                const classModuleResults = await API.graphql(
+                    graphqlOperation(listClassModules)
+                )
+                const classModule = classModuleResults.data.listClassModules.items
+                setClassModules(classModule)
+            } 
+            catch (error) {
+                console.log(error)
+                console.log('ClassID missing')
+            }
+        }
+        fetchModules();
+    }, [])
 
     return (
         <div className="staff-pages-container">
@@ -81,7 +106,8 @@ function ModulesList() {
                 <ClassHeader 
                     tabContent={tabContent} 
                     chosedModule={chosedModule} 
-                    location={location} />
+                    qualificationDetails={qualificationDetails}
+                    moduleDetails={moduleDetails}/>
 
                 <div className='add-new-module'>
                     <div 
@@ -90,21 +116,36 @@ function ModulesList() {
                         Add a new module <div className='access'>+</div>
                     </div> 
                 </div>
-                { classModules.map((moduleDetails) => 
-                    moduleDetails.id === undefined || moduleDetails.id === '' ? ''
-                    : 
-                    <Link to={{     
-                        pathname:'/Staff/Departments/Lessons',
-                        state: {departmentDetails, moduleDetails}
-                    }} >
-                        <div 
-                            style={{marginTop: '1rem' }} 
-                            className='active-class-exams-calendar-tilte'
-                            onClick={()=> setChosedModule(true)}>
-                            {moduleDetails.moduleName} <div className='access'>{`>`}</div>
-                        </div> 
-                    </Link> )
-                }
+                { classModules.map((moduleDetail) =>
+                    moduleDetail.id && ( 
+                        moduleDetail.classID === qualificationDetails.qualificationId ? 
+                            <Link to={{     
+                                pathname:'/Staff/Departments/Lessons',
+                                state: {qualificationDetails, moduleDetail} }} 
+                                key={moduleDetail.id}>
+                                    <div 
+                                        style={{marginTop: '1rem' }} 
+                                        className='active-class-exams-calendar-tilte'
+                                        onClick={()=> setChosedModule(true)}>
+                                        {moduleDetail.moduleName} <div className='access'>{`>`}</div>
+                                    </div> 
+                            </Link> 
+                        /*: 
+                        moduleDetails.id && (
+                            moduleDetail.classID === qualificationDetails.qualificationId? 
+                            <Link to={{     
+                                pathname:'/Staff/Departments/Lessons',
+                                state: {qualificationDetails, moduleDetails} }} >
+                                    <div 
+                                        style={{marginTop: '1rem' }} 
+                                        className='active-class-exams-calendar-tilte'
+                                        onClick={()=> setChosedModule(true)}>
+                                        {moduleDetails.moduleName} <div className='access'>{`>`}</div>
+                                    </div> 
+                            </Link> */
+                            : [])
+                )}
+                
                 {/* The Pup-out window that allows the admin to create */}
                 {/* a new module. */}
                 {/* By default the display is set to false */}
@@ -114,7 +155,7 @@ function ModulesList() {
                         <div className='pop-up-title'>Create a new module</div>
                         <input
                             className='lg-pop-up-input'
-                            placeholder='Faculty Name'
+                            placeholder='Module Name'
                             value={moduleNameInputValue}
                             onChange={e => setModuleNameInputValue(e.target.value)}
                         />

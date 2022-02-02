@@ -138,7 +138,9 @@ export const getFaculty = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -263,7 +265,9 @@ export const getDepartment = /* GraphQL */ `
       classes {
         items {
           id
-          classYear
+          qualificationName
+          qualificationLevel
+          qualificationYear
           departmentID
           department {
             id
@@ -343,7 +347,9 @@ export const listDepartments = /* GraphQL */ `
         classes {
           items {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -371,7 +377,9 @@ export const getClass = /* GraphQL */ `
   query GetClass($id: ID!) {
     getClass(id: $id) {
       id
-      classYear
+      qualificationName
+      qualificationLevel
+      qualificationYear
       departmentID
       department {
         id
@@ -407,7 +415,9 @@ export const getClass = /* GraphQL */ `
         classes {
           items {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -434,7 +444,9 @@ export const getClass = /* GraphQL */ `
           classID
           class {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -468,7 +480,9 @@ export const listClasss = /* GraphQL */ `
     listClasss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        classYear
+        qualificationName
+        qualificationLevel
+        qualificationYear
         departmentID
         department {
           id
@@ -494,7 +508,9 @@ export const listClasss = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -511,7 +527,9 @@ export const listClasss = /* GraphQL */ `
             classID
             class {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -536,7 +554,9 @@ export const getClassModule = /* GraphQL */ `
       classID
       class {
         id
-        classYear
+        qualificationName
+        qualificationLevel
+        qualificationYear
         departmentID
         department {
           id
@@ -562,7 +582,9 @@ export const getClassModule = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -579,7 +601,9 @@ export const getClassModule = /* GraphQL */ `
             classID
             class {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -610,7 +634,152 @@ export const listClassModules = /* GraphQL */ `
         classID
         class {
           id
-          classYear
+          qualificationName
+          qualificationLevel
+          qualificationYear
+          departmentID
+          department {
+            id
+            departmentName
+            facultyID
+            faculty {
+              id
+              facultyName
+              campusID
+              createdAt
+              updatedAt
+            }
+            classes {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          modules {
+            items {
+              id
+              moduleName
+              classID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getStudent = /* GraphQL */ `
+  query GetStudent($id: ID!) {
+    getStudent(id: $id) {
+      id
+      studentFullname
+      studentSurname
+      studentPhoneNumber
+      studentEmail
+      studentCampusName
+      studentDepartmentName
+      studentYear
+      pending
+      classID
+      class {
+        id
+        qualificationName
+        qualificationLevel
+        qualificationYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStudents = /* GraphQL */ `
+  query ListStudents(
+    $filter: ModelStudentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        studentFullname
+        studentSurname
+        studentPhoneNumber
+        studentEmail
+        studentCampusName
+        studentDepartmentName
+        studentYear
+        pending
+        classID
+        class {
+          id
+          qualificationName
+          qualificationLevel
+          qualificationYear
           departmentID
           department {
             id

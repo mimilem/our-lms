@@ -1,35 +1,108 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 import emailjs from '@emailjs/browser';
 
-import { useDetectClickOutside } from 'react-detect-click-outside';
+//import aws api and components to create new cart item
+import { API, graphqlOperation } from "aws-amplify";
+import { listCampuss, listFacultys, listDepartments, listClasss } from '../../../../../../graphql/queries';
+import * as mutations from '../../../../../../graphql/mutations';
 
+//import the styling compnent(s).
 import './register-form.css';
 
+//import all components that will be 
+//displayed on the page.
 import NavigationTab from '../../../../Components/NavigationTab';
 import SubmissionMessage from '../SubmissionMessage/SubmissionMessage';
 
 
 function RegistrationFormPage2() {
-
-    const [back, setBack] = useState(true)
-
-    const [isShown, setIsShown] = useState(false);
-    const [isDepartmentShown, setIsDepartmentShown] = useState(false);
-
-    const [showSubmissionMsg, setShowSubmissionMsg] = useState(false);
-
-    const closeDropdown = () => { setIsShown(false) }
-    const ref = useDetectClickOutside({ onTriggered: closeDropdown });
     
-    const closeDepartmentDropdown = () => { setIsDepartmentShown(false) }
-    const refs = useDetectClickOutside({ onTriggered: closeDepartmentDropdown });
-
     //Set the document title of the page when it loads.
     useEffect(() => {
         document.title = "Apply | Vinco-elearning"
     }, []);
+
+    //return button state
+    const [back, setBack] = useState(true)
+    //state to show the message that appears after submission
+    const [showSubmissionMsg, setShowSubmissionMsg] = useState(false);
+
+    const [showCampusDropdown, setShowCampusDropdown] = useState(false)
+    const [showDepartmentDropdown, setShowDepartmentDropdown] = useState(false)
+    const [showClassDropdown, setShowClassDropdown] = useState(false)
+    
+    const closeCampusDropdown = () => {
+        setShowCampusDropdown(false);
+    }
+    const closeDepartmentDropdown = () => {
+        setShowDepartmentDropdown(false);
+    }
+    const closeClassDropdown = () => {
+        setShowClassDropdown(false);
+    }
+    const campusRef = useDetectClickOutside({ onTriggered: closeCampusDropdown });
+    const ref = useDetectClickOutside({ onTriggered: closeDepartmentDropdown });
+    const classRef = useDetectClickOutside({ onTriggered: closeClassDropdown });
+
+    //list of courses of the select course dropdown
+    const [selectedCampus, setSelectedCampus] = useState('');
+    const [selectedCampusId, setSelectedCampusId] = useState('');
+
+    const [selectedDepartment, setSelectedDepartment] = useState('');
+    const [selectedDepartmentId, setSelectedDepartmentId] = useState('');
+    const [selectedDepartmentName, setSelectedDepartmentName] = useState('');
+
+    const [selectedClass, setSelectedClass] = useState();
+    const [selectedClassId, setSelectedClassId] = useState('');
+    const [selectedYear, setSelectedYear] = useState();
+    
+    //states to display fetched data for the registration form.
+    const [campusData, setCampusData] = useState([])
+    const [facultyData, setFacultyData] = useState([])
+    const [departmentData, setDepartmentData] = useState([])
+    const [classData, setClassData] = useState([])
+
+    /* fetch the API data of campus, faculties, departements and classes */
+    useEffect( () => {
+        const fetchApiData = async () => {
+            try {
+                //fetch Campus list
+                const campusResults = await API.graphql(
+                    graphqlOperation(listCampuss)
+                )
+                const campus = campusResults.data.listCampuss.items
+                setCampusData(campus)
+                
+                //fetch the list of faculties
+                const facultyResults = await API.graphql(
+                    graphqlOperation(listFacultys)
+                )
+                const faculty = facultyResults.data.listFacultys.items
+                setFacultyData(faculty)
+                
+                //fetch the list of departments
+                const departmentResults = await API.graphql(
+                    graphqlOperation(listDepartments)
+                )
+                const department = departmentResults.data.listDepartments.items
+                setDepartmentData(department)
+                
+                //fetch the list of classes
+                const classResults = await API.graphql(
+                    graphqlOperation(listClasss)
+                )
+                const classes = classResults.data.listClasss.items
+                setClassData(classes)
+            } 
+            catch (error) {
+                console.log(error)
+            }
+        }
+        fetchApiData();
+    }, [])
 
     let location = useLocation()
     let studentPageOneDetails = {
@@ -39,14 +112,30 @@ function RegistrationFormPage2() {
         studentSurname: location.state.studentSurname, 
         studentPhoneNumber: location.state.studentPoneNumber, 
         studentEmail: location.state.studentEmail, 
-        studentGender: location.state.studentGender, 
-        studentCountryOfBirth: location.state.studentCountryOfBirth, 
-        studentDocumentID: location.state.studentDocumentID, 
-        studentNationality: location.state.studentNationality, 
-        lcStudentHomeLanguage: location.state.studentHomeLanguage,
         back: back 
     }
 
+    // This Function is used to create a new student
+    // then reload the page.
+    const createNewStudent = async () => {
+        const studentDetails = {
+            studentFullname: studentPageOneDetails.studentFullName,
+            studentSurname: studentPageOneDetails.studentSurname,
+            studentPhoneNumber: studentPageOneDetails.studentPhoneNumber,
+            studentEmail: studentPageOneDetails.studentEmail,
+            studentCampusName: selectedCampus,
+            studentDepartmentName: selectedClass,
+            studentYear: selectedYear,
+            pending: true,
+            classID: selectedClassId,
+        };
+        const newStudent = await API.graphql({ 
+            query: mutations.createStudent, 
+            variables: {input: studentDetails}
+        });
+    }
+    
+    // Email JS Configuration starts
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -59,8 +148,8 @@ function RegistrationFormPage2() {
             console.log(error.text);
         });
     };
-
     let message = `Full name: ${studentPageOneDetails.studentFullName}`
+    // Email JS Configuration ends
 
     return (
         <div className='register-page-container'>
@@ -68,70 +157,125 @@ function RegistrationFormPage2() {
             <NavigationTab />
 
             <div className='registration-form-background'>
+
                 <form className='register-page-content' ref={form} onSubmit={sendEmail}>
                     <div className='registration-form-container'>
                         <div className='registration-form-title'>Application Form</div>
                         <hr className='registration-form-hr'/>
 
+                        {/* Form Sub-Title */}
                         <div className='disabled-dark-horizontal-bar'>
                             <div className='registration-section-title'>Select a qualification</div>
                         </div>
-                        <div className='md-registration-form-title'>Type of learning</div>
-                        <input 
-                            className='registration-form-checkbox'
-                            type='checkbox'
-                        /> Online
-                        <input 
-                            className='registration-form-checkbox'
-                            type='checkbox'
-                        /> Part-Time
-                        <input 
-                            className='registration-form-checkbox'
-                            type='checkbox'
-                        /> Full Time
 
-                        <div className='form-dropdown-container'>
+                        {/* Learning Choice */}
+                        <>
+                            <div className='md-registration-form-title'>Type of learning</div>
                             <input 
-                                placeholder='Choose a Faculty'
-                                className='md-registration-form-input'
-                                type='text'
-                                onClick={() => setIsShown(true)} ref={ref} 
-                            />
-                            { isShown === true ? 
-                            <>
-                                <div className='form-dropdown'>
-                                    Health
+                                className='registration-form-checkbox'
+                                type='checkbox'
+                            /> Online
+                            <input 
+                                className='registration-form-checkbox'
+                                type='checkbox'
+                            /> Part-Time
+                            <input 
+                                className='registration-form-checkbox'
+                                type='checkbox'
+                            /> Full Time
+                        </>
+
+                        {/* Campus dropdown */}
+                        <div className='form-dropdown-container'>
+                            <input
+                                className='lg-registration-form-input'
+                                placeholder="Choose a Campus"
+                                value={selectedCampus} 
+                                onChange={(e) => setSelectedCampus(e.target.value)}
+                                onClick={() => setShowCampusDropdown(true)}
+                                ref={campusRef} 
+                                readonly="readonly"/>
+                            { showCampusDropdown && (
+                                <div className='select-dropdown'>
+                                    {campusData.map((item) => 
+                                        <div 
+                                            className='select-dropdown-label'
+                                            onClick={() => {
+                                                setSelectedCampus(item.campusName)
+                                                setSelectedCampusId(item.id)} }>
+                                            {item.campusName}
+                                        </div>
+                                    )}
                                 </div>
-                                <div className='form-dropdown'>
-                                    Engeneering 
-                                </div>
-                            </> : []
-                            }
+                            )}
                         </div>
                         
                         <hr className='registration-form-hr'/>
 
+                        {/* Department dropdown */}
                         <div className='form-dropdown-container'>
-                            <input 
-                                placeholder='Choose a department'
-                                className='lg-registration-form-input'
-                                type='text'
-                                onClick={() => setIsDepartmentShown(true)} refs={refs} 
-                            />
-                            { isDepartmentShown === true ? 
-                            <>
-                                <div className='form-dropdown'>
-                                    Accounting
-                                </div>
-                            </> : []
-                            }
+                            <div className='context-menu'>
+                                <input 
+                                    className='lg-registration-form-input'
+                                    placeholder='Select a department'
+                                    value={selectedDepartment}
+                                    onChange={(e) => setSelectedDepartment(e.target.value)}
+                                    onClick={() => setShowDepartmentDropdown(true)}
+                                    ref={ref} 
+                                    readonly="readonly"/>
+                            </div>
+                            { showDepartmentDropdown && (
+                            <div className='select-dropdown'>
+                                {facultyData.map((item) => 
+                                    <div key={item.id}>
+                                        <div className='select-dropdown-title'>
+                                            {item.facultyName}
+                                        </div>
+                                        <hr className='select-dropdown-hr'/>
+                                        
+                                        {departmentData.map((items) =>
+                                            item.id === items.facultyID ? 
+                                            <div 
+                                                className='select-dropdown-label'
+                                                onClick={() => {
+                                                    setSelectedDepartment(items.departmentName)
+                                                    setSelectedDepartmentId(items.id)} }>
+                                                {items.departmentName}
+                                            </div>
+                                            : []
+                                        ) }
+                                    </div>)}
+                            </div>
+                            )}
                         </div>
 
-                        <input 
-                            placeholder='Year'
-                            className='sm-registration-form-input'
-                            type='text'
+                        {/* Class Choice */}
+                        <input
+                            placeholder="Select a qualification"
+                            value={`${selectedClass === undefined? 'Select a qualification' : selectedClass} 
+                                ${selectedYear === undefined? '' : selectedYear }`} // set selected value
+                            onChange={(e) => setSelectedClass(e.target.value)} // assign onChange function
+                            onClick={() => setShowClassDropdown(true)}
+                            ref={classRef}
+                            readonly="readonly"
+                            className='lg-registration-form-input'
                         />
+                        { showClassDropdown && (
+                            <div className='select-dropdown'>
+                                {classData.map((item) => 
+                                    item.departmentID === selectedDepartmentId ?
+                                    <div 
+                                        className='select-dropdown-label'
+                                        onClick={() => {
+                                            setSelectedClass(item.qualificationName)
+                                            setSelectedYear(item.qualificationYear)
+                                            setSelectedClassId(item.id)} }>
+                                        {item.qualificationName} - {item.qualificationYear}
+                                    </div>
+                                    : []
+                                )}
+                            </div>
+                        )}
                         <hr className='registration-form-hr'/>
 
                         <div className='disabled-dark-horizontal-bar'>
@@ -186,7 +330,11 @@ function RegistrationFormPage2() {
                             style={{display: 'none'}}/>
 
                         <div className='form-pagination'>2/2</div>
-                        <button className='form-next-button' type="submit" value="Send">Submit</button>
+                        <button 
+                            className='form-next-button' 
+                            type="submit" 
+                            value="Send"
+                            onClick={createNewStudent}>Submit</button>
 
                         <Link to={{
                             pathname:'/Register',

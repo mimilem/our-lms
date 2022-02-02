@@ -1,4 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+
+//import aws api and components to create new cart item
+import { API, graphqlOperation } from "aws-amplify";
+import { listStudents } from '../../../../graphql/queries';
+import * as mutations from '../../../../graphql/mutations';
 
 //import the styling compnent(s).
 import './students.css';
@@ -19,6 +24,44 @@ function StudentsPage() {
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('students');
 
+    const [students, setStudents] = useState([])
+    const [studentFilterData, setStudentFilterData] = useState([])
+    const [searchStudentByName, setSearchStudentByName] = useState('')
+
+    /* fetch the API data of students */
+    useEffect( () => {
+        const fetchStudents = async () => {
+            try {
+                const studentResults = await API.graphql(
+                    graphqlOperation(listStudents)
+                )
+                const student = studentResults.data.listStudents.items
+                setStudents(student)
+                setStudentFilterData(student)
+            } 
+            catch (error) {
+                console.log(error)
+            }
+        }
+        fetchStudents();
+    }, [])
+
+    const searchStudentsByNameFilter = (text) => {
+        if (text) {
+            const newData = students.filter((item) => {
+                const itemData = item.studentFullname ? item.studentFullname.toUpperCase() 
+                                : ''.toUpperCase()
+                const textData = text.toUpperCase()
+                return itemData.indexOf(textData) > -1
+            });
+            setStudentFilterData(newData)
+            setSearchStudentByName(text)
+        } else {
+            setStudentFilterData(students)
+            setSearchStudentByName(text)
+        }
+    }
+
     return (
         <div className="staff-pages-container">
 
@@ -38,9 +81,11 @@ function StudentsPage() {
                             type='text'
                             placeholder='Search a student'
                             className='search-student'
+                            autoFocus={true}
+                            onChange={(e) => searchStudentsByNameFilter(e.target.value)}
+                            value={searchStudentByName}
                         />
                     </div>
-
                     <div className='register-button-container'>
                         <button 
                             className='register-button'
@@ -50,7 +95,7 @@ function StudentsPage() {
                     </div>
                 </div>
 
-                <StudentsList />
+                <StudentsList studentFilterData={studentFilterData} />
 
             </div>
         </div>

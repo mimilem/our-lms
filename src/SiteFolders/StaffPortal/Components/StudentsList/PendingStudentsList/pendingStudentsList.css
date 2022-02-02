@@ -1,10 +1,10 @@
 .pending-status {
   background-color: #ff4500;
   border-radius: 10px;
-  display: flex;
   height: 0.5rem;
-  position: relative;
-  top: 0rem;
+  margin: 10px;
+  margin-left: -1rem;
+  position: absolute;
   width: 0.5rem;
 }
 .pending-userAvatar-icon-container {
@@ -19,4 +19,42 @@
   margin-left: auto;
   margin-right: auto;
   width: 5rem;
+}
+
+.pending-student-list-element {
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 95%;
+}
+
+.pending-student-index {
+  display: flex;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.pending-student-name {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.pending-student-action-title {
+  color: #353839;
+  float: right;
+  padding-right: 5rem;
+  top: 0;
+}
+.pending-student-action {
+  color: #353839;
+  display: flex;
+  float: right;
+  padding-right: 1.5rem;
+  top: 0;
 }

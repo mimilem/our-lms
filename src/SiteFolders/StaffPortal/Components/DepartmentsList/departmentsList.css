@@ -25,6 +25,7 @@
   margin-left: 2rem;
   padding-left: 1rem;
   text-decoration: none;
+  text-transform: capitalize;
   transition: transform 0.3s;
   width: 91.8%;
 }
@@ -43,6 +44,7 @@
   margin-left: 2rem;
   padding-left: 1rem;
   text-decoration: none;
+  text-transform: capitalize;
   transition: transform 0.3s;
   width: 91.8%;
 }
@@ -58,4 +60,23 @@
 }
 .departments-list-container ul li:hover {
   color: #5d8aa8;
+}
+
+.qualification-container {
+  color: #000;
+  padding: 10px;
+}
+.add-qualification {
+  color: #353839;
+  cursor: pointer;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+.qualification-container div:hover {
+  color: #5d8aa8;
+}
+
+.qualification-list {
+  color: #000;
+  text-transform: capitalize;
 }

@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './studentsProfile.css';
 
-import Header from '../../Components/Header';
-import SideNavigation from '../../Components/SideNavigation';
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
-import studentAvatar from '../../../../assets/ThatsMeSalam.jpg'
+import studentAvatar from '../../../../assets/avatar.png'
 import StudentProfileNavTab from './Components/StudentProfileNavTab';
 
 
@@ -16,6 +15,8 @@ function StudentsProfile() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+
+    let location = useLocation()
 
     return (
 
@@ -35,16 +36,25 @@ function StudentsProfile() {
                             className='studentAvatar'/>
                     </div>
                     <div className='centered-text'>
-                        <div className='centered-student-name'>Nephthali Salam</div>
-                        <div className='centered-student-email'>snephthali@gmail.com</div>
+                        <div className='centered-student-name'>{location.state.studentFullname}</div>
+                        <div className='centered-student-email'>{location.state.studentEmail}</div>
                         
+                        <div className='student-profile-hr'/>
+                        
+                        <div className='centered-student-email'>
+                            {location.state.studentDepartmentName}
+                        </div>
+
                         <div className='student-profile-hr'/>
 
-                        <div className='centered-student-email'>Grade: 1st Year</div>
+                        <div className='centered-student-email'>
+                            {location.state.studentYear === 1 ? '1st year' : 
+                                location.state.studentYear === 2 ? '2nd year': [] }
+                        </div>
                         
                         <div className='student-profile-hr'/>
                         
-                        <div className='centered-student-email'>Phone: +27 67 791 9267</div>
+                        <div className='centered-student-email'>Phone: {location.state.studentPhoneNumber}</div>
                     </div>
                 </div>
 

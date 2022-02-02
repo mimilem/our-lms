@@ -27,9 +27,19 @@ type Department
 
 type Class
   @model
-  @key(name: "byDepartment", fields: ["departmentID", "classYear"]) {
+  @key(
+    name: "byDepartment"
+    fields: [
+      "departmentID"
+      "qualificationName"
+      "qualificationLevel"
+      "qualificationYear"
+    ]
+  ) {
   id: ID!
-  classYear: Int!
+  qualificationName: String!
+  qualificationLevel: String
+  qualificationYear: String
   departmentID: ID!
   department: Department @connection(fields: ["departmentID"])
   modules: [ClassModule] @connection(keyName: "byClass", fields: ["id"])
@@ -40,6 +50,34 @@ type ClassModule
   @key(name: "byClass", fields: ["classID", "moduleName"]) {
   id: ID!
   moduleName: String!
+  classID: ID
+  class: Class @connection(fields: ["classID"])
+}
+
+type Student
+  @model
+  @key(
+    name: "byStudent"
+    fields: [
+      "classID"
+      "studentFullname"
+      "studentSurname"
+      "studentPhoneNumber"
+      "studentEmail"
+      "studentCampusName"
+      "studentDepartmentName"
+      "studentYear"
+    ]
+  ) {
+  id: ID!
+  studentFullname: String!
+  studentSurname: String!
+  studentPhoneNumber: String!
+  studentEmail: String!
+  studentCampusName: String!
+  studentDepartmentName: String!
+  studentYear: Int!
+  pending: Boolean!
   classID: ID
   class: Class @connection(fields: ["classID"])
 }

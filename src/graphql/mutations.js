@@ -194,7 +194,9 @@ export const createFaculty = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -272,7 +274,9 @@ export const updateFaculty = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -350,7 +354,9 @@ export const deleteFaculty = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -423,7 +429,9 @@ export const createDepartment = /* GraphQL */ `
       classes {
         items {
           id
-          classYear
+          qualificationName
+          qualificationLevel
+          qualificationYear
           departmentID
           department {
             id
@@ -518,7 +526,9 @@ export const updateDepartment = /* GraphQL */ `
       classes {
         items {
           id
-          classYear
+          qualificationName
+          qualificationLevel
+          qualificationYear
           departmentID
           department {
             id
@@ -613,7 +623,9 @@ export const deleteDepartment = /* GraphQL */ `
       classes {
         items {
           id
-          classYear
+          qualificationName
+          qualificationLevel
+          qualificationYear
           departmentID
           department {
             id
@@ -659,7 +671,9 @@ export const createClass = /* GraphQL */ `
   ) {
     createClass(input: $input, condition: $condition) {
       id
-      classYear
+      qualificationName
+      qualificationLevel
+      qualificationYear
       departmentID
       department {
         id
@@ -695,7 +709,9 @@ export const createClass = /* GraphQL */ `
         classes {
           items {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -722,7 +738,9 @@ export const createClass = /* GraphQL */ `
           classID
           class {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -754,7 +772,9 @@ export const updateClass = /* GraphQL */ `
   ) {
     updateClass(input: $input, condition: $condition) {
       id
-      classYear
+      qualificationName
+      qualificationLevel
+      qualificationYear
       departmentID
       department {
         id
@@ -790,7 +810,9 @@ export const updateClass = /* GraphQL */ `
         classes {
           items {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -817,7 +839,9 @@ export const updateClass = /* GraphQL */ `
           classID
           class {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -849,7 +873,9 @@ export const deleteClass = /* GraphQL */ `
   ) {
     deleteClass(input: $input, condition: $condition) {
       id
-      classYear
+      qualificationName
+      qualificationLevel
+      qualificationYear
       departmentID
       department {
         id
@@ -885,7 +911,9 @@ export const deleteClass = /* GraphQL */ `
         classes {
           items {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -912,7 +940,9 @@ export const deleteClass = /* GraphQL */ `
           classID
           class {
             id
-            classYear
+            qualificationName
+            qualificationLevel
+            qualificationYear
             departmentID
             department {
               id
@@ -948,7 +978,9 @@ export const createClassModule = /* GraphQL */ `
       classID
       class {
         id
-        classYear
+        qualificationName
+        qualificationLevel
+        qualificationYear
         departmentID
         department {
           id
@@ -974,7 +1006,9 @@ export const createClassModule = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -991,7 +1025,9 @@ export const createClassModule = /* GraphQL */ `
             classID
             class {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -1020,7 +1056,9 @@ export const updateClassModule = /* GraphQL */ `
       classID
       class {
         id
-        classYear
+        qualificationName
+        qualificationLevel
+        qualificationYear
         departmentID
         department {
           id
@@ -1046,7 +1084,9 @@ export const updateClassModule = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -1063,7 +1103,9 @@ export const updateClassModule = /* GraphQL */ `
             classID
             class {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -1092,7 +1134,9 @@ export const deleteClassModule = /* GraphQL */ `
       classID
       class {
         id
-        classYear
+        qualificationName
+        qualificationLevel
+        qualificationYear
         departmentID
         department {
           id
@@ -1118,7 +1162,9 @@ export const deleteClassModule = /* GraphQL */ `
           classes {
             items {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt
@@ -1135,7 +1181,264 @@ export const deleteClassModule = /* GraphQL */ `
             classID
             class {
               id
-              classYear
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createStudent = /* GraphQL */ `
+  mutation CreateStudent(
+    $input: CreateStudentInput!
+    $condition: ModelStudentConditionInput
+  ) {
+    createStudent(input: $input, condition: $condition) {
+      id
+      studentFullname
+      studentSurname
+      studentPhoneNumber
+      studentEmail
+      studentCampusName
+      studentDepartmentName
+      studentYear
+      pending
+      classID
+      class {
+        id
+        qualificationName
+        qualificationLevel
+        qualificationYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateStudent = /* GraphQL */ `
+  mutation UpdateStudent(
+    $input: UpdateStudentInput!
+    $condition: ModelStudentConditionInput
+  ) {
+    updateStudent(input: $input, condition: $condition) {
+      id
+      studentFullname
+      studentSurname
+      studentPhoneNumber
+      studentEmail
+      studentCampusName
+      studentDepartmentName
+      studentYear
+      pending
+      classID
+      class {
+        id
+        qualificationName
+        qualificationLevel
+        qualificationYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteStudent = /* GraphQL */ `
+  mutation DeleteStudent(
+    $input: DeleteStudentInput!
+    $condition: ModelStudentConditionInput
+  ) {
+    deleteStudent(input: $input, condition: $condition) {
+      id
+      studentFullname
+      studentSurname
+      studentPhoneNumber
+      studentEmail
+      studentCampusName
+      studentDepartmentName
+      studentYear
+      pending
+      classID
+      class {
+        id
+        qualificationName
+        qualificationLevel
+        qualificationYear
+        departmentID
+        department {
+          id
+          departmentName
+          facultyID
+          faculty {
+            id
+            facultyName
+            campusID
+            campus {
+              id
+              institutionName
+              campusName
+              createdAt
+              updatedAt
+            }
+            departments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          classes {
+            items {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
+              departmentID
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        modules {
+          items {
+            id
+            moduleName
+            classID
+            class {
+              id
+              qualificationName
+              qualificationLevel
+              qualificationYear
               departmentID
               createdAt
               updatedAt

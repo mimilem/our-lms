@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom'
-import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
+
 import ClassHeader from '../ClassHeader';
+import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 
 
 function ClassTimeTable(props) {
 
-    const [tabContent, setTabContent] = useState('timeTable')
+    const [tabContent, setTabContent] = useState('timeTable');
+    const [chosedModule, setChosedModule] = useState(true);
 
     // Initiate a boolean state to check weither 
     // the bar is toggled and weither the tab is active.
@@ -14,6 +16,26 @@ function ClassTimeTable(props) {
     const [activeTab, setActiveTab] = useState('department');
 
     let location = useLocation();
+
+    const qualificationDetails = {
+        qualificationId: location.state.qualificationDetails.qualificationId,
+        departmentId: location.state.qualificationDetails.departmentId,
+        qualificationName: location.state.qualificationDetails.qualificationName,
+        qualificationLevel: location.state.qualificationDetails.qualificationLevel,
+        qualificationYear: location.state.qualificationDetails.qualificationYear,
+    }
+    
+    const moduleDetail =  location.state.moduleDetail ? ({
+        id: location.state.moduleDetail.id,
+        classID: location.state.moduleDetail.classID,
+        moduleName: location.state.moduleDetail.moduleName,
+    })
+    : location.state.moduleDetails ? (
+    {
+        id: location.state.moduleDetails.id,
+        classID: location.state.moduleDetails.classID,
+        moduleName: location.state.moduleDetails.moduleName,
+    }) :[]
 
     return (
         <div className="staff-pages-container">
@@ -24,7 +46,11 @@ function ClassTimeTable(props) {
                 activeTab={activeTab} />
 
             <div className='staff-pages-content'>
-                <ClassHeader  tabContent={tabContent} location={location} />
+                <ClassHeader  
+                    tabContent={tabContent} 
+                    chosedModule={chosedModule}
+                    moduleDetails={moduleDetail} 
+                    qualificationDetails={qualificationDetails} />
 
                 <div className='class-page-content'>
                     <h1 className='not-available-msg'>Not Yet Available</h1>
