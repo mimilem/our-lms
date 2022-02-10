@@ -1,9 +1,14 @@
 var aws = require('aws-sdk')
-var ddb = new aws.DynamoDB()
+var ddb = new aws.DynamoDB({apiVersion: '2012-10-08'})
 
 exports.handler = async (event, context) => {
+
+    aws.config.update({region: 'us-east-2'});
+
     let date = new Date()
+
     if (event.request.userAttributes.sub) {
+
         let params = {
             Item: {
                 'id': {S: event.request.userAttributes.sub},
@@ -13,7 +18,7 @@ exports.handler = async (event, context) => {
                 'createdAt': {S: date.toISOString()},
                 'updatedAt': {S: date.toISOString()},
             },
-            TableName: process.env.USERTABLE
+            TableName: process.env.SUPERADMINTABLE
         }
 
         try {

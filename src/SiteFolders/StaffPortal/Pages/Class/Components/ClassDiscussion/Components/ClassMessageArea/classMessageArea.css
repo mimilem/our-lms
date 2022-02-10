@@ -1,0 +1,51 @@
+.textArea-container {
+  align-items: center;
+  display: flex;
+  background-color: #96a9b6;
+  bottom: 0;
+  justify-content: center;
+  margin-left: 13.5rem;
+  padding: 10px;
+  position: fixed;
+  width: 73%;
+}
+.class-discussion-text-area {
+  align-items: center;
+  border-radius: 20px;
+  border-width: 0;
+  font-size: 18px;
+  height: 20px;
+  outline: none;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  resize: none;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.send-icon {
+  background-image: url("../../../../../../../../assets/send.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  height: 2rem;
+  margin-left: 10px;
+  width: 2rem;
+}
+
+.file-icon {
+  background-image: url("../../../../../../../../assets/new-document.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  height: 2rem;
+  margin-right: 10px;
+  width: 2rem;
+}

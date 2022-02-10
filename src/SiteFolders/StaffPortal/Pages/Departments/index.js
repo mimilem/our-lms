@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // 'useLocation' to receive parameters through the 
 // react-dom-router Link. From the Full and Toggled Navigation.
@@ -91,6 +91,11 @@ function DepartmentsPage() {
         });
         window.location.reload(false);
     }
+    
+    //automatically scroll to top
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
 
     return (
         <div className="staff-pages-container">

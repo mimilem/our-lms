@@ -1,0 +1,12 @@
+.discussion-pages-container {
+  background: #f5f5f5;
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.discussion-container {
+  height: 100%;
+  width: 100%;
+}

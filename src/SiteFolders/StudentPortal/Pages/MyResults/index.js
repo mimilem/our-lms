@@ -16,17 +16,15 @@ import '../studentsPages.css';
 
 // Import all components that will be 
 //displayed on the pages.
-import Header from '../../Components/Header';
-import SideNavigation from '../../Components/SideNavigation';
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
 
-function MyWorks({item}) {
+function MyResults({item}) {
 
     // Initiate a boolean state to check weither 
     //the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
-    const [activeTab, setActiveTab] = useState('myWork');
+    const [activeTab, setActiveTab] = useState('myResult');
 
     const marksData = [
         {
@@ -82,7 +80,7 @@ function MyWorks({item}) {
 
             <div className='students-pages-content'>
 
-                <div className='students-pages-header-tilte'>My Work</div>
+                <div className='students-pages-header-tilte'>My Result</div>
                 <hr className='students-page-hr' />
 
                 {/* Period selection to display page content  */}
@@ -153,4 +151,4 @@ function MyWorks({item}) {
     );
 }
 
-export default MyWorks;
+export default MyResults;

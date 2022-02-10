@@ -3,15 +3,16 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-2",
-    "aws_appsync_graphqlEndpoint": "https://gzzcoklmvnb5ji53fjmyogshda.appsync-api.us-east-2.amazonaws.com/graphql",
-    "aws_appsync_region": "us-east-2",
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-qnfseddw2bdklcxhjsocgwalgm",
-    "aws_cognito_identity_pool_id": "us-east-2:d4f7e031-5876-400e-831e-1c3e8ab6c504",
+    "aws_cognito_identity_pool_id": "us-east-2:efaf6e4d-899c-4805-a0cd-2dda6c7b0c21",
     "aws_cognito_region": "us-east-2",
-    "aws_user_pools_id": "us-east-2_nvKCUEtsO",
-    "aws_user_pools_web_client_id": "67il9827l6lcvv92284sj6n5uc",
-    "oauth": {}
+    "aws_user_pools_id": "us-east-2_iPxuObiqo",
+    "aws_user_pools_web_client_id": "2c035r4dd94l57fcoj1q831kb1",
+    "oauth": {},
+    "aws_appsync_graphqlEndpoint": "https://okihjj3zefgw3irco2ydecc3gq.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_appsync_region": "us-east-2",
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_user_files_s3_bucket": "vincoelearningbucket81733-dev",
+    "aws_user_files_s3_bucket_region": "us-east-2"
 };
 
 

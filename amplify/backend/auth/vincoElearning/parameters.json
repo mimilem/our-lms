@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "vincoelearningd40f4111_identitypool_d40f4111",
+    "identityPoolName": "vinco_idPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "vincoed40f4111",
-    "userPoolName": "vincoelearningd40f4111_userpool_d40f4111",
+    "resourceNameTruncated": "vincoe5147ab00",
+    "userPoolName": "vinco_userPool",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -17,7 +17,9 @@
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
-    "requiredAttributes": [],
+    "requiredAttributes": [
+        "email"
+    ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
@@ -26,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "vincoed40f4111_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "vincoE5147ab00_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d40f4111",
-    "resourceName": "vincoelearningd40f4111",
+    "sharedId": "5147ab00",
+    "resourceName": "vincoElearning",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -43,15 +45,32 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "triggers": "{}",
-    "userPoolGroupList": [],
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "triggers": "{\n  \"PostConfirmation\": [\n    \"custom\"\n  ]\n}",
+    "hostedUI": false,
+    "userPoolGroupList": [
+        "Admin"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "parentStack": {
         "Ref": "AWS::StackId"
     },
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"vincoElearningPostConfirmation\"\n  }\n]",
     "breakCircularDependency": true,
     "permissions": [],
-    "dependsOn": []
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "vincoElearningPostConfirmation",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        }
+    ]
 }

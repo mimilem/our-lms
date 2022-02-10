@@ -52,6 +52,37 @@ type ClassModule
   moduleName: String!
   classID: ID
   class: Class @connection(fields: ["classID"])
+  moduleChapters: [ModuleChapter]
+    @connection(keyName: "byClassModule", fields: ["id"])
+}
+
+type ModuleChapter
+  @model
+  @key(name: "byClassModule", fields: ["classModuleID", "chapterName"]) {
+  id: ID!
+  chapterName: String!
+  classModuleID: ID
+  classModule: ClassModule @connection(fields: ["classModuleID"])
+  files: [File] @connection(keyName: "byModuleChapter", fields: ["id"])
+}
+
+type File
+  @model
+  @auth(rules: [{ allow: owner }])
+  @key(name: "byModuleChapter", fields: ["moduleChapterID", "name", "owner"]) {
+  id: ID!
+  name: String
+  owner: String
+  file: S3Object
+  moduleChapterID: ID
+  moduleChapter: ModuleChapter @connection(fields: ["moduleChapterID"])
+}
+
+type S3Object {
+  id: ID
+  bucket: String!
+  region: String!
+  key: String!
 }
 
 type Student
@@ -80,4 +111,25 @@ type Student
   pending: Boolean!
   classID: ID
   class: Class @connection(fields: ["classID"])
+}
+
+type SuperAdmin
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Admin"] }
+      { allow: owner, ownerField: "username" }
+    ]
+  ) {
+  id: ID!
+  username: String!
+  email: String!
+}
+
+type Message @model {
+  id: ID!
+  author: String!
+  body: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }

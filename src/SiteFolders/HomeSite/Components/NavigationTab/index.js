@@ -8,8 +8,10 @@
 
 */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Auth } from 'aws-amplify';
 
 //import styling
 import './navigationTab.css'
@@ -23,6 +25,27 @@ function NavigationTab() {
     
     //declare the initial state of the active tab element.
     const [activeTab, setActiveTab] = useState("tab1");
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [signedIn, setSignedIn] = useState(false)
+
+    const handleChangeUsername = (e) => {
+        setUsername(e.target.value)
+    }
+    const handleChangePassword = (e) => {
+        setPassword(e.target.value)
+    }
+    
+    async function signIn() {
+        try {
+            const user = await Auth.signIn(username, password);
+            setSignedIn(true)
+        } catch (error) {
+            console.log('error signing in', error);
+        }
+    }
     
     return (
         <div className='navigation-container'>
@@ -37,13 +60,17 @@ function NavigationTab() {
                 <input 
                     placeholder="Username"
                     type='email'    
+                    value={username}
+                    onChange={handleChangeUsername}
                 />
                 <input 
                     placeholder="Password"
-                    type='password'    
+                    type='password'  
+                    value={password}
+                    onChange={handleChangePassword}  
                 />
-                <Link to='/Staff/Dashboard'>
-                    <button style={{cursor: 'pointer'}}>
+                <Link to={signedIn === true ? '/Staff/Dashboard' : '/'}>
+                    <button onClick={signIn} style={{cursor: 'pointer'}}>
                         Login
                     </button>
                 </Link>
@@ -66,7 +93,7 @@ function NavigationTab() {
                         onMouseLeave={() => setIsShown(false)}
                     > 
                         <li 
-                            className="tab-element"/*{activeTab === 'tab2' ? 'active-tab-element' :} */ 
+                            className="tab-element"
                             onClick={() => setActiveTab("tab2")}
                         >
                             Courses

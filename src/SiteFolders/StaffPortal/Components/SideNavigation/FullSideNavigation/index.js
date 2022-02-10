@@ -64,6 +64,13 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Students</div>
                 </Link>
 
+                <Link to='/Staff/ManageUsers'
+                    className={activeTab === 'students' ? 'active' : ''} 
+                >
+                    <div className='students-icon'/>
+                    <div className='side-navigation-text'>Manage Users</div>
+                </Link>
+
                 <Link to='/Staff/Exams'
                     className={activeTab === 'exams' ? 'active' : ''} 
                 >

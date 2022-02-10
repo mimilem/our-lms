@@ -56,14 +56,14 @@ function ToggledSideNavigation({ toggledBar, setToggledBar, activeTab }) {
                 </Link>
                 
                 <Link 
-                    to='/Students/MyWork' 
-                    title='My Work' 
-                    className={activeTab === 'myWork' ? 'active' : ''}
+                    to='/Students/MyResult' 
+                    title='My Result' 
+                    className={activeTab === 'myResult' ? 'active' : ''}
                 >
                     <div className='myWork-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
                         <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
-                            My Work
+                            My Result
                         </div>
                     </div>
                 </Link>

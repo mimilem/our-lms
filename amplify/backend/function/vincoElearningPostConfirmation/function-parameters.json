@@ -3,15 +3,15 @@
   "modules": [
     "custom"
   ],
-  "parentResource": "vincoelearning1e81a9b81e81a9b8",
-  "functionName": "vincoelearning1e81a9b81e81a9b8PostConfirmation",
-  "resourceName": "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+  "parentResource": "vincoElearning",
+  "functionName": "vincoElearningPostConfirmation",
+  "resourceName": "vincoElearningPostConfirmation",
   "parentStack": "auth",
   "triggerEnvs": [],
   "triggerDir": "C:\\Program Files\\nodejs\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
   "triggerTemplate": "PostConfirmation.json.ejs",
   "triggerEventPath": "PostConfirmation.event.json",
-  "roleName": "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+  "roleName": "vincoElearningPostConfirmation",
   "skipEdit": true,
   "enableCors": false
 }

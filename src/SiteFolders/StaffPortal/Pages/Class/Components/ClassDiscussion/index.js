@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import './classDiscussion.css';
+
 import ClassHeader from '../ClassHeader';
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
+import ClassDiscussionTab from './Components/ClassDiscussionTab';
+import ClassMessageArea from './Components/ClassMessageArea';
+import ClassMessageList from './Components/ClassMessageList';
 
 
-function ClassTimeTable(props) {
+function ClassDiscussion() {
 
-    const [tabContent, setTabContent] = useState('timeTable');
+    const [tabContent, setTabContent] = useState('discussion');
     const [chosedModule, setChosedModule] = useState(true);
 
     // Initiate a boolean state to check weither 
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+
+    const [messageInput, setMessageInput] = useState('')
+    const [message, setMessage] = useState('')
+    const [sendMessage, setSendMessage] = useState(false)
 
     let location = useLocation();
 
@@ -36,9 +45,9 @@ function ClassTimeTable(props) {
         classID: location.state.moduleDetails.classID,
         moduleName: location.state.moduleDetails.moduleName,
     }) :[]
-
+    
     return (
-        <div className="staff-pages-container">
+        <div className="discussion-pages-container">
 
             <HeaderAndSideNav 
                 toggledBar={toggledBar} 
@@ -53,11 +62,24 @@ function ClassTimeTable(props) {
                     qualificationDetails={qualificationDetails} />
 
                 <div className='class-page-content'>
-                    <h1 className='not-available-msg'>Not Yet Available</h1>
+
+                    <div className='discussion-container'>
+                        <ClassMessageList 
+                            messageInput={messageInput} 
+                            setMessageInput={setMessageInput} 
+                            sendMessage={sendMessage} />
+                        <ClassDiscussionTab
+                            moduleName={moduleDetail.moduleName} />
+                        <ClassMessageArea 
+                            messageInput={messageInput} 
+                            setMessageInput={setMessageInput} 
+                            setSendMessage={setSendMessage} />
+                    </div>
+
                 </div>
             </div>            
         </div>
     );
 }
 
-export default ClassTimeTable;
+export default ClassDiscussion;

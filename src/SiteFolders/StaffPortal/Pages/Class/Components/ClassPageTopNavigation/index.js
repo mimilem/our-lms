@@ -121,15 +121,20 @@ function ClassPageTopNavigation({
                         </div>
                     </Link>
                     
-                    <div 
-                        className={
-                            tabContent === 'chatRoom' ? 
-                            "active-class-top-navigation-tab-element" 
-                            : 
-                            "class-top-navigation-tab-element"
-                        }>
-                        Discussion
-                    </div>
+                    <Link to={{     
+                        pathname:'/Staff/Departments/Discussion',
+                        state: {qualificationDetails, moduleDetails}
+                    }}>
+                        <div 
+                            className={
+                                tabContent === 'discussion' ? 
+                                "active-class-top-navigation-tab-element" 
+                                : 
+                                "class-top-navigation-tab-element"
+                            }>
+                            Discussion
+                        </div>
+                    </Link>
                 </>
             }
         </div>

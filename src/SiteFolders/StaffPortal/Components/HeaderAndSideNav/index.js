@@ -21,7 +21,7 @@ function HeaderAndSideNav({
         const fetchCampus = async () => {
             try {
                     const campusResults = await API.graphql(
-                        graphqlOperation(queries.getCampus, { id: '6d6f6976-d8d4-4d3b-b08a-1c631dfdbc32' }
+                        graphqlOperation(queries.getCampus, { id: 'f276e696-6f2d-41d4-8faf-4b29bf94ae39' }
                     ))
                     const campus = campusResults.data.getCampus
                     setCampus(campus)

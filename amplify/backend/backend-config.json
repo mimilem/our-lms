@@ -1,4 +1,45 @@
 {
+  "function": {
+    "vincoElearningPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "auth": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "vincoElearning",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ]
+    },
+    "vincoElearning": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "vincoElearningPostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": false
+    }
+  },
   "api": {
     "vincoelearning": {
       "service": "AppSync",
@@ -6,10 +47,9 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
-              "description": "vincoAPIKEY"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authvincoElearning"
             }
           },
           "additionalAuthenticationProviders": []
@@ -17,19 +57,26 @@
       }
     }
   },
-  "auth": {
-    "vincoelearningd40f4111": {
-      "service": "Cognito",
+  "storage": {
+    "vincoElearningS3": {
+      "service": "S3",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
-  "function": {
-    "vincoelearning1e81a9b81e81a9b8PostConfirmation": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "vincoElearning",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "userPoolGroups",
+          "attributes": [
+            "AdminGroupRole"
+          ]
+        }
+      ]
     }
   }
 }

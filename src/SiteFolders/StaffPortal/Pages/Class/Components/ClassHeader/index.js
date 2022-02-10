@@ -17,15 +17,17 @@ function ClassHeader({
     
     return (
         <>
-            <div className='staff-pages-header-dropdown'>
-                <div>
-                    <div className='staff-pages-header-tilte'>
-                        {qualificationDetails.qualificationName} - {qualificationDetails.qualificationYear} Year
-                    </div> 
+            <div style={{display: tabContent === 'discussion' ? 'none' : ''}}>
+                <div className={'staff-pages-header-dropdown'}>
+                    <div>
+                        <div className='staff-pages-header-tilte'>
+                            {qualificationDetails.qualificationName} - {qualificationDetails.qualificationYear} Year
+                        </div> 
+                    </div>
                 </div>
+                
+                <hr className='staff-page-hr'/>          
             </div>
-
-            <hr className='staff-page-hr'/>          
             
             <div>
                 <ClassPageTopNavigation 

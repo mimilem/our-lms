@@ -67,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+            "vincoElearningPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+                  "vincoElearningPostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -122,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+            "vincoElearningPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "vincoelearning1e81a9b81e81a9b8PostConfirmation",
+                  "vincoElearningPostConfirmation",
                   "-",
                   {
                     "Ref": "env"

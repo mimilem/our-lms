@@ -3,12 +3,10 @@
 // of the student portal.
 
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Let's import our GraphQl queries and extentions to fetch data from the API
-import { API, graphqlOperation } from 'aws-amplify';
-import * as queries from '../../../../graphql/queries';
+import { Auth } from 'aws-amplify';
 
 //import the styling compnent(s).
 import './login.css';
@@ -18,14 +16,32 @@ import studentLoginCardIcon from '../../../../assets/graduate-cap.png';
 
 
 function Login() {
-    
-    const [campus, setCampus] = useState([])
-    const [faculty, setFaculty] = useState([])
 
     //Set the document title of the page when it loads.
     useEffect(() => {
         document.title = "Student Portail | Vinco-elearning"
      }, []);
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [signedIn, setSignedIn] = useState(false)
+
+    const handleChangeUsername = (e) => {
+        setUsername(e.target.value)
+    }
+    const handleChangePassword = (e) => {
+        setPassword(e.target.value)
+    }
+    
+        async function signIn() {
+            try {
+                const user = await Auth.signIn(username, password);
+                setSignedIn(true)
+            } catch (error) {
+                console.log('error signing in', error);
+            }
+        }
 
     //Show Password function.
     const showPassword = () => {
@@ -36,46 +52,6 @@ function Login() {
             input.type = "password";
         }
     }
-
-    // fetch a campus and a faculty
-    /*useEffect(() => {
-        const fetchCampus = async () => {
-            try {
-                const campusResults = await API.graphql(
-                    { query: queries.getCampus, variables: { id: '029f5130-90c3-40f3-8bf7-f80db1e8f1b0' }}
-                )
-                const facultyResults = await API.graphql(
-                    { query: queries.getFaculty, variables: { id: 'f908e441-23f4-4734-aaf5-a1c123c537ce' }}
-                )
-                const campus = campusResults.data.getCampus
-                const faculty = facultyResults.data.getFaculty
-                setCampus(campus)
-                setFaculty(faculty)
-            } 
-            catch (error) {
-                console.log(error)
-            }
-        }
-        fetchCampus();
-    }, [])
-
-    const campusName = campus.campusName
-    const campusID = campus.id
-
-    const facultyName = faculty.facultyName
-    const facultyID = faculty.id
-    const facultyCampusID = faculty.campusID
-
-    const campusDetails = {
-        campusName,
-        campusID
-    }
-    
-    const facultyDetails = {
-        facultyName,
-        facultyID,
-        facultyCampusID
-    }*/
     
     return (
         <div className='student-loginPage-container'>
@@ -95,10 +71,14 @@ function Login() {
                     <div className='student-login-form'>
                         <input
                             placeholder='Username'
+                            value={username}
+                            onChange={handleChangeUsername}
                             type='text' />
                         <br/>
                         <input
                             placeholder='Password'
+                            value={password}
+                            onChange={handleChangePassword}
                             type='password'
                             id="thePassword" />
 
@@ -118,7 +98,7 @@ function Login() {
                     <Link to={{     
                         pathname:'/Students/Dashboard',
                     }}>
-                        <button className='student-login-login-button'>
+                        <button onClick={signIn} className='student-login-login-button'>
                             Login
                         </button>
                     </Link>

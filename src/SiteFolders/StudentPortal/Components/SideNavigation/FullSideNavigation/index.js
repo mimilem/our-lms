@@ -48,11 +48,11 @@ function FullSideNavigation(props) {
                         <div className='side-navigation-text'>My Courses</div>
                 </Link>
                 
-                <Link to='/Students/MyWork' 
-                    className={activeTab === 'myWork' ? 'active' : ''} 
+                <Link to='/Students/MyResult' 
+                    className={activeTab === 'myResult' ? 'active' : ''} 
                 >
                         <div className='myWork-icon'/>
-                        <div className='side-navigation-text'>My Work</div>
+                        <div className='side-navigation-text'>My Result</div>
                 </Link>
 
                 <Link to='/Students/Time-Table'

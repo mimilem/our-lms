@@ -22,8 +22,10 @@ import DepartmentsPage from '../SiteFolders/StaffPortal/Pages/Departments';
 import Events from '../SiteFolders/StaffPortal/Pages/Events';
 import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
 import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
+import ClassDiscussion from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassDiscussion'
 import ModulesList from '../SiteFolders/StaffPortal/Pages/Class/Components/ModulesList';
 import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
+import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
 import ClassStudents from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassStudents';
 import ClassTimeTable from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassTimeTable';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
@@ -41,7 +43,7 @@ import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
 import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
 import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
-import MyWorks from '../SiteFolders/StudentPortal/Pages/MyWork';
+import MyResults from '../SiteFolders/StudentPortal/Pages/MyResults';
 
 
 function Router() {
@@ -68,10 +70,12 @@ function Router() {
                 <Route exact path='/Staff/Departments/Lessons' component={Lessons}/>
                 <Route exact path='/Staff/Departments/Students' component={ClassStudents}/>
                 <Route exact path='/Staff/Departments/TimeTable' component={ClassTimeTable}/>
+                <Route exact path='/Staff/Departments/Discussion' component={ClassDiscussion}/>
                 <Route exact path='/Staff/Events' component={Events}/>
                 <Route exact path='/Staff/Exams' component={ExamsPage}/>
                 <Route exact path='/Staff/Exams/Calendar' component={CalendarPage}/>
                 <Route exact path='/Staff/Exams/Subject' component={SubjectSelection}/>
+                <Route exact path='/Staff/ManageUsers' component={ManageUsersPage}/>
                 <Route exact path='/Staff/Modules-Shelf' component={ModulePage}/>
                 <Route exact path='/Staff/Reports' component={Reports}/>
                 <Route exact path='/Staff/Students' component={StudentsPage}/>
@@ -86,7 +90,7 @@ function Router() {
                 <Route exact path='/Students/MyCourses/CourseName' component={StudentsModule}/>
                 <Route exact path='/Students/Reports' component={StudentReports}/>
                 <Route exact path='/Students/Time-Table' component={StudentTimeTable}/>
-                <Route exact path='/Students/MyWork' component={MyWorks}/>
+                <Route exact path='/Students/MyResult' component={MyResults}/>
                 
             </Switch>
         </Routers>
