@@ -17,3 +17,90 @@
   position: relative;
   z-index: 9;
 }
+
+.pop-up-title {
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.create-course-pop-up-title {
+  align-items: center;
+  display: flex;
+  font-size: 23px;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.create-course-input {
+  display: flex;
+  font-size: 16px;
+  height: 1.5rem;
+  outline-color: #5d8aa8;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 60%;
+}
+
+#select-a-teacher {
+  align-items: center;
+  background-color: #353839;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  justify-content: center;
+  margin-left: 7.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 10rem;
+}
+.dropdown-icon {
+  background-image: url("../../../../../../assets/caret-down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 1rem;
+}
+.selected-teacher {
+  text-align: center;
+  background-color: aliceblue;
+  justify-content: center;
+  margin-right: 10rem;
+  padding: 1rem;
+  height: 1rem;
+}
+#select-a-period {
+  align-items: center;
+  background-color: #353839;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  justify-content: center;
+  margin-right: 5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 12rem;
+}
+
+#courseOverview {
+  font-size: 16px;
+  min-height: 10rem;
+  max-height: 10rem;
+  min-width: 55%;
+  max-width: 55%;
+  padding: 1rem;
+}

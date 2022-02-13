@@ -20,7 +20,8 @@ function ClassHeader({
             <div style={{display: tabContent === 'discussion' ? 'none' : ''}}>
                 <div className={'staff-pages-header-dropdown'}>
                     <div>
-                        <div className='staff-pages-header-tilte'>
+                        <div 
+                            className='staff-pages-header-tilte'>
                             {qualificationDetails.qualificationName} - {qualificationDetails.qualificationYear} Year
                         </div> 
                     </div>

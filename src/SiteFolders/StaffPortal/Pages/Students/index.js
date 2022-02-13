@@ -11,8 +11,6 @@ import '../staffPages.css';
 
 //import all components that will be 
 //displayed on the pages.
-import Header from '../../Components/Header';
-import SideNavigation from '../../Components/SideNavigation';
 import StudentsList from '../../Components/StudentsList';
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
@@ -61,6 +59,11 @@ function StudentsPage() {
             setSearchStudentByName(text)
         }
     }
+
+    //automatically scroll to top
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
 
     return (
         <div className="staff-pages-container">

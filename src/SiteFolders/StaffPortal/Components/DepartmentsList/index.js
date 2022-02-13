@@ -60,7 +60,10 @@ function DepartmentsList({
         <div>
             {/* onClick show the window to create a new faculty (window section placed 
             in the Departments component) */}
-            <div onClick={() => setShowCreateFaculty(true)} className='exams-calendar-tilte'>
+            <div 
+                onClick={() => setShowCreateFaculty(true)} 
+                className='exams-calendar-tilte'
+                style={{fontSize: 17, alignItems:'center'}}>
                 + Add a new faculty
             </div>  
 
@@ -72,7 +75,7 @@ function DepartmentsList({
                 {/* Display full information if the toggle state is set to true. */}
                 { toggleDown === false ?
                     <div 
-                        className='class-exams-calendar-tilte' 
+                        className='department-list-title' 
                         style={{marginBottom:'25px'}} 
                         onClick={()=> setToggleDown1(true)}>
                             {facultyItemMap.facultyName} <div className='access'>↓</div>
@@ -80,7 +83,7 @@ function DepartmentsList({
                     :
                     <>
                         <div 
-                            className='active-class-exams-calendar-tilte' 
+                            className='active-department-list-title' 
                             onClick={()=> setToggleDown1(false)}>
                                 {facultyItemMap.facultyName} <div className='access'>↑</div>
                         </div> 
@@ -93,7 +96,7 @@ function DepartmentsList({
                                 {/* Store the faculty id(in setStateFacultyID declared in the Departments component)
                                     so that we may assign this id when we create a new department. */}
                                 <div 
-                                    style={{color: '#353839', cursor:'pointer', textTransform:'capitalize'}}
+                                    style={{color: '#353839', cursor:'pointer', textTransform:'capitalize', fontSize: 16}}
                                     onClick={() => {
                                         setShowCreateDepartment(true)
                                         setStateFacultyID(facultyItemMap.id)}}>
@@ -108,7 +111,9 @@ function DepartmentsList({
 
                                 <div key={departmentItemMap.id}>
 
-                                    <li style={{textTransform:'capitalize'}}>{departmentItemMap.departmentName}</li>
+                                    <li style={{textTransform:'capitalize', fontSize: 16}}>
+                                        {departmentItemMap.departmentName}
+                                    </li>
 
                                     <div className='qualification-container'>
                                         <div className='add-qualification'

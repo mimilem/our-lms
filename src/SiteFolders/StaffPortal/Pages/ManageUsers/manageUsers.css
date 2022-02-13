@@ -2,3 +2,15 @@
   height: 15px;
   margin-left: 4rem;
 }
+
+.add-users-icon {
+  background-image: url("../../../../assets/add-user(1).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  height: 3rem;
+  margin-right: 4rem;
+  width: 3rem;
+}

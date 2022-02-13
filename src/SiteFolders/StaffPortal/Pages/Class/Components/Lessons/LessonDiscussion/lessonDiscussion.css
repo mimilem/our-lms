@@ -1,0 +1,109 @@
+.disccusion-container {
+  background-color: #f5f5f5;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 27rem;
+  position: relative;
+  width: 100%;
+}
+.type-msg-area {
+  background-color: #fff;
+  bottom: 0;
+  float: bottom;
+  height: auto;
+  margin-top: 20rem;
+  padding: 10px;
+  position: sticky;
+  width: 100%;
+}
+.lesson-discussion-type-msg {
+  align-items: center;
+  border-radius: 20px;
+  border-width: 1 solid;
+  font-size: 18px;
+  height: 20px;
+  justify-content: center;
+  left: auto;
+  right: auto;
+  outline: none;
+  padding: 10px;
+  position: relative;
+  resize: none;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.lesson-file-icon {
+  background-image: url("../../../../../../../assets/new-document.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  height: 2.5rem;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 2.5rem;
+}
+
+.lesson-send-icon {
+  background-image: url("../../../../../../../assets/send.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 2.5rem;
+  margin-left: 20px;
+  width: 2.5rem;
+}
+
+.lesson-info-bar {
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+}
+
+.my-msg-container {
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 80%;
+  display: flex;
+}
+.my-msg {
+  background-color: #000;
+  border-radius: 20px;
+  color: #fff;
+  padding: 15px;
+  width: 8rem;
+}
+.my-icon {
+  background-color: #353839;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 3px;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.sender-msg-container {
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+.sender-msg {
+  background-color: #353839;
+  border-radius: 20px;
+  color: #fff;
+  padding: 15px;
+  width: 8rem;
+}
+.sender-icon {
+  background-color: #000;
+  border-radius: 20px;
+  margin-left: 3px;
+  margin-right: 10px;
+  height: 2.5rem;
+  width: 2.5rem;
+}

@@ -77,12 +77,12 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDeta
                 </Link>
 
                 <Link to='/Staff/ManageUsers'
-                    className={activeTab === 'students' ? 'active' : ''} 
-                    title='Students'>
-                    <div className='students-icon'/>
+                    className={activeTab === 'manageusers' ? 'active' : ''} 
+                    title='Manage Users'>
+                    <div className='manage-users-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
-                            Users
+                        <div style={{fontSize:'10px',position: 'relative', left:'-23px', right:0}}>
+                            Manage Users
                         </div>
                     </div>
                 </Link>

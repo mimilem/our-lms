@@ -306,6 +306,12 @@ export const onCreateClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -346,6 +352,12 @@ export const onUpdateClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -386,6 +398,12 @@ export const onDeleteClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -402,6 +420,12 @@ export const onCreateClassModule = /* GraphQL */ `
     onCreateClassModule {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -442,6 +466,12 @@ export const onUpdateClassModule = /* GraphQL */ `
     onUpdateClassModule {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -482,6 +512,12 @@ export const onDeleteClassModule = /* GraphQL */ `
     onDeleteClassModule {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -526,6 +562,12 @@ export const onCreateModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -547,6 +589,16 @@ export const onCreateModuleChapter = /* GraphQL */ `
           id
           name
           owner
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
           moduleChapterID
           createdAt
           updatedAt
@@ -567,6 +619,12 @@ export const onUpdateModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -588,6 +646,16 @@ export const onUpdateModuleChapter = /* GraphQL */ `
           id
           name
           owner
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
           moduleChapterID
           createdAt
           updatedAt
@@ -608,6 +676,12 @@ export const onDeleteModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -634,6 +708,259 @@ export const onDeleteModuleChapter = /* GraphQL */ `
           updatedAt
         }
         nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLesson = /* GraphQL */ `
+  subscription OnCreateLesson {
+    onCreateLesson {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLesson = /* GraphQL */ `
+  subscription OnUpdateLesson {
+    onUpdateLesson {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLesson = /* GraphQL */ `
+  subscription OnDeleteLesson {
+    onDeleteLesson {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLessonTimeTable = /* GraphQL */ `
+  subscription OnCreateLessonTimeTable {
+    onCreateLessonTimeTable {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonTimeTable = /* GraphQL */ `
+  subscription OnUpdateLessonTimeTable {
+    onUpdateLessonTimeTable {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonTimeTable = /* GraphQL */ `
+  subscription OnDeleteLessonTimeTable {
+    onDeleteLessonTimeTable {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -660,11 +987,20 @@ export const onCreateFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt
@@ -695,11 +1031,20 @@ export const onUpdateFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt
@@ -730,11 +1075,20 @@ export const onDeleteFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt

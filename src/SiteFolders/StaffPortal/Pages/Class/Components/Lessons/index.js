@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 // Import the amplify API and components to handle the 
 // requests.
 import { Storage, API, graphqlOperation } from "aws-amplify";
-import { listModuleChapters, listFiles } from '../../../../../../graphql/queries';
+import { listModuleChapters, listFiles, listLessons, listLessonTimeTables } from '../../../../../../graphql/queries';
 import * as mutations from '../../../../../../graphql/mutations';
 import awsExports from '../../../../../../aws-exports';
 
@@ -16,6 +16,7 @@ import '../classComponent.css';
 //displayed on the page.
 import ClassHeader from '../ClassHeader';
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
+import LessonDashboard from './LessonDashboard';
 
 
 function Lessons() {
@@ -34,9 +35,20 @@ function Lessons() {
     const [moduleChapter, setModuleChapter] = useState([]);
     const [moduleChapterID, setModuleChapterID] = useState('Not Found');
 
+    const [lesson, setLesson] = useState([])
+    const [newLessonID, setNewLessonID] = useState([])
+    const [lessonNameInputValue, setLessonNameInputValue] = useState('')
+    const [showCreateLesson, setShowCreateLesson] = useState(false)
+
+    const [showLessonWindow, setShowLessonWindow] = useState(false)
+
     const [file, setFile] = useState([]);
     const [fileUrl, setFileUrl] = useState('');
     const [fileName, setFileName] = useState('');
+
+    const [lessonTimeTableDayInputValue, setLessonTimeTableDayInputValue] = useState([])
+    const [lessonTimeTableStartTimeInputValue, setLessonTimeTableStartTimeInputValue] = useState([])
+    const [lessonTimeTableEndTimeInputValue, setLessonTimeTableEndTimeInputValue] = useState([])
 
     let location = useLocation();
     
@@ -74,6 +86,33 @@ function Lessons() {
         window.location.reload(false);
     }
 
+    // This Function is used to create a new Lesson
+    // then reload the page.
+    const createLesson = async () => {
+        const lessonDetails = {
+            lessonName: lessonNameInputValue,
+            moduleChapterID: moduleChapterID
+        };
+        const newLesson = await API.graphql({ 
+            query: mutations.createLesson, 
+            variables: {input: lessonDetails}
+        });
+        setNewLessonID(newLesson.data.createLesson.id)
+
+        const lessonTimeTableDetails = {
+            lessonName: lessonNameInputValue,
+            day: lessonTimeTableDayInputValue,
+            startTime: lessonTimeTableStartTimeInputValue,
+            endTime: lessonTimeTableEndTimeInputValue,
+            lessonID: newLessonID
+        };
+        const newlessonTimeTable = await API.graphql({ 
+            query: mutations.createLessonTimeTable, 
+            variables: {input: lessonTimeTableDetails}
+        });
+        window.location.reload(false);
+    }
+
     async function onChangeHandler(e) {
         
         const file = e.target.files[0];
@@ -106,7 +145,7 @@ function Lessons() {
         .catch(err => console.log('error upload file!', err))
     }
 
-    /* fetch the list of all Module Chapter */
+    /* fetch the list of all Module Chapter && lessons */
     useEffect( () => {
             
         const fetchModuleChapter = async () => {
@@ -116,6 +155,12 @@ function Lessons() {
                 )
                 const moduleChapter = moduleChapterResults.data.listModuleChapters.items
                 setModuleChapter(moduleChapter)
+
+                const lessonsResults = await API.graphql(
+                    graphqlOperation(listLessons)
+                )
+                const Lessons = lessonsResults.data.listLessons.items
+                setLesson(Lessons)
 
                 Storage.list('') // for listing ALL files without prefix, pass '' instead
                 .then(result => {
@@ -149,7 +194,10 @@ function Lessons() {
                     qualificationDetails={qualificationDetails} />
 
                 <div className='class-page-content'>
-
+                    <div style={{display: showLessonWindow === true ? '' : 'none' }} >
+                        <LessonDashboard />
+                    </div>
+                    
                     <div className='title'>{moduleDetail.moduleName}</div>
 
 
@@ -158,25 +206,27 @@ function Lessons() {
                             <div 
                                 className='exams-calendar-tilte'
                                 onClick={() => setShowCreateModuleChapter(true)}>
-                                Add a new chapter <div className='access'>+</div>
+                                Add a new Module <div className='access'>+</div>
                             </div> 
                         </div>
 
                         <div className="chapter-container">
 
-                            {
-                                moduleChapter.map((item) => 
-                                    <div key={item.id}>
-                                        <div className='class-exams-calendar-tilte'>
-                                            Chapter: {item.chapterName}
+                            { 
+                                moduleChapter.map((moduleChapterMapItem) => 
+                                moduleChapterMapItem.classModuleID === moduleDetail.id ?
+                                
+                                    <div key={moduleChapterMapItem.id}>
+                                        <div className='exams-calendar-tilte'>
+                                            Chapter: {moduleChapterMapItem.chapterName}
                                         </div>
                                         <div className='add-a-material'>
                                             Add a material <br/>
                                             <input 
                                                 type='file'
                                                 onChange={onChangeHandler}
-                                                onClick={()=> setModuleChapterID(item.id)} />
-                                            { moduleChapterID===item.id ? 
+                                                onClick={()=> setModuleChapterID(moduleChapterMapItem.id)} />
+                                            { moduleChapterID===moduleChapterMapItem.id ? 
                                                 <div className='list-of-materials-uploaded'>
                                                     <img src={fileUrl} alt='' className='uploadprevu'/>
                                                     <div className='documentTitle'>{fileName}</div>
@@ -184,21 +234,47 @@ function Lessons() {
                                                 </div> : []
                                             }
                                         </div>
+                                        {   moduleChapterID===moduleChapterMapItem.id ? 
+                                            file.map((fileMapItem) => (
+                                            <div className='list-of-materials-uploaded'>
+                                                <img 
+                                                    src={'https://s3-us-east-2.amazonaws.com/vincoelearningbucket81733-dev/public/'+fileMapItem.key} 
+                                                    alt='' className='uploadprevu'/>
+                                                <div className='documentTitle'>{fileMapItem.key}</div>
+                                                <div className='download-icon'/>
+                                            </div>) ) : []
+                                        }
 
-                                        <h2 style={{marginLeft: '2rem'}}>List Of Materials</h2>
-                                            {
-                                                file.map((item) => (
-                                                <div className='list-of-materials-uploaded'>
-                                                    <img 
-                                                        src={'https://s3-us-east-2.amazonaws.com/vincoelearningbucket81733-dev/public/'+item.key} 
-                                                        alt='' className='uploadprevu'/>
-                                                    <div className='documentTitle'>{item.key}</div>
-                                                    <div className='download-icon'/>
-                                                </div>)) 
-                                            }
+
+                                        <div>
+                                            <h1 style={{marginLeft: '2rem'}}>Lessons</h1>
+                                            <div 
+                                                className='add-lesson' 
+                                                title='Add a new lesson'
+                                                onClick={() => {
+                                                    setShowCreateLesson(true)
+                                                    setModuleChapterID(moduleChapterMapItem.id)}}>
+                                                New Lesson <div className='add-button-icon'/>
+                                            </div>
+                                            
+                                            <ul className='lesson-element-container'>
+                                                {
+                                                    lesson.map(lessonMapItem => 
+                                                        lessonMapItem.moduleChapterID === moduleChapterMapItem.id ?
+                                                        
+                                                <li 
+                                                    onClick={() => setShowLessonWindow(true)} 
+                                                    className='lesson-element'>
+                                                        {lessonMapItem.lessonName}
+                                                </li>
+                                                : []
+                                                )}
+                                            </ul>
+                                            
+                                        </div>
                                         <hr className='staff-page-hr'/>
-                                    </div>
-                                )
+                                    </div>: []
+                                ) 
                             }
                         </div>
                     </div> 
@@ -212,20 +288,140 @@ function Lessons() {
             <div 
                 className='pop-out-window'
                 style={{ display:showCreateModuleChapter === false ? 'none' : ''}} >
-                    <div className='pop-up-title'>Create a new module chapter</div>
+                    <div className='pop-up-title'>Add a new Module</div>
                     <input
                         className='lg-pop-up-input'
-                        placeholder='Module Chapter Name'
+                        placeholder='Module Name'
                         value={moduleChapterNameInputValue}
                         onChange={e => setModuleChapterNameInputValue(e.target.value)}
                     />
+
+                    <div style={{marginLeft: '7rem'}}>
+                        <h2>Add a material</h2> 
+                        <input 
+                            placeholder='Add a material'
+                            type='file'
+                            onChange={onChangeHandler}/>
+                    </div>
+
                     <div 
                         className='close-pop-up-icon' 
                         onClick={ () => setShowCreateModuleChapter(false)} />
                     <div 
                         onClick={ createNewModuleChapter } 
                         className='create-pop-up-button'
-                    >Create</div>
+                    >Add</div>
+            </div>
+
+            {/* The Pup-out window that allows the admin to create */}
+            {/* a new lesson. */}
+            {/* By default the display is set to false */}
+            <div 
+                className='pop-out-window'
+                style={{ display:showCreateLesson === false ? 'none' : ''}} >
+                    <div className='pop-up-title'>Add a new lesson</div>
+                    <input
+                        className='lg-pop-up-input'
+                        placeholder='Lesson Name'
+                        value={lessonNameInputValue}
+                        onChange={e => setLessonNameInputValue(e.target.value)}
+                    />
+
+                    <div className='timeTable'>
+                        <h2>Time Table</h2>
+                        <div className='create-timeTableDay'>
+                            <div>
+                                <div className='create-timeTableDay-element'>
+                                    <input 
+                                        type='checkbox'
+                                        value="Monday"
+                                        onClick={() => setLessonTimeTableDayInputValue("Monday")}/>
+                                        Monday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input 
+                                        type='checkbox'
+                                        value="Tuesday"
+                                        onClick={() => setLessonTimeTableDayInputValue(prevState =>
+                                            prevState + "Tuesday"
+                                        )}/>
+                                        Tuesday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input type='checkbox'/>Wednesday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input type='checkbox'/>Thursday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input type='checkbox'/>Friday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input type='checkbox'/>Saturday
+                                </div>
+                                <div className='create-timeTableDay-element'>
+                                    <input type='checkbox'/>Sunday
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    From <input 
+                                        className='create-timeTableHour-element' 
+                                        type='time'
+                                        onChange={(e)=> setLessonTimeTableStartTimeInputValue(e.target.value)}/> - To <input 
+                                        className='create-timeTableHour-element' 
+                                        type='time'
+                                        onChange={(e)=> setLessonTimeTableEndTimeInputValue(e.target.value)}/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                <div>
+                                    From <input className='create-timeTableHour-element' type='time'/> - To <input 
+                                    className='create-timeTableHour-element' type='time'/>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div className='lessonType'>
+                            <h2>Lesson Type</h2>
+                            <div className='lessonType-element-container'>
+                                <div className='lessonType-element'>
+                                    <input type='checkbox' />
+                                    Online
+                                </div>
+                                <div className='lessonType-element'>
+                                    <input type='checkbox' />
+                                    On Site
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div 
+                        className='close-pop-up-icon' 
+                        onClick={ () => setShowCreateLesson(false)} />
+                    <div 
+                        onClick={ createLesson } 
+                        className='create-pop-up-button'
+                    >Add</div>
             </div>
         </div>
     );

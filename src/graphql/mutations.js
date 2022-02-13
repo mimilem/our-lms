@@ -336,6 +336,12 @@ export const createClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -379,6 +385,12 @@ export const updateClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -422,6 +434,12 @@ export const deleteClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -441,6 +459,12 @@ export const createClassModule = /* GraphQL */ `
     createClassModule(input: $input, condition: $condition) {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -484,6 +508,12 @@ export const updateClassModule = /* GraphQL */ `
     updateClassModule(input: $input, condition: $condition) {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -527,6 +557,12 @@ export const deleteClassModule = /* GraphQL */ `
     deleteClassModule(input: $input, condition: $condition) {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -574,6 +610,12 @@ export const createModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -595,6 +637,16 @@ export const createModuleChapter = /* GraphQL */ `
           id
           name
           owner
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
           moduleChapterID
           createdAt
           updatedAt
@@ -618,6 +670,12 @@ export const updateModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -639,6 +697,16 @@ export const updateModuleChapter = /* GraphQL */ `
           id
           name
           owner
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
           moduleChapterID
           createdAt
           updatedAt
@@ -662,6 +730,12 @@ export const deleteModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -688,6 +762,277 @@ export const deleteModuleChapter = /* GraphQL */ `
           updatedAt
         }
         nextToken
+      }
+      lessons {
+        items {
+          id
+          lessonName
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createLesson = /* GraphQL */ `
+  mutation CreateLesson(
+    $input: CreateLessonInput!
+    $condition: ModelLessonConditionInput
+  ) {
+    createLesson(input: $input, condition: $condition) {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLesson = /* GraphQL */ `
+  mutation UpdateLesson(
+    $input: UpdateLessonInput!
+    $condition: ModelLessonConditionInput
+  ) {
+    updateLesson(input: $input, condition: $condition) {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLesson = /* GraphQL */ `
+  mutation DeleteLesson(
+    $input: DeleteLessonInput!
+    $condition: ModelLessonConditionInput
+  ) {
+    deleteLesson(input: $input, condition: $condition) {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createLessonTimeTable = /* GraphQL */ `
+  mutation CreateLessonTimeTable(
+    $input: CreateLessonTimeTableInput!
+    $condition: ModelLessonTimeTableConditionInput
+  ) {
+    createLessonTimeTable(input: $input, condition: $condition) {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLessonTimeTable = /* GraphQL */ `
+  mutation UpdateLessonTimeTable(
+    $input: UpdateLessonTimeTableInput!
+    $condition: ModelLessonTimeTableConditionInput
+  ) {
+    updateLessonTimeTable(input: $input, condition: $condition) {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLessonTimeTable = /* GraphQL */ `
+  mutation DeleteLessonTimeTable(
+    $input: DeleteLessonTimeTableInput!
+    $condition: ModelLessonTimeTableConditionInput
+  ) {
+    deleteLessonTimeTable(input: $input, condition: $condition) {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -717,11 +1062,20 @@ export const createFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt
@@ -755,11 +1109,20 @@ export const updateFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt
@@ -793,11 +1156,20 @@ export const deleteFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt

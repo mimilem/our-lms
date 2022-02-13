@@ -35,7 +35,8 @@
 }
 
 .institution-name {
-  font-size: 1.5rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 17px;
   margin-left: 0.2rem;
 }
 

@@ -111,9 +111,9 @@ function ModulesList() {
 
                 <div className='add-new-module'>
                     <div 
-                        className='active-class-exams-calendar-tilte' 
+                        className='active-department-list-title' 
                         onClick={ () => setShowCreateModule(true) }>
-                        Add a new module <div className='access'>+</div>
+                        Add a new course <div className='access'>+</div>
                     </div> 
                 </div>
                 { classModules.map((moduleDetail) =>
@@ -125,25 +125,11 @@ function ModulesList() {
                                 key={moduleDetail.id}>
                                     <div 
                                         style={{marginTop: '1rem' }} 
-                                        className='active-class-exams-calendar-tilte'
+                                        className='active-department-list-title'
                                         onClick={()=> setChosedModule(true)}>
                                         {moduleDetail.moduleName} <div className='access'>{`>`}</div>
                                     </div> 
-                            </Link> 
-                        /*: 
-                        moduleDetails.id && (
-                            moduleDetail.classID === qualificationDetails.qualificationId? 
-                            <Link to={{     
-                                pathname:'/Staff/Departments/Lessons',
-                                state: {qualificationDetails, moduleDetails} }} >
-                                    <div 
-                                        style={{marginTop: '1rem' }} 
-                                        className='active-class-exams-calendar-tilte'
-                                        onClick={()=> setChosedModule(true)}>
-                                        {moduleDetails.moduleName} <div className='access'>{`>`}</div>
-                                    </div> 
-                            </Link> */
-                            : [])
+                            </Link> : [])
                 )}
                 
                 {/* The Pup-out window that allows the admin to create */}
@@ -151,11 +137,91 @@ function ModulesList() {
                 {/* By default the display is set to false */}
                 <div 
                     className='pop-out-window'
-                    style={{ display:showCreateModule === false ? 'none' : ''}} >
-                        <div className='pop-up-title'>Create a new module</div>
+                    style={{ display:showCreateModule === false ? 'none' : '' }} >
+                        <div className='create-course-pop-up-title'>
+                            Create a new Course
+                        </div>
                         <input
-                            className='lg-pop-up-input'
-                            placeholder='Module Name'
+                            className='create-course-input'
+                            placeholder='Course Name'
+                            value={moduleNameInputValue}
+                            onChange={e => setModuleNameInputValue(e.target.value)}
+                        />
+                        <input
+                            className='create-course-input'
+                            placeholder='Code'
+                            value={moduleNameInputValue}
+                            onChange={e => setModuleNameInputValue(e.target.value)}
+                        />
+                        <input
+                            className='create-course-input'
+                            placeholder='Credit'
+                            value={moduleNameInputValue}
+                            onChange={e => setModuleNameInputValue(e.target.value)}
+                        />
+
+                        <div style={{display: 'flex'}}>
+                            <div className='create-course-input' id='select-a-teacher'>
+                                Select a teacher <div className='dropdown-icon'/>
+                            </div>
+                            <div className='selected-teacher'>x Noleen Isaac</div>
+                        </div>
+
+                        <div style={{marginLeft:'7.5rem', marginTop:15}}>
+                            <div 
+                                style={{
+                                    fontSize:20, 
+                                    fontWeight:'bold',
+                                    marginBottom: 15
+                                    }}>Select a period
+                            </div>
+                            <div style={{display: 'block', width: '100%'}}>
+                                <div style={{display:'flex', marginTop:15, marginBottom: 20}}>
+                                    <input 
+                                        type='checkbox'
+                                        style={{marginTop: 5}} />
+                                        <div style={{fontSize:16}}>All Year</div>
+                                </div>
+                                <div 
+                                    className='create-course-input' 
+                                    id='select-a-period'>
+                                    Select a Semester <div className='dropdown-icon'/>
+                                </div> 
+
+                                <div 
+                                    className='create-course-input' 
+                                    id='select-a-period'>
+                                    Monthly <div className='dropdown-icon'/>
+                                </div>
+
+                                <div className='create-course-input'>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{marginLeft:'7.5rem', marginTop:'-2rem', marginBottom:'2rem'}}>
+                            <div 
+                                style={{
+                                    fontSize:20, 
+                                    marginBottom: 15
+                                    }}>Is the course compulsory ?
+                                    <div style={{display:'flex', marginTop:15, marginBottom: 20}}>
+                                        <input 
+                                            type='checkbox'
+                                            style={{marginTop: 5}} />
+                                            <div style={{fontSize:16}}>Yes</div>
+                                        <input 
+                                            type='checkbox'
+                                            style={{marginTop: 5, marginLeft: '20px'}} />
+                                            <div style={{fontSize:16}}>No</div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <textarea
+                            id='courseOverview'
+                            className='create-course-input'
+                            placeholder='Course Overview'
                             value={moduleNameInputValue}
                             onChange={e => setModuleNameInputValue(e.target.value)}
                         />
@@ -166,6 +232,7 @@ function ModulesList() {
                             onClick={ createNewModule } 
                             className='create-pop-up-button'
                         >Create</div>
+                        <div style={{paddingBottom: '5rem'}}/>
                 </div>
 
             </div>

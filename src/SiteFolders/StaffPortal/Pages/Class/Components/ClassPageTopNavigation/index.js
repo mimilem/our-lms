@@ -27,7 +27,7 @@ function ClassPageTopNavigation({
                         : 
                         "class-top-navigation-tab-element"
                     }>
-                    Modules
+                    Courses
                 </div>
             </Link>
                 
@@ -35,7 +35,7 @@ function ClassPageTopNavigation({
                 chosedModule === false ? 
                 <>
                     <div className="dis-class-top-navigation-tab-element">
-                        Chapters
+                     Modules
                     </div>
                     <div className="dis-class-top-navigation-tab-element">
                         Students
@@ -49,9 +49,9 @@ function ClassPageTopNavigation({
                     <div className="dis-class-top-navigation-tab-element">
                         Reports
                     </div>
-                    <div className="dis-class-top-navigation-tab-element">
+                    {/* <div className="dis-class-top-navigation-tab-element">
                         Discussion
-                    </div>
+                    </div> */}
                 </>
                 :
                 <>
@@ -66,7 +66,7 @@ function ClassPageTopNavigation({
                                 : 
                                 "class-top-navigation-tab-element"
                             }>
-                            Chapters
+                            Modules
                         </div>
                     </Link>
                     
@@ -121,7 +121,7 @@ function ClassPageTopNavigation({
                         </div>
                     </Link>
                     
-                    <Link to={{     
+                    {/* <Link to={{     
                         pathname:'/Staff/Departments/Discussion',
                         state: {qualificationDetails, moduleDetails}
                     }}>
@@ -134,7 +134,7 @@ function ClassPageTopNavigation({
                             }>
                             Discussion
                         </div>
-                    </Link>
+                    </Link> */}
                 </>
             }
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //import the styling compnent(s).
 import './dashboard.css';
@@ -15,6 +15,11 @@ function StaffDashboard() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('dashboard');
+
+    //automatically scroll to top
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
 
     return (
         <div className="staff-pages-container">

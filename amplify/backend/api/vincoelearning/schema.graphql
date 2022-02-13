@@ -47,10 +47,27 @@ type Class
 
 type ClassModule
   @model
-  @key(name: "byClass", fields: ["classID", "moduleName"]) {
+  @key(
+    name: "byClass"
+    fields: [
+      "classID"
+      "moduleName"
+      "courseCode"
+      "teacherName"
+      "coursePeriod"
+      "courseCredit"
+      "courseDescription"
+    ]
+  ) {
   id: ID!
   moduleName: String!
-  classID: ID
+  courseCode: String
+  teacherName: String
+  coursePeriod: [String]
+  courseCredit: String
+  courseIsCompulsory: Boolean
+  courseDescription: String
+  classID: ID!
   class: Class @connection(fields: ["classID"])
   moduleChapters: [ModuleChapter]
     @connection(keyName: "byClassModule", fields: ["id"])
@@ -64,6 +81,33 @@ type ModuleChapter
   classModuleID: ID
   classModule: ClassModule @connection(fields: ["classModuleID"])
   files: [File] @connection(keyName: "byModuleChapter", fields: ["id"])
+  lessons: [Lesson] @connection(keyName: "byModuleChapter", fields: ["id"])
+}
+
+type Lesson
+  @model
+  @key(name: "byModuleChapter", fields: ["moduleChapterID", "lessonName"]) {
+  id: ID!
+  lessonName: String!
+  moduleChapterID: ID!
+  moduleChapter: ModuleChapter @connection(fields: ["moduleChapterID"])
+  lessonTimeTable: [LessonTimeTable]
+    @connection(keyName: "byLesson", fields: ["id"])
+}
+
+type LessonTimeTable
+  @model
+  @key(
+    name: "byLesson"
+    fields: ["lessonID", "lessonName", "day", "startTime", "endTime"]
+  ) {
+  id: ID!
+  lessonName: String!
+  day: [String]
+  startTime: [String]
+  endTime: [String]
+  lessonID: ID!
+  lesson: Lesson @connection(fields: ["lessonID"])
 }
 
 type File

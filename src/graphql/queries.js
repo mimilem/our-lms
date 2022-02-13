@@ -199,6 +199,12 @@ export const getClass = /* GraphQL */ `
         items {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
@@ -245,6 +251,12 @@ export const getClassModule = /* GraphQL */ `
     getClassModule(id: $id) {
       id
       moduleName
+      courseCode
+      teacherName
+      coursePeriod
+      courseCredit
+      courseIsCompulsory
+      courseDescription
       classID
       class {
         id
@@ -290,6 +302,12 @@ export const listClassModules = /* GraphQL */ `
       items {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -319,6 +337,12 @@ export const getModuleChapter = /* GraphQL */ `
       classModule {
         id
         moduleName
+        courseCode
+        teacherName
+        coursePeriod
+        courseCredit
+        courseIsCompulsory
+        courseDescription
         classID
         class {
           id
@@ -346,6 +370,16 @@ export const getModuleChapter = /* GraphQL */ `
         }
         nextToken
       }
+      lessons {
+        items {
+          id
+          lessonName
+          moduleChapterID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -365,12 +399,162 @@ export const listModuleChapters = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
           nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLesson = /* GraphQL */ `
+  query GetLesson($id: ID!) {
+    getLesson(id: $id) {
+      id
+      lessonName
+      moduleChapterID
+      moduleChapter {
+        id
+        chapterName
+        classModuleID
+        classModule {
+          id
+          moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        files {
+          nextToken
+        }
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lessonTimeTable {
+        items {
+          id
+          lessonName
+          day
+          startTime
+          endTime
+          lessonID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessons = /* GraphQL */ `
+  query ListLessons(
+    $filter: ModelLessonFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessons(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLessonTimeTable = /* GraphQL */ `
+  query GetLessonTimeTable($id: ID!) {
+    getLessonTimeTable(id: $id) {
+      id
+      lessonName
+      day
+      startTime
+      endTime
+      lessonID
+      lesson {
+        id
+        lessonName
+        moduleChapterID
+        moduleChapter {
+          id
+          chapterName
+          classModuleID
+          createdAt
+          updatedAt
+        }
+        lessonTimeTable {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessonTimeTables = /* GraphQL */ `
+  query ListLessonTimeTables(
+    $filter: ModelLessonTimeTableFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonTimeTables(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lessonName
+        day
+        startTime
+        endTime
+        lessonID
+        lesson {
+          id
+          lessonName
+          moduleChapterID
+          createdAt
+          updatedAt
         }
         createdAt
         updatedAt
@@ -399,11 +583,20 @@ export const getFile = /* GraphQL */ `
         classModule {
           id
           moduleName
+          courseCode
+          teacherName
+          coursePeriod
+          courseCredit
+          courseIsCompulsory
+          courseDescription
           classID
           createdAt
           updatedAt
         }
         files {
+          nextToken
+        }
+        lessons {
           nextToken
         }
         createdAt

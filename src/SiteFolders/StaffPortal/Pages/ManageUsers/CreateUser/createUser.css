@@ -1,0 +1,12 @@
+.createUser-profile-picture {
+  align-items: center;
+  background-color: #000;
+  border-radius: 50px;
+  display: flex;
+  height: 5rem;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 5rem;
+}
