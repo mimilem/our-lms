@@ -32,6 +32,15 @@ function StaffDashboard() {
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Admin Dashboard</div>
                 <hr className='staff-page-hr'/>
+
+                <div className='gradient-blue-card-container'>
+                    <div className='top-left-text'>Faculty</div>
+                    <div className='top-right-text'><div className='more-icon'/></div>
+                </div>
+                <div className='gradient-blue-card-container'>
+                    <div className='top-left-text'>Time Table</div>
+                    <div className='top-right-text'><div className='more-icon'/></div>
+                </div>
             </div>
         </div>
     );

@@ -57,8 +57,8 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDeta
                     title='Departments' >
                     <div className='classes-icon'/>
                     <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-20px', right:0}}>
-                            Departments
+                        <div style={{fontSize:'10px',position: 'relative', left:'-7px', right:0}}>
+                            Faculty
                         </div>
                     </div>
                 </Link>

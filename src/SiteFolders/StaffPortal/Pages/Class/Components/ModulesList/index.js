@@ -4,7 +4,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 // Import the amplify API and components to handle the 
 // requests.
-import { API, graphqlOperation } from "aws-amplify";
+import { Storage, API, graphqlOperation } from "aws-amplify";
 import { listClassModules } from '../../../../../../graphql/queries';
 import * as mutations from '../../../../../../graphql/mutations';
 
@@ -257,6 +257,7 @@ function ModulesList() {
                         <div className='create-course-pop-up-title'>
                             Create a new Course
                         </div>
+                        
                         <input
                             className='create-course-input'
                             placeholder='Course Name'

@@ -232,7 +232,7 @@ function Lessons() {
                         <div>
                             <div className='moduleIntro'>Introduction</div>
                             <p>{moduleDetail.courseDescription}</p>
-                            <b>by: Teacher's Name</b>
+                            <b>by: {moduleDetail.teacherName}</b>
                         </div>
 
                         <div className="chapter-container">
@@ -275,6 +275,7 @@ function Lessons() {
                                             <h2 style={{marginLeft: '2rem'}}>Lessons</h2>
                                             <div 
                                                 className='add-lesson' 
+                                                style={{fontSize: 15}}
                                                 title='Add a new lesson'
                                                 onClick={() => {
                                                     setShowCreateLesson(true)

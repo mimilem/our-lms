@@ -10,6 +10,12 @@ type Faculty
   @key(name: "byCampus", fields: ["campusID", "facultyName"]) {
   id: ID!
   facultyName: String!
+  headofFaculty: String!
+  facultyCountry: String!
+  facultyCity: String!
+  facultyPhoneNumber: String!
+  facultyEmailAddress: String!
+  facultyAdress: String!
   campusID: ID!
   campus: Campus @connection(fields: ["campusID"])
   departments: [Department] @connection(keyName: "byFaculty", fields: ["id"])

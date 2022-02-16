@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 // requests.
 import { API } from "aws-amplify";
 import * as mutations from '../../../../graphql/mutations';
+import awsExports from '../../../../aws-exports';
 
 //import the styling compnent(s).
 import './departments.css';
@@ -29,7 +30,15 @@ function DepartmentsPage() {
     // State to keep and update the input value when the admin create 
     // an instance.
     const [facultyNameInputValue, setFacultyNameInputValue] = useState('')
+    const [facultyHead, setFacultyHead] = useState('')
+    const [facultyCountry, setFacultyCountry] = useState('')
+    const [facultyCity, setFacultyCity] = useState('')
+    const [facultyPhoneNumber, setFacultyPhoneNumber] = useState('')
+    const [facultyEmail, setFacultyEmail] = useState('')
+    const [facultyAddress, setFacultyAddress] = useState('')
+
     const [departmentNameInputValue, setDepartmentNameInputValue] = useState('')
+    
     const [qualificationNameInputValue, setQualificationNameInputValue] = useState('')
     const [qualificationLevelInputValue, setQualificationLevelInputValue] = useState('')
     const [qualificationYearInputValue, setQualificationYearInputValue] = useState('')
@@ -45,6 +54,10 @@ function DepartmentsPage() {
     const [stateFacultyID, setStateFacultyID] = useState([])
     const [stateDepartmentID, setStateDepartmentID] = useState([])
 
+    const [file, setFile] = useState([]);
+    const [fileUrl, setFileUrl] = useState('');
+    const [fileName, setFileName] = useState('');
+
     let location = useLocation()
     let locationCampusDetails = {
         locationCampusID: location.state.campusID
@@ -55,6 +68,12 @@ function DepartmentsPage() {
     const createNewFaculty = async () => {
         const facultyDetails = {
             facultyName: facultyNameInputValue,
+            headofFaculty: facultyHead,
+            facultyCountry: facultyCountry,
+            facultyCity: facultyCity,
+            facultyPhoneNumber: facultyPhoneNumber,
+            facultyEmailAddress: facultyEmail,
+            facultyAdress: facultyAddress,
             campusID: locationCampusDetails.locationCampusID
         };
         const newFaculty = await API.graphql({ 
@@ -99,6 +118,38 @@ function DepartmentsPage() {
         window.scrollTo(0,0);
     }, []);
 
+    async function onChangeHandler(e) {
+        
+        const file = e.target.files[0];
+
+        setFileUrl(URL.createObjectURL(file))
+        setFileName(file.name)
+
+        Storage.put(file.name, file, { contentType: ''})
+        .then (()=> {
+            console.log('successfully saved file')
+
+            //create dynamoDB files
+            const fileDetails = {
+                name: file.name,
+                moduleChapterID: undefined,
+                file: {
+                    bucket: awsExports.aws_user_files_s3_bucket,
+                    region: awsExports.aws_user_files_s3_bucket_region,
+                    key: file.name
+                }
+            }
+            API.graphql({
+                query: mutations.createFile,
+                variables: {input: fileDetails}
+            });
+            
+            console.log('successfully Added')
+            window.location.reload(false);
+        })
+        .catch(err => console.log('error upload file!', err))
+    }
+
     return (
         <div className="staff-pages-container">
 
@@ -126,11 +177,61 @@ function DepartmentsPage() {
                     className='pop-out-window'
                     style={{ display:showCreateFaculty === false ? 'none' : ''}} >
                         <div className='pop-up-title' >Create a new Faculty</div>
+
+                        <img style={{marginTop:'-2rem'}} src={fileUrl} alt='' className='createUser-profile-picture'/>
+                        
+                        <input
+                            style={{
+                                background:'red', 
+                                position:'absolute', 
+                                top: '17%', 
+                                marginLeft:'44%', 
+                                width: '4.5rem', 
+                                opacity:0}} 
+                            onChange={onChangeHandler}
+                            id='fileid' type='file' name='filename'/>
+
                         <input
                             className='lg-pop-up-input'
-                            placeholder='Faculty Name'
+                            placeholder='Faculty name'
                             value={facultyNameInputValue}
                             onChange={e => setFacultyNameInputValue(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Head of faculty'
+                            value={facultyHead}
+                            onChange={e => setFacultyHead(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Country'
+                            value={facultyCountry}
+                            onChange={e => setFacultyCountry(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='City'
+                            value={facultyCity}
+                            onChange={e => setFacultyCity(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Street address'
+                            value={facultyAddress}
+                            onChange={e => setFacultyAddress(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Phone number'
+                            value={facultyPhoneNumber}
+                            onChange={e => setFacultyPhoneNumber(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Email address'
+                            value={facultyEmail}
+                            onChange={e => setFacultyEmail(e.target.value)}
                         />
                         <div 
                             className='close-pop-up-icon' 

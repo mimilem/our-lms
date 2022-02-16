@@ -11,6 +11,12 @@ export const getCampus = /* GraphQL */ `
         items {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -48,6 +54,12 @@ export const getFaculty = /* GraphQL */ `
     getFaculty(id: $id) {
       id
       facultyName
+      headofFaculty
+      facultyCountry
+      facultyCity
+      facultyPhoneNumber
+      facultyEmailAddress
+      facultyAdress
       campusID
       campus {
         id
@@ -84,6 +96,12 @@ export const listFacultys = /* GraphQL */ `
       items {
         id
         facultyName
+        headofFaculty
+        facultyCountry
+        facultyCity
+        facultyPhoneNumber
+        facultyEmailAddress
+        facultyAdress
         campusID
         campus {
           id
@@ -111,6 +129,12 @@ export const getDepartment = /* GraphQL */ `
       faculty {
         id
         facultyName
+        headofFaculty
+        facultyCountry
+        facultyCity
+        facultyPhoneNumber
+        facultyEmailAddress
+        facultyAdress
         campusID
         campus {
           id
@@ -156,6 +180,12 @@ export const listDepartments = /* GraphQL */ `
         faculty {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -185,6 +215,12 @@ export const getClass = /* GraphQL */ `
         faculty {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt

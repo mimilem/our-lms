@@ -14,6 +14,12 @@ export const createCampus = /* GraphQL */ `
         items {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -38,6 +44,12 @@ export const updateCampus = /* GraphQL */ `
         items {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -62,6 +74,12 @@ export const deleteCampus = /* GraphQL */ `
         items {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -81,6 +99,12 @@ export const createFaculty = /* GraphQL */ `
     createFaculty(input: $input, condition: $condition) {
       id
       facultyName
+      headofFaculty
+      facultyCountry
+      facultyCity
+      facultyPhoneNumber
+      facultyEmailAddress
+      facultyAdress
       campusID
       campus {
         id
@@ -115,6 +139,12 @@ export const updateFaculty = /* GraphQL */ `
     updateFaculty(input: $input, condition: $condition) {
       id
       facultyName
+      headofFaculty
+      facultyCountry
+      facultyCity
+      facultyPhoneNumber
+      facultyEmailAddress
+      facultyAdress
       campusID
       campus {
         id
@@ -149,6 +179,12 @@ export const deleteFaculty = /* GraphQL */ `
     deleteFaculty(input: $input, condition: $condition) {
       id
       facultyName
+      headofFaculty
+      facultyCountry
+      facultyCity
+      facultyPhoneNumber
+      facultyEmailAddress
+      facultyAdress
       campusID
       campus {
         id
@@ -187,6 +223,12 @@ export const createDepartment = /* GraphQL */ `
       faculty {
         id
         facultyName
+        headofFaculty
+        facultyCountry
+        facultyCity
+        facultyPhoneNumber
+        facultyEmailAddress
+        facultyAdress
         campusID
         campus {
           id
@@ -230,6 +272,12 @@ export const updateDepartment = /* GraphQL */ `
       faculty {
         id
         facultyName
+        headofFaculty
+        facultyCountry
+        facultyCity
+        facultyPhoneNumber
+        facultyEmailAddress
+        facultyAdress
         campusID
         campus {
           id
@@ -273,6 +321,12 @@ export const deleteDepartment = /* GraphQL */ `
       faculty {
         id
         facultyName
+        headofFaculty
+        facultyCountry
+        facultyCity
+        facultyPhoneNumber
+        facultyEmailAddress
+        facultyAdress
         campusID
         campus {
           id
@@ -322,6 +376,12 @@ export const createClass = /* GraphQL */ `
         faculty {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -371,6 +431,12 @@ export const updateClass = /* GraphQL */ `
         faculty {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
@@ -420,6 +486,12 @@ export const deleteClass = /* GraphQL */ `
         faculty {
           id
           facultyName
+          headofFaculty
+          facultyCountry
+          facultyCity
+          facultyPhoneNumber
+          facultyEmailAddress
+          facultyAdress
           campusID
           createdAt
           updatedAt
