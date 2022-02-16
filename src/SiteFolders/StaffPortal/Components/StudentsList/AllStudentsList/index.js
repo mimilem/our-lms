@@ -5,7 +5,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 //import aws api and components to create new cart item
 import { API, graphqlOperation } from "aws-amplify";
-import { listStudents, listCampuss, listClasss } from '../../../../../graphql/queries';
+import { listStudents, listClasss } from '../../../../../graphql/queries';
 import * as mutations from '../../../../../graphql/mutations';
 
 //import the styling compnent(s).
@@ -115,7 +115,7 @@ function AllStudentsList({ studentFilterData }) {
             </div>
             
             <ol>
-                <li className='pending-student-list-element' style={{marginBottom: '15px'}}>
+                <li className='pending-student-list-element' style={{marginBottom: '15px', fontSize: '16px'}}>
                     <div className='pending-student-name'><b>No.</b></div>
                     <div className='pending-student-name' style={{marginRight: '80px'}}>Full Name + <b>Surname</b></div>
                     <div className='pending-student-action-title'><b>Actions</b></div>
@@ -134,7 +134,8 @@ function AllStudentsList({ studentFilterData }) {
                             <div className='pending-student-name'>
                                 { index + 1 }. 
                             </div>
-                            <div className='pending-student-name'>{ studentItemMap.studentFullname } <b>{ 
+                            <div
+                                className='pending-student-name'>{ studentItemMap.studentFullname } <b>{ 
                                 studentItemMap.studentSurname }</b>
                             </div>
 

@@ -1,5 +1,6 @@
 .second-title {
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .student-list-element {
@@ -7,7 +8,7 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
   display: flex;
-  font-size: 20px;
+  font-size: 16px;
   justify-content: space-between;
   margin-bottom: 2px;
   padding-bottom: 10px;

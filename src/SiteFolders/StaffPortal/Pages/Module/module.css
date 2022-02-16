@@ -11,6 +11,19 @@
   width: 1.8rem;
 }
 
+.add-module-icon {
+  background-image: url("../../../../assets/add-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  margin-right: 4rem;
+  margin-top: -1rem;
+  height: 2rem;
+  width: 2rem;
+}
+
 .card-dropdown-menu {
   background-color: #fff;
   border-radius: 0.25rem;
