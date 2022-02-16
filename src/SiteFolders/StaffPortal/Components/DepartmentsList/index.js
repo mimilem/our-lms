@@ -96,12 +96,18 @@ function DepartmentsList({
                                 {/* Store the faculty id(in setStateFacultyID declared in the Departments component)
                                     so that we may assign this id when we create a new department. */}
                                 <div 
-                                    style={{color: '#353839', cursor:'pointer', textTransform:'capitalize', fontSize: 16}}
+                                    style={{
+                                        color: '#353839', 
+                                        cursor:'pointer', 
+                                        textTransform:'capitalize', 
+                                        fontSize: 16, 
+                                        marginLeft: '69%'}}
                                     onClick={() => {
                                         setShowCreateDepartment(true)
                                         setStateFacultyID(facultyItemMap.id)}}>
                                             + Add a new department
                                 </div>
+                                <hr className='department-list-hr' />
                                 { 
                                 // If the faculty id is the same as the department 
                                 // facultyID field display the list of departments.
@@ -112,7 +118,7 @@ function DepartmentsList({
                                 <div key={departmentItemMap.id}>
 
                                     <li style={{textTransform:'capitalize', fontSize: 16}}>
-                                        {departmentItemMap.departmentName}
+                                        Department: {departmentItemMap.departmentName}
                                     </li>
 
                                     <div className='qualification-container'>
@@ -140,6 +146,8 @@ function DepartmentsList({
                                             </div> :[])
                                         }    
                                     </div>
+                                    
+                                    <hr className='department-list-hr' />
                                     </div>
                                     : ''
                                 )}

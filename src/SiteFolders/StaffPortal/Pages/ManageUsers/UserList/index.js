@@ -3,7 +3,7 @@ import React from 'react';
 import './userList.css';
 
 
-function UserList() {
+function UserList({teachers}) {
     return (
         <div className='userList-container'>
             

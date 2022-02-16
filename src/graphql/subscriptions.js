@@ -1243,6 +1243,63 @@ export const onDeleteSuperAdmin = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTeacher = /* GraphQL */ `
+  subscription OnCreateTeacher($username: String) {
+    onCreateTeacher(username: $username) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTeacher = /* GraphQL */ `
+  subscription OnUpdateTeacher($username: String) {
+    onUpdateTeacher(username: $username) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTeacher = /* GraphQL */ `
+  subscription OnDeleteTeacher($username: String) {
+    onDeleteTeacher(username: $username) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateMessage = /* GraphQL */ `
   subscription OnCreateMessage {
     onCreateMessage {

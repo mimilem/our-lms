@@ -1,8 +1,9 @@
-.title {
+.course-module-title {
   align-items: center;
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: bold;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-transform: capitalize;
 }
 .chapter-semester-container {
@@ -23,12 +24,18 @@
 .add-a-material {
   cursor: pointer;
   float: left;
+  font-size: 16px;
   margin-left: 2.5rem;
   left: auto;
   padding-bottom: 30px;
   padding-top: 1rem;
   right: auto;
   width: 100%;
+}
+
+.moduleIntro {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .list-of-materials {

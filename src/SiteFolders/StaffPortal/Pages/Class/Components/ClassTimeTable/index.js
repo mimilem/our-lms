@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// Time table
+import { 
+    Inject, 
+    ScheduleComponent, 
+    Day, 
+    WorkWeek, 
+    ViewsDirective, 
+    ViewDirective
+} from '@syncfusion/ej2-react-schedule';
+
 import ClassHeader from '../ClassHeader';
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 
@@ -14,6 +24,18 @@ function ClassTimeTable(props) {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+
+    const [lessonTimeTableData, setlessonTimeTableData] = useState([{
+        Id: 1,
+        Subject: 'Explosion of Betelgeuse Star',
+        StartTime: new Date(2022, 1, 8, 9, 30),
+        EndTime: new Date(2022, 1, 8, 11, 0)
+    }, {
+        Id: 2,
+        Subject: 'Thule Air Crash Report',
+        StartTime: new Date(2022, 1, 9, 12, 0),
+        EndTime: new Date(2022, 1, 9, 14, 0)
+    }])
 
     let location = useLocation();
 
@@ -53,7 +75,15 @@ function ClassTimeTable(props) {
                     qualificationDetails={qualificationDetails} />
 
                 <div className='class-page-content'>
-                    <h1 className='not-available-msg'>Not Yet Available</h1>
+                    <div>
+                        <ScheduleComponent currentView='WorkWeek'
+                            eventSettings={{ dataSource: lessonTimeTableData }} >
+                            <Inject services={[Day, WorkWeek]} />
+                            <ViewsDirective>
+                                <ViewDirective option='WorkWeek' startHour='8:00' endHour='18:00'/>
+                            </ViewsDirective>
+                        </ScheduleComponent>
+                    </div>
                 </div>
             </div>            
         </div>

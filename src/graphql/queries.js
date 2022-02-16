@@ -739,6 +739,51 @@ export const listSuperAdmins = /* GraphQL */ `
     }
   }
 `;
+export const getTeacher = /* GraphQL */ `
+  query GetTeacher($id: ID!) {
+    getTeacher(id: $id) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTeachers = /* GraphQL */ `
+  query ListTeachers(
+    $filter: ModelTeacherFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTeachers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        username
+        email
+        teacherFullName
+        teacherSurname
+        teacherGender
+        teacherCampusName
+        teacherDepartmentName
+        teacherQualificationName
+        teacherCourseName
+        role
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getMessage = /* GraphQL */ `
   query GetMessage($id: ID!) {
     getMessage(id: $id) {

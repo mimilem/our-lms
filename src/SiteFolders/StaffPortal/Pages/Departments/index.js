@@ -39,6 +39,8 @@ function DepartmentsPage() {
     const [showCreateDepartment, setShowCreateDepartment] = useState(false)
     const [showCreateQualification, setShowCreateQualification] = useState(false)
 
+    const [headofDepartmentInputValue, setHeadofDepartmentInputValue] = useState('')
+
     // Update the state of the faculty and department ID
     const [stateFacultyID, setStateFacultyID] = useState([])
     const [stateDepartmentID, setStateDepartmentID] = useState([])
@@ -151,6 +153,12 @@ function DepartmentsPage() {
                             placeholder='Department Name'
                             value={departmentNameInputValue}
                             onChange={e => setDepartmentNameInputValue(e.target.value)}
+                        />
+                        <input
+                            className='lg-pop-up-input'
+                            placeholder='Head Of Department'
+                            value={headofDepartmentInputValue}
+                            onChange={e => setHeadofDepartmentInputValue(e.target.value)}
                         />
                         <div 
                             className='close-pop-up-icon' 

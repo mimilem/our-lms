@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 // Import the amplify API and components to handle the 
 // requests.
@@ -26,11 +27,113 @@ function ModulesList() {
 
     // State to keep and update the input value when the admin create 
     // an instance.
-    const [moduleNameInputValue, setModuleNameInputValue] = useState('')
+    const [moduleNameInputValue, setModuleNameInputValue] = useState('');
+    const [courseCodeInput, setCourseCodeInput] = useState('')
+    const [courseCreditInput, setCourseCreditInput] = useState('')
+    const [courseTeacherInput, setCourseTeacherInput] = useState('')
+    const [coursePeriodInput, setCoursePeriodInput] = useState('');
+    const [courseIsPeriodAllYear, setCourseIsPeriodAllYear] = useState(true);
+    const [courseCompulsoryInput, setCourseCompulsoryInput] = useState(true)
+    const [courseDescriptionInput, setCourseDescriptionInput] = useState('')
+
     // Initial state to display the pop-out screens. 
-    const [showCreateModule, setShowCreateModule] = useState(false)
+    const [showCreateModule, setShowCreateModule] = useState(false);
     //used to create new ClassModule
-    const [classModules, setClassModules] = useState([])
+    const [classModules, setClassModules] = useState([]);
+
+    const [showTeacherDropdown, setShowTeacherDropdown] = useState(false);
+    const [showSemesterDropdown, setShowSemesterDropdown] = useState(false);
+    const [showMonthDropdown, setShowMonthDropdown] = useState(false);
+
+    const [selectedTeacher, setSelectedTeacher] = useState(false);
+    const [selectedPeriod, setSelectedPeriod] = useState(false);
+    const [isMonthChecked, setIsMonthChecked] = useState(false);
+
+    const [semesters, setSemesters] = useState([{
+            id:1,
+            value:'semester 1'
+        },
+        {
+            id: 2,
+            value:'semester 2'
+    }])
+
+    const [months, setMonths] = useState([{
+            id:1,
+            value:'January',
+            isChecked: false
+        },
+        {
+            id: 2,
+            value:'February',
+            isChecked: false
+        },
+        {
+            id: 3,
+            value:'March',
+            isChecked: false
+        },
+        {
+            id: 4,
+            value:'April',
+            isChecked: false
+        },
+        {
+            id: 5,
+            value:'May',
+            isChecked: false
+        },
+        {
+            id: 6,
+            value:'June',
+            isChecked: false
+        },
+        {
+            id: 7,
+            value:'July',
+            isChecked: false
+        },
+        {
+            id: 8,
+            value:'August',
+            isChecked: false
+        },
+        {
+            id: 9,
+            value:'September',
+            isChecked: false
+        },
+        {
+            id: 10,
+            value:'October',
+            isChecked: false
+        },
+        {
+            id: 11,
+            value:'November',
+            isChecked: false
+        },
+        {
+            id: 12,
+            value:'December',
+            isChecked: false
+        },
+    ])
+
+    const closeTeacherDropdown = () => {
+        setShowTeacherDropdown(false);
+    }
+    const refTeacher = useDetectClickOutside({ onTriggered: closeTeacherDropdown });
+
+    const closeSemesterDropdown = () => {
+        setShowSemesterDropdown(false);
+    }
+    const refSemester = useDetectClickOutside({ onTriggered: closeSemesterDropdown });
+
+    const closeMonthDropdown = () => {
+        setShowMonthDropdown(false);
+    }
+    const refMonth = useDetectClickOutside({ onTriggered: closeMonthDropdown });
 
     // Receive states from DepartmentList Component
     let location = useLocation();
@@ -51,8 +154,6 @@ function ModulesList() {
             qualificationYear:location.state.qualificationDetails.qualificationYear,
     } 
     
-    console.log(qualificationDetails.qualificationId)
-    
     const moduleDetails = location.state.moduleDetails && {
         id: location.state.moduleDetails.id,
         classID: location.state.moduleDetails.classID,
@@ -60,13 +161,22 @@ function ModulesList() {
         moduleName: location.state.moduleDetails.moduleName,
     }
 
+    const teacherNameData = {
+        name:'Jacob Malu'
+    }
+
     // This Function is used to create a new ClassModule
     // then reload the page.
     const createNewModule = async () => {
         const moduleDetails = {
             moduleName: moduleNameInputValue,
-            classID: qualificationDetails.qualificationId === '' ? '' 
-                : qualificationDetails.qualificationId
+            courseCode: courseCodeInput,
+            teacherName: courseTeacherInput,
+            coursePeriod: coursePeriodInput,
+            courseCredit: courseCreditInput,
+            courseIsCompulsory: courseCompulsoryInput,
+            courseDescription: courseDescriptionInput,
+            classID: qualificationDetails.qualificationId
         };
         const newModule = await API.graphql({ 
             query: mutations.createClassModule, 
@@ -77,6 +187,9 @@ function ModulesList() {
 
     /* fetch the list of all ClassModule */
     useEffect( () => {
+
+        window.scrollTo(0,0);
+
         const fetchModules = async () => {
             try {
                 const classModuleResults = await API.graphql(
@@ -92,6 +205,8 @@ function ModulesList() {
         }
         fetchModules();
     }, [])
+
+    console.log(coursePeriodInput)
 
     return (
         <div className="staff-pages-container">
@@ -126,6 +241,7 @@ function ModulesList() {
                                     <div 
                                         style={{marginTop: '1rem' }} 
                                         className='active-department-list-title'
+                                        title={moduleDetail.courseDescription}
                                         onClick={()=> setChosedModule(true)}>
                                         {moduleDetail.moduleName} <div className='access'>{`>`}</div>
                                     </div> 
@@ -150,22 +266,41 @@ function ModulesList() {
                         <input
                             className='create-course-input'
                             placeholder='Code'
-                            value={moduleNameInputValue}
-                            onChange={e => setModuleNameInputValue(e.target.value)}
+                            onChange={e => setCourseCodeInput(e.target.value)}
                         />
                         <input
                             className='create-course-input'
                             placeholder='Credit'
-                            value={moduleNameInputValue}
-                            onChange={e => setModuleNameInputValue(e.target.value)}
+                            value={courseCreditInput}
+                            onChange={e => setCourseCreditInput(e.target.value)}
                         />
 
                         <div style={{display: 'flex'}}>
-                            <div className='create-course-input' id='select-a-teacher'>
+                            <div 
+                                className='create-course-input' 
+                                id='select-a-teacher'
+                                onClick={() => setShowTeacherDropdown(true)}
+                                ref={refTeacher} >
                                 Select a teacher <div className='dropdown-icon'/>
                             </div>
-                            <div className='selected-teacher'>x Noleen Isaac</div>
+                            {
+                                selectedTeacher === true ?
+                                <div className='selected-teacher'>x {teacherNameData.name}</div>
+                                : []
+                            }
                         </div>
+                        { showTeacherDropdown && (
+                        <div className='select-course-dropdown'>
+                            <div 
+                                className='select-course-dropdown-label'
+                                onClick={() => setSelectedTeacher(true)}>
+                                {teacherNameData.name}
+                            </div>            
+                            <hr className='select-form-hr'/>
+                            <div className='select-course-dropdown-label'>
+                                Antoine Griz
+                           </div>  
+                        </div>)}
 
                         <div style={{marginLeft:'7.5rem', marginTop:15}}>
                             <div 
@@ -173,25 +308,83 @@ function ModulesList() {
                                     fontSize:20, 
                                     fontWeight:'bold',
                                     marginBottom: 15
-                                    }}>Select a period
+                                }}>Select a period
                             </div>
                             <div style={{display: 'block', width: '100%'}}>
                                 <div style={{display:'flex', marginTop:15, marginBottom: 20}}>
                                     <input 
                                         type='checkbox'
-                                        style={{marginTop: 5}} />
+                                        style={{marginTop: 5}}
+                                        checked={courseIsPeriodAllYear === false ? true : false}
+                                        onClick={() => {
+                                            setCourseIsPeriodAllYear(prevState => (!prevState));
+                                            setCoursePeriodInput(courseIsPeriodAllYear === true ? "All Year" : '');
+                                            setSelectedPeriod(true);
+                                        }} />
                                         <div style={{fontSize:16}}>All Year</div>
                                 </div>
-                                <div 
-                                    className='create-course-input' 
-                                    id='select-a-period'>
-                                    Select a Semester <div className='dropdown-icon'/>
-                                </div> 
+
+                                <div>
+                                    <div 
+                                        className='create-course-input' 
+                                        id='select-a-period'
+                                        onClick={() => setShowSemesterDropdown(true)}
+                                        ref={refSemester} >
+                                        Select a Semester <div className='dropdown-icon'/>
+                                    </div>
+                                    { selectedPeriod === true ?
+                                        <div className='selected-semester'>x {coursePeriodInput}</div>
+                                        :[]
+                                    }
+                                </div>
+                                { showSemesterDropdown && (
+                                    <div className='select-period-dropdown'>
+                                        {
+                                            semesters.map((semester) => (
+                                                <>    
+                                                    <div 
+                                                        className='select-course-dropdown-label'
+                                                        onClick={ () => {
+                                                            setCourseIsPeriodAllYear(true);
+                                                            setCoursePeriodInput(semester.value);
+                                                            setSelectedPeriod(true);
+                                                        }}>
+                                                        {semester.value}
+                                                    </div>
+                                                    <hr className='select-form-hr'/>
+                                                </>
+                                            ))
+                                        }
+                                    </div>)}
 
                                 <div 
-                                    className='create-course-input' 
-                                    id='select-a-period'>
+                                    className='create-month-input' 
+                                    id='select-a-period'
+                                    onClick={() => setShowMonthDropdown(true)}
+                                    ref={refMonth} >
                                     Monthly <div className='dropdown-icon'/>
+                                    { showMonthDropdown && (
+                                    <div className='select-month-dropdown'>
+                                        {
+                                            months.map(month => (
+                                                <div className='select-course-dropdown-label'>
+                                                    <>
+                                                        <input 
+                                                            type='checkbox'
+                                                            checked={month.isChecked === true ? true : false}
+                                                            onClick={() => {
+                                                                setCoursePeriodInput(prevState => prevState !== undefined || '' ?
+                                                                `${prevState}, ${month.value}` : coursePeriodInput);
+                                                                setIsMonthChecked(!month.isChecked);
+                                                                setSelectedPeriod(true);
+                                                            }}/> 
+                                                        {month.value}
+                                                        <hr className='select-form-hr'/>
+                                                    </>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>)}
                                 </div>
 
                                 <div className='create-course-input'>
@@ -208,11 +401,17 @@ function ModulesList() {
                                     <div style={{display:'flex', marginTop:15, marginBottom: 20}}>
                                         <input 
                                             type='checkbox'
-                                            style={{marginTop: 5}} />
+                                            style={{marginTop: 5}} 
+                                            defaultChecked={true}
+                                            checked={courseCompulsoryInput === true ? true : false}
+                                            onClick={()=> {setCourseCompulsoryInput((prevState) => (!prevState))}}/>
                                             <div style={{fontSize:16}}>Yes</div>
                                         <input 
                                             type='checkbox'
-                                            style={{marginTop: 5, marginLeft: '20px'}} />
+                                            style={{marginTop: 5, marginLeft: '20px'}}
+                                            defaultChecked={false}
+                                            checked={courseCompulsoryInput === true ? false : true}
+                                            onClick={()=> {setCourseCompulsoryInput(false)}} />
                                             <div style={{fontSize:16}}>No</div>
                                     </div>
                             </div>
@@ -222,8 +421,8 @@ function ModulesList() {
                             id='courseOverview'
                             className='create-course-input'
                             placeholder='Course Overview'
-                            value={moduleNameInputValue}
-                            onChange={e => setModuleNameInputValue(e.target.value)}
+                            value={courseDescriptionInput}
+                            onChange={e => setCourseDescriptionInput(e.target.value)}
                         />
                         <div 
                             className='close-pop-up-icon' 

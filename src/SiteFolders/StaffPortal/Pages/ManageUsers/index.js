@@ -4,9 +4,13 @@ import './manageUsers.css';
 
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 
-import { Auth } from 'aws-amplify';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
+
+import { Auth, API, graphqlOperation } from 'aws-amplify';
+import { 
+    listTeachers, 
+} from '../../../../graphql/queries';
 
 
 function ManageUsersPage() {
@@ -23,21 +27,6 @@ function ManageUsersPage() {
     const [code, setCode] = useState('')
 
     const [showCreateUser, setShowCreateUser] = useState(false)
-
-    async function signUp() {
-        try {
-            const { user } = await Auth.signUp({
-                username,
-                password,
-                attributes: {
-                    email
-                }
-            });
-            console.log(user);
-        } catch (error) {
-            console.log('error signing up:', error);
-        }
-    }
 
     async function confirmSignUp() {
         try {
@@ -83,7 +72,7 @@ function ManageUsersPage() {
                     <button onClick={confirmSignUp} type='submit'>Confirm</button>
                 </div>
                 
-                <UserList />
+                <UserList/>
 
                 <CreateUser showCreateUser={showCreateUser} setShowCreateUser={setShowCreateUser} />
             

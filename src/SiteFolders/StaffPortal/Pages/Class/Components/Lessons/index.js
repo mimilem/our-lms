@@ -64,12 +64,24 @@ function Lessons() {
         id: location.state.moduleDetail.id,
         classID: location.state.moduleDetail.classID,
         moduleName: location.state.moduleDetail.moduleName,
+        courseCode: location.state.moduleDetail.courseCode,
+        teacherName: location.state.moduleDetail.teacherName,
+        coursePeriod: location.state.moduleDetail.coursePeriod,
+        courseCredit: location.state.moduleDetail.courseCredit,
+        courseIsCompulsory: location.state.moduleDetail.courseIsCompulsory,
+        courseDescription: location.state.moduleDetail.courseDescription,
     })
     : location.state.moduleDetails ? (
     {
         id: location.state.moduleDetails.id,
         classID: location.state.moduleDetails.classID,
         moduleName: location.state.moduleDetails.moduleName,
+        courseCode: location.state.moduleDetails.courseCode,
+        teacherName: location.state.moduleDetails.teacherName,
+        coursePeriod: location.state.moduleDetails.coursePeriod,
+        courseCredit: location.state.moduleDetails.courseCredit,
+        courseIsCompulsory: location.state.moduleDetails.courseIsCompulsory,
+        courseDescription: location.state.moduleDetails.courseDescription,
     }) :[]
 
     // This Function is used to create a new Module Chapter
@@ -198,16 +210,29 @@ function Lessons() {
                         <LessonDashboard />
                     </div>
                     
-                    <div className='title'>{moduleDetail.moduleName}</div>
+                    <div className='course-module-title'>{moduleDetail.moduleName}</div>
 
 
                     <div className='chapter-semester-container'>
+
+
                         <div style={{width: '70%', cursor: 'pointer'}}>
                             <div 
                                 className='exams-calendar-tilte'
+                                style={{fontSize: 17, alignItems:'center'}}
                                 onClick={() => setShowCreateModuleChapter(true)}>
                                 Add a new Module <div className='access'>+</div>
                             </div> 
+                        </div>
+                       
+                        <br/>
+                        <br/>
+                        <br/>
+                        
+                        <div>
+                            <div className='moduleIntro'>Introduction</div>
+                            <p>{moduleDetail.courseDescription}</p>
+                            <b>by: Teacher's Name</b>
                         </div>
 
                         <div className="chapter-container">
@@ -217,7 +242,7 @@ function Lessons() {
                                 moduleChapterMapItem.classModuleID === moduleDetail.id ?
                                 
                                     <div key={moduleChapterMapItem.id}>
-                                        <div className='exams-calendar-tilte'>
+                                        <div className='exams-calendar-tilte' style={{fontSize: '18px', alignItems:'center'}}>
                                             Chapter: {moduleChapterMapItem.chapterName}
                                         </div>
                                         <div className='add-a-material'>
@@ -247,7 +272,7 @@ function Lessons() {
 
 
                                         <div>
-                                            <h1 style={{marginLeft: '2rem'}}>Lessons</h1>
+                                            <h2 style={{marginLeft: '2rem'}}>Lessons</h2>
                                             <div 
                                                 className='add-lesson' 
                                                 title='Add a new lesson'

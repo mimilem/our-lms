@@ -1,4 +1,14 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
+
+// Time table
+import { 
+    Inject, 
+    ScheduleComponent, 
+    Day, 
+    WorkWeek, 
+    ViewsDirective, 
+    ViewDirective
+} from '@syncfusion/ej2-react-schedule';
 
 //import the styling compnent(s).
 import './timeTable.css';
@@ -16,6 +26,18 @@ function TimeTablePage() {
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('timeTable');
 
+    const [lessonTimeTableData, setlessonTimeTableData] = useState([{
+        Id: 1,
+        Subject: 'Explosion of Betelgeuse Star',
+        StartTime: new Date(2022, 1, 8, 9, 30),
+        EndTime: new Date(2022, 1, 8, 11, 0)
+    }, {
+        Id: 2,
+        Subject: 'Thule Air Crash Report',
+        StartTime: new Date(2022, 1, 9, 12, 0),
+        EndTime: new Date(2022, 1, 9, 14, 0)
+    }])
+
     return (
         <div className='staff-pages-container'>
             
@@ -28,6 +50,16 @@ function TimeTablePage() {
                 <div className='staff-pages-header-tilte'>Time Table</div>
                 
                 <hr className='staff-page-hr' />
+
+                <div>
+                    <ScheduleComponent currentView='WorkWeek'
+                        eventSettings={{ dataSource: lessonTimeTableData }} >
+                        <Inject services={[Day, WorkWeek]} />
+                        <ViewsDirective>
+                            <ViewDirective option='WorkWeek' startHour='8:00' endHour='18:00'/>
+                        </ViewsDirective>
+                    </ScheduleComponent>
+                </div>
             
             </div>
         </div>

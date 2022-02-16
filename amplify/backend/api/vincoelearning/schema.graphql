@@ -170,6 +170,27 @@ type SuperAdmin
   email: String!
 }
 
+type Teacher
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Admin"] }
+      { allow: owner, ownerField: "username" }
+    ]
+  ) {
+  id: ID!
+  username: String!
+  email: String!
+  teacherFullName: String!
+  teacherSurname: String!
+  teacherGender: String!
+  teacherCampusName: String!
+  teacherDepartmentName: String!
+  teacherQualificationName: [String!]
+  teacherCourseName: [String!]
+  role: String
+}
+
 type Message @model {
   id: ID!
   author: String!

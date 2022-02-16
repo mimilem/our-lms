@@ -1342,6 +1342,72 @@ export const deleteSuperAdmin = /* GraphQL */ `
     }
   }
 `;
+export const createTeacher = /* GraphQL */ `
+  mutation CreateTeacher(
+    $input: CreateTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    createTeacher(input: $input, condition: $condition) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateTeacher = /* GraphQL */ `
+  mutation UpdateTeacher(
+    $input: UpdateTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    updateTeacher(input: $input, condition: $condition) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteTeacher = /* GraphQL */ `
+  mutation DeleteTeacher(
+    $input: DeleteTeacherInput!
+    $condition: ModelTeacherConditionInput
+  ) {
+    deleteTeacher(input: $input, condition: $condition) {
+      id
+      username
+      email
+      teacherFullName
+      teacherSurname
+      teacherGender
+      teacherCampusName
+      teacherDepartmentName
+      teacherQualificationName
+      teacherCourseName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createMessage = /* GraphQL */ `
   mutation CreateMessage(
     $input: CreateMessageInput!
