@@ -9,8 +9,9 @@
 */
 
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+
+import { Auth } from 'aws-amplify';
 
 import './fullSideNavigation.css';
 import ToggledSideNavigation from '../ToggledSideNavigation';
@@ -24,6 +25,14 @@ function FullSideNavigation(props) {
     // button is clicked on. 
     const handleToggledBar = () => {
         setToggledBar(true)
+    }
+
+    async function signOut() {
+        try {
+            await Auth.signOut();
+        } catch (error) {
+            console.log('error signing out: ', error);
+        }
     }
 
     return (
@@ -92,7 +101,10 @@ function FullSideNavigation(props) {
                     <div className='side-navigation-text'>Media</div>
                 </Link>
 
-                <Link to='/' className='logout-container'>
+                <Link 
+                    to='/' 
+                    onClick={signOut}
+                    className='logout-container'>
                     <div className='logout-icon'/>
                     <div className='side-navigation-text'>Sign Out</div>
                 </Link> 

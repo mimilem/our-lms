@@ -34,14 +34,14 @@ function Login() {
         setPassword(e.target.value)
     }
     
-        async function signIn() {
-            try {
-                const user = await Auth.signIn(username, password);
-                setSignedIn(true)
-            } catch (error) {
-                console.log('error signing in', error);
-            }
+    async function signIn() {
+        try {
+            const user = await Auth.signIn(username, password);
+            setSignedIn(true)
+        } catch (error) {
+            console.log('error signing in', error);
         }
+    }
 
     //Show Password function.
     const showPassword = () => {
@@ -98,7 +98,9 @@ function Login() {
                     <Link to={{     
                         pathname:'/Students/Dashboard',
                     }}>
-                        <button onClick={signIn} className='student-login-login-button'>
+                        <button 
+                            onClick={signIn} 
+                            className='student-login-login-button'>
                             Login
                         </button>
                     </Link>

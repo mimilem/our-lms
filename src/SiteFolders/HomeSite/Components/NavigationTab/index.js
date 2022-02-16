@@ -11,13 +11,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Auth } from 'aws-amplify';
+import { Auth, Hub, Logger } from 'aws-amplify';
 
 //import styling
 import './navigationTab.css'
 
 
 function NavigationTab() {
+
+    const logger = new Logger('My-Logger');
+
+    const currentUser = Auth.currentAuthenticatedUser();
 
     const [isShown, setIsShown] = useState(false);
     const [isShown1, setIsShown1] = useState(false);
@@ -40,13 +44,13 @@ function NavigationTab() {
     
     async function signIn() {
         try {
-            const user = await Auth.signIn(username, password);
-            setSignedIn(true)
+            const user = await Auth.signIn(username, password)
+            setSignedIn(true);
         } catch (error) {
             console.log('error signing in', error);
         }
     }
-    
+
     return (
         <div className='navigation-container'>
             
@@ -69,7 +73,9 @@ function NavigationTab() {
                     value={password}
                     onChange={handleChangePassword}  
                 />
-                <Link to={signedIn === true ? '/Staff/Dashboard' : '/'}>
+                <Link
+                    onClick={()=> setSignedIn(true)} 
+                    to={ signedIn === true ? '/Staff/Dashboard' : '/'}>
                     <button onClick={signIn} style={{cursor: 'pointer'}}>
                         Login
                     </button>
