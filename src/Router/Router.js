@@ -17,6 +17,7 @@ import RegistrationFormPage2 from '../SiteFolders/HomeSite/Pages/Register/Compon
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
+import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
 import DepartmentsPage from '../SiteFolders/StaffPortal/Pages/Departments';
 import Events from '../SiteFolders/StaffPortal/Pages/Events';
@@ -28,7 +29,6 @@ import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
 import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
 import ClassStudents from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassStudents';
 import ClassTimeTable from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassTimeTable';
-import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
