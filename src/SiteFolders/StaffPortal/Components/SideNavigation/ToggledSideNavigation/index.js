@@ -107,7 +107,7 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDeta
                     </div>
                 </Link>
 
-                <Link to='/Staff/Time-Table'
+                {/* <Link to='/Staff/Time-Table'
                     className={activeTab === 'timeTable' ? 'active' : ''}  
                     title='Time Table' >
                     <div className='time-table-icon' title='Time Table'/>
@@ -116,7 +116,7 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDeta
                             Time Table
                         </div>
                     </div>
-                </Link>
+                </Link> */}
 
                 <Link to='/Staff/Events' 
                     className={activeTab === 'Media' ? 'active' : ''} 

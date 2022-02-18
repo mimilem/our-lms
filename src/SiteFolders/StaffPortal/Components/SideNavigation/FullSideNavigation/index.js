@@ -39,7 +39,10 @@ function FullSideNavigation(props) {
         toggledBar === false ?
             <div className="full-side-navigation-container">
                 
-                <Link to='/Staff/Dashboard'
+                <Link to={{
+                    pathname:'/Staff/Dashboard',
+                    state: campusDetails
+                }}
                     className={activeTab === 'dashboard' ? 'active' : ''} 
                 >
                     <div className='dashboard-icon'/>
@@ -52,8 +55,8 @@ function FullSideNavigation(props) {
                 }}
                     className={activeTab === 'department' ? 'active' : ''} 
                 >
-                        <div className='classes-icon'/>
-                        <div className='side-navigation-text'>Falculty</div>
+                    <div className='classes-icon'/>
+                    <div className='side-navigation-text'>Falculty</div>
                 </Link>
 
                 <Link to={{     
@@ -86,13 +89,13 @@ function FullSideNavigation(props) {
                     <div className='exams-icon'/>
                     <div className='side-navigation-text'>Exams</div>
                 </Link>
-
+                {/* 
                 <Link to='/Staff/Time-Table'
                     className={activeTab === 'timeTable' ? 'active' : ''} 
                 >
                     <div className='time-table-icon'/>
                     <div className='side-navigation-text'>Time Table</div>
-                </Link>
+                </Link> */}
 
                 <Link to='/Staff/Events'
                     className={activeTab === 'media' ? 'active' : ''} 

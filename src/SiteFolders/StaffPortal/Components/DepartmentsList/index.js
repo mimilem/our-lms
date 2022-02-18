@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-//import aws api and components to create new cart item
-import { API, graphqlOperation } from "aws-amplify";
-import { listFacultys, listDepartments, listClasss } from '../../../../graphql/queries';
 
 //import the styling compnent(s).
 import './departmentsList.css' ;
@@ -15,46 +11,16 @@ function DepartmentsList({
     setShowCreateQualification,
     setStateFacultyID,
     setStateDepartmentID,
-    locationCampusDetails 
+    locationCampusDetails,
+    faculty,
+    setFaculty,
+    department,
+    setDepartment,
+    qualification,
+    setQualification,
 }) {
-    
-    const [toggleDown, setToggleDown1] = useState(false)
 
-    const [faculty, setFaculty] = useState([])
-    const [department, setDepartment] = useState([])
-    const [qualification, setQualification] = useState([])
-
-     /* fetch the API data of faculties and departements */
-     useEffect( () => {
-        const fetchFaculty = async () => {
-            try {
-                //faculties
-                const facultyResults = await API.graphql(
-                    graphqlOperation(listFacultys)
-                )
-                const faculty = facultyResults.data.listFacultys.items
-                setFaculty(faculty)
-
-                //departements
-                const departmentResults = await API.graphql(
-                    graphqlOperation(listDepartments)
-                )
-                const department = departmentResults.data.listDepartments.items
-                setDepartment(department)
-
-                //qualification
-                const qualificationResults = await API.graphql(
-                    graphqlOperation(listClasss)
-                )
-                const qualification = qualificationResults.data.listClasss.items
-                setQualification(qualification)
-            } 
-            catch (error) {
-                console.log(error)
-            }
-        }
-        fetchFaculty();
-    }, [])
+    const [toggleDown, setToggleDown] = useState();
 
     return (
         <div>
@@ -73,18 +39,18 @@ function DepartmentsList({
             <div key={facultyItemMap.id} className='this-container'>
 
                 {/* Display full information if the toggle state is set to true. */}
-                { toggleDown === false ?
+                { toggleDown !== facultyItemMap.id ?
                     <div 
                         className='department-list-title' 
                         style={{marginBottom:'25px'}} 
-                        onClick={()=> setToggleDown1(true)}>
+                        onClick={()=> setToggleDown(facultyItemMap.id)}>
                             {facultyItemMap.facultyName} <div className='access'>↓</div>
                     </div> 
                     :
                     <>
                         <div 
                             className='active-department-list-title' 
-                            onClick={()=> setToggleDown1(false)}>
+                            onClick={()=> setToggleDown('')}>
                                 {facultyItemMap.facultyName} <div className='access'>↑</div>
                         </div> 
                         {/* Display the departments belonging to the corresponding faculty. */}

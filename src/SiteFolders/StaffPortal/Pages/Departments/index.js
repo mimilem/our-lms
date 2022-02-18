@@ -6,8 +6,9 @@ import { useLocation } from 'react-router-dom';
 
 // Import the amplify API and components to handle the 
 // requests.
-import { API } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
 import * as mutations from '../../../../graphql/mutations';
+import { listFacultys, listDepartments, listClasss } from '../../../../graphql/queries';
 import awsExports from '../../../../aws-exports';
 
 //import the styling compnent(s).
@@ -26,6 +27,10 @@ function DepartmentsPage() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('department');
+
+    const [faculty, setFaculty] = useState([])
+    const [department, setDepartment] = useState([])
+    const [qualification, setQualification] = useState([])
 
     // State to keep and update the input value when the admin create 
     // an instance.
@@ -59,6 +64,7 @@ function DepartmentsPage() {
     const [fileName, setFileName] = useState('');
 
     let location = useLocation()
+
     let locationCampusDetails = {
         locationCampusID: location.state.campusID
     }
@@ -112,11 +118,43 @@ function DepartmentsPage() {
         });
         window.location.reload(false);
     }
-    
-    //automatically scroll to top
-    useEffect(() => {
+
+    /* fetch the API data of faculties and departements */
+    useEffect( () => {
+
+        //automatically scroll to top
         window.scrollTo(0,0);
-    }, []);
+
+        const fetchFaculty = async () => {
+            try {
+                //faculties
+                const facultyResults = await API.graphql(
+                    graphqlOperation(listFacultys)
+                )
+                let faculty = facultyResults.data.listFacultys.items
+                setFaculty(faculty)
+                console.log(faculty)
+
+                //departements
+                const departmentResults = await API.graphql(
+                    graphqlOperation(listDepartments)
+                )
+                const department = departmentResults.data.listDepartments.items
+                setDepartment(department)
+
+                //qualification
+                const qualificationResults = await API.graphql(
+                    graphqlOperation(listClasss)
+                )
+                const qualification = qualificationResults.data.listClasss.items
+                setQualification(qualification)
+            } 
+            catch (error) {
+                console.log(error)
+            }
+        }
+        fetchFaculty();
+    }, [])
 
     async function onChangeHandler(e) {
         
@@ -168,7 +206,13 @@ function DepartmentsPage() {
                     setShowCreateQualification={setShowCreateQualification}
                     locationCampusDetails={locationCampusDetails}
                     setStateFacultyID={setStateFacultyID}
-                    setStateDepartmentID={setStateDepartmentID} />
+                    setStateDepartmentID={setStateDepartmentID}
+                    faculty={faculty} 
+                    setFaculty={department}
+                    department={department} 
+                    setDepartment={setDepartment}
+                    qualification={qualification} 
+                    setQualification={setQualification} />
 
                 {/* The Pup-out window that allows the admin to create */}
                 {/* a new faculty or school. */}
