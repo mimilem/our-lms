@@ -36,6 +36,16 @@
   z-index: 1;
 }
 
+.campus-icon {
+  background-image: url("../../../../assets/campus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1.5rem;
+  margin-left: -5px;
+  width: 1.5rem;
+}
 .dashboard-icon {
   background-image: url("../../../../assets/dashboard.png");
   background-repeat: no-repeat;

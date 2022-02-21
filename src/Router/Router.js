@@ -18,6 +18,7 @@ import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 
 //import the StaffPortal site pages
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
+import CampusPage from '../SiteFolders/StaffPortal/Pages/Campus';
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
 import DepartmentsPage from '../SiteFolders/StaffPortal/Pages/Departments';
 import Events from '../SiteFolders/StaffPortal/Pages/Events';
@@ -64,6 +65,7 @@ function Router() {
                 <Route exact path='/student-login' component={Login} />
 
                 {/* Staff Portail Routes path */}
+                <Route exact path='/Staff/SelectCampus' component={CampusPage}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
                 <Route exact path='/Staff/Departments' component={DepartmentsPage}/>
                 <Route exact path='/Staff/Departments/ModulesList' component={ModulesList}/>

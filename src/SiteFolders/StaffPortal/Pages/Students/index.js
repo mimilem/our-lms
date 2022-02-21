@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 //import aws api and components to create new cart item
 import { API, graphqlOperation } from "aws-amplify";
@@ -21,10 +22,15 @@ function StudentsPage() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('students');
+    const [choosedCampus, setChoosedCampus] = useState(true);
 
     const [students, setStudents] = useState([])
     const [studentFilterData, setStudentFilterData] = useState([])
     const [searchStudentByName, setSearchStudentByName] = useState('')
+
+    let location = useLocation()
+
+    const campusId = location.state.campusID
 
     /* fetch the API data of students */
     useEffect( () => {
@@ -71,7 +77,9 @@ function StudentsPage() {
             <HeaderAndSideNav 
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} /> 
+                activeTab={activeTab}
+                choosedCampus={choosedCampus}
+                campusId={campusId} /> 
 
             <div className='staff-pages-content'>
 

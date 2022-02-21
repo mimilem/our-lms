@@ -18,7 +18,8 @@ function SideNavigation({
     toggledBar, 
     setToggledBar, 
     activeTab, 
-    campusDetails 
+    campusDetails,
+    choosedCampus
 }) {
 
     return (
@@ -27,7 +28,8 @@ function SideNavigation({
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
                 activeTab={activeTab}
-                campusDetails={campusDetails} /> 
+                campusDetails={campusDetails}
+                choosedCampus={choosedCampus} /> 
         </div>
     );
 }

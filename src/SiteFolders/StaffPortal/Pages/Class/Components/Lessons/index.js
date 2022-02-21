@@ -28,6 +28,7 @@ function Lessons() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+    const [choosedCampus, setChoosedCampus] = useState(true);
 
     const [showCreateModuleChapter, setShowCreateModuleChapter] = useState(false)
     const [moduleChapterNameInputValue, setModuleChapterNameInputValue] = useState('')
@@ -51,6 +52,8 @@ function Lessons() {
     const [lessonTimeTableEndTimeInputValue, setLessonTimeTableEndTimeInputValue] = useState([])
 
     let location = useLocation();
+
+    const campusId = location.state.campusId
     
     const qualificationDetails = {
         qualificationId: location.state.qualificationDetails.qualificationId,
@@ -195,7 +198,9 @@ function Lessons() {
             <HeaderAndSideNav
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} />
+                activeTab={activeTab}
+                choosedCampus={choosedCampus}
+                campusId={campusId} />
 
             <div className='staff-pages-content'>
 
@@ -203,7 +208,8 @@ function Lessons() {
                     tabContent={tabContent}
                     chosedModule={chosedModule} 
                     moduleDetails={moduleDetail} 
-                    qualificationDetails={qualificationDetails} />
+                    qualificationDetails={qualificationDetails}
+                    campusId={campusId} />
 
                 <div className='class-page-content'>
                     <div style={{display: showLessonWindow === true ? '' : 'none' }} >

@@ -12,6 +12,8 @@ function HeaderAndSideNav({
     toggledBar, 
     setToggledBar, 
     activeTab, 
+    campusId, 
+    choosedCampus
 }) {
 
     const [ campus, setCampus ] = useState([])
@@ -21,7 +23,7 @@ function HeaderAndSideNav({
         const fetchCampus = async () => {
             try {
                     const campusResults = await API.graphql(
-                        graphqlOperation(queries.getCampus, { id: 'f276e696-6f2d-41d4-8faf-4b29bf94ae39' }
+                        graphqlOperation(queries.getCampus, { id: campusId }
                     ))
                     const campus = campusResults.data.getCampus
                     setCampus(campus)
@@ -31,14 +33,13 @@ function HeaderAndSideNav({
             }
         }
         fetchCampus();
-    }, [])
-
+    })
+    
     const campusDetails = {
         campusID: campus.id,
         institutionName: campus.institutionName,
         campusName: campus.campusName,
     }
-
     return (
             <div>
                 <Header campusDetails={campusDetails}/>
@@ -55,7 +56,8 @@ function HeaderAndSideNav({
                         toggledBar={toggledBar} 
                         setToggledBar={setToggledBar} 
                         activeTab={activeTab}
-                        campusDetails={campusDetails} />
+                        campusDetails={campusDetails}
+                        choosedCampus={choosedCampus} />
                 </div>
             </div>
     );

@@ -24,6 +24,7 @@ function ClassTimeTable(props) {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+    const [choosedCampus, setChoosedCampus] = useState(true);
 
     const [lessonTimeTableData, setlessonTimeTableData] = useState([{
         Id: 1,
@@ -38,6 +39,8 @@ function ClassTimeTable(props) {
     }])
 
     let location = useLocation();
+
+    const campusId = location.state.campusId
 
     const qualificationDetails = {
         qualificationId: location.state.qualificationDetails.qualificationId,
@@ -65,14 +68,17 @@ function ClassTimeTable(props) {
             <HeaderAndSideNav 
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} />
+                activeTab={activeTab}
+                choosedCampus={choosedCampus}
+                campusId={campusId} />
 
             <div className='staff-pages-content'>
                 <ClassHeader  
                     tabContent={tabContent} 
                     chosedModule={chosedModule}
                     moduleDetails={moduleDetail} 
-                    qualificationDetails={qualificationDetails} />
+                    qualificationDetails={qualificationDetails}
+                    campusId={campusId} />
 
                 <div className='class-page-content'>
                     <div>

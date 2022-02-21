@@ -1,0 +1,77 @@
+.campus-page-content {
+  margin-top: 1rem;
+  float: left;
+  width: 100%;
+}
+.campus-list-container {
+  display: flex;
+  margin-left: 4rem;
+}
+
+.add-campus-card {
+  align-items: center;
+  display: flex;
+  background: linear-gradient(to right, #396afc, #000);
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  height: 7rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  justify-content: center;
+  padding: 1rem;
+  margin-right: 1rem;
+  text-align: left;
+  width: 15rem;
+}
+.add-campus-card:hover {
+  background: linear-gradient(to right, #000, #396afc);
+}
+
+.add-campus-icon {
+  align-items: center;
+  background-image: url("../../../../assets/plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  width: 6.5rem;
+}
+
+.campus-card {
+  background: linear-gradient(to right, #396afc, #2948ff);
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  padding: 1rem;
+  margin-right: 1rem;
+  text-align: left;
+  width: 15rem;
+}
+.campus-card:hover {
+  background: linear-gradient(to right, #2948ff, #396afc);
+}
+
+.campus-card-add {
+  font-size: 30px;
+  text-align: center;
+}
+
+.campus-card-photo {
+  background-color: #000;
+  border-radius: 40px;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+  margin-left: 5.5rem;
+  width: 4rem;
+}
+.campus-card-name {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}

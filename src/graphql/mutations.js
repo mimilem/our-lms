@@ -10,6 +10,11 @@ export const createCampus = /* GraphQL */ `
       id
       institutionName
       campusName
+      campusHead
+      campusCity
+      campusPhoneNumber
+      campusEmailAddress
+      campusAdress
       faculties {
         items {
           id
@@ -40,6 +45,11 @@ export const updateCampus = /* GraphQL */ `
       id
       institutionName
       campusName
+      campusHead
+      campusCity
+      campusPhoneNumber
+      campusEmailAddress
+      campusAdress
       faculties {
         items {
           id
@@ -70,6 +80,11 @@ export const deleteCampus = /* GraphQL */ `
       id
       institutionName
       campusName
+      campusHead
+      campusCity
+      campusPhoneNumber
+      campusEmailAddress
+      campusAdress
       faculties {
         items {
           id
@@ -110,6 +125,11 @@ export const createFaculty = /* GraphQL */ `
         id
         institutionName
         campusName
+        campusHead
+        campusCity
+        campusPhoneNumber
+        campusEmailAddress
+        campusAdress
         faculties {
           nextToken
         }
@@ -150,6 +170,11 @@ export const updateFaculty = /* GraphQL */ `
         id
         institutionName
         campusName
+        campusHead
+        campusCity
+        campusPhoneNumber
+        campusEmailAddress
+        campusAdress
         faculties {
           nextToken
         }
@@ -190,6 +215,11 @@ export const deleteFaculty = /* GraphQL */ `
         id
         institutionName
         campusName
+        campusHead
+        campusCity
+        campusPhoneNumber
+        campusEmailAddress
+        campusAdress
         faculties {
           nextToken
         }
@@ -234,6 +264,11 @@ export const createDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
           createdAt
           updatedAt
         }
@@ -283,6 +318,11 @@ export const updateDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
           createdAt
           updatedAt
         }
@@ -332,6 +372,11 @@ export const deleteDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
           createdAt
           updatedAt
         }

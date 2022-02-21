@@ -13,7 +13,9 @@ function ClassHeader({
     tabContent, 
     chosedModule, 
     qualificationDetails,
-    moduleDetails }) {
+    moduleDetails,
+    campusId
+}) {
     
     return (
         <>
@@ -35,7 +37,8 @@ function ClassHeader({
                     tabContent={tabContent} 
                     chosedModule={chosedModule}
                     qualificationDetails={qualificationDetails}
-                    moduleDetails={moduleDetails} />
+                    moduleDetails={moduleDetails}
+                    campusId={campusId} />
             </div>
         </>
     );

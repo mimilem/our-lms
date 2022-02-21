@@ -18,6 +18,7 @@ function DepartmentsList({
     setDepartment,
     qualification,
     setQualification,
+    campusId
 }) {
 
     const [toggleDown, setToggleDown] = useState();
@@ -103,7 +104,7 @@ function DepartmentsList({
                                             <div key={qualificationItemMap.id}>
                                                 <Link to={{
                                                     pathname:'/Staff/Departments/ModulesList',
-                                                    state: qualificationItemMap }}>
+                                                    state:{ qualificationItemMap, campusId }}}>
                                                     <div className='qualification-list'>
                                                         {qualificationItemMap.qualificationName} - {
                                                         qualificationItemMap.qualificationYear} Year

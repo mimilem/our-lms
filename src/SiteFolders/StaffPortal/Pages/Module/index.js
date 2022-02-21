@@ -24,6 +24,7 @@ function ModulePage() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('moduleShelf');
+    const [choosedCampus, setChoosedCampus] = useState(true);
 
     const [moduleChapter, setModuleChapter] = useState([]);
 
@@ -32,6 +33,8 @@ function ModulePage() {
     const [classModuleID, setClassModuleID] = useState(undefined)
 
     let location = useLocation()
+
+    const campusId = location.state.campusID
 
     /* fetch the API data of faculties and departements */
     useEffect( () => {
@@ -71,7 +74,9 @@ function ModulePage() {
             <HeaderAndSideNav 
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} /> 
+                activeTab={activeTab}
+                choosedCampus={choosedCampus}
+                campusId={campusId} /> 
                 
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Module shelf</div>

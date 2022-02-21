@@ -75,7 +75,7 @@ function NavigationTab() {
                 />
                 <Link
                     onClick={()=> setSignedIn(true)} 
-                    to={ signedIn === true ? '/Staff/Dashboard' : '/'}>
+                    to={ signedIn === true ? '/Staff/SelectCampus' : '/'}>
                     <button onClick={signIn} style={{cursor: 'pointer'}}>
                         Login
                     </button>

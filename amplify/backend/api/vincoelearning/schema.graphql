@@ -2,6 +2,11 @@ type Campus @model {
   id: ID!
   institutionName: String!
   campusName: String!
+  campusHead: String
+  campusCity: String
+  campusPhoneNumber: String
+  campusEmailAddress: String
+  campusAdress: String
   faculties: [Faculty] @connection(keyName: "byCampus", fields: ["id"])
 }
 

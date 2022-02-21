@@ -27,6 +27,7 @@ function DepartmentsPage() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('department');
+    const [choosedCampus, setChoosedCampus] = useState(true)
 
     const [faculty, setFaculty] = useState([])
     const [department, setDepartment] = useState([])
@@ -68,6 +69,8 @@ function DepartmentsPage() {
     let locationCampusDetails = {
         locationCampusID: location.state.campusID
     }
+
+    const campusId = location.state.campusID
 
     // This Function is used to create a new faculty
     // then reload the page.
@@ -133,7 +136,6 @@ function DepartmentsPage() {
                 )
                 let faculty = facultyResults.data.listFacultys.items
                 setFaculty(faculty)
-                console.log(faculty)
 
                 //departements
                 const departmentResults = await API.graphql(
@@ -194,7 +196,9 @@ function DepartmentsPage() {
             <HeaderAndSideNav
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} /> 
+                activeTab={activeTab}
+                campusId={campusId}
+                choosedCampus={choosedCampus} /> 
 
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Faculties and Schools</div>
@@ -212,7 +216,8 @@ function DepartmentsPage() {
                     department={department} 
                     setDepartment={setDepartment}
                     qualification={qualification} 
-                    setQualification={setQualification} />
+                    setQualification={setQualification}
+                    campusId={campusId} />
 
                 {/* The Pup-out window that allows the admin to create */}
                 {/* a new faculty or school. */}

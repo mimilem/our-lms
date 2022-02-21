@@ -7,6 +7,11 @@ export const getCampus = /* GraphQL */ `
       id
       institutionName
       campusName
+      campusHead
+      campusCity
+      campusPhoneNumber
+      campusEmailAddress
+      campusAdress
       faculties {
         items {
           id
@@ -39,6 +44,11 @@ export const listCampuss = /* GraphQL */ `
         id
         institutionName
         campusName
+        campusHead
+        campusCity
+        campusPhoneNumber
+        campusEmailAddress
+        campusAdress
         faculties {
           nextToken
         }
@@ -65,6 +75,11 @@ export const getFaculty = /* GraphQL */ `
         id
         institutionName
         campusName
+        campusHead
+        campusCity
+        campusPhoneNumber
+        campusEmailAddress
+        campusAdress
         faculties {
           nextToken
         }
@@ -107,6 +122,11 @@ export const listFacultys = /* GraphQL */ `
           id
           institutionName
           campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
           createdAt
           updatedAt
         }
@@ -140,6 +160,11 @@ export const getDepartment = /* GraphQL */ `
           id
           institutionName
           campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
           createdAt
           updatedAt
         }

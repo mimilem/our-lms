@@ -41,7 +41,7 @@ function Header({ campusDetails }) {
             </div>
             
             <div className='institution-name'>
-                Vinco-eLearning - {campusDetails.campusName} Campus
+                Vinco-eLearning - {campusDetails.campusName ? campusDetails.campusName : "Select A " } Campus
             </div>
 
             {/* DON'T TOUCH */}

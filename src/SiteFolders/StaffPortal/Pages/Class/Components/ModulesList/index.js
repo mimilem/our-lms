@@ -24,6 +24,7 @@ function ModulesList() {
     // the bar is toggled and weither the tab is active.
     const [toggledBar, setToggledBar] = useState(true);
     const [activeTab, setActiveTab] = useState('department');
+    const [choosedCampus, setChoosedCampus] = useState(true);
 
     // State to keep and update the input value when the admin create 
     // an instance.
@@ -137,13 +138,15 @@ function ModulesList() {
 
     // Receive states from DepartmentList Component
     let location = useLocation();
+    
+    const campusId = location.state.campusId
 
-    const qualificationDetails = location.state.id !== undefined ? {
-            qualificationId: location.state.id,
-            departmentId: location.state.departmentID,
-            qualificationName: location.state.qualificationName,
-            qualificationLevel: location.state.qualificationLevel,
-            qualificationYear: location.state.qualificationYear,
+    const qualificationDetails = location.state.qualificationItemMap !== undefined ? {
+            qualificationId: location.state.qualificationItemMap.id,
+            departmentId: location.state.qualificationItemMap.departmentID,
+            qualificationName: location.state.qualificationItemMap.qualificationName,
+            qualificationLevel: location.state.qualificationItemMap.qualificationLevel,
+            qualificationYear: location.state.qualificationItemMap.qualificationYear,
         }
         : 
         {
@@ -206,15 +209,15 @@ function ModulesList() {
         fetchModules();
     }, [])
 
-    console.log(coursePeriodInput)
-
     return (
         <div className="staff-pages-container">
 
             <HeaderAndSideNav
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
-                activeTab={activeTab} />
+                activeTab={activeTab}
+                choosedCampus={choosedCampus}
+                campusId={campusId} />
 
             <div className='staff-pages-content'>
 
@@ -222,7 +225,8 @@ function ModulesList() {
                     tabContent={tabContent} 
                     chosedModule={chosedModule} 
                     qualificationDetails={qualificationDetails}
-                    moduleDetails={moduleDetails}/>
+                    moduleDetails={moduleDetails}
+                    campusId={campusId} />
 
                 <div className='add-new-module'>
                     <div 
@@ -236,7 +240,7 @@ function ModulesList() {
                         moduleDetail.classID === qualificationDetails.qualificationId ? 
                             <Link to={{     
                                 pathname:'/Staff/Departments/Lessons',
-                                state: {qualificationDetails, moduleDetail} }} 
+                                state: {qualificationDetails, moduleDetail, campusId} }} 
                                 key={moduleDetail.id}>
                                     <div 
                                         style={{marginTop: '1rem' }} 

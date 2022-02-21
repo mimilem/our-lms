@@ -9,7 +9,9 @@ function ClassPageTopNavigation({
     tabContent, 
     chosedModule, 
     qualificationDetails,
-    moduleDetails}) {
+    moduleDetails,
+    campusId
+}) {
         
     return (
         <div className='class-top-navigation-container'>
@@ -18,7 +20,7 @@ function ClassPageTopNavigation({
             <Link
                 to={{     
                     pathname:'/Staff/Departments/ModulesList',
-                    state: {qualificationDetails, moduleDetails}
+                    state: {qualificationDetails, moduleDetails, campusId}
                 }}>
                 <div 
                     className={
@@ -57,7 +59,7 @@ function ClassPageTopNavigation({
                 <>
                     <Link to={{     
                         pathname:'/Staff/Departments/Lessons',
-                        state: {qualificationDetails, moduleDetails}
+                        state: {qualificationDetails, moduleDetails, campusId}
                     }} >
                         <div 
                             className={
@@ -72,7 +74,7 @@ function ClassPageTopNavigation({
                     
                     <Link to={{     
                         pathname:'/Staff/Departments/TimeTable',
-                        state: {qualificationDetails, moduleDetails}
+                        state: {qualificationDetails, moduleDetails, campusId}
                     }}>
                         <div 
                             className={
@@ -108,7 +110,7 @@ function ClassPageTopNavigation({
                     
                     <Link to={{     
                         pathname:'/Staff/Departments/Students',
-                        state: {qualificationDetails, moduleDetails}
+                        state: {qualificationDetails, moduleDetails, campusId}
                     }}>
                         <div 
                             className={

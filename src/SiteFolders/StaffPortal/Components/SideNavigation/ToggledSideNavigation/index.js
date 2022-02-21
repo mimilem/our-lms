@@ -17,7 +17,13 @@ import './ToggledSideNavigation.css';
 import FullSideNavigation from '../FullSideNavigation';
 
 
-function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDetails}) {
+function ToggledSideNavigation({
+    toggledBar, 
+    setToggledBar, 
+    activeTab, 
+    campusDetails, 
+    choosedCampus
+}) {
 
     // Change the initiale state for when the 'Show 
     // Full Bar' button is clicked on.
@@ -36,121 +42,157 @@ function ToggledSideNavigation({toggledBar, setToggledBar, activeTab, campusDeta
     return (
         toggledBar === true ?
 
-            <div className="toggled-side-navigation-container">
-                
-                <Link to='/Staff/Dashboard' 
-                    className={activeTab === 'dashboard' ? 'active' : ''} 
-                    title='Dashboard' >
-                    <div className='dashboard-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
-                            Dashboard
-                        </div>
-                    </div>  
-                </Link>
+            choosedCampus === true ?
 
-                <Link to={{     
-                        pathname:'/Staff/Departments',
+                <div className="toggled-side-navigation-container">
+                    
+                    <Link to={{
+                        pathname:'/Staff/SelectCampus',
                         state: campusDetails
                     }}
-                    className={activeTab === 'department' ? 'active' : ''}  
-                    title='Departments' >
-                    <div className='classes-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-7px', right:0}}>
-                            Faculty
-                        </div>
-                    </div>
-                </Link>
+                        className={activeTab === 'campus' ? 'active' : ''} 
+                        title='Select or create a campus' >
+                        <div className='campus-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
+                                Campus
+                            </div>
+                        </div>  
+                    </Link>
+                    
+                    <Link to={{
+                        pathname:'/Staff/Dashboard',
+                        state: campusDetails
+                    }}
+                        className={activeTab === 'dashboard' ? 'active' : ''} 
+                        title='Dashboard' >
+                        <div className='dashboard-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
+                                Dashboard
+                            </div>
+                        </div>  
+                    </Link>
 
-                <Link to='/Staff/Modules-Shelf' 
-                    className={activeTab === 'moduleShelf' ? 'active' : ''} 
-                    title='Modules'>
-                    <div className='module-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
-                            Modules
+                    <Link to={{     
+                            pathname:'/Staff/Departments',
+                            state: campusDetails
+                        }}
+                        className={activeTab === 'department' ? 'active' : ''}  
+                        title='Departments' >
+                        <div className='classes-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-7px', right:0}}>
+                                Faculty
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
 
-                <Link to='/Staff/Students'
-                    className={activeTab === 'students' ? 'active' : ''} 
-                    title='Students'>
-                    <div className='students-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
-                            Students
+                    <Link to={{     
+                            pathname:'/Staff/Modules-Shelf',
+                            state: campusDetails
+                        }}
+                        className={activeTab === 'moduleShelf' ? 'active' : ''} 
+                        title='Modules'>
+                        <div className='module-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
+                                Modules
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
 
-                <Link to='/Staff/ManageUsers'
-                    className={activeTab === 'manageusers' ? 'active' : ''} 
-                    title='Manage Users'>
-                    <div className='manage-users-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-23px', right:0}}>
-                            Manage Users
+                    <Link to={{     
+                            pathname:'/Staff/Students',
+                            state: campusDetails
+                        }}
+                        className={activeTab === 'students' ? 'active' : ''} 
+                        title='Students'>
+                        <div className='students-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
+                                Students
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
 
-                <Link to='/Staff/Exams' 
-                    className={activeTab === 'exams' ? 'active' : ''}
-                    title='exams' >
-                    <div className='exams-icon' title='Exams'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
-                            Exams
+                    <Link to={{     
+                            pathname:'/Staff/ManageUsers',
+                            state: campusDetails
+                        }}
+                        className={activeTab === 'manageusers' ? 'active' : ''} 
+                        title='Manage Users'>
+                        <div className='manage-users-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-23px', right:0}}>
+                                Manage Users
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
 
-                {/* <Link to='/Staff/Time-Table'
-                    className={activeTab === 'timeTable' ? 'active' : ''}  
-                    title='Time Table' >
-                    <div className='time-table-icon' title='Time Table'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
-                            Time Table
+                    <Link to={{     
+                            pathname:'/Staff/Exams',
+                            state: campusDetails
+                        }} 
+                        className={activeTab === 'exams' ? 'active' : ''}
+                        title='exams' >
+                        <div className='exams-icon' title='Exams'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                                Exams
+                            </div>
                         </div>
-                    </div>
-                </Link> */}
+                    </Link>
 
-                <Link to='/Staff/Events' 
-                    className={activeTab === 'Media' ? 'active' : ''} 
-                    title='Media' >
-                    <div className='events-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
-                            Events
+                    {/* <Link to='/Staff/Time-Table'
+                        className={activeTab === 'timeTable' ? 'active' : ''}  
+                        title='Time Table' >
+                        <div className='time-table-icon' title='Time Table'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-16px', right:0}}>
+                                Time Table
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link> */}
 
-                {/* <Link to='/Staff/Reports' title='Report'>
-                    <div className='reports-icon'/>    
-                </Link> */}
-
-                <Link 
-                    to='/' 
-                    onClick={signOut}
-                    className='logout-container' 
-                    title='Log-out'>
-                    <div className='logout-icon'/>
-                    <div style={{position: 'absolute', width: '100%'}}>
-                        <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
-                            Sign out
+                    <Link to={{     
+                            pathname:'/Staff/Events',
+                            state: campusDetails
+                        }}
+                        className={activeTab === 'Media' ? 'active' : ''} 
+                        title='Media' >
+                        <div className='events-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                                Events
+                            </div>
                         </div>
-                    </div>
-                </Link>
-            
-                <div 
-                    onClick={handleFullBar} 
-                    className='toggled-side-navigation-icon' 
-                    title='Show more information' />
-            </div>
+                    </Link>
+
+                    {/* <Link to='/Staff/Reports' title='Report'>
+                        <div className='reports-icon'/>    
+                    </Link> */}
+
+                    <Link 
+                        to='/' 
+                        onClick={signOut}
+                        className='logout-container' 
+                        title='Log-out'>
+                        <div className='logout-icon'/>
+                        <div style={{position: 'absolute', width: '100%'}}>
+                            <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
+                                Sign out
+                            </div>
+                        </div>
+                    </Link>
+                
+                    <div 
+                        onClick={handleFullBar} 
+                        className='toggled-side-navigation-icon' 
+                        title='Show more information' />
+                </div>
+
+            : []
 
             : 
 
