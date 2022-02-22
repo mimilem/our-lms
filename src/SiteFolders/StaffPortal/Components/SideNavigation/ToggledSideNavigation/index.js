@@ -79,11 +79,11 @@ function ToggledSideNavigation({
                             state: campusDetails
                         }}
                         className={activeTab === 'department' ? 'active' : ''}  
-                        title='Departments' >
+                        title='Faculties' >
                         <div className='classes-icon'/>
                         <div style={{position: 'absolute', width: '100%'}}>
-                            <div style={{fontSize:'10px',position: 'relative', left:'-7px', right:0}}>
-                                Faculty
+                            <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
+                                Faculties
                             </div>
                         </div>
                     </Link>

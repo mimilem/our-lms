@@ -60,7 +60,6 @@ function DepartmentsPage() {
     const [stateFacultyID, setStateFacultyID] = useState([])
     const [stateDepartmentID, setStateDepartmentID] = useState([])
 
-    const [file, setFile] = useState([]);
     const [fileUrl, setFileUrl] = useState('');
     const [fileName, setFileName] = useState('');
 
@@ -201,7 +200,7 @@ function DepartmentsPage() {
                 choosedCampus={choosedCampus} /> 
 
             <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte'>Faculties and Schools</div>
+                <div className='staff-pages-header-tilte'>Faculties</div>
                 <hr className='staff-page-hr'/>
 
                 <DepartmentsList 

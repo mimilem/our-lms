@@ -14,6 +14,7 @@ import '../staffPages.css';
 //import all components that will be 
 //displayed on the pages.
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
+import SideCampusWindow from './Components/SideCampusWindow';
 
 
 function CampusPage() {
@@ -25,7 +26,15 @@ function CampusPage() {
     const [choosedCampus, setChoosedCampus] = useState(false);
 
     const [campus, setCampus] = useState([])
-    const [campusId, setCampusId] = useState();
+    const [campusId, setCampusId] = useState({
+        campusID:'',
+        campusHead: '',
+        campusAdress: '',
+        campusName: '',
+        campusCity:''
+    });
+
+    const [showSideCampusWindow, setShowSideCampusWindow] = useState(false)
 
     // State to keep and update the input value when the admin create 
     // an instance.
@@ -118,40 +127,51 @@ function CampusPage() {
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
                 activeTab={activeTab}
-                campusId={campusId}
+                campusId={campusId.campusID}
                 choosedCampus={choosedCampus} />
 
             <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte'>Select a campus</div>
+                <div className='staff-pages-header-tilte' style={{marginLeft: '3rem'}}>Select a campus</div>
                 <hr className='staff-page-hr' />
 
                 <div className="campus-list-container">
-
                     <div 
                         className='add-campus-card'
                         onClick={()=> setShowCreateCampus(true)}>
-                        <div className='add-campus-icon'/>
-                        <div className='campus-card-add'>Add a Campus</div>
+                        <div className='add-campus-icon' title='Add a Campus'/>
                     </div>
 
                     {
                         campus.map(campusMapItem => (
                             <div 
                                 className='campus-card'
+                                key={campusMapItem.id}
                                 onClick={()=>{
-                                    setCampusId(campusMapItem.id)
-                                    setChoosedCampus(true)}}>
+                                    setCampusId({
+                                        campusID: campusMapItem.id,
+                                        campusHead:campusMapItem.campusHead,
+                                        campusName:campusMapItem.campusName,
+                                        campusAdress:campusMapItem.campusAdress,
+                                        campusCity:campusMapItem.campusCity,
+                                    })
+                                    setShowSideCampusWindow(true)} }
+                                to={{ pathname:'/Staff/Dashboard', state:campusId }} >
                                 <div className='campus-card-photo'/>
                                 <div className='campus-card-name'>{campusMapItem.campusName}</div>
                                 <div className='campus-card-address'><b>Address: </b>{campusMapItem.campusAdress}</div>
                                 <div className='campus-card-country'><b>City/Town: </b>{campusMapItem.campusCity}</div>
                                 <div className='campus-card-headOf'><b>Head of faculty: </b>{campusMapItem.campusHead}</div>
+                                {console.log(campus)}
                             </div>
                         ))
-                    }
-                    
+                    }    
                 </div>
+
             
+            </div>
+            <div style={{ display: showSideCampusWindow === false ? 'none' : '' }}>
+                <SideCampusWindow 
+                    campusId={campusId} />
             </div>
 
             {/* The Pup-out window that allows the admin to create */}

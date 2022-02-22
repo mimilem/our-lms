@@ -84,7 +84,7 @@ function DepartmentsList({
 
                                 <div key={departmentItemMap.id}>
 
-                                    <li style={{textTransform:'capitalize', fontSize: 16}}>
+                                    <li style={{textTransform:'capitalize', fontSize: 16, cursor:'context-menu'}}>
                                         Department: {departmentItemMap.departmentName}
                                     </li>
 

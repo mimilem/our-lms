@@ -1,7 +1,7 @@
 .campus-page-content {
   margin-top: 1rem;
   float: left;
-  width: 100%;
+  width: 75%;
 }
 .campus-list-container {
   display: flex;
@@ -9,24 +9,8 @@
 }
 
 .add-campus-card {
-  align-items: center;
-  display: flex;
-  background: linear-gradient(to right, #396afc, #000);
-  border-radius: 15px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 15px;
-  height: 7rem;
-  line-height: 1.5rem;
-  letter-spacing: 1px;
-  justify-content: center;
-  padding: 1rem;
-  margin-right: 1rem;
-  text-align: left;
-  width: 15rem;
-}
-.add-campus-card:hover {
-  background: linear-gradient(to right, #000, #396afc);
+  position: absolute;
+  right: 5rem;
 }
 
 .add-campus-icon {
@@ -35,10 +19,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  height: 5rem;
-  width: 6.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 18rem;
+  top: -5rem;
+  width: 2.5rem;
 }
 
 .campus-card {
@@ -52,6 +40,7 @@
   padding: 1rem;
   margin-right: 1rem;
   text-align: left;
+  text-decoration: none;
   width: 15rem;
 }
 .campus-card:hover {

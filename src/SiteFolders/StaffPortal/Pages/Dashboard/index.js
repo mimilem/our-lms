@@ -36,9 +36,11 @@ function StaffDashboard() {
     const campusId = location.state.campusID
 
     const campusDetails = {
-        campusID: location.state.campusID,
-        campusName: location.state.campusName
+        campusID: location.state.campusID !== undefined ? location.state.campusID : location.state, 
+        campusName: location.state.campusName,
     }
+
+    console.log(location)
 
     /* fetch the API data of faculties and departements */
     useEffect( () => {
@@ -71,15 +73,20 @@ function StaffDashboard() {
             <div className='staff-pages-content'>
                 <div className='staff-pages-header-tilte'>Admin Dashboard</div>
                 <hr className='staff-page-hr'/>
-                <div className='staff-pages-header-tilte' style={{marginBottom: '1rem'}}>Quick Links: Faculties</div>
+                <div 
+                    className='staff-pages-header-tilte' 
+                    style={{marginBottom: '1rem'}}>
+                    Quick Links: Faculties
+                </div>
                 { faculty.map( facultyItemMap => (
                     facultyItemMap.campusID === campusId ?
-                    <Link to={{     
-                        pathname:'/Staff/Departments',
-                        state: campusDetails
-                    }} 
+                    <Link 
+                        to={{     
+                            pathname:'/Staff/Departments',
+                            state: campusDetails
+                        }} 
                         className='gradient-blue-card-container' 
-                        style={{padding:'1rem', fontSize: '15px'}}>
+                        style={{padding:'1rem', fontSize: '15px'}} >
                             <div className='top-left-text' style={{padding:'1rem', fontSize: '17px'}}>
                                 {facultyItemMap.facultyName}
                             </div>
