@@ -131,14 +131,14 @@ function CampusPage() {
                 choosedCampus={choosedCampus} />
 
             <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte' style={{marginLeft: '3rem'}}>Select a campus</div>
+                <div className='staff-pages-header-tilte' style={{marginLeft: '3rem'}}>Campuses</div>
                 <hr className='staff-page-hr' />
 
                 <div className="campus-list-container">
                     <div 
                         className='add-campus-card'
                         onClick={()=> setShowCreateCampus(true)}>
-                        <div className='add-campus-icon' title='Add a Campus'/>
+                        <div className='add-campus-icon' title='Create a Campus'/>
                     </div>
 
                     {

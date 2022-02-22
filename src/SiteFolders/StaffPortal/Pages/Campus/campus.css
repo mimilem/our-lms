@@ -15,18 +15,18 @@
 
 .add-campus-icon {
   align-items: center;
-  background-image: url("../../../../assets/plus.png");
+  background-image: url("../../../../assets/plus1234.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  height: 2.5rem;
+  height: 2rem;
   position: absolute;
   right: 18rem;
-  top: -5rem;
-  width: 2.5rem;
+  top: -1.5rem;
+  width: 2rem;
 }
 
 .campus-card {
@@ -39,6 +39,7 @@
   letter-spacing: 1px;
   padding: 1rem;
   margin-right: 1rem;
+  margin-top: 1.5rem;
   text-align: left;
   text-decoration: none;
   width: 15rem;
