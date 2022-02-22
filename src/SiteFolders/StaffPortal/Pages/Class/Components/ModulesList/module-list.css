@@ -1,6 +1,7 @@
 .subjects-list-container {
   display: block;
   margin-left: 0.5rem;
+  z-index: 999;
 }
 
 .first-subtitle {
@@ -11,11 +12,18 @@
   font-size: 18px;
 }
 
-.add-new-module {
-  margin-bottom: 80px;
-  margin-top: -2rem;
-  position: relative;
-  z-index: 9;
+.class-course-add-button {
+  background-image: url("../../../../../../assets/add-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  margin-top: 0rem;
+  margin-right: 4rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  z-index: 99;
 }
 
 .pop-up-title {

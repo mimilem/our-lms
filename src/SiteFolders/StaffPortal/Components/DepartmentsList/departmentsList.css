@@ -1,6 +1,20 @@
 .this-container {
   margin-top: 2rem;
 }
+
+.faculty-add-button {
+  background-image: url("../../../../assets/add-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 .departments-list-container {
   align-items: center;
   background-color: #fff;

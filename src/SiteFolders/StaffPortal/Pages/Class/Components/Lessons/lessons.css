@@ -21,6 +21,29 @@
   position: relative;
   width: 70%;
 }
+
+.add-module {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  float: right;
+  justify-content: center;
+  margin-right: 2rem;
+  margin-top: -2.5rem;
+  padding: 1rem;
+}
+.module-add-button {
+  background-image: url("../../../../../../assets/add-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 2rem;
+  margin: 0.5rem;
+  right: 0;
+  width: 2rem;
+}
+
 .add-a-material {
   cursor: pointer;
   float: left;

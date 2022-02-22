@@ -28,7 +28,7 @@ function ClassPageTopNavigation({
                         "active-class-top-navigation-tab-element" 
                         : 
                         "class-top-navigation-tab-element"
-                    }>
+                    } style={{fontSize: '17px'}}>
                     Courses
                 </div>
             </Link>
@@ -67,7 +67,7 @@ function ClassPageTopNavigation({
                                 "active-class-top-navigation-tab-element" 
                                 : 
                                 "class-top-navigation-tab-element"
-                            }>
+                            } style={{fontSize: '17px'}}> 
                             Modules
                         </div>
                     </Link>
@@ -82,7 +82,7 @@ function ClassPageTopNavigation({
                                 "active-class-top-navigation-tab-element" 
                                 : 
                                 "class-top-navigation-tab-element"
-                            }>
+                            } style={{fontSize: '17px'}}> 
                             Time Table
                         </div>
                     </Link>
@@ -94,7 +94,7 @@ function ClassPageTopNavigation({
                             "active-class-top-navigation-tab-element" 
                             : 
                             "class-top-navigation-tab-element"
-                        }>
+                        } style={{fontSize: '17px'}}> 
                         Exams
                     </div>
                     
@@ -104,7 +104,7 @@ function ClassPageTopNavigation({
                             "active-class-top-navigation-tab-element" 
                             : 
                             "class-top-navigation-tab-element"
-                        }>
+                        } style={{fontSize: '17px'}}> 
                         Reports
                     </div>
                     
@@ -118,7 +118,7 @@ function ClassPageTopNavigation({
                                 "active-class-top-navigation-tab-element" 
                                 : 
                                 "class-top-navigation-tab-element"
-                            }>
+                            } style={{fontSize: '17px'}}> 
                             Students
                         </div>
                     </Link>

@@ -228,13 +228,11 @@ function ModulesList() {
                     moduleDetails={moduleDetails}
                     campusId={campusId} />
 
-                <div className='add-new-module'>
                     <div 
-                        className='active-department-list-title' 
-                        onClick={ () => setShowCreateModule(true) }>
-                        Add a new course <div className='access'>+</div>
-                    </div> 
-                </div>
+                        className='class-course-add-button'
+                        title='Add a new course.'
+                        onClick={ () => setShowCreateModule(true) } />
+
                 { classModules.map((moduleDetail) =>
                     moduleDetail.id && ( 
                         moduleDetail.classID === qualificationDetails.qualificationId ? 

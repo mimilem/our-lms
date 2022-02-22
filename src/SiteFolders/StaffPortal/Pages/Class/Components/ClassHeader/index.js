@@ -23,7 +23,7 @@ function ClassHeader({
                 <div className={'staff-pages-header-dropdown'}>
                     <div>
                         <div 
-                            className='staff-pages-header-tilte'>
+                            className='staff-pages-header-tilte' style={{fontSize: '20px'}}>
                             {qualificationDetails.qualificationName} - {qualificationDetails.qualificationYear} Year
                         </div> 
                     </div>

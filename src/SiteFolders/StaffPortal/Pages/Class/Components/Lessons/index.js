@@ -218,23 +218,7 @@ function Lessons() {
                     
                     <div className='course-module-title'>{moduleDetail.moduleName}</div>
 
-
                     <div className='chapter-semester-container'>
-
-
-                        <div style={{width: '70%', cursor: 'pointer'}}>
-                            <div 
-                                className='exams-calendar-tilte'
-                                style={{fontSize: 17, alignItems:'center'}}
-                                onClick={() => setShowCreateModuleChapter(true)}>
-                                Add a new Module <div className='access'>+</div>
-                            </div> 
-                        </div>
-                       
-                        <br/>
-                        <br/>
-                        <br/>
-                        
                         <div>
                             <div className='moduleIntro'>Introduction</div>
                             <p>{moduleDetail.courseDescription}</p>
@@ -243,11 +227,21 @@ function Lessons() {
 
                         <div className="chapter-container">
 
+                            <div 
+                                className='add-module' 
+                                style={{fontSize: 15}} 
+                                onClick={() => setShowCreateModuleChapter(true)}>
+                                New Module
+                                <div 
+                                    className='module-add-button' 
+                                    title='Create a module.'/>
+                            </div>
                             { 
                                 moduleChapter.map((moduleChapterMapItem) => 
                                 moduleChapterMapItem.classModuleID === moduleDetail.id ?
                                 
-                                    <div key={moduleChapterMapItem.id}>
+                                    <div key={moduleChapterMapItem.id}>     
+
                                         <div className='exams-calendar-tilte' style={{fontSize: '18px', alignItems:'center'}}>
                                             Chapter: {moduleChapterMapItem.chapterName}
                                         </div>

@@ -27,11 +27,8 @@ function DepartmentsList({
         <div>
             {/* onClick show the window to create a new faculty (window section placed 
             in the Departments component) */}
-            <div 
-                onClick={() => setShowCreateFaculty(true)} 
-                className='exams-calendar-tilte'
-                style={{fontSize: 17, alignItems:'center'}}>
-                + Add a new faculty
+            <div onClick={() => setShowCreateFaculty(true)}>
+                <div className='faculty-add-button' title='Create a faculty.'/>
             </div>  
 
             {/* 1. Check the campus IDs to display the corresponding faculties */}

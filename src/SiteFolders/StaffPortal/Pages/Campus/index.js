@@ -130,7 +130,7 @@ function CampusPage() {
                 campusId={campusId.campusID}
                 choosedCampus={choosedCampus} />
 
-            <div className='staff-pages-content'>
+            <div className='staff-pages-content' style={{marginLeft: '20rem'}}> 
                 <div className='staff-pages-header-tilte' style={{marginLeft: '3rem'}}>Campuses</div>
                 <hr className='staff-page-hr' />
 
