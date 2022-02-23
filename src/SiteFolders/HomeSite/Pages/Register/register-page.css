@@ -1,6 +1,6 @@
 .register-page-container {
   background-color: #000;
-  height: 300vh;
+  height: auto;
   width: 100%;
 }
 .register-page-content {

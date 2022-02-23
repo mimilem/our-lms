@@ -15,6 +15,11 @@ import './lessonTimeTable.css';
 
 function LessonTimeTable() {
 
+    const [timeTbSubject, setTimeTbSubject] = useState('')
+    const [timeTbID, setTimeTbID] = useState(timeTbSubject)
+    const [timeTbStartTime, setTimeTbStartTime] = useState('')
+    const [timeTbEndTime, setTimeTbEndTime] = useState('')
+
     const [lessonTimeTableData, setlessonTimeTableData] = useState([{
         Id: 1,
         Subject: 'Explosion of Betelgeuse Star',
@@ -27,9 +32,12 @@ function LessonTimeTable() {
         EndTime: new Date(2022, 1, 9, 14, 0)
     }])
 
+    
     return (
         <div className='lessonTimeTable-container'>
-            <ScheduleComponent currentView='WorkWeek' selectedDate={new Date(2022, 1, 6)} eventSettings={{ dataSource: lessonTimeTableData }} >
+            <ScheduleComponent 
+                currentView='WorkWeek' 
+                eventSettings={{ dataSource: lessonTimeTableData }} >
                 <Inject services={[Day, WorkWeek]} />
                 <ViewsDirective>
                     <ViewDirective option='WorkWeek' startHour='8:00' endHour='18:00'/>

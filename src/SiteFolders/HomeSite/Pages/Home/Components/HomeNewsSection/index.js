@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import mediaData from '../data/MediaData' 
+
 //import styling
 import './homeNewsSection.css'
+
+import mediaData from '../../../../Components/data/MediaData';
 
 
 function HomeNewsSection() {

@@ -17,8 +17,6 @@ export const getCampus = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -65,8 +63,6 @@ export const getFaculty = /* GraphQL */ `
       id
       facultyName
       headofFaculty
-      facultyCountry
-      facultyCity
       facultyPhoneNumber
       facultyEmailAddress
       facultyAdress
@@ -112,8 +108,6 @@ export const listFacultys = /* GraphQL */ `
         id
         facultyName
         headofFaculty
-        facultyCountry
-        facultyCity
         facultyPhoneNumber
         facultyEmailAddress
         facultyAdress
@@ -150,8 +144,6 @@ export const getDepartment = /* GraphQL */ `
         id
         facultyName
         headofFaculty
-        facultyCountry
-        facultyCity
         facultyPhoneNumber
         facultyEmailAddress
         facultyAdress
@@ -206,8 +198,6 @@ export const listDepartments = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -241,8 +231,6 @@ export const getClass = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress

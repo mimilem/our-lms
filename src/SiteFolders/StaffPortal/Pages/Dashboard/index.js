@@ -1,3 +1,9 @@
+/*
+    After the selection of  a campus,
+    this is where the user will be 
+    redirected.
+*/
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -21,8 +27,6 @@ function StaffDashboard() {
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('dashboard');
     const [choosedCampus, setChoosedCampus] = useState(true);
-    const [toggleFromDashboard, setToggleFromDashboard] = useState();
-    
 
     const [faculty, setFaculty] = useState([])
 
@@ -36,13 +40,12 @@ function StaffDashboard() {
     const campusId = location.state.campusID
 
     const campusDetails = {
-        campusID: location.state.campusID !== undefined ? location.state.campusID : location.state, 
+        campusID: location.state.campusID !== undefined 
+            ? location.state.campusID : location.state, 
         campusName: location.state.campusName,
     }
 
-    console.log(location)
-
-    /* fetch the API data of faculties and departements */
+    /* fetch the API data of faculties */
     useEffect( () => {
         const fetchFaculty = async () => {
             try {
@@ -82,15 +85,19 @@ function StaffDashboard() {
                     facultyItemMap.campusID === campusId ?
                     <Link 
                         to={{     
-                            pathname:'/Staff/Departments',
+                            pathname:'/Staff/Faculties',
                             state: campusDetails
                         }} 
                         className='gradient-blue-card-container' 
                         style={{padding:'1rem', fontSize: '15px'}} >
-                            <div className='top-left-text' style={{padding:'1rem', fontSize: '17px'}}>
+                            <div 
+                                className='top-left-text' 
+                                style={{padding:'1rem', fontSize: '17px'}} >
                                 {facultyItemMap.facultyName}
                             </div>
-                            <div className='top-right-text'><div className='more-icon'/></div>
+                            <div className='top-right-text'>
+                                <div className='more-icon'/>
+                            </div>
                             <h4 style={{position: 'absolute', bottom:0, padding:'1rem'}}>
                                 Head Of Faculty: {facultyItemMap.headofFaculty}
                             </h4>

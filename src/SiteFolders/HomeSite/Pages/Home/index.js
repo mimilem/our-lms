@@ -1,9 +1,12 @@
-import React, {useEffect} from 'react';
-import Footer from '../../Components/Footer';
+import React, { useEffect } from 'react';
 
+//import all components that will be 
+//displayed on the pages.
+import Footer from '../../Components/Footer';
 import Header from '../../Components/Header'
-import HomeLastSection from '../../Components/HomeLastSection';
-import HomeNewsSection from '../../Components/HomeNewsSection';
+import HomeLastSection from './Components/HomeLastSection';
+import HomeNewsSection from './Components/HomeNewsSection';
+
 
 function Home() {
 

@@ -1,19 +1,8 @@
 .navigation-container {
-  background: linear-gradient(
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    #fff,
-    transparent
-  );
+  background: #fff;
   font-family: "Open Sans", sans-serif;
-  height: 20vh;
-  min-height: 20vh;
+  height: 15vh;
+  min-height: 15vh;
   min-width: 100%;
   overflow: hidden;
   position: fixed;
@@ -23,11 +12,11 @@
 }
 
 .home-site-logo-container {
-  height: 200px;
+  height: 190px;
   margin-top: -15px;
   padding-left: 1.9%;
   padding-right: 1.99%;
-  width: 13%;
+  width: 10%;
 }
 .home-site-logo {
   background-image: url(../../../../assets/VincoColorEng.svg);
@@ -65,13 +54,14 @@
   Tab navigation elements styling
 */
 .tab-list-container {
-  display: block;
+  align-items: center;
+  display: flex;
   font-size: 15px;
   list-style: none;
   position: fixed;
-  right: 0;
-  top: 40px;
-  width: 80%;
+  justify-content: center;
+  top: 10px;
+  width: 100%;
 }
 .tab-element {
   border-bottom-left-radius: 15px;

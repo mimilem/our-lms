@@ -6,6 +6,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
+//import the styling compnent(s).
 import './header.css';
 
 
@@ -41,7 +42,11 @@ function Header({ campusDetails }) {
             </div>
             
             <div className='header-institution-name'>
-                Vinco-eLearning - <b>{campusDetails.campusName ? campusDetails.campusName : "Select A " } Campus</b>
+                Vinco-eLearning - <b>
+                {
+                    campusDetails.campusName ? campusDetails.campusName 
+                    : "Select A " 
+                } Campus</b>
             </div>
 
             {/* DON'T TOUCH */}
@@ -70,7 +75,7 @@ function Header({ campusDetails }) {
                                 <hr className='nav-tab-hr'/>
                                 <li>Settings</li>
                                 <hr className='nav-tab-hr'/>
-                                <Link to='/' className='sign-out'>Sign out</Link>
+                                <Link to='/Staff-login' className='sign-out'>Sign out</Link>
                             </ul> 
                         )}
                 

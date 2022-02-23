@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
 
+//import all components that will be 
+//displayed on the pages.
 import BackgroundAnimation from '../../Components/BackgroundAnimation'
 import NavigationTab from '../../Components/NavigationTab';
 
@@ -14,6 +15,7 @@ function MediaPage() {
 
     return (
         <div className='Media-container'>
+            
             <BackgroundAnimation />
             
             <NavigationTab/>

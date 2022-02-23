@@ -1,9 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 
+//import the styling compnent(s).
+import './contact.css'
+
+//import all components that will be 
+//displayed on the pages.
 import BackgroundAnimation from '../../Components/BackgroundAnimation'
 import ContactForm from '../../Components/ContactForm';
 import NavigationTab from '../../Components/NavigationTab';
-import './contact.css'
+
 
 function ContactPage() {
 

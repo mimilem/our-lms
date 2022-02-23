@@ -75,7 +75,7 @@ function ToggledSideNavigation({
                     </Link>
 
                     <Link to={{     
-                            pathname:'/Staff/Departments',
+                            pathname:'/Staff/Faculties',
                             state: campusDetails
                         }}
                         className={activeTab === 'department' ? 'active' : ''}  
@@ -174,7 +174,7 @@ function ToggledSideNavigation({
                     </Link> */}
 
                     <Link 
-                        to='/' 
+                        to='/Staff-login' 
                         onClick={signOut}
                         className='logout-container' 
                         title='Log-out'>

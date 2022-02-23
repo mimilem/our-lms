@@ -20,8 +20,6 @@ export const createCampus = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -55,8 +53,6 @@ export const updateCampus = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -90,8 +86,6 @@ export const deleteCampus = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -115,8 +109,6 @@ export const createFaculty = /* GraphQL */ `
       id
       facultyName
       headofFaculty
-      facultyCountry
-      facultyCity
       facultyPhoneNumber
       facultyEmailAddress
       facultyAdress
@@ -160,8 +152,6 @@ export const updateFaculty = /* GraphQL */ `
       id
       facultyName
       headofFaculty
-      facultyCountry
-      facultyCity
       facultyPhoneNumber
       facultyEmailAddress
       facultyAdress
@@ -205,8 +195,6 @@ export const deleteFaculty = /* GraphQL */ `
       id
       facultyName
       headofFaculty
-      facultyCountry
-      facultyCity
       facultyPhoneNumber
       facultyEmailAddress
       facultyAdress
@@ -254,8 +242,6 @@ export const createDepartment = /* GraphQL */ `
         id
         facultyName
         headofFaculty
-        facultyCountry
-        facultyCity
         facultyPhoneNumber
         facultyEmailAddress
         facultyAdress
@@ -308,8 +294,6 @@ export const updateDepartment = /* GraphQL */ `
         id
         facultyName
         headofFaculty
-        facultyCountry
-        facultyCity
         facultyPhoneNumber
         facultyEmailAddress
         facultyAdress
@@ -362,8 +346,6 @@ export const deleteDepartment = /* GraphQL */ `
         id
         facultyName
         headofFaculty
-        facultyCountry
-        facultyCity
         facultyPhoneNumber
         facultyEmailAddress
         facultyAdress
@@ -422,8 +404,6 @@ export const createClass = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -477,8 +457,6 @@ export const updateClass = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress
@@ -532,8 +510,6 @@ export const deleteClass = /* GraphQL */ `
           id
           facultyName
           headofFaculty
-          facultyCountry
-          facultyCity
           facultyPhoneNumber
           facultyEmailAddress
           facultyAdress

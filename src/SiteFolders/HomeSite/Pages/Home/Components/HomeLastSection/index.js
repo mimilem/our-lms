@@ -1,6 +1,8 @@
-import BackgroundAnimation from '../BackgroundAnimation';
 //import styling
 import './homeLastSection.css'
+
+import BackgroundAnimation from '../../../../Components/BackgroundAnimation';
+
 
 function HomeLastSection() {
     return (

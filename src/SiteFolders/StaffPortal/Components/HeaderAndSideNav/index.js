@@ -4,10 +4,13 @@ import React, { useEffect, useState } from 'react';
 import { API, graphqlOperation } from "aws-amplify";
 import * as queries from '../../../../graphql/queries';
 
+//import all components that will be 
+//displayed on the pages.
 import Header from '../Header';
 import SideNavigation from '../SideNavigation';
 
 
+// Receive params from all pages.
 function HeaderAndSideNav({
     toggledBar, 
     setToggledBar, 
@@ -16,18 +19,19 @@ function HeaderAndSideNav({
     choosedCampus
 }) {
 
+    // State to fetch a campus.
     const [ campus, setCampus ] = useState([])
 
      /* fetch the API data of a campus */
      useEffect( () => {
         const fetchCampus = async () => {
             try {
-                    const campusResults = await API.graphql(
-                        graphqlOperation(queries.getCampus, { id: campusId }
-                    ))
-                    const campus = campusResults.data.getCampus
-                    setCampus(campus)
-                } 
+                const campusResults = await API.graphql(
+                    graphqlOperation(queries.getCampus, { id: campusId }
+                ))
+                const campus = campusResults.data.getCampus
+                setCampus(campus)
+            } 
             catch (error) {
                 console.log(error)
             }
@@ -40,6 +44,7 @@ function HeaderAndSideNav({
         institutionName: campus.institutionName,
         campusName: campus.campusName,
     }
+
     return (
             <div>
                 <Header campusDetails={campusDetails}/>

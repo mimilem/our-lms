@@ -21,7 +21,7 @@
   left: 0;
   margin-left: auto;
   margin-right: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
   padding-bottom: 6rem;
   position: fixed;
   right: 0;

@@ -11,45 +11,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Auth, Hub, Logger } from 'aws-amplify';
-
 //import styling
 import './navigationTab.css'
 
 
 function NavigationTab() {
 
-    const logger = new Logger('My-Logger');
-
-    const currentUser = Auth.currentAuthenticatedUser();
-
+    // navigation Tab dropdown states.
     const [isShown, setIsShown] = useState(false);
     const [isShown1, setIsShown1] = useState(false);
     const [isShown2, setIsShown2] = useState(false);
+    const [isShown3, setIsShown3] = useState(false);
     
     //declare the initial state of the active tab element.
     const [activeTab, setActiveTab] = useState("tab1");
-
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-
-    const [signedIn, setSignedIn] = useState(false)
-
-    const handleChangeUsername = (e) => {
-        setUsername(e.target.value)
-    }
-    const handleChangePassword = (e) => {
-        setPassword(e.target.value)
-    }
-    
-    async function signIn() {
-        try {
-            const user = await Auth.signIn(username, password)
-            setSignedIn(true);
-        } catch (error) {
-            console.log('error signing in', error);
-        }
-    }
 
     return (
         <div className='navigation-container'>
@@ -58,50 +33,23 @@ function NavigationTab() {
                 <div className='home-site-logo'/>
             </div>
 
-            {/* Staff Login Form */}
-            <div className='staff-login-form-container'>
-                Staff login: 
-                <input 
-                    placeholder="Username"
-                    type='email'    
-                    value={username}
-                    onChange={handleChangeUsername}
-                />
-                <input 
-                    placeholder="Password"
-                    type='password'  
-                    value={password}
-                    onChange={handleChangePassword}  
-                />
-                <Link
-                    onClick={()=> setSignedIn(true)} 
-                    to={ signedIn === true ? '/Staff/SelectCampus' : '/'}>
-                    <button onClick={signIn} style={{cursor: 'pointer'}}>
-                        Login
-                    </button>
-                </Link>
-            </div>
-
             {/* Tab navigation list and dropdown menus */}
             <div className="tab-list-container">
                 <ul>
                     <Link to='/'>
                         <li
                             className={activeTab === 'tab1' ? 'active-tab-element' : "tab-element"}
-                            onClick={() => setActiveTab("tab1")} 
-                        >
+                            onClick={() => setActiveTab("tab1")} >
                             Home
                         </li>
                     </Link>
 
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown(true)}
-                        onMouseLeave={() => setIsShown(false)}
-                    > 
+                        onMouseLeave={() => setIsShown(false)} > 
                         <li 
                             className="tab-element"
-                            onClick={() => setActiveTab("tab2")}
-                        >
+                            onClick={() => setActiveTab("tab2")} >
                             Courses
                         </li>
                         {isShown && (
@@ -117,12 +65,10 @@ function NavigationTab() {
 
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown1(true)}
-                        onMouseLeave={() => setIsShown1(false)}
-                    > 
+                        onMouseLeave={() => setIsShown1(false)} > 
                         <li 
                             className={activeTab === 'tab3' ? 'active-tab-element' : "tab-element" }
-                            onClick={() => setActiveTab("tab3")}
-                        >
+                            onClick={() => setActiveTab("tab3")} >
                             Admission
                         </li>
                         {isShown1 && (
@@ -142,12 +88,10 @@ function NavigationTab() {
                     
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown2(true)}
-                        onMouseLeave={() => setIsShown2(false)} 
-                    > 
+                        onMouseLeave={() => setIsShown2(false)} > 
                         <li 
                             className={activeTab === 'tab4' ? 'active-tab-element' : "tab-element" }
-                            onClick={() => setActiveTab("tab4")}
-                        >
+                            onClick={() => setActiveTab("tab4")} >
                             About
                         </li>
                         {isShown2 && (
@@ -166,15 +110,29 @@ function NavigationTab() {
                     <Link to='/contact'>
                         <li 
                             className={activeTab === 'tab5' ? 'active-tab-element' : "tab-element" }
-                            onClick={() => setActiveTab("tab5")}
-                        >
+                            onClick={() => setActiveTab("tab5")} >
                             Get In Touch
                         </li>
                     </Link>
 
-                    <Link  to='/student-login'>
-                        <li className="student-portail-tab-element">Student Portal</li>
-                    </Link>
+                    <div className='dropdown'
+                        onMouseEnter={() => setIsShown3(true)}
+                        onMouseLeave={() => setIsShown3(false)} >
+                        <li className="student-portail-tab-element" >
+                            Login
+                        </li>
+                        {isShown3 && (
+                            <ul className='dropdown-menu' style={{marginTop: '0.2rem'}}>
+                                <Link to='/Staff-login'>
+                                    <li>Staff</li>
+                                </Link>
+                                <hr className='nav-tab-hr'/>
+                                <Link to='/student-login'>
+                                    <li>Student</li>
+                                </Link>
+                            </ul> 
+                        )}
+                    </div>
                 </ul>   
             </div>
         </div>

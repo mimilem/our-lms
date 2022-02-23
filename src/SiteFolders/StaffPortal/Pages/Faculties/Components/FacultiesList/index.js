@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 //import the styling compnent(s).
-import './departmentsList.css' ;
+import './facultiesList.css' ;
 
 
-function DepartmentsList({ 
+function FacultiesList({ 
     setShowCreateFaculty, 
     setShowCreateDepartment,
     setShowCreateQualification,
@@ -100,7 +100,7 @@ function DepartmentsList({
                                             qualificationItemMap.departmentID === departmentItemMap.id ?
                                             <div key={qualificationItemMap.id}>
                                                 <Link to={{
-                                                    pathname:'/Staff/Departments/ModulesList',
+                                                    pathname:'/Staff/Departments/Courses',
                                                     state:{ qualificationItemMap, campusId }}}>
                                                     <div className='qualification-list'>
                                                         {qualificationItemMap.qualificationName} - {
@@ -124,4 +124,4 @@ function DepartmentsList({
     );
 }
 
-export default DepartmentsList;
+export default FacultiesList;

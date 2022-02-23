@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
-import mediaData from '../../../Components/data/MediaData'
-
-import BackgroundAnimation from '../../../Components/BackgroundAnimation'
-//import Styling
+//import the styling compnent(s).
 import './article.css'
+
+//import all components that will be 
+//displayed on the pages.
+import BackgroundAnimation from '../../../Components/BackgroundAnimation'
 
 
 function Article() {

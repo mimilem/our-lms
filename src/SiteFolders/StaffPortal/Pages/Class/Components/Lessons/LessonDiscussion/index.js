@@ -8,6 +8,7 @@ import { API, graphqlOperation } from "aws-amplify";
 import * as mutations from '../../../../../../../graphql/mutations';
 import { listMessages } from '../../../../../../../graphql/queries';
 
+//import the styling compnent(s).
 import './lessonDiscussion.css';
 
 
@@ -32,7 +33,7 @@ function LessonDiscussion() {
             }
         }
         fetchMessage();
-    }, [])
+    })
 
     // This Function is used to create a new message
     // then reload the page.
@@ -45,7 +46,6 @@ function LessonDiscussion() {
             query: mutations.createMessage, 
             variables: {input: messageDetails}
         });
-        window.location.reload(false);
     }
 
     return (

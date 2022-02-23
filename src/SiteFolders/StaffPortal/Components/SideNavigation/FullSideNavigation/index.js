@@ -60,7 +60,7 @@ function FullSideNavigation(props) {
                     </Link>
 
                     <Link to={{     
-                        pathname:'/Staff/Departments',
+                        pathname:'/Staff/Faculties',
                         state: campusDetails
                     }}
                         className={activeTab === 'department' ? 'active' : ''} 
@@ -127,7 +127,7 @@ function FullSideNavigation(props) {
                     </Link>
 
                     <Link 
-                        to='/' 
+                        to='/Staff-login' 
                         onClick={signOut}
                         className='logout-container'>
                         <div className='logout-icon'/>

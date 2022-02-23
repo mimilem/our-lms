@@ -16,8 +16,6 @@ type Faculty
   id: ID!
   facultyName: String!
   headofFaculty: String!
-  facultyCountry: String!
-  facultyCity: String!
   facultyPhoneNumber: String!
   facultyEmailAddress: String!
   facultyAdress: String!
@@ -31,6 +29,7 @@ type Department
   @key(name: "byFaculty", fields: ["facultyID", "departmentName"]) {
   id: ID!
   departmentName: String!
+  headofDepartment: String
   facultyID: ID!
   faculty: Faculty @connection(fields: ["facultyID"])
   classes: [Class] @connection(keyName: "byDepartment", fields: ["id"])

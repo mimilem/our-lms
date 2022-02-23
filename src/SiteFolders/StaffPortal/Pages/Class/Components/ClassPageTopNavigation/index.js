@@ -19,7 +19,7 @@ function ClassPageTopNavigation({
             {/* Tab navigation list */}
             <Link
                 to={{     
-                    pathname:'/Staff/Departments/ModulesList',
+                    pathname:'/Staff/Departments/Courses',
                     state: {qualificationDetails, moduleDetails, campusId}
                 }}>
                 <div 
