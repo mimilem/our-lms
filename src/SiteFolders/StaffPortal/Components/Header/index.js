@@ -42,11 +42,12 @@ function Header({ campusDetails }) {
             </div>
             
             <div className='header-institution-name'>
-                Vinco-eLearning - <b>
+                Vinco-eLearning<b>
                 {
-                    campusDetails.campusName ? campusDetails.campusName 
-                    : "Select A " 
-                } Campus</b>
+                    campusDetails.campusName ? 
+                    ` - ${campusDetails.campusName} Campus` 
+                    : [] 
+                }</b>
             </div>
 
             {/* DON'T TOUCH */}

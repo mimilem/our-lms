@@ -8,6 +8,7 @@ import React from 'react';
 
 
 function CreateNewCampus({
+    setShowCreateCampus, 
     showCreateCampus, 
     fileUrl,
     onChangeHandler,
@@ -81,7 +82,7 @@ function CreateNewCampus({
                 />
                 <div 
                     className='close-pop-up-icon' 
-                    onClick={ () => campusStateDetails.setShowCreateCampus(false)} />
+                    onClick={ () => setShowCreateCampus(false)} />
                 <div 
                     onClick={ createNewCampus } 
                     className='create-pop-up-button'

@@ -9,7 +9,7 @@
 
 */
 
-.sideNav-container {
+.institution-sideNav-container {
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
@@ -25,7 +25,7 @@
   z-index: 9;
 }
 
-.side-navigation-text {
+.institution-side-navigation-text {
   align-items: center;
   display: inline-block;
   justify-content: center;
@@ -36,18 +36,18 @@
   z-index: 1;
 }
 
-.campus-icon {
-  background-image: url("../../../../assets/message.png");
+.institution-campus-icon {
+  background-image: url("../../../../../../assets/campus.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: inline-block;
-  height: 1rem;
+  height: 1.3rem;
   margin-left: -5px;
-  width: 1rem;
+  width: 1.3rem;
 }
-.dashboard-icon {
-  background-image: url("../../../../assets/dashboard.png");
+.institution-classes-icon {
+  background-image: url("../../../../../../assets/online-learning.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -55,8 +55,8 @@
   height: 1rem;
   width: 1rem;
 }
-.classes-icon {
-  background-image: url("../../../../assets/online-learning.png");
+.institution-profile-icon {
+  background-image: url("../../../../../../assets/user1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -64,8 +64,8 @@
   height: 1rem;
   width: 1rem;
 }
-.module-icon {
-  background-image: url("../../../../assets/modules.png");
+.institution-information-icon {
+  background-image: url("../../../../../../assets/information.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -73,8 +73,8 @@
   height: 1rem;
   width: 1rem;
 }
-.students-icon {
-  background-image: url("../../../../assets/learning.png");
+.institution-manage-users-icon {
+  background-image: url("../../../../../../assets/people.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -82,8 +82,8 @@
   height: 1rem;
   width: 1rem;
 }
-.manage-users-icon {
-  background-image: url("../../../../assets/people.png");
+.institution-time-table-icon {
+  background-image: url("../../../../../../assets/calendar.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -91,8 +91,8 @@
   height: 1rem;
   width: 1rem;
 }
-.exams-icon {
-  background-image: url("../../../../assets/test.png");
+.institution-notification-icon {
+  background-image: url("../../../../../../assets/notification-bell.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -100,26 +100,8 @@
   height: 1rem;
   width: 1rem;
 }
-.time-table-icon {
-  background-image: url("../../../../assets/calendar.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
-}
-.events-icon {
-  background-image: url("../../../../assets/event.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
-}
-.reports-icon {
-  background-image: url("../../../../assets/report.png");
+.institution-events-icon {
+  background-image: url("../../../../../../assets/event.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -128,11 +110,11 @@
   width: 1rem;
 }
 
-.logout-container {
+.institution-logout-container {
   width: 100%;
 }
-.logout-icon {
-  background-image: url("../../../../assets/log-out.png");
+.institution-logout-icon {
+  background-image: url("../../../../../../assets/log-out.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -141,8 +123,8 @@
   width: 1rem;
 }
 
-.toggle-icon {
-  background-image: url("../../../../assets/double-left-arrows-symbol.png");
+.institution-toggle-icon {
+  background-image: url("../../../../../../assets/double-left-arrows-symbol.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

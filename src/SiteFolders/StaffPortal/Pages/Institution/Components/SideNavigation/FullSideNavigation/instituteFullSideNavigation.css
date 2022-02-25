@@ -1,0 +1,46 @@
+/*
+
+  The styling component of the 'FullSideNavigation' component.  
+  
+  Every class Name container here starting with 'full-side',
+  to avoid conflicts between styling components.   
+
+*/
+
+.intitution-full-side-navigation-container {
+  width: 16rem;
+}
+
+.intitution-full-side-navigation-container a {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 24px;
+  list-style: none;
+  text-decoration: none;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+}
+.intitution-full-side-navigation-container a:hover {
+  background-color: #5d8aa8;
+  color: #fff;
+  transition: all 0.4s ease 0s;
+}
+
+.intitution-full-side-navigation-container .institution-active {
+  background-color: #96a9b6;
+  color: #fff;
+}
+
+.institution-full-side-navigation-container .institution-logout-container {
+  background: transparent;
+  bottom: 0;
+  color: red;
+  width: 100%;
+}
+.institution-full-side-navigation-container
+  .institution-logout-container:hover {
+  background: #96a9b6;
+  color: #dc143c;
+}

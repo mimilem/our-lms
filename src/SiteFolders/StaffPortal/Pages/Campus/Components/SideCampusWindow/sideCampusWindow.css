@@ -3,9 +3,18 @@
   height: 100%;
   padding-top: 1rem;
   position: fixed;
-  left: 0;
+  left: 4rem;
   top: 3rem;
   width: 20rem;
+  animation: slide 0.5s forwards;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    right: 0;
+  }
 }
 
 .sideCampustab-title {

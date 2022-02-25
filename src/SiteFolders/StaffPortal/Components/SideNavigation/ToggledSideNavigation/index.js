@@ -55,7 +55,7 @@ function ToggledSideNavigation({
                         <div className='campus-icon'/>
                         <div style={{position: 'absolute', width: '100%'}}>
                             <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
-                                Campus
+                                General
                             </div>
                         </div>  
                     </Link>

@@ -15,6 +15,7 @@ import '../staffPages.css';
 import HeaderAndSideNav from '../../Components/HeaderAndSideNav';
 import SideCampusWindow from './Components/SideCampusWindow';
 import CreateNewCampus from './Components/CreateNewCampus';
+import SideNavigation from '../Institution/Components/SideNavigation';
 
 
 function CampusPage() {
@@ -24,6 +25,8 @@ function CampusPage() {
     const [toggledBar, setToggledBar] = useState(false);
     const [activeTab, setActiveTab] = useState('campus');
     const [choosedCampus, setChoosedCampus] = useState(false);
+
+    const [generalToggledBar, setGeneralToggledBar] = useState(false)
 
     const [campus, setCampus] = useState([])
     const [campusId, setCampusId] = useState({
@@ -141,22 +144,24 @@ function CampusPage() {
         }
         fetchCampus();
     })
-
+    
     return (
-        <div className = {
-            choosedCampus === true ? 'staff-pages-container' 
-            : 'campus-page-content'}>
-            
+        <div className='campus-page-content'>
+        
             <HeaderAndSideNav
                 toggledBar={toggledBar} 
                 setToggledBar={setToggledBar}
                 activeTab={activeTab}
                 campusId={campusId.campusID}
                 choosedCampus={choosedCampus} />
+                
+            <SideNavigation 
+                generalToggledBar={generalToggledBar} 
+                setGeneralToggledBar={setGeneralToggledBar} />
 
             <div 
                 className='staff-pages-content' 
-                style={{marginLeft: '20rem'}} > 
+                style={{marginLeft: showSideCampusWindow===true ? '22rem' : '18rem'}} > 
                 <div 
                     className='staff-pages-header-tilte' 
                     style={{marginLeft: '3rem'}} >
@@ -179,7 +184,8 @@ function CampusPage() {
                                 className='campus-card'
                                 key={campusMapItem.id}
                                 onClick={()=>{
-                                    setShowSideCampusWindow(true)
+                                    setShowSideCampusWindow(true);
+                                    setGeneralToggledBar(true);
                                     setCampusId({
                                         campusID: campusMapItem.id,
                                         campusHead:campusMapItem.campusHead,
@@ -209,13 +215,17 @@ function CampusPage() {
 
             <SideCampusWindow 
                 campusId={campusId} 
-                showSideCampusWindow={showSideCampusWindow} />
+                showSideCampusWindow={showSideCampusWindow}
+                setShowSideCampusWindow={setShowSideCampusWindow}
+                generalToggledBar={generalToggledBar} 
+                setGeneralToggledBar={setGeneralToggledBar} />
 
             {/* The Pup-out window that allows the admin to create */}
             {/* a new campus. */}
             {/* By default the display is set to false */}
             <CreateNewCampus 
                 showCreateCampus={showCreateCampus}
+                setShowCreateCampus={setShowCreateCampus}
                 fileUrl={fileUrl}
                 onChangeHandler={onChangeHandler}
                 campusStateDetails={campusStateDetails}
