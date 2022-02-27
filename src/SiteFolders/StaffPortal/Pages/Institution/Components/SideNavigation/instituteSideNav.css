@@ -82,6 +82,15 @@
   height: 1rem;
   width: 1rem;
 }
+.institution-fees-icon {
+  background-image: url("../../../../../../assets/money.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
 .institution-time-table-icon {
   background-image: url("../../../../../../assets/calendar.png");
   background-repeat: no-repeat;
@@ -110,6 +119,15 @@
   width: 1rem;
 }
 
+.institution-library-icon {
+  background-image: url("../../../../../../assets/library.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
 .institution-logout-container {
   width: 100%;
 }
