@@ -78,7 +78,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
                 className='' 
             >
                 <div className='institution-time-table-icon'/>
-                <div className='institution-side-navigation-text'>General alendar</div>
+                <div className='institution-side-navigation-text'>General Calendar</div>
             </Link>
 
             <Link to={{     
