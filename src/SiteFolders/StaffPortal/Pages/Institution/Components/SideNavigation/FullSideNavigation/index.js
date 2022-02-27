@@ -78,7 +78,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
                 className='' 
             >
                 <div className='institution-time-table-icon'/>
-                <div className='institution-side-navigation-text'>calendar</div>
+                <div className='institution-side-navigation-text'>General alendar</div>
             </Link>
 
             <Link to={{     
@@ -98,7 +98,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
                 className='' 
             >
                 <div className='institution-notification-icon'/>
-                <div className='institution-side-navigation-text'>Notifications</div>
+                <div className='institution-side-navigation-text'>General Notifications</div>
             </Link>
 
             <Link to={{     
@@ -108,7 +108,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
                 className='' 
             >
                 <div className='institution-events-icon'/>
-                <div className='institution-side-navigation-text'>Events</div>
+                <div className='institution-side-navigation-text'>General Events</div>
             </Link>
 
             <Link to={{     
