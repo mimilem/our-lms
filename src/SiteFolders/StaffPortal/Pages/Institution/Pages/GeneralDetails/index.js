@@ -34,9 +34,7 @@ function GeneralDetails() {
                 setGeneralToggledBar={setGeneralToggledBar}
                 activeTab={activeTab} />
 
-            <div 
-                className='staff-pages-content' 
-                style={{marginLeft: '18rem'}} > 
+            <div className='generalDetails-content' > 
                 <div 
                     className='staff-pages-header-tilte' 
                     style={{marginLeft: '3rem'}} >
@@ -44,6 +42,51 @@ function GeneralDetails() {
                 </div>
                 <hr className='staff-page-hr' />
                 
+                <div className='generalDetails-institution-name-container'>
+                    <div className='generalDetails-institution-name'>
+                        Vinco-eLearning
+                    </div>
+                    <div className='generalDetails-institution-edit-icon' />
+                </div>
+
+                <div className='generalDetails-input-container'>
+                    <div className='generalDetails-label'>Adress:</div>
+                    <input 
+                        type='text' 
+                        className='generalDetails-input'/>
+                </div>
+                <div className='generalDetails-input-container'>
+                    <div className='generalDetails-label'>Email:</div>
+                    <input 
+                        type='text' 
+                        className='generalDetails-input'/>
+                </div>
+                <div className='generalDetails-input-container'>
+                    <div className='generalDetails-label'>Phone:</div>
+                    <input 
+                        type='text' 
+                        className='generalDetails-input'/>
+                </div>
+
+                <div className='btn-generalDetails-container'>
+                    <button className='btn-generalDetails-cancel'>Cancel</button>
+                    <button className='btn-generalDetails-save'>Save</button>
+                </div>
+
+                <div className='generalDetails-stats-container'>
+                    <div>
+                        Total number of campuses: <b>2</b>
+                    </div>
+                    <div>
+                        Total number of departments: <b>2</b>
+                    </div>
+                    <div>
+                        Total number of Staff: <b>85</b>
+                    </div>
+                    <div>
+                        Total number of Students: <b>1115</b>
+                    </div>
+                </div>
             </div>
         </div>
     );

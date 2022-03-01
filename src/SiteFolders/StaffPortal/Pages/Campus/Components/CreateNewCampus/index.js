@@ -82,7 +82,7 @@ function CreateNewCampus({
                 />
                 <div 
                     className='close-pop-up-icon' 
-                    onClick={ () => setShowCreateCampus(false)} />
+                    onClick={() => setShowCreateCampus(false)} />
                 <div 
                     onClick={ createNewCampus } 
                     className='create-pop-up-button'

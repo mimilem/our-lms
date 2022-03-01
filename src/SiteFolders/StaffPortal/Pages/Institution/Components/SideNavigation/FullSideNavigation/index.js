@@ -37,7 +37,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
                 className={activeTab === 'adminProfile' ? 'institution-active' : '' } 
             >
                 <div className='institution-profile-icon'/>
-                <div className='institution-side-navigation-text'>General Profile</div>
+                <div className='institution-side-navigation-text'>Admin Profile</div>
             </Link>
             
             <Link to={{     

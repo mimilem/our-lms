@@ -1,0 +1,96 @@
+.generalDetails-content {
+  margin-left: 17rem;
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.generalDetails-institution-name-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.generalDetails-institution-name {
+  font-size: 35px;
+  margin-left: 4rem;
+}
+
+.generalDetails-institution-edit-icon {
+  background-image: url("../../../../../../assets/write.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 4rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.generalDetails-input-container {
+  align-items: center;
+  border: 1px solid;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  display: flex;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  width: 50%;
+}
+.generalDetails-input {
+  align-items: center;
+  border-width: 0;
+  display: flex;
+  float: right;
+  font-size: 15px;
+  height: 1.5rem;
+  outline: none;
+  width: 80%;
+}
+.generalDetails-label {
+  align-items: center;
+  color: rgb(161, 161, 161);
+  display: flex;
+  float: left;
+  font-size: 15px;
+  padding-right: 5px;
+  width: auto;
+}
+.btn-generalDetails-container {
+  display: flex;
+  float: right;
+  margin-top: 1rem;
+}
+.btn-generalDetails-save {
+  align-items: center;
+  border: 0;
+  color: #fff;
+  background-color: #5d8aa8;
+  border-radius: 60px;
+  float: right;
+  margin-right: 4rem;
+  font-size: 15px;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: auto;
+}
+.btn-generalDetails-cancel {
+  align-items: center;
+  border: 0;
+  color: #5d8aa8;
+  background: transparent;
+  margin-right: 2rem;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: auto;
+}
+
+.generalDetails-stats-container {
+  font-size: 15px;
+  line-height: 2rem;
+  margin-left: 4rem;
+  margin-top: 5rem;
+}

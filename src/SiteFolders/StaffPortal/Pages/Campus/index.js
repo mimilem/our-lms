@@ -34,7 +34,10 @@ function CampusPage() {
         campusHead: '',
         campusAdress: '',
         campusName: '',
-        campusCity:''
+        campusCity:'',
+        campusPhoneNumber: '',
+        campusEmailAddress: '',
+        institutionName:''
     });
 
     const [showSideCampusWindow, setShowSideCampusWindow] = useState(false)
@@ -143,7 +146,7 @@ function CampusPage() {
             }
         }
         fetchCampus();
-    })
+    }, [])
     
     return (
         <div className='campus-page-content'>
@@ -192,7 +195,11 @@ function CampusPage() {
                                         campusHead:campusMapItem.campusHead,
                                         campusName:campusMapItem.campusName,
                                         campusAdress:campusMapItem.campusAdress,
-                                        campusCity:campusMapItem.campusCity,}) 
+                                        campusCity:campusMapItem.campusCity,
+                                        campusPhoneNumber:campusMapItem.campusPhoneNumber,
+                                        campusEmailAddress:campusMapItem.campusEmailAddress,
+                                        institutionName: campusMapItem.institutionName,
+                                    }) 
                             }} >
                                 <div className='campus-card-photo'/>
                                 <div className='campus-card-name'>
@@ -219,7 +226,8 @@ function CampusPage() {
                 showSideCampusWindow={showSideCampusWindow}
                 setShowSideCampusWindow={setShowSideCampusWindow}
                 generalToggledBar={generalToggledBar} 
-                setGeneralToggledBar={setGeneralToggledBar} />
+                setGeneralToggledBar={setGeneralToggledBar}
+                setCampusId={setCampusId} />
 
             {/* The Pup-out window that allows the admin to create */}
             {/* a new campus. */}
