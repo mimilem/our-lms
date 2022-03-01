@@ -1,0 +1,37 @@
+.userList-container {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 70%;
+}
+
+.roleAndUser-container {
+  margin-bottom: 2rem;
+}
+
+.role-user-title {
+  margin-left: 2rem;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.user-container {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 2rem;
+  padding: 0.5rem;
+}
+
+.generalStaff-profile-picture {
+  background-color: #96a9b6;
+  border-radius: 20px;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.generalStaff-view-profile {
+  color: #5d8aa8;
+  cursor: pointer;
+  text-decoration: underline;
+}

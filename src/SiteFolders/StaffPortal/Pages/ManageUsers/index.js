@@ -9,9 +9,7 @@ import UserList from './UserList';
 import CreateUser from './CreateUser';
 
 import { Auth, API, graphqlOperation } from 'aws-amplify';
-import { 
-    listTeachers, 
-} from '../../../../graphql/queries';
+import { listTeachers } from '../../../../graphql/queries';
 
 
 function ManageUsersPage() {

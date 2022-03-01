@@ -14,13 +14,14 @@ import './instituteSideNav.css';
 import FullSideNavigation from './FullSideNavigation';
 
 
-function SideNavigation({generalToggledBar, setGeneralToggledBar}) {
+function SideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}) {
 
     return (
         <div className='institution-sideNav-container'>
             <FullSideNavigation
                 generalToggledBar={generalToggledBar} 
-                setGeneralToggledBar={setGeneralToggledBar} /> 
+                setGeneralToggledBar={setGeneralToggledBar}
+                activeTab={activeTab} /> 
         </div>
     );
 }

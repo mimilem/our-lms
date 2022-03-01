@@ -13,6 +13,7 @@ import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
 
 //import the StaffPortal site pages
+import AdminProfile from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AdminProfile';
 import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 import CampusPage from '../SiteFolders/StaffPortal/Pages/Campus';
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
@@ -24,6 +25,7 @@ import ClassDiscussion from '../SiteFolders/StaffPortal/Pages/Class/Components/C
 import Courses from '../SiteFolders/StaffPortal/Pages/Class/Components/Courses';
 import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
 import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
+import GeneralDetails from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralDetails';
 import ClassStudents from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassStudents';
 import ClassTimeTable from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassTimeTable';
 import StaffLogin from '../SiteFolders/StaffPortal/Authentication/Login';
@@ -43,6 +45,7 @@ import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
 import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
 import MyResults from '../SiteFolders/StudentPortal/Pages/MyResults';
+import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
 
 
 function Router() {
@@ -61,6 +64,9 @@ function Router() {
 
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/SelectCampus' component={CampusPage}/>
+                <Route exact path='/Staff/AdminProfile' component={AdminProfile}/>
+                <Route exact path='/Staff/GeneralDetails' component={GeneralDetails}/>
+                <Route exact path='/Staff/GeneralStaff' component={GeneralStaff}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
                 <Route exact path='/Staff/Faculties' component={FacultiesPage}/>
                 <Route exact path='/Staff/Departments/Courses' component={Courses}/>

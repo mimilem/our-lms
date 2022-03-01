@@ -1,0 +1,84 @@
+.adminProfile-content {
+  margin-left: 17rem;
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.adminProfile-main-card {
+  background: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0rem;
+  padding-top: 15px;
+  width: 30%;
+}
+
+.adminAvatar-container {
+  background-color: #00ff00;
+  border-radius: 100px;
+  display: flex;
+  float: top;
+  height: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8rem;
+}
+.adminAvatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100px;
+  display: flex;
+  height: 97%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 97%;
+}
+
+.centered-text {
+  background: linear-gradient(to right, #232526, #414345);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-bottom: 2rem;
+}
+
+.centered-admin-name {
+  color: #fff /*rgb(31, 29, 29)*/;
+  display: flex;
+  font-size: 26px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.centered-admin-email {
+  color: #fff /*rgb(31, 29, 29)*/;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.admin-profile-hr {
+  background-color: #96a9b6;
+  display: flex;
+  height: 0.5px;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  width: 93%;
+}

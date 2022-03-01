@@ -157,11 +157,12 @@ function CampusPage() {
                 
             <SideNavigation 
                 generalToggledBar={generalToggledBar} 
-                setGeneralToggledBar={setGeneralToggledBar} />
+                setGeneralToggledBar={setGeneralToggledBar}
+                activeTab={activeTab} />
 
             <div 
                 className='staff-pages-content' 
-                style={{marginLeft: showSideCampusWindow===true ? '22rem' : '18rem'}} > 
+                style={{marginLeft: showSideCampusWindow===true ? '22rem' : '17rem'}} > 
                 <div 
                     className='staff-pages-header-tilte' 
                     style={{marginLeft: '3rem'}} >

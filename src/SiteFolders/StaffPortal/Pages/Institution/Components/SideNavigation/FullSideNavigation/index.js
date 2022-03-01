@@ -18,7 +18,7 @@ import '../instituteSideNav.css';
 import ToggledSideNavigation from '../ToggledSideNavigation';
 
 
-function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
+function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}) {
 
     async function signOut() {
         try {
@@ -32,30 +32,27 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
         generalToggledBar === false ? 
         <div className="intitution-full-side-navigation-container">
             <Link to={{
-                pathname:'/Staff/SelectCampus',
-                
+                pathname:'/Staff/AdminProfile',
             }}
-                className='' 
+                className={activeTab === 'adminProfile' ? 'institution-active' : '' } 
             >
                 <div className='institution-profile-icon'/>
                 <div className='institution-side-navigation-text'>General Profile</div>
             </Link>
             
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
-                    
+                    pathname:'/Staff/GeneralDetails',
                 }}
-                className='' 
+                className={activeTab === 'generalDetails' ? 'institution-active' : '' }
             >
                 <div className='institution-information-icon'/>
                 <div className='institution-side-navigation-text'>General Details</div>
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
-                    
+                    pathname:'/Staff/GeneralStaff',
                 }}
-                className='' 
+                className={activeTab === 'generalStaff' ? 'institution-active' : '' } 
             >
                 <div className='institution-manage-users-icon'/>
                 <div className='institution-side-navigation-text'>General Staff</div>
@@ -63,9 +60,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
             
             <Link to={{
                 pathname:'/Staff/SelectCampus',
-                
             }}
-                className='institution-active' 
+                className={activeTab === 'campus' ? 'institution-active' : '' }
             >
                 <div className='institution-campus-icon'/>
                 <div className='institution-side-navigation-text'>Campuses</div>
@@ -73,9 +69,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-                    
                 }}
-                className='' 
+                className={activeTab === 'generalCalendar' ? 'institution-active' : '' }
             >
                 <div className='institution-time-table-icon'/>
                 <div className='institution-side-navigation-text'>General Calendar</div>
@@ -83,9 +78,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-                    
                 }}
-                className='' 
+                className={activeTab === 'fees' ? 'institution-active' : '' } 
             >
                 <div className='institution-fees-icon'/>
                 <div className='institution-side-navigation-text'>Fees</div>
@@ -93,9 +87,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-                    
                 }}
-                className='' 
+                className={activeTab === 'generalNotifications' ? 'institution-active' : '' }
             >
                 <div className='institution-notification-icon'/>
                 <div className='institution-side-navigation-text'>General Notifications</div>
@@ -103,9 +96,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-                    
                 }}
-                className='' 
+                className={activeTab === 'generalEvents' ? 'institution-active' : '' } 
             >
                 <div className='institution-events-icon'/>
                 <div className='institution-side-navigation-text'>General Events</div>
@@ -113,9 +105,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar}) {
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-                    
                 }}
-                className='' 
+                className={activeTab === 'library' ? 'institution-active' : '' } 
             >
                 <div className='institution-library-icon'/>
                 <div className='institution-side-navigation-text'>Library</div>
