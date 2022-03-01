@@ -1,0 +1,72 @@
+.profileAdminNav-container {
+  background-color: #fff;
+  height: auto;
+  margin-left: 3rem;
+  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.profileAdminNav-input-container {
+  align-items: center;
+  border: 1px solid;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  display: flex;
+  margin-top: 1rem;
+  width: 50%;
+}
+
+.profileAdminNav-input {
+  align-items: center;
+  border-width: 0;
+  display: flex;
+  float: right;
+  font-size: 15px;
+  height: 1.5rem;
+  outline: none;
+  width: 80%;
+}
+.profileAdminNav-label {
+  align-items: center;
+  color: rgb(161, 161, 161);
+  display: flex;
+  float: left;
+  font-size: 15px;
+  padding-right: 5px;
+  width: auto;
+}
+
+.btn-profileAdminNav-container {
+  display: flex;
+  margin-left: 28%;
+  margin-top: 1rem;
+}
+.btn-profileAdminNav-Save {
+  align-items: center;
+  border: 0;
+  color: #fff;
+  background-color: #5d8aa8;
+  border-radius: 60px;
+  float: right;
+  margin-right: 4rem;
+  font-size: 15px;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: auto;
+}
+.btn-profileAdminNav-cancel {
+  align-items: center;
+  border: 0;
+  color: #5d8aa8;
+  background: transparent;
+  margin-right: 2rem;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: auto;
+}

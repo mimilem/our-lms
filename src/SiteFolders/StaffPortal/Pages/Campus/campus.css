@@ -1,6 +1,7 @@
 .campus-page-content {
   margin-top: 1rem;
   float: left;
+  height: auto;
   width: 75%;
 }
 .campus-list-container {

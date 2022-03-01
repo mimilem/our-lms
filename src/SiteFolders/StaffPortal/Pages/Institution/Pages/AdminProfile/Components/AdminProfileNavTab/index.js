@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './adminProfileNavTab.css';
 
+import ProfileAdminNav from '../ProfileAdminNav';
+
 
 function AdminProfileNavTab() {
+
+    const [choseTab, setChosetab] = useState('profile')
+
     return (
-        <div className='admin-navTab-container'>
-            <div className="admin-navTab-element">
-                Profile
+        <div>
+            <div className='admin-navTab-container'>
+                <div className="admin-navTab-element">
+                    Profile
+                </div>
+                <div className="admin-navTab-element">
+                    Stats
+                </div>
             </div>
-            <div className="admin-navTab-element">
-                Stats
-            </div>
-            <div className="admin-navTab-element">
-                Contact
+            <div>
+                {
+                    choseTab === 'profile' ? <ProfileAdminNav /> : ''
+                }
             </div>
         </div>
     );

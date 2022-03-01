@@ -7,7 +7,7 @@ import './toggledSideNavigation.css';
 import '../instituteSideNav.css';
 
 
-function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar}) {
+function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}) {
     
     async function signOut() {
         try {
@@ -21,14 +21,53 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar}) {
         <div className="institution-toggled-side-navigation-container">
                     
             <Link to={{
+                pathname:'/Staff/AdminProfile',
+            }}
+                className={activeTab === 'adminProfile' ? 'institution-active' : '' }
+                title='Admin Profile' >
+                <div className='institution-profile-icon'/>
+                <div style={{position: 'absolute', width: '100%'}}>
+                    <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                        Profile
+                    </div>
+                </div>  
+            </Link>
+                    
+            <Link to={{
+                pathname:'/Staff/GeneralDetails',
+            }}
+                className={activeTab === 'generalDetails' ? 'institution-active' : '' }
+                title='General Details' >
+                <div className='institution-information-icon'/>
+                <div style={{position: 'absolute', width: '100%'}}>
+                    <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                        Details
+                    </div>
+                </div>  
+            </Link>
+                    
+            <Link to={{
+                pathname:'/Staff/GeneralStaff',
+            }}
+                className={activeTab === 'generalStaff' ? 'institution-active' : '' }
+                title='General Details' >
+                <div className='institution-manage-users-icon'/>
+                <div style={{position: 'absolute', width: '100%'}}>
+                    <div style={{fontSize:'10px',position: 'relative', left:'-2px', right:0}}>
+                        Staff
+                    </div>
+                </div>  
+            </Link>
+
+            <Link to={{
                 pathname:'/Staff/SelectCampus',
             }}
-                className='institution-active'
+                className={activeTab === 'campus' ? 'institution-active' : '' }
                 title='Select or create a campus' >
                 <div className='institution-campus-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
-                    <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
-                        Campus
+                    <div style={{fontSize:'10px',position: 'relative', left:'-15px', right:0}}>
+                        Campuses
                     </div>
                 </div>  
             </Link>
@@ -36,72 +75,47 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar}) {
             <Link to={{
                 pathname:'/Staff/SelectCampus',
             }} 
-                title='Profile' >
-                <div className='institution-profile-icon'/>
+                className={activeTab === 'generalCalendar' ? 'institution-active' : '' }
+                title='Calendar' >
+                <div className='institution-time-table-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
-                    <div style={{fontSize:'10px',position: 'relative', left:'-5px', right:0}}>
-                        Profile
+                    <div style={{fontSize:'10px',position: 'relative', left:'-10px', right:0}}>
+                        Calendar
                     </div>
                 </div>  
             </Link>
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-
                 }}  
-                title='Staff' >
-                <div className='institution-manage-users-icon'/>
+                className={activeTab === 'fees' ? 'institution-active' : '' }
+                title='Fees' >
+                <div className='institution-fees-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
                     <div style={{fontSize:'10px',position: 'relative', left:'-3px', right:0}}>
-                        Staff
+                        Fees
                     </div>
                 </div>
             </Link>
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus-Shelf',
-
                 }} 
-                title='Information'>
-                <div className='institution-information-icon'/>
-                <div style={{position: 'absolute', width: '100%'}}>
-                    <div style={{fontSize:'10px',position: 'relative', left:'-15px', right:0}}>
-                        Information
-                    </div>
-                </div>
-            </Link>
-
-            <Link to={{     
-                    pathname:'/Staff/SelectCampus',
-
-                }} 
-                title='Calendar'>
-                <div className='institution-time-table-icon'/>
-                <div style={{position: 'absolute', width: '100%'}}>
-                    <div style={{fontSize:'10px',position: 'relative', left:'-12px', right:0}}>
-                    Calendar
-                    </div>
-                </div>
-            </Link>
-
-            <Link to={{     
-                    pathname:'/Staff/SelectCampus',
-
-                }} 
-                title='Notification'>
+                className={activeTab === 'generalNotifications' ? 'institution-active' : '' }
+                title='General Notifications'>
                 <div className='institution-notification-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
                     <div style={{fontSize:'10px',position: 'relative', left:'-20px', right:0}}>
-                        Notification
+                        Notifications
                     </div>
                 </div>
             </Link>
 
             <Link to={{     
                     pathname:'/Staff/SelectCampus',
-
                 }} 
-                title='Event' >
+                className={activeTab === 'generalEvents' ? 'institution-active' : '' }
+                title='General Events'>
                 <div className='institution-events-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
                     <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
@@ -109,6 +123,20 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar}) {
                     </div>
                 </div>
             </Link>
+
+            <Link to={{     
+                    pathname:'/Staff/SelectCampus',
+                }} 
+                className={activeTab === 'library' ? 'institution-active' : '' }
+                title='Library'>
+                <div className='institution-library-icon'/>
+                <div style={{position: 'absolute', width: '100%'}}>
+                    <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                        Library
+                    </div>
+                </div>
+            </Link>
+
             <Link 
                 to='/Staff-login' 
                 onClick={signOut}

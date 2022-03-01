@@ -129,7 +129,8 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
         : 
         <ToggledSideNavigation
             generalToggledBar={generalToggledBar} 
-            setGeneralToggledBar={setGeneralToggledBar} />
+            setGeneralToggledBar={setGeneralToggledBar}
+            activeTab={activeTab} />
     );
 }
 
