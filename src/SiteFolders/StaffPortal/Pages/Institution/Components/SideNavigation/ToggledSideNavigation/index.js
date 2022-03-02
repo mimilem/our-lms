@@ -73,9 +73,9 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
             </Link>
             
             <Link to={{
-                pathname:'/Staff/SelectCampus',
+                pathname:'/Staff/AcademicCalendar',
             }} 
-                className={activeTab === 'generalCalendar' ? 'institution-active' : '' }
+                className={activeTab === 'academicCalendar' ? 'institution-active' : '' }
                 title='Calendar' >
                 <div className='institution-time-table-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>

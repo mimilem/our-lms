@@ -34,6 +34,8 @@ import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
 import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
+import AcademicCalendar from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AcademicCalendar';
+import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
 
 //import the StudentPortal site pages
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
@@ -45,7 +47,6 @@ import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
 import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
 import MyResults from '../SiteFolders/StudentPortal/Pages/MyResults';
-import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
 
 
 function Router() {
@@ -65,6 +66,7 @@ function Router() {
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/SelectCampus' component={CampusPage}/>
                 <Route exact path='/Staff/AdminProfile' component={AdminProfile}/>
+                <Route exact path='/Staff/AcademicCalendar' component={AcademicCalendar}/>
                 <Route exact path='/Staff/GeneralDetails' component={GeneralDetails}/>
                 <Route exact path='/Staff/GeneralStaff' component={GeneralStaff}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>

@@ -50,6 +50,12 @@ function GeneralDetails() {
                 </div>
 
                 <div className='generalDetails-input-container'>
+                    <div className='generalDetails-label'>Academic Year:</div>
+                    <input 
+                        type='text' 
+                        className='generalDetails-input'/>
+                </div>
+                <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Adress:</div>
                     <input 
                         type='text' 

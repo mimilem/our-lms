@@ -68,9 +68,9 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/AcademicCalendar',
                 }}
-                className={activeTab === 'generalCalendar' ? 'institution-active' : '' }
+                className={activeTab === 'academicCalendar' ? 'institution-active' : '' }
             >
                 <div className='institution-time-table-icon'/>
                 <div className='institution-side-navigation-text'>General Calendar</div>
