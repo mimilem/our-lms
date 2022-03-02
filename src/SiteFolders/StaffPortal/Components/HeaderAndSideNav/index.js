@@ -16,7 +16,7 @@ function HeaderAndSideNav({
     setToggledBar, 
     activeTab, 
     campusId, 
-    choosedCampus
+    choosedCampus,
 }) {
 
     // State to fetch a campus.

@@ -5,6 +5,34 @@
   to avoid conflicts with other  styling components.
 
 */
+.loader-container {
+  display: flex;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+.loader {
+  margin: auto;
+  border: 20px solid #eaf0f6;
+  border-radius: 50%;
+  border-top: 20px solid #5d8aa8;
+  width: 100px;
+  height: 100px;
+  animation: spinner 4s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .staff-loginPage-container {
   height: 100%;

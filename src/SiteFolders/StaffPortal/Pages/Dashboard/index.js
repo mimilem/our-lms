@@ -30,6 +30,8 @@ function StaffDashboard() {
 
     const [faculty, setFaculty] = useState([])
 
+    const [isLoading, setIsLoading] = useState(false)
+
     //automatically scroll to top
     useEffect(() => {
         window.scrollTo(0,0);
@@ -49,61 +51,74 @@ function StaffDashboard() {
     useEffect( () => {
         const fetchFaculty = async () => {
             try {
+                setIsLoading(true)
                 //faculties
                 let facultyResults = await API.graphql(
                     graphqlOperation(listFacultys)
-                )
-                let faculty = facultyResults.data.listFacultys.items
-                setFaculty(faculty)
-            }
-            catch (error) {
-                console.log(error)
+                    )
+                    let faculty = facultyResults.data.listFacultys.items
+                    setFaculty(faculty)
+                    setIsLoading(false)
+                }
+                catch (error) {
+                    console.log(error)
+                    setIsLoading(false)
             }
         }
         fetchFaculty();
-    })
+    }, [])
 
     return (
-        <div className="staff-pages-container">
+        <div>
 
-            <HeaderAndSideNav
-                toggledBar={toggledBar} 
-                setToggledBar={setToggledBar}
-                activeTab={activeTab}
-                campusId={campusId}
-                choosedCampus={choosedCampus} />
-
-            <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte'>Admin Dashboard</div>
-                <hr className='staff-page-hr'/>
-                <div 
-                    className='staff-pages-header-tilte' 
-                    style={{marginBottom: '1rem'}}>
-                    Quick Links: Faculties
+            {isLoading === true ? 
+                <div className='loader-container'>
+                    <div className='loader' />
                 </div>
-                { faculty.map( facultyItemMap => (
-                    facultyItemMap.campusID === campusId ?
-                    <Link 
-                        to={{     
-                            pathname:'/Staff/Faculties',
-                            state: campusDetails
-                        }} 
-                        className='gradient-blue-card-container' 
-                        style={{padding:'1rem', fontSize: '15px'}} >
-                            <div 
-                                className='top-left-text' 
-                                style={{padding:'1rem', fontSize: '17px'}} >
-                                {facultyItemMap.facultyName}
-                            </div>
-                            <div className='top-right-text'>
-                                <div className='more-icon'/>
-                            </div>
-                            <h4 style={{position: 'absolute', bottom:0, padding:'1rem'}}>
-                                Head Of Faculty: {facultyItemMap.headofFaculty}
-                            </h4>
-                    </Link>
-                    : []))
-                }
+            : '' }
+        
+            <div className="staff-pages-container">
+
+
+                <HeaderAndSideNav
+                    toggledBar={toggledBar} 
+                    setToggledBar={setToggledBar}
+                    activeTab={activeTab}
+                    campusId={campusId}
+                    choosedCampus={choosedCampus} />
+
+                <div className='staff-pages-content'>
+                    <div className='staff-pages-header-tilte'>Admin Dashboard</div>
+                    <hr className='staff-page-hr'/>
+                    <div 
+                        className='staff-pages-header-tilte' 
+                        style={{marginBottom: '1rem'}}>
+                        Quick Links: Faculties
+                    </div>
+                    { faculty.map( facultyItemMap => (
+                        facultyItemMap.campusID === campusId ?
+                        <Link 
+                            to={{     
+                                pathname:'/Staff/Faculties',
+                                state: campusDetails
+                            }} 
+                            className='gradient-blue-card-container' 
+                            style={{padding:'1rem', fontSize: '15px'}} >
+                                <div 
+                                    className='top-left-text' 
+                                    style={{padding:'1rem', fontSize: '17px'}} >
+                                    {facultyItemMap.facultyName}
+                                </div>
+                                <div className='top-right-text'>
+                                    <div className='more-icon'/>
+                                </div>
+                                <h4 style={{position: 'absolute', bottom:0, padding:'1rem'}}>
+                                    Head Of Faculty: {facultyItemMap.headofFaculty}
+                                </h4>
+                        </Link>
+                        : []))
+                    }
+                </div>
             </div>
         </div>
     );

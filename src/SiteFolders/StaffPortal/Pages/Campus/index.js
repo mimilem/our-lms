@@ -27,6 +27,8 @@ function CampusPage() {
     const [choosedCampus, setChoosedCampus] = useState(false);
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false)
+    
+    const [isLoading, setIsLoading] = useState(false)
 
     const [campus, setCampus] = useState([])
     const [campusId, setCampusId] = useState({
@@ -134,55 +136,66 @@ function CampusPage() {
     useEffect( () => {
         const fetchCampus = async () => {
             try {
+                
+                setIsLoading(true)
                 //faculties
                 const campusResults = await API.graphql(
                     graphqlOperation(listCampuss)
                 )
                 let campus = campusResults.data.listCampuss.items
                 setCampus(campus)
+                setIsLoading(false)
             }
             catch (error) {
                 console.log(error)
+                setIsLoading(false)
             }
         }
         fetchCampus();
     }, [])
     
     return (
-        <div className='campus-page-content'>
-        
-            <HeaderAndSideNav
-                toggledBar={toggledBar} 
-                setToggledBar={setToggledBar}
-                activeTab={activeTab}
-                campusId={campusId.campusID}
-                choosedCampus={choosedCampus} />
-                
-            <SideNavigation 
-                generalToggledBar={generalToggledBar} 
-                setGeneralToggledBar={setGeneralToggledBar}
-                activeTab={activeTab} />
-
-            <div 
-                className='staff-pages-content' 
-                style={{marginLeft: showSideCampusWindow===true ? '22rem' : '17rem'}} > 
-                <div 
-                    className='staff-pages-header-tilte' 
-                    style={{marginLeft: '3rem'}} >
-                    Campuses
+        <div>
+            
+            {isLoading ? 
+                <div className='loader-container'>
+                    <div className='loader' />
                 </div>
-                <hr className='staff-page-hr' />
+            : '' }
+            <div className='campus-page-content'>
 
-                <div className="campus-list-container">
+                <HeaderAndSideNav
+                    toggledBar={toggledBar} 
+                    setToggledBar={setToggledBar}
+                    activeTab={activeTab}
+                    campusId={campusId.campusID}
+                    choosedCampus={choosedCampus} />
+                    
+                <SideNavigation 
+                    generalToggledBar={generalToggledBar} 
+                    setGeneralToggledBar={setGeneralToggledBar}
+                    activeTab={activeTab} />
+
+                <div 
+                    className='staff-pages-content' 
+                    style={{marginLeft: showSideCampusWindow===true ? '22rem' : '17rem'}} > 
                     <div 
-                        className='add-campus-card'
-                        onClick={()=> setShowCreateCampus(true)}>
-                        <div 
-                            className='add-campus-icon' 
-                            title='Create a Campus'/>
+                        className='staff-pages-header-tilte' 
+                        style={{marginLeft: '3rem'}} >
+                        Campuses
                     </div>
+                    <hr className='staff-page-hr' />
 
-                    {
+                    <div className="campus-list-container">
+                        <div 
+                            className='add-campus-card'
+                            onClick={()=> setShowCreateCampus(true)}>
+                            <div 
+                                className='add-campus-icon' 
+                                title='Create a Campus'/>
+                        </div>
+
+                        {
                         campus.map(campusMapItem => (
                             <div 
                                 className='campus-card'
@@ -216,29 +229,30 @@ function CampusPage() {
                                 </div>
                             </div>
                         ))
-                    }    
+                        }    
+                    </div>
+
                 </div>
 
+                <SideCampusWindow 
+                    campusId={campusId} 
+                    showSideCampusWindow={showSideCampusWindow}
+                    setShowSideCampusWindow={setShowSideCampusWindow}
+                    generalToggledBar={generalToggledBar} 
+                    setGeneralToggledBar={setGeneralToggledBar}
+                    setCampusId={setCampusId} />
+
+                {/* The Pup-out window that allows the admin to create */}
+                {/* a new campus. */}
+                {/* By default the display is set to false */}
+                <CreateNewCampus 
+                    showCreateCampus={showCreateCampus}
+                    setShowCreateCampus={setShowCreateCampus}
+                    fileUrl={fileUrl}
+                    onChangeHandler={onChangeHandler}
+                    campusStateDetails={campusStateDetails}
+                    createNewCampus={createNewCampus} />
             </div>
-
-            <SideCampusWindow 
-                campusId={campusId} 
-                showSideCampusWindow={showSideCampusWindow}
-                setShowSideCampusWindow={setShowSideCampusWindow}
-                generalToggledBar={generalToggledBar} 
-                setGeneralToggledBar={setGeneralToggledBar}
-                setCampusId={setCampusId} />
-
-            {/* The Pup-out window that allows the admin to create */}
-            {/* a new campus. */}
-            {/* By default the display is set to false */}
-            <CreateNewCampus 
-                showCreateCampus={showCreateCampus}
-                setShowCreateCampus={setShowCreateCampus}
-                fileUrl={fileUrl}
-                onChangeHandler={onChangeHandler}
-                campusStateDetails={campusStateDetails}
-                createNewCampus={createNewCampus} />
         </div>
     );
 }

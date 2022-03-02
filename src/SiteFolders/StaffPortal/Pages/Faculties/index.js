@@ -57,6 +57,8 @@ function FacultiesPage() {
         setFacultyAddress
     }
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const [departmentNameInputValue, setDepartmentNameInputValue] = useState('');
     const [headofDepartmentInputValue, setHeadofDepartmentInputValue] = useState('');
 
@@ -160,6 +162,7 @@ function FacultiesPage() {
 
         const fetchFaculty = async () => {
             try {
+                setIsLoading(true)
                 //faculties
                 const facultyResults = await API.graphql(
                     graphqlOperation(listFacultys)
@@ -180,9 +183,11 @@ function FacultiesPage() {
                 )
                 const qualification = qualificationResults.data.listClasss.items
                 setQualification(qualification)
+                setIsLoading(false)
             } 
             catch (error) {
                 console.log(error)
+                setIsLoading(false)
             }
         }
         fetchFaculty();
@@ -221,60 +226,69 @@ function FacultiesPage() {
     }
 
     return (
-        <div className="staff-pages-container">
+        <div>
+            
+            {isLoading === true ? 
+                <div className='loader-container'>
+                    <div className='loader' />
+                </div>
+            : '' }
 
-            <HeaderAndSideNav
-                toggledBar={toggledBar} 
-                setToggledBar={setToggledBar}
-                activeTab={activeTab}
-                campusId={campusId}
-                choosedCampus={choosedCampus} /> 
+            <div className="staff-pages-container">
 
-            <div className='staff-pages-content'>
-                <div className='staff-pages-header-tilte'>Faculties</div>
-                <hr className='staff-page-hr'/>
+                <HeaderAndSideNav
+                    toggledBar={toggledBar} 
+                    setToggledBar={setToggledBar}
+                    activeTab={activeTab}
+                    campusId={campusId}
+                    choosedCampus={choosedCampus} /> 
 
-                <FacultiesList 
-                    setShowCreateFaculty={setShowCreateFaculty}
-                    setShowCreateDepartment={setShowCreateDepartment}
-                    setShowCreateQualification={setShowCreateQualification}
-                    locationCampusDetails={locationCampusDetails}
-                    setStateFacultyID={setStateFacultyID}
-                    setStateDepartmentID={setStateDepartmentID}
-                    faculty={faculty} 
-                    setFaculty={department}
-                    department={department} 
-                    setDepartment={setDepartment}
-                    qualification={qualification} 
-                    setQualification={setQualification}
-                    campusId={campusId} />
+                <div className='staff-pages-content'>
+                    <div className='staff-pages-header-tilte'>Faculties</div>
+                    <hr className='staff-page-hr'/>
 
-                {/* The Pup-out window that allows the admin to create */}
-                {/* a new faculty or school. */}
-                {/* By default the display is set to false */}
-                <CreateNewFaculty 
-                    showCreateFaculty={showCreateFaculty}
-                    setShowCreateFaculty={setShowCreateFaculty}
-                    fileUrl={fileUrl}
-                    onChangeHandler={onChangeHandler}
-                    createNewFaculty={createNewFaculty}
-                    facultyStateDetails={facultyStateDetails} />
+                    <FacultiesList 
+                        setShowCreateFaculty={setShowCreateFaculty}
+                        setShowCreateDepartment={setShowCreateDepartment}
+                        setShowCreateQualification={setShowCreateQualification}
+                        locationCampusDetails={locationCampusDetails}
+                        setStateFacultyID={setStateFacultyID}
+                        setStateDepartmentID={setStateDepartmentID}
+                        faculty={faculty} 
+                        setFaculty={department}
+                        department={department} 
+                        setDepartment={setDepartment}
+                        qualification={qualification} 
+                        setQualification={setQualification}
+                        campusId={campusId} />
 
-                {/* The Pup-out window that allows the admin to create */}
-                {/* a new department. */}
-                {/* By default the display is set to false */}
-                <CreateNewDepartment 
-                    showCreateDepartment={showCreateDepartment}
-                    createNewDepartment={createNewDepartment}
-                    departmentStateDetails={departmentStateDetails} />
+                    {/* The Pup-out window that allows the admin to create */}
+                    {/* a new faculty or school. */}
+                    {/* By default the display is set to false */}
+                    <CreateNewFaculty 
+                        showCreateFaculty={showCreateFaculty}
+                        setShowCreateFaculty={setShowCreateFaculty}
+                        fileUrl={fileUrl}
+                        onChangeHandler={onChangeHandler}
+                        createNewFaculty={createNewFaculty}
+                        facultyStateDetails={facultyStateDetails} />
 
-                {/* The Pup-out window that allows the admin to create */}
-                {/* a new qualification. */}
-                {/* By default the display is set to false */}
-                <CreateNewQualification
-                    showCreateQualification={showCreateQualification}
-                    createNewQualification={createNewQualification}
-                    qualificationStateDetails={qualificationStateDetails} />
+                    {/* The Pup-out window that allows the admin to create */}
+                    {/* a new department. */}
+                    {/* By default the display is set to false */}
+                    <CreateNewDepartment 
+                        showCreateDepartment={showCreateDepartment}
+                        createNewDepartment={createNewDepartment}
+                        departmentStateDetails={departmentStateDetails} />
+
+                    {/* The Pup-out window that allows the admin to create */}
+                    {/* a new qualification. */}
+                    {/* By default the display is set to false */}
+                    <CreateNewQualification
+                        showCreateQualification={showCreateQualification}
+                        createNewQualification={createNewQualification}
+                        qualificationStateDetails={qualificationStateDetails} />
+                </div>
             </div>
         </div>
     );

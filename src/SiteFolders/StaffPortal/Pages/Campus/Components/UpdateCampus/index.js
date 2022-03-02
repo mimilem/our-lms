@@ -13,7 +13,7 @@ function UpdateCampus({
             className='pop-out-window' 
             style={{ display:showUpdateWindow === false ? 'none' : ''}}>
 
-            <div className='pop-up-title' >Update Campus</div>
+            <div className='pop-up-title' >Update {campusId.campusName} Campus</div>
             
             <input
                 className='lg-pop-up-input'
