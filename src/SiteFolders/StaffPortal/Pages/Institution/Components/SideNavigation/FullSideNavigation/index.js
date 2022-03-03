@@ -77,16 +77,16 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/GeneralFees',
                 }}
-                className={activeTab === 'fees' ? 'institution-active' : '' } 
+                className={activeTab === 'generalFees' ? 'institution-active' : '' } 
             >
                 <div className='institution-fees-icon'/>
                 <div className='institution-side-navigation-text'>Fees</div>
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/GeneralNotifications',
                 }}
                 className={activeTab === 'generalNotifications' ? 'institution-active' : '' }
             >
@@ -95,7 +95,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/GeneralEvent',
                 }}
                 className={activeTab === 'generalEvents' ? 'institution-active' : '' } 
             >

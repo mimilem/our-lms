@@ -13,40 +13,43 @@ import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
 
 //import the StaffPortal site pages
+import AcademicCalendar from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AcademicCalendar';
 import AdminProfile from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AdminProfile';
-import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
-import CampusPage from '../SiteFolders/StaffPortal/Pages/Campus';
 import CalendarPage from '../SiteFolders/StaffPortal/Pages/CalendarPage';
-import FacultiesPage from '../SiteFolders/StaffPortal/Pages/Faculties';
-import Events from '../SiteFolders/StaffPortal/Pages/Events';
-import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
-import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
+import CampusPage from '../SiteFolders/StaffPortal/Pages/Campus';
 import ClassDiscussion from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassDiscussion'
-import Courses from '../SiteFolders/StaffPortal/Pages/Class/Components/Courses';
-import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
-import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
-import GeneralDetails from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralDetails';
 import ClassStudents from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassStudents';
 import ClassTimeTable from '../SiteFolders/StaffPortal/Pages/Class/Components/ClassTimeTable';
+import Courses from '../SiteFolders/StaffPortal/Pages/Class/Components/Courses';
+import Events from '../SiteFolders/StaffPortal/Pages/Events';
+import ExamsPage from '../SiteFolders/StaffPortal/Pages/Exams';
+import FacultiesPage from '../SiteFolders/StaffPortal/Pages/Faculties';
+import GeneralDetails from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralDetails';
+import GeneralEvents from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralEvent';
+import GeneralFees from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralFees';
+import GeneralNotifications from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralNotifications';
+import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
+import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
+import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
+import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
+import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
+import StaffDashboard from '../SiteFolders/StaffPortal/Pages/Dashboard';
 import StaffLogin from '../SiteFolders/StaffPortal/Authentication/Login';
 import StudentsPage from '../SiteFolders/StaffPortal/Pages/Students';
 import StudentsProfile from '../SiteFolders/StaffPortal/Pages/StudentsProfile';
 import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection';
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
-import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
-import AcademicCalendar from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AcademicCalendar';
-import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
 
 //import the StudentPortal site pages
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
-import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
-import StudentMyCourses from '../SiteFolders/StudentPortal/Pages/MyCourses';
-import StudentsModule from '../SiteFolders/StudentPortal/Pages/MyCourses/Module';
-import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
-import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
-import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
-import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
 import MyResults from '../SiteFolders/StudentPortal/Pages/MyResults';
+import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
+import StudentMedia from '../SiteFolders/StudentPortal/Pages/Media';
+import StudentsModule from '../SiteFolders/StudentPortal/Pages/MyCourses/Module';
+import StudentMyCourses from '../SiteFolders/StudentPortal/Pages/MyCourses';
+import StudentPortailExamsPage from '../SiteFolders/StudentPortal/Pages/Exams';
+import StudentReports from '../SiteFolders/StudentPortal/Pages/Reports';
+import StudentTimeTable from '../SiteFolders/StudentPortal/Pages/TimeTable';
 
 
 function Router() {
@@ -67,6 +70,9 @@ function Router() {
                 <Route exact path='/Staff/SelectCampus' component={CampusPage}/>
                 <Route exact path='/Staff/AdminProfile' component={AdminProfile}/>
                 <Route exact path='/Staff/AcademicCalendar' component={AcademicCalendar}/>
+                <Route exact path='/Staff/GeneralEvent' component={GeneralEvents}/>
+                <Route exact path='/Staff/GeneralNotifications' component={GeneralNotifications}/>
+                <Route exact path='/Staff/GeneralFees' component={GeneralFees}/>
                 <Route exact path='/Staff/GeneralDetails' component={GeneralDetails}/>
                 <Route exact path='/Staff/GeneralStaff' component={GeneralStaff}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>

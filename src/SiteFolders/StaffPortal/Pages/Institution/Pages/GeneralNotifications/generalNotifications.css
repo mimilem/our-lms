@@ -1,0 +1,31 @@
+.generalNotifications-content {
+  margin-left: 17rem;
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.notifications-list-container {
+  display: flex;
+  margin-left: 4rem;
+}
+
+.add-notification-card {
+  position: absolute;
+  right: 5rem;
+}
+
+.add-notification-icon {
+  align-items: center;
+  background-image: url("../../../../../../assets/plus1234.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  position: absolute;
+  right: 0rem;
+  top: -1.5rem;
+  width: 2rem;
+}

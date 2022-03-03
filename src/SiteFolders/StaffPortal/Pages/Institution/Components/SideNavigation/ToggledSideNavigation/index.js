@@ -86,9 +86,9 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/GeneralFees',
                 }}  
-                className={activeTab === 'fees' ? 'institution-active' : '' }
+                className={activeTab === 'generalFees' ? 'institution-active' : '' }
                 title='Fees' >
                 <div className='institution-fees-icon'/>
                 <div style={{position: 'absolute', width: '100%'}}>
@@ -99,7 +99,7 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus-Shelf',
+                    pathname:'/Staff/GeneralNotifications',
                 }} 
                 className={activeTab === 'generalNotifications' ? 'institution-active' : '' }
                 title='General Notifications'>
@@ -112,7 +112,7 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/GeneralEvent',
                 }} 
                 className={activeTab === 'generalEvents' ? 'institution-active' : '' }
                 title='General Events'>
