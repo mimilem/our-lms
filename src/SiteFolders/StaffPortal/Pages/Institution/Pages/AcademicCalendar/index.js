@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { Storage } from "aws-amplify";
+
 import './academicCalendar.css';
 
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
@@ -20,6 +22,36 @@ function AcademicCalendar() {
     useEffect(() => {
         window.scrollTo(0,0);
     }, []);
+
+    const [file, setFile] = useState('');
+    const [fetchedFileName, setFetchedFName] = useState('');
+    const [fileName, setFileName] = useState('');
+    const [files, setFiles] = useState([])
+
+    function handleChangeDocument(e) {
+        setFile(e.target.files[0]);
+    }
+
+    async function handleSubmitDocument(e) {
+        const result = await Storage.put(file.name, file, {
+          contentType: 'application/pdf'
+        }).then (()=> {
+            console.log('successfully saved file')})
+    }
+
+    useEffect(() => {
+        fetchImages()
+      }, [])
+      async function fetchImages() {
+        let fileKeys = await Storage.list('')
+        fileKeys = await Promise.all(fileKeys.map(async k => {
+          const key = await Storage.get(k.key)
+          setFetchedFName(k.key)
+          return key
+
+        }))
+        setFiles(fileKeys)
+      }
     
     return (
         <div className="campus-page-content">
@@ -46,20 +78,25 @@ function AcademicCalendar() {
 
                 <div style={{marginLeft: '4rem'}}>
                     <div className='accCalendar-year'>Academic year: 2022</div>
-                    <input
-                        type='file'
-                        className='upload-accCalendar-file'
-                    />
                     <div style={{display: 'flex'}}>
-                        <div className='accCalendar-file-view'>
-                            <div className='accCalendar-file-img'/>
-                            <div className='accCalendar-file-title'>
-                                title.pdf
-                            </div>
-                        </div>
-                        <button className='accCalendar-file-btn'>Upload</button>
+                        <input
+                            type='file'
+                            className='upload-accCalendar-file'
+                            onChange={handleChangeDocument} />
+                        <button
+                            onClick={handleSubmitDocument}
+                            className='accCalendar-file-btn'>
+                                Upload
+                        </button>
                     </div>
                 </div>
+
+                {files.map(file => (
+                    <div className='pdf-list' key={file}>
+                        download {fetchedFileName}
+                    </div>
+                ))
+                }
 
             </div>
         </div>
