@@ -18,7 +18,7 @@ function GeneralFees(props) {
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
 
     //automatically scroll to top
-    useEffect(() => {
+    useEffect(() => { 
         window.scrollTo(0,0);
     }, []);
 
@@ -40,17 +40,17 @@ function GeneralFees(props) {
 
     useEffect(() => {
         fetchImages()
-      }, [])
-      async function fetchImages() {
-        let fileKeys = await Storage.list('')
-        fileKeys = await Promise.all(fileKeys.map(async k => {
-          const key = await Storage.get(k.key)
-          setFetchedFName(k.key)
-          return key
+    }, [])
+    async function fetchImages() {
+    let fileKeys = await Storage.list('')
+    fileKeys = await Promise.all(fileKeys.map(async k => {
+        const key = await Storage.get(k.key)
+        setFetchedFName(k.key)
+        return key
 
-        }))
-        setFiles(fileKeys)
-      }
+    }))
+    setFiles(fileKeys)
+    }
 
     return (
         <div className="campus-page-content">
