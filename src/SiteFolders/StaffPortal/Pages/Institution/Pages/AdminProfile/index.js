@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { Auth } from "aws-amplify";
+
 import './adminProfile.css';
 
 import adminAvatar from '../../../../../../assets/avatar.png'
@@ -18,6 +20,33 @@ function AdminProfile() {
     const [choosedCampus, setChoosedCampus] = useState(false);
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
+
+
+    const [error, setError] = useState(null);
+    const [currentUsername, setCurrentUsername] = useState('');
+    const [currentName, setCurrentName] = useState('');
+    const [currentFamilyName, setCurrentFamilyName] = useState('');
+    const [currentPhoneNumber, setCurrentPhoneNumber] = useState('');
+    const [currentEmail, setCurrentEmail] = useState('');
+    useEffect(() => {
+        try {
+          setError(null);
+    
+          Auth.currentAuthenticatedUser({
+            bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+          }).then(user => {
+            setCurrentUsername(user.username);
+            setCurrentName(user.attributes.name);
+            setCurrentFamilyName(user.attributes.family_name);
+            setCurrentPhoneNumber(user.attributes.phone_number);
+            setCurrentEmail(user.attributes.email);
+            // TBD
+          }).catch(err => setError(err));
+        }
+        catch (e) {
+          setError(e);
+        }
+      }, []);
 
     //automatically scroll to top
     useEffect(() => {
@@ -57,8 +86,8 @@ function AdminProfile() {
                                 className='adminAvatar'/>
                         </div>
                         <div className='centered-text'>
-                            <div className='centered-admin-name'>Name Surname</div>
-                            <div className='centered-admin-email'>name@example.com</div>
+                            <div className='centered-admin-name'>{currentName} {currentFamilyName}</div>
+                            <div className='centered-admin-email'>{currentEmail}</div>
                             
                             <div className='adminProfile-hr'/>
                             
@@ -71,7 +100,7 @@ function AdminProfile() {
                             
                             <div className='adminProfile-hr'/>
                             
-                            <div className='centered-admin-email'>Phone: +000 000 0000</div>
+                            <div className='centered-admin-email'>Phone: {currentPhoneNumber}</div>
                         </div>
                     </div>
 

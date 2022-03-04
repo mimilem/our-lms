@@ -86,6 +86,7 @@ export const getFaculty = /* GraphQL */ `
         items {
           id
           departmentName
+          headofDepartment
           facultyID
           createdAt
           updatedAt
@@ -139,6 +140,7 @@ export const getDepartment = /* GraphQL */ `
     getDepartment(id: $id) {
       id
       departmentName
+      headofDepartment
       facultyID
       faculty {
         id
@@ -193,6 +195,7 @@ export const listDepartments = /* GraphQL */ `
       items {
         id
         departmentName
+        headofDepartment
         facultyID
         faculty {
           id
@@ -226,6 +229,7 @@ export const getClass = /* GraphQL */ `
       department {
         id
         departmentName
+        headofDepartment
         facultyID
         faculty {
           id
@@ -281,6 +285,7 @@ export const listClasss = /* GraphQL */ `
         department {
           id
           departmentName
+          headofDepartment
           facultyID
           createdAt
           updatedAt
@@ -316,6 +321,7 @@ export const getClassModule = /* GraphQL */ `
         department {
           id
           departmentName
+          headofDepartment
           facultyID
           createdAt
           updatedAt
@@ -710,6 +716,7 @@ export const getStudent = /* GraphQL */ `
         department {
           id
           departmentName
+          headofDepartment
           facultyID
           createdAt
           updatedAt
@@ -765,6 +772,9 @@ export const getSuperAdmin = /* GraphQL */ `
       id
       username
       email
+      name
+      family_name
+      phone_number
       createdAt
       updatedAt
     }
@@ -781,6 +791,9 @@ export const listSuperAdmins = /* GraphQL */ `
         id
         username
         email
+        name
+        family_name
+        phone_number
         createdAt
         updatedAt
       }

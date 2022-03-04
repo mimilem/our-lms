@@ -18,6 +18,9 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [adminName, setAdminName] = useState('')
+    const [adminFamilyName, setAdminFamilyName] = useState('')
+    const [adminPhoneNumber, setAdminPhoneNumber] = useState('')
 
     const [roleInput, setRoleInput] = useState('')
 
@@ -68,7 +71,10 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 username,
                 password,
                 attributes: {
-                    email
+                    email,
+                    name: adminName,
+                    family_name: adminFamilyName,
+                    phone_number: adminPhoneNumber,
                 }
             });
             window.location.reload(false);
@@ -157,10 +163,14 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 <input
                     className='create-course-input'
                     placeholder='Full name'
+                    value={adminName}
+                    onChange={(e) => setAdminName(e.target.value)}
                 />
                 <input
                     className='create-course-input'
                     placeholder='Surname'
+                    value={adminFamilyName}
+                    onChange={(e) => setAdminFamilyName(e.target.value)}
                 />
                 <input
                     className='create-course-input'
@@ -170,7 +180,13 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 />
                 <input
                     className='create-course-input'
-                    placeholder='Id'
+                    placeholder='Phone number'
+                    value={adminPhoneNumber}
+                    onChange={(e) => setAdminPhoneNumber(e.target.value)}
+                />
+                <input
+                    className='create-course-input'
+                    placeholder='Username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />

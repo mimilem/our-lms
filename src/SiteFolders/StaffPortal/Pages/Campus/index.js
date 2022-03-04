@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-//import aws api and components to create new cart item
-import { API, graphqlOperation } from "aws-amplify";
+//import aws api and components.
+import { API, graphqlOperation, Auth } from "aws-amplify";
 import { listCampuss } from '../../../../graphql/queries';
 import * as mutations from '../../../../graphql/mutations';
 import awsExports from '../../../../aws-exports';
