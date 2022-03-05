@@ -22,7 +22,8 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
     const [adminFamilyName, setAdminFamilyName] = useState('')
     const [adminPhoneNumber, setAdminPhoneNumber] = useState('')
 
-    const [roleInput, setRoleInput] = useState('')
+    const [roleInputValue, setRoleInputValue] = useState('')
+    const roleList = [{id: 1, value:"Teacher"}, {id:2, value:"Admin"}]
 
     const [teacherFullNameInputValue, setTeacherFullNameInputValue] = useState('')
     const [teacherSurnameInput, setTeacherSurnameInput] = useState('')
@@ -37,6 +38,7 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
     const [showDepartmentDropdown, setShowDepartmentDropdown] = useState(false)
     const [showClassModuleDropdown, setShowClassModuleDropdown] = useState(false)
 
+    const [selectedRole, setSelectedRole] = useState(false)
     const [selectedCampus, setSelectedCampus] = useState(false)
     const [selectedDepartment, setSelectedDepartment] = useState(false)
     const [selectedCourse, setSelectedCourse] = useState(false)
@@ -65,7 +67,7 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
     }
     const refClassModule = useDetectClickOutside({ onTriggered: closeClassModule });
 
-    async function signUp() {
+    async function signUpAdmin() {
         try {
             const { user } = await Auth.signUp({
                 username,
@@ -89,7 +91,7 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 username,
                 password,
                 attributes: {
-                    email
+                    email,
                 }
             });
             const teacherDetails = {
@@ -102,7 +104,7 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 teacherDepartmentName: teacherDepartmentNameInput,
                 teacherQualificationName: teacherQualificationNameInput,
                 teacherCourseName: teacherCourseNameInput,
-                role: roleInput,
+                role: roleInputValue,
             };
             /*const newTeacher = await API.graphql({ 
                 query: mutations.createTeacher, 
@@ -198,11 +200,40 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                 />
 
                 <div style={{display: 'flex'}}>
-                    <div className='create-course-input' id='select-a-teacher'>
+                    <div 
+                        className='create-course-input' 
+                        id='select-a-teacher'
+                        ref={refRole}
+                        onClick={() => setShowRoleDropdown(true)}>
+
                         Role <div className='dropdown-icon'/>
                     </div>
-                    <div className='selected-teacher'>Teacher</div>
+                    {
+                        selectedRole === true ?
+                            <div className='selected-teacher'>x {roleInputValue}</div>
+                        : []
+                    }
                 </div>
+                { 
+                    showRoleDropdown && (
+                    <div className='select-teacher-dropdown'>
+                        {
+                            roleList.map((role) => (
+                                <>    
+                                    <div 
+                                        className='select-course-dropdown-label'
+                                        onClick={ () => {
+                                            setRoleInputValue(role.value);
+                                            setSelectedRole(true)
+                                        }}>
+                                        {role.value}
+                                    </div>
+                                    <hr className='select-form-hr'/>
+                                </>
+                            ))
+                        }
+                    </div>)
+                }
 
                 <div style={{display: 'flex'}}>
                     <div 
@@ -308,7 +339,7 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                     className='close-pop-up-icon' />
                 <div 
                     className='create-pop-up-button'
-                    onClick={signUp}
+                    onClick={signUpAdmin}
                 >Create</div>
                 <div style={{paddingBottom: '5rem'}}/>
         </div>

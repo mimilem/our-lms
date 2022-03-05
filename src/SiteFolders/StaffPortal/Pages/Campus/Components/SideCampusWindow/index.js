@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 //import aws api and components
-import { API } from "aws-amplify";
+import { API  } from "aws-amplify";
 import * as mutations from '../../../../../../graphql/mutations';
 
 //import the styling compnent(s).
 import './sideCampusWindow.css';
+
 import UpdateCampus from '../UpdateCampus';
 
 
@@ -16,9 +17,9 @@ function SideCampusWindow({
     showSideCampusWindow, 
     setShowSideCampusWindow,
     generalToggledBar, 
-    setGeneralToggledBar, }) {
+    setGeneralToggledBar }) {
 
-    const [showUpdateWindow, setShowUpdateWindow] = useState(false)
+    const [showUpdateWindow, setShowUpdateWindow] = useState(false);
 
     // This Function is used to delete a new campus
     // then reload the page.
@@ -32,8 +33,6 @@ function SideCampusWindow({
         });
         window.location.reload(false);
     }
-
-    console.log(campusId.campusID)
 
     // This Function is used to update a campus
     // then reload the page.

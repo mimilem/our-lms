@@ -1,17 +1,83 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getInstitution = /* GraphQL */ `
+  query GetInstitution($id: ID!) {
+    getInstitution(id: $id) {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listInstitutions = /* GraphQL */ `
+  query ListInstitutions(
+    $filter: ModelInstitutionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listInstitutions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCampus = /* GraphQL */ `
   query GetCampus($id: ID!) {
     getCampus(id: $id) {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -40,13 +106,23 @@ export const listCampuss = /* GraphQL */ `
     listCampuss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -69,13 +145,23 @@ export const getFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -115,13 +201,13 @@ export const listFacultys = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }
@@ -152,13 +238,13 @@ export const getDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }

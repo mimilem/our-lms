@@ -1,6 +1,102 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createInstitution = /* GraphQL */ `
+  mutation CreateInstitution(
+    $input: CreateInstitutionInput!
+    $condition: ModelInstitutionConditionInput
+  ) {
+    createInstitution(input: $input, condition: $condition) {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateInstitution = /* GraphQL */ `
+  mutation UpdateInstitution(
+    $input: UpdateInstitutionInput!
+    $condition: ModelInstitutionConditionInput
+  ) {
+    updateInstitution(input: $input, condition: $condition) {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteInstitution = /* GraphQL */ `
+  mutation DeleteInstitution(
+    $input: DeleteInstitutionInput!
+    $condition: ModelInstitutionConditionInput
+  ) {
+    deleteInstitution(input: $input, condition: $condition) {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCampus = /* GraphQL */ `
   mutation CreateCampus(
     $input: CreateCampusInput!
@@ -8,13 +104,26 @@ export const createCampus = /* GraphQL */ `
   ) {
     createCampus(input: $input, condition: $condition) {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -41,13 +150,26 @@ export const updateCampus = /* GraphQL */ `
   ) {
     updateCampus(input: $input, condition: $condition) {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -74,13 +196,26 @@ export const deleteCampus = /* GraphQL */ `
   ) {
     deleteCampus(input: $input, condition: $condition) {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -115,13 +250,23 @@ export const createFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -159,13 +304,23 @@ export const updateFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -203,13 +358,23 @@ export const deleteFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -252,13 +417,13 @@ export const createDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }
@@ -305,13 +470,13 @@ export const updateDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }
@@ -358,13 +523,13 @@ export const deleteDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }

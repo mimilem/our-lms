@@ -138,7 +138,7 @@ function CampusPage() {
             try {
                 
                 setIsLoading(true)
-                //faculties
+                //Campuses
                 const campusResults = await API.graphql(
                     graphqlOperation(listCampuss)
                 )

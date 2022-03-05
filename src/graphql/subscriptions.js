@@ -1,17 +1,117 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateInstitution = /* GraphQL */ `
+  subscription OnCreateInstitution {
+    onCreateInstitution {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateInstitution = /* GraphQL */ `
+  subscription OnUpdateInstitution {
+    onUpdateInstitution {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteInstitution = /* GraphQL */ `
+  subscription OnDeleteInstitution {
+    onDeleteInstitution {
+      id
+      institutionName
+      academicYear
+      adress
+      email
+      phone
+      campuses {
+        items {
+          id
+          campusName
+          campusHead
+          campusCity
+          campusPhoneNumber
+          campusEmailAddress
+          campusAdress
+          institutionID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCampus = /* GraphQL */ `
   subscription OnCreateCampus {
     onCreateCampus {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -35,13 +135,26 @@ export const onUpdateCampus = /* GraphQL */ `
   subscription OnUpdateCampus {
     onUpdateCampus {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -65,13 +178,26 @@ export const onDeleteCampus = /* GraphQL */ `
   subscription OnDeleteCampus {
     onDeleteCampus {
       id
-      institutionName
       campusName
       campusHead
       campusCity
       campusPhoneNumber
       campusEmailAddress
       campusAdress
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       faculties {
         items {
           id
@@ -103,13 +229,23 @@ export const onCreateFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -144,13 +280,23 @@ export const onUpdateFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -185,13 +331,23 @@ export const onDeleteFaculty = /* GraphQL */ `
       campusID
       campus {
         id
-        institutionName
         campusName
         campusHead
         campusCity
         campusPhoneNumber
         campusEmailAddress
         campusAdress
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
         faculties {
           nextToken
         }
@@ -231,13 +387,13 @@ export const onCreateDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }
@@ -281,13 +437,13 @@ export const onUpdateDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }
@@ -331,13 +487,13 @@ export const onDeleteDepartment = /* GraphQL */ `
         campusID
         campus {
           id
-          institutionName
           campusName
           campusHead
           campusCity
           campusPhoneNumber
           campusEmailAddress
           campusAdress
+          institutionID
           createdAt
           updatedAt
         }

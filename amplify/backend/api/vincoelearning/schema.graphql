@@ -1,12 +1,35 @@
-type Campus @model {
+type Institution @model {
   id: ID!
   institutionName: String!
+  academicYear: String
+  adress: String
+  email: String
+  phone: String
+  campuses: [Campus] @connection(keyName: "byInstitution", fields: ["id"])
+}
+type Campus
+  @model
+  @key(
+    name: "byInstitution"
+    fields: [
+      "institutionID"
+      "campusName"
+      "campusHead"
+      "campusCity"
+      "campusPhoneNumber"
+      "campusEmailAddress"
+      "campusAdress"
+    ]
+  ) {
+  id: ID!
   campusName: String!
   campusHead: String
   campusCity: String
   campusPhoneNumber: String
   campusEmailAddress: String
   campusAdress: String
+  institutionID: ID!
+  institution: Institution @connection(fields: ["institutionID"])
   faculties: [Faculty] @connection(keyName: "byCampus", fields: ["id"])
 }
 
@@ -178,9 +201,9 @@ type SuperAdmin
   id: ID!
   username: String!
   email: String!
-  name: String
-  family_name: String
-  phone_number: String
+  name: String!
+  family_name: String!
+  phone_number: String!
 }
 
 type Teacher

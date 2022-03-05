@@ -21,13 +21,14 @@ function AdminProfile() {
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
 
-
     const [error, setError] = useState(null);
     const [currentUsername, setCurrentUsername] = useState('');
     const [currentName, setCurrentName] = useState('');
     const [currentFamilyName, setCurrentFamilyName] = useState('');
     const [currentPhoneNumber, setCurrentPhoneNumber] = useState('');
     const [currentEmail, setCurrentEmail] = useState('');
+    const [currentUserRole, setCurrentUserRole] = useState('');
+
     useEffect(() => {
         try {
           setError(null);
@@ -40,6 +41,7 @@ function AdminProfile() {
             setCurrentFamilyName(user.attributes.family_name);
             setCurrentPhoneNumber(user.attributes.phone_number);
             setCurrentEmail(user.attributes.email);
+            setCurrentUserRole('custom:user_role');
             // TBD
           }).catch(err => setError(err));
         }
@@ -95,7 +97,7 @@ function AdminProfile() {
                             <div className='adminProfile-hr'/>
 
                             <div className='centered-admin-email'>
-                                Admin
+                                {currentUserRole} 1
                             </div>
                             
                             <div className='adminProfile-hr'/>

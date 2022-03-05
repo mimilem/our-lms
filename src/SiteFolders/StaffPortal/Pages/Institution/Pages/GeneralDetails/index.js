@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+//import aws api and components.
+import { API } from "aws-amplify";
+import * as queries from '../../../../../../graphql/queries';
+import * as mutations from '../../../../../../graphql/mutations';
+
 import './generalDetails.css';
 
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
@@ -16,10 +21,64 @@ function GeneralDetails() {
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
 
+    const [institution, setInstitution] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const [institutionName, setInstitutionName] = useState('')
+    const [institutionAcademicYear, setInstitutionAcademicYear] = useState('')
+    const [institutionAdress, setInstitutionAdress] = useState('')
+    const [institutionPhone, setInstitutionPhone] = useState('')
+    const [institutionEmail, setInstitutionEmail] = useState('')
+
+    let institutionID = "e99da62e-0b01-49d9-9dd6-53968544cd86"
+
     //automatically scroll to top
     useEffect(() => {
         window.scrollTo(0,0);
     }, []);
+
+    useEffect( () => {
+        const fetchInstitution = async () => {
+            try {
+                setIsLoading(true)
+                //Instituttion
+                const institutionResults = await API.graphql(
+                    { query: queries.getInstitution, variables: { id: institutionID }}
+                )
+                let institution = institutionResults.data.getInstitution
+                setInstitution(institution)
+                setInstitutionName(institution.institutionName)
+                setInstitutionAcademicYear(institution.academicYear)
+                setInstitutionAdress(institution.adress)
+                setInstitutionEmail(institution.email)
+                setInstitutionPhone(institution.phone)
+                setIsLoading(false)
+            }
+            catch (error) {
+                console.log(error)
+                setIsLoading(false)
+            }
+        }
+        fetchInstitution();
+    },[])
+
+    // This Function is used to update the institution
+    // then reload the page.
+    const updateInstitution = async () => {
+        const institutionDetails = {
+            id: institutionID,
+            institutionName: institutionName,
+            academicYear:institutionAcademicYear,
+            adress:institutionAdress,
+            email:institutionEmail,
+            phone:institutionPhone,
+        };
+        const updatedInstitution= await API.graphql({ 
+            query: mutations.updateInstitution, 
+            variables: {input: institutionDetails}
+        });
+        window.location.reload(false);
+    }
 
     return (
         <div className='campus-page-content'>
@@ -44,7 +103,7 @@ function GeneralDetails() {
                 
                 <div className='generalDetails-institution-name-container'>
                     <div className='generalDetails-institution-name'>
-                        Vinco-eLearning
+                        {institution.institutionName}
                     </div>
                     <div className='generalDetails-institution-edit-icon' />
                 </div>
@@ -52,45 +111,55 @@ function GeneralDetails() {
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Academic Year:</div>
                     <input 
-                        type='text' 
+                        type='text'
+                        value={institutionAcademicYear}
+                        onChange={e => setInstitutionAcademicYear(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Adress:</div>
                     <input 
                         type='text' 
+                        value={institutionAdress}
+                        onChange={e => setInstitutionAdress(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Email:</div>
                     <input 
                         type='text' 
+                        value={institutionEmail}
+                        onChange={e => setInstitutionEmail(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Phone:</div>
                     <input 
                         type='text' 
+                        value={institutionPhone}
+                        onChange={e => setInstitutionPhone(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
 
                 <div className='btn-generalDetails-container'>
                     <button className='btn-generalDetails-cancel'>Cancel</button>
-                    <button className='btn-generalDetails-save'>Save</button>
+                    <button 
+                        onClick={updateInstitution}
+                        className='btn-generalDetails-save'>Save</button>
                 </div>
 
                 <div className='generalDetails-stats-container'>
                     <div>
-                        Total number of campuses: <b>2</b>
+                        Total number of campuses: <b>undefined</b>
                     </div>
                     <div>
-                        Total number of departments: <b>2</b>
+                        Total number of departments: <b>undefined</b>
                     </div>
                     <div>
-                        Total number of Staff: <b>85</b>
+                        Total number of Staff: <b>undefined</b>
                     </div>
                     <div>
-                        Total number of Students: <b>1115</b>
+                        Total number of Students: <b>undefined</b>
                     </div>
                 </div>
             </div>
