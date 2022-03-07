@@ -54,6 +54,126 @@ export const listInstitutions = /* GraphQL */ `
     }
   }
 `;
+export const getNotifications = /* GraphQL */ `
+  query GetNotifications($id: ID!) {
+    getNotifications(id: $id) {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNotificationss = /* GraphQL */ `
+  query ListNotificationss(
+    $filter: ModelNotificationsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNotificationss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        description
+        create_date
+        create_time
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getEvents = /* GraphQL */ `
+  query GetEvents($id: ID!) {
+    getEvents(id: $id) {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listEventss = /* GraphQL */ `
+  query ListEventss(
+    $filter: ModelEventsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listEventss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        description
+        event_date
+        event_place
+        create_date
+        create_time
+        institutionID
+        institution {
+          id
+          institutionName
+          academicYear
+          adress
+          email
+          phone
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCampus = /* GraphQL */ `
   query GetCampus($id: ID!) {
     getCampus(id: $id) {

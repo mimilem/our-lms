@@ -228,7 +228,7 @@ function Courses() {
 
     /* fetch the list of all ClassModule */
     useEffect( () => {
-
+        //automatically scroll to top
         window.scrollTo(0,0);
 
         const fetchModules = async () => {

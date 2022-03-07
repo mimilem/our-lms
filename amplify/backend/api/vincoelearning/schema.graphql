@@ -7,6 +7,46 @@ type Institution @model {
   phone: String
   campuses: [Campus] @connection(keyName: "byInstitution", fields: ["id"])
 }
+
+type Notifications
+  @model
+  @key(
+    name: "byInstitution"
+    fields: ["title", "description", "create_date", "create_time"]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  create_date: String!
+  create_time: String!
+  institutionID: ID!
+  institution: Institution @connection(fields: ["institutionID"])
+}
+
+type Events
+  @model
+  @key(
+    name: "byInstitution"
+    fields: [
+      "title"
+      "description"
+      "event_date"
+      "event_place"
+      "create_date"
+      "create_time"
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  event_date: String!
+  event_place: String
+  create_date: String!
+  create_time: String!
+  institutionID: ID!
+  institution: Institution @connection(fields: ["institutionID"])
+}
+
 type Campus
   @model
   @key(

@@ -97,6 +97,192 @@ export const deleteInstitution = /* GraphQL */ `
     }
   }
 `;
+export const createNotifications = /* GraphQL */ `
+  mutation CreateNotifications(
+    $input: CreateNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    createNotifications(input: $input, condition: $condition) {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateNotifications = /* GraphQL */ `
+  mutation UpdateNotifications(
+    $input: UpdateNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    updateNotifications(input: $input, condition: $condition) {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteNotifications = /* GraphQL */ `
+  mutation DeleteNotifications(
+    $input: DeleteNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    deleteNotifications(input: $input, condition: $condition) {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createEvents = /* GraphQL */ `
+  mutation CreateEvents(
+    $input: CreateEventsInput!
+    $condition: ModelEventsConditionInput
+  ) {
+    createEvents(input: $input, condition: $condition) {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateEvents = /* GraphQL */ `
+  mutation UpdateEvents(
+    $input: UpdateEventsInput!
+    $condition: ModelEventsConditionInput
+  ) {
+    updateEvents(input: $input, condition: $condition) {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteEvents = /* GraphQL */ `
+  mutation DeleteEvents(
+    $input: DeleteEventsInput!
+    $condition: ModelEventsConditionInput
+  ) {
+    deleteEvents(input: $input, condition: $condition) {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCampus = /* GraphQL */ `
   mutation CreateCampus(
     $input: CreateCampusInput!

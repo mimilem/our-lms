@@ -30,6 +30,7 @@ import GeneralFees from '../SiteFolders/StaffPortal/Pages/Institution/Pages/Gene
 import GeneralNotifications from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralNotifications';
 import GeneralStaff from '../SiteFolders/StaffPortal/Pages/Institution/Pages/GeneralStaff';
 import Lessons from '../SiteFolders/StaffPortal/Pages/Class/Components/Lessons';
+import Library from '../SiteFolders/StaffPortal/Pages/Institution/Pages/Library';
 import ManageUsersPage from '../SiteFolders/StaffPortal/Pages/ManageUsers';
 import ModulePage from '../SiteFolders/StaffPortal/Pages/Module';
 import Reports from '../SiteFolders/StaffPortal/Pages/Reports';
@@ -75,6 +76,7 @@ function Router() {
                 <Route exact path='/Staff/GeneralFees' component={GeneralFees}/>
                 <Route exact path='/Staff/GeneralDetails' component={GeneralDetails}/>
                 <Route exact path='/Staff/GeneralStaff' component={GeneralStaff}/>
+                <Route exact path='/Staff/Library' component={Library}/>
                 <Route exact path='/Staff/Dashboard' component={StaffDashboard}/>
                 <Route exact path='/Staff/Faculties' component={FacultiesPage}/>
                 <Route exact path='/Staff/Departments/Courses' component={Courses}/>

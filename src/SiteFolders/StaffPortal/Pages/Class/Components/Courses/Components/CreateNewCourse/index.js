@@ -197,8 +197,7 @@ function CreateNewCourse({
                     className='create-course-input'
                     placeholder='Course Overview'
                     value={courseStateDetails.courseDescriptionInput}
-                    onChange={e => courseStateDetails.setCourseDescriptionInput(e.target.value)}
-                />
+                    onChange={e => courseStateDetails.setCourseDescriptionInput(e.target.value)} />
                 <div 
                     className='close-pop-up-icon' 
                     onClick={ () => setShowCreateCourse(false)} />

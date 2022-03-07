@@ -88,6 +88,174 @@ export const onDeleteInstitution = /* GraphQL */ `
     }
   }
 `;
+export const onCreateNotifications = /* GraphQL */ `
+  subscription OnCreateNotifications {
+    onCreateNotifications {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNotifications = /* GraphQL */ `
+  subscription OnUpdateNotifications {
+    onUpdateNotifications {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNotifications = /* GraphQL */ `
+  subscription OnDeleteNotifications {
+    onDeleteNotifications {
+      id
+      title
+      description
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateEvents = /* GraphQL */ `
+  subscription OnCreateEvents {
+    onCreateEvents {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateEvents = /* GraphQL */ `
+  subscription OnUpdateEvents {
+    onUpdateEvents {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteEvents = /* GraphQL */ `
+  subscription OnDeleteEvents {
+    onDeleteEvents {
+      id
+      title
+      description
+      event_date
+      event_place
+      create_date
+      create_time
+      institutionID
+      institution {
+        id
+        institutionName
+        academicYear
+        adress
+        email
+        phone
+        campuses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCampus = /* GraphQL */ `
   subscription OnCreateCampus {
     onCreateCampus {

@@ -104,7 +104,7 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
             </Link>
 
             <Link to={{     
-                    pathname:'/Staff/SelectCampus',
+                    pathname:'/Staff/Library',
                 }}
                 className={activeTab === 'library' ? 'institution-active' : '' } 
             >
