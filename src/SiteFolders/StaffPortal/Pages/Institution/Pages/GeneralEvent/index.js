@@ -24,7 +24,7 @@ function GeneralEvents() {
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false); 
 
     const [eventID, setEventID] = useState('')
     const [titleInput, setTitleInput] = useState('')
