@@ -32,7 +32,7 @@ function CampusPage() {
 
     const [campus, setCampus] = useState([])
     const [campusId, setCampusId] = useState({
-        campusID:'',
+        campusID: undefined,
         campusHead: '',
         campusAdress: '',
         campusName: '',
@@ -134,6 +134,7 @@ function CampusPage() {
     }, []);
 
     useEffect( () => {
+        
         const fetchCampus = async () => {
             try {
                 

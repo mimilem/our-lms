@@ -47,11 +47,18 @@ function Library(props) {
                 <div style={{display: 'flex', marginLeft: '4rem'}}>
                     <input
                         type='file'
-                        className='upload-accCalendar-file'  />
+                        className='upload-accCalendar-file' />
                     <button
                         className='accCalendar-file-btn'>
                             Upload
                     </button>
+                </div>
+                <div className='library-search-container'>
+                    <input
+                        placeholder='Search a document'
+                        className='library-search' 
+                        type='search' autoFocus />
+                    <div className='library-search-icon'/>
                 </div>
             </div>
             

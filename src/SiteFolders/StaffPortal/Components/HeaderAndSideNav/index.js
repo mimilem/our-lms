@@ -22,9 +22,13 @@ function HeaderAndSideNav({
     // State to fetch a campus.
     const [ campus, setCampus ] = useState([])
 
-     /* fetch the API data of a campus */
-     useEffect( () => {
-        const fetchCampus = async () => {
+    useEffect( () => {
+        fetchCampus()
+    }, [])
+
+    /* fetch the API data of a campus */
+    const fetchCampus = async () => {
+        if (campusId !== undefined || campusId !== '') {
             try {
                 const campusResults = await API.graphql(
                     graphqlOperation(queries.getCampus, { id: campusId }
@@ -33,11 +37,12 @@ function HeaderAndSideNav({
                 setCampus(campus)
             } 
             catch (error) {
-                console.log(error)
             }
+        } else {
+            console.log("the campus has no ID")
         }
         fetchCampus();
-    })
+    }
     
     const campusDetails = {
         campusID: campus.id,

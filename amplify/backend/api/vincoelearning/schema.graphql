@@ -49,6 +49,7 @@ type Events
 
 type Campus
   @model
+  @auth(rules: [{ allow: groups, groups: ["Admin"] }])
   @key(
     name: "byInstitution"
     fields: [
