@@ -15,7 +15,7 @@
       "function": {
         "vincoElearningPostConfirmation": {
           "deploymentBucketName": "amplify-vincoelearning-dev-81733-deployment",
-          "s3Key": "amplify-builds/vincoElearningPostConfirmation-396e3138554e6c374157-build.zip"
+          "s3Key": "amplify-builds/vincoElearningPostConfirmation-794944744c4b356e6157-build.zip"
         }
       },
       "auth": {

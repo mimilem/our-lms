@@ -40,6 +40,58 @@
   margin-left: 0.2rem;
 }
 
+.notification-icon-container {
+  display: inline-block;
+  cursor: pointer;
+  height: 2rem;
+  margin-right: 5rem;
+  padding: 0.1rem;
+  position: absolute;
+  right: 0;
+  top: 0.4rem;
+  width: 2rem;
+}
+.notification-icon {
+  background-image: url("../../../../assets/bell.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+.notification-dropdown {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  display: block;
+  right: 1rem;
+  list-style: none;
+  padding: 0.75rem;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 2.4rem;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
+  width: 15rem;
+  max-height: 20rem;
+}
+.notification-list-container {
+}
+.notification-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.notification-description {
+  font-size: 14px;
+  font-weight: normal;
+}
+
 .user-settings {
   background: linear-gradient(to left, green, red, orange);
   border-radius: 50px;
