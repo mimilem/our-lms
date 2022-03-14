@@ -79,6 +79,7 @@
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 100ms ease-in-out;
   width: 15rem;
+
   max-height: 20rem;
 }
 .notification-list-container {

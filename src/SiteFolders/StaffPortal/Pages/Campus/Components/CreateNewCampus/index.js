@@ -40,12 +40,6 @@ function CreateNewCampus({
 
                 <input
                     className='lg-pop-up-input'
-                    placeholder='Institution name'
-                    value={campusStateDetails.institutionNameInputvalue}
-                    onChange={e => campusStateDetails.setInstitutionNameInputvalue(e.target.value)}
-                />
-                <input
-                    className='lg-pop-up-input'
                     placeholder='Campus name'
                     value={campusStateDetails.campusNameInputValue}
                     onChange={e => campusStateDetails.setCampusNameInputValue(e.target.value)}

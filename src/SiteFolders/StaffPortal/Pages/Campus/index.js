@@ -46,7 +46,6 @@ function CampusPage() {
 
     // State to keep and update the input value when the admin create 
     // an instance.
-    const [institutionNameInputvalue, setInstitutionNameInputvalue] = useState('');
     const [campusNameInputValue, setCampusNameInputValue] = useState('')
     const [campusHeadInputValue, setCampusHeadInputValue] = useState('')
     const [campusCityInputValue, setCampusCityInputValue] = useState('')
@@ -61,8 +60,6 @@ function CampusPage() {
     const [fileName, setFileName] = useState('');
     
     const campusStateDetails = {
-        institutionNameInputvalue, 
-        setInstitutionNameInputvalue,
         campusNameInputValue, 
         setCampusNameInputValue,
         campusHeadInputValue, 
@@ -81,19 +78,21 @@ function CampusPage() {
     // then reload the page.
     const createNewCampus = async () => {
         const campusDetails = {
-            institutionName: institutionNameInputvalue,
             campusName: campusNameInputValue,
             campusHead: campusHeadInputValue,
             campusCity: campusCityInputValue,
             campusPhoneNumber: campusPhoneNumberInputValue,
             campusEmailAddress: campusEmailInputValue,
             campusAdress: campusAddressInputValue,
+            institutionID: 'e99da62e-0b01-49d9-9dd6-53968544cd86'
         };
         const newCampus = await API.graphql({ 
             query: mutations.createCampus, 
             variables: {input: campusDetails}
         });
         setShowCreateCampus(false)
+        
+        window.location.reload(false);
     }
 
     async function onChangeHandler(e) {
@@ -211,8 +210,7 @@ function CampusPage() {
                                         campusAdress:campusMapItem.campusAdress,
                                         campusCity:campusMapItem.campusCity,
                                         campusPhoneNumber:campusMapItem.campusPhoneNumber,
-                                        campusEmailAddress:campusMapItem.campusEmailAddress,
-                                        institutionName: campusMapItem.institutionName,
+                                        campusEmailAddress:campusMapItem.campusEmailAddress
                                     }) 
                             }} >
                                 <div className='campus-card-photo'/>

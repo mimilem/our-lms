@@ -1,25 +1,25 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-vincoelearning-dev-81733-authRole",
-      "UnauthRoleArn": "arn:aws:iam::755830341824:role/amplify-vincoelearning-dev-81733-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::755830341824:role/amplify-vincoelearning-dev-81733-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-vincoelearning-dev-81733-deployment",
-      "UnauthRoleName": "amplify-vincoelearning-dev-81733-unauthRole",
-      "StackName": "amplify-vincoelearning-dev-81733",
-      "StackId": "arn:aws:cloudformation:us-east-2:755830341824:stack/amplify-vincoelearning-dev-81733/d34a66e0-88a6-11ec-b846-0650406514c4",
-      "AmplifyAppId": "d3qh8w3pnrdor3"
+      "AuthRoleName": "amplify-vincoelearning-dev-100304-authRole",
+      "UnauthRoleArn": "arn:aws:iam::813801303441:role/amplify-vincoelearning-dev-100304-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::813801303441:role/amplify-vincoelearning-dev-100304-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vincoelearning-dev-100304-deployment",
+      "UnauthRoleName": "amplify-vincoelearning-dev-100304-unauthRole",
+      "StackName": "amplify-vincoelearning-dev-100304",
+      "StackId": "arn:aws:cloudformation:us-east-1:813801303441:stack/amplify-vincoelearning-dev-100304/30b34320-a36d-11ec-88c2-0a6da4dd8b6b",
+      "AmplifyAppId": "d3efdbxw3xvjm3"
     },
     "categories": {
       "function": {
-        "vincoElearningPostConfirmation": {
-          "deploymentBucketName": "amplify-vincoelearning-dev-81733-deployment",
-          "s3Key": "amplify-builds/vincoElearningPostConfirmation-794944744c4b356e6157-build.zip"
+        "vincoelearning062201dc062201dcPostConfirmation": {
+          "deploymentBucketName": "amplify-vincoelearning-dev-100304-deployment",
+          "s3Key": "amplify-builds/vincoelearning062201dc062201dcPostConfirmation-5a46526f643761463655-build.zip"
         }
       },
       "auth": {
-        "vincoElearning": {}
+        "vincoelearning062201dc062201dc": {}
       }
     }
   }

@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "vinco_idPool",
+    "identityPoolName": "vinco_idpool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "vincoe5147ab00",
-    "userPoolName": "vinco_userPool",
+    "resourceNameTruncated": "vincoe062201dc",
+    "userPoolName": "vincoelearning062201dc_userpool_062201dc",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -21,23 +21,17 @@
         "email"
     ],
     "userpoolClientGenerateSecret": false,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "365",
     "userpoolClientWriteAttributes": [
-        "family_name",
-        "name",
-        "phone_number",
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email",
-        "family_name",
-        "name",
-        "phone_number"
+        "email"
     ],
-    "userpoolClientLambdaRole": "vincoE5147ab00_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": true,
-    "sharedId": "5147ab00",
-    "resourceName": "vincoElearning",
+    "userpoolClientLambdaRole": "vincoe062201dc_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "062201dc",
+    "resourceName": "vincoelearning062201dc062201dc",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -52,8 +46,9 @@
         ]
     },
     "useDefault": "manual",
+    "thirdPartyAuth": false,
     "userPoolGroups": true,
-    "adminQueries": true,
+    "adminQueries": false,
     "triggers": "{\n  \"PostConfirmation\": [\n    \"custom\"\n  ]\n}",
     "hostedUI": false,
     "userPoolGroupList": [
@@ -64,20 +59,18 @@
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"vincoElearningPostConfirmation\"\n  }\n]",
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"vincoelearning062201dc062201dcPostConfirmation\"\n  }\n]",
     "breakCircularDependency": true,
     "permissions": [],
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "vincoElearningPostConfirmation",
+            "resourceName": "vincoelearning062201dc062201dcPostConfirmation",
             "triggerProvider": "Cognito",
             "attributes": [
                 "Arn",
                 "Name"
             ]
         }
-    ],
-    "authProviders": [],
-    "thirdPartyAuth": true
+    ]
 }

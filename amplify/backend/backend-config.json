@@ -1,6 +1,23 @@
 {
+  "api": {
+    "vincoelearning": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authvincoelearning062201dc062201dc"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
   "function": {
-    "vincoElearningPostConfirmation": {
+    "vincoelearning062201dc062201dcPostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -13,7 +30,7 @@
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "vincoElearning",
+          "resourceName": "vincoelearning062201dc062201dc",
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
@@ -23,13 +40,13 @@
         }
       ]
     },
-    "vincoElearning": {
+    "vincoelearning062201dc062201dc": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "vincoElearningPostConfirmation",
+          "resourceName": "vincoelearning062201dc062201dcPostConfirmation",
           "triggerProvider": "Cognito",
           "attributes": [
             "Arn",
@@ -38,45 +55,6 @@
         }
       ],
       "customAuth": false
-    }
-  },
-  "api": {
-    "vincoelearning": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authvincoElearning"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    }
-  },
-  "storage": {
-    "vincoElearningS3": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "vincoElearning",
-          "attributes": [
-            "UserPoolId"
-          ]
-        },
-        {
-          "category": "auth",
-          "resourceName": "userPoolGroups",
-          "attributes": [
-            "AdminGroupRole"
-          ]
-        }
-      ]
     }
   }
 }

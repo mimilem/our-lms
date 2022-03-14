@@ -791,6 +791,29 @@ export const createClass = /* GraphQL */ `
         }
         nextToken
       }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -839,6 +862,29 @@ export const updateClass = /* GraphQL */ `
           courseCredit
           courseIsCompulsory
           courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
           classID
           createdAt
           updatedAt
@@ -899,6 +945,29 @@ export const deleteClass = /* GraphQL */ `
         }
         nextToken
       }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -934,6 +1003,9 @@ export const createClassModule = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -986,6 +1058,9 @@ export const updateClassModule = /* GraphQL */ `
         modules {
           nextToken
         }
+        students {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -1034,6 +1109,9 @@ export const deleteClassModule = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -1647,10 +1725,16 @@ export const createStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1667,6 +1751,9 @@ export const createStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -1688,10 +1775,16 @@ export const updateStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1708,6 +1801,9 @@ export const updateStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -1729,10 +1825,16 @@ export const deleteStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1749,6 +1851,9 @@ export const deleteStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt

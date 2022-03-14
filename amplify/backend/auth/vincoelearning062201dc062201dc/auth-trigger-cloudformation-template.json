@@ -11,10 +11,10 @@
     "userpoolArn": {
       "Type": "String"
     },
-    "functionvincoElearningPostConfirmationName": {
+    "functionvincoelearning062201dc062201dcPostConfirmationName": {
       "Type": "String"
     },
-    "functionvincoElearningPostConfirmationArn": {
+    "functionvincoelearning062201dc062201dcPostConfirmationArn": {
       "Type": "String"
     }
   },
@@ -34,7 +34,7 @@
       "Properties": {
         "Action": "lambda:InvokeFunction",
         "FunctionName": {
-          "Ref": "functionvincoElearningPostConfirmationName"
+          "Ref": "functionvincoelearning062201dc062201dcPostConfirmationName"
         },
         "Principal": "cognito-idp.amazonaws.com",
         "SourceArn": {
@@ -132,9 +132,9 @@
         "lambdaConfig": [
           {
             "triggerType": "PostConfirmation",
-            "lambdaFunctionName": "vincoElearningPostConfirmation",
+            "lambdaFunctionName": "vincoelearning062201dc062201dcPostConfirmation",
             "lambdaFunctionArn": {
-              "Ref": "functionvincoElearningPostConfirmationArn"
+              "Ref": "functionvincoelearning062201dc062201dcPostConfirmationArn"
             }
           }
         ]
