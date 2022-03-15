@@ -112,11 +112,15 @@ function Header({ campusDetails, items }) {
                 className='notification-icon-container'>
                 
                 <div style={{width: '100%', height: '100%'}}>
-                    <div className='notification-number'>4</div>
+                    <div className='notification-number'>{notifications.length}</div>
                     <div className='notification-icon' />
                 </div>
                 {isShownNotification && (
                     <ul className='notification-dropdown'>
+                        
+                        <div className='mark-as-read'>Mark As Read</div>
+                        <br/>
+                        
                         <div>
                             {
                                 notifications.map(notification =>(
