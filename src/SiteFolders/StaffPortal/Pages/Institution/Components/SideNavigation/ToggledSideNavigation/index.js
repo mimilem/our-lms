@@ -21,19 +21,6 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
         <div className="institution-toggled-side-navigation-container">
                     
             <Link to={{
-                pathname:'/Staff/AdminProfile',
-            }}
-                className={activeTab === 'adminProfile' ? 'institution-active' : '' }
-                title='Admin Profile' >
-                <div className='institution-profile-icon'/>
-                <div style={{position: 'absolute', width: '100%'}}>
-                    <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
-                        Profile
-                    </div>
-                </div>  
-            </Link>
-                    
-            <Link to={{
                 pathname:'/Staff/GeneralDetails',
             }}
                 className={activeTab === 'generalDetails' ? 'institution-active' : '' }
@@ -42,6 +29,19 @@ function ToggledSideNavigation({generalToggledBar, setGeneralToggledBar, activeT
                 <div style={{position: 'absolute', width: '100%'}}>
                     <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
                         Details
+                    </div>
+                </div>  
+            </Link>
+                    
+            <Link to={{
+                pathname:'/Staff/AdminProfile',
+            }}
+                className={activeTab === 'adminProfile' ? 'institution-active' : '' }
+                title='Admin Profile' >
+                <div className='institution-profile-icon'/>
+                <div style={{position: 'absolute', width: '100%'}}>
+                    <div style={{fontSize:'10px',position: 'relative', left:'-6px', right:0}}>
+                        Profile
                     </div>
                 </div>  
             </Link>

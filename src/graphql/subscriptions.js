@@ -96,6 +96,7 @@ export const onCreateNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -123,6 +124,7 @@ export const onUpdateNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -150,6 +152,7 @@ export const onDeleteNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id

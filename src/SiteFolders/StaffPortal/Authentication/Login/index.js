@@ -60,7 +60,7 @@ function StaffLogin() {
         }
     }
     if (formState==='signedIn') {
-        return <Redirect to='/Staff/SelectCampus' />
+        return <Redirect to='/Staff/GeneralDetails' />
       }
     return (
         formState === 'signIn' && (

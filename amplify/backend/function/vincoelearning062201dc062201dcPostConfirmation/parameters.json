@@ -1,4 +1,4 @@
 {
-  "modules": "custom",
+  "modules": "add-to-group,custom",
   "resourceName": "vincoelearning062201dc062201dcPostConfirmation"
 }

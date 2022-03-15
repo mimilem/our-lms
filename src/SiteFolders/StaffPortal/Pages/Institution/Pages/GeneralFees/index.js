@@ -5,6 +5,7 @@ import './generalFees.css';
 
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 import SideNavigation from '../../Components/SideNavigation';
+import AddFeesForm from './Components/AddFeesForm';
 
 
 function GeneralFees(props) {
@@ -16,6 +17,9 @@ function GeneralFees(props) {
     const [choosedCampus, setChoosedCampus] = useState(false);
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
+
+    
+    const [showAddFees, setShowAddFees] = useState(false);
 
     //automatically scroll to top
     useEffect(() => { 
@@ -75,6 +79,11 @@ function GeneralFees(props) {
                 </div>
                 <hr className='staff-page-hr' />
 
+                <div 
+                    onClick={() => setShowAddFees(true)}
+                    className='add-fees-icon' 
+                    title='Add a fee document' />
+
                 <div style={{marginLeft: '4rem'}}>
                     <div className='generalFees-year'>Academic year: 2022</div>
                     <div style={{display: 'flex'}}>
@@ -97,6 +106,8 @@ function GeneralFees(props) {
                 }
                 </div>
             </div>
+
+            <AddFeesForm showAddFees={showAddFees} setShowAddFees={setShowAddFees} />
         </div>
     );
 }

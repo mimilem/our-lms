@@ -16,11 +16,13 @@ import * as mutations from '../../../../graphql/mutations';
 import './header.css';
 
 
-function Header({ campusDetails }) {
+function Header({ campusDetails, items }) {
     
     const [isShown, setIsShown] = useState(false);
     const [isShownNotification, setIsShownNotification] = useState(false);
-    const [notifications, setNotifications] = useState([])
+    const [notifications, setNotifications] = useState([]);
+
+    const [seen, setSeen] = useState(false)
 
     const closeDropdown = () => {
         setIsShown(false);
@@ -46,6 +48,18 @@ function Header({ campusDetails }) {
             window.removeEventListener('resize', changeWidth)
         }
     }, [])
+
+    // This Function is used to update a campus
+    // then reload the page.
+    const updateNotification = async () => {
+        const notificationDetails = {
+        };
+        const updateNotification = await API.graphql({ 
+            query: mutations.updateNotifications, 
+            variables: {input: notificationDetails}
+        });
+        window.location.reload(false);
+    }
 
     /* fetch the list of all notifications */
     useEffect( () => {
@@ -96,15 +110,32 @@ function Header({ campusDetails }) {
             <div
                 onClick={() => setIsShownNotification(true)} ref={refNotifications} 
                 className='notification-icon-container'>
-                <div className='notification-icon' />
+                
+                <div style={{width: '100%', height: '100%'}}>
+                    <div className='notification-number'>4</div>
+                    <div className='notification-icon' />
+                </div>
                 {isShownNotification && (
                     <ul className='notification-dropdown'>
                         <div>
                             {
                                 notifications.map(notification =>(
-                                    <div className='notification-list-container'>
+                                    notification.seen === false ? 
+                                    <div key={notification.id} className='notification-list-unseen'>
+                                        <div className='notification-title'>{notification.title}</div>
+                                        <div className='notification-description'>• {notification.description}</div>
+                                        <div className='notification-created'>
+                                            Created: {notification.create_date} at {notification.create_time}
+                                        </div>
+                                        <hr className='nav-tab-hr'/>
+                                    </div>
+                                    : 
+                                    <div key={notification.id} className='notification-list-seen'>
                                         <div className='notification-title'>{notification.title}</div>
                                         <div className='notification-description'>{notification.description}</div>
+                                        <div className='notification-created'>
+                                            Created: {notification.create_date} at {notification.create_time}
+                                        </div>
                                         <hr className='nav-tab-hr'/>
                                     </div>
                                 ))

@@ -95,6 +95,60 @@
         },
      
     
+        "StudentGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "Student",
+              "Precedence" : 2,
+              
+              "RoleArn" : {
+                "Fn::GetAtt": [
+                    "StudentGroupRole",
+                    "Arn"
+                ]
+              },
+              
+              "UserPoolId" : {
+                "Ref": "authvincoelearning062201dc062201dcUserPoolId"
+              }
+            }
+        },
+        
+        "StudentGroupRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName":{
+                    "Fn::Join": [
+                        "",
+                        [
+                          {
+                            "Ref": "authvincoelearning062201dc062201dcUserPoolId"
+                          },
+                          "-StudentGroupRole"
+                        ]
+                    ]
+                },
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Federated": "cognito-identity.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRoleWithWebIdentity",
+                            "Condition": {
+                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authvincoelearning062201dc062201dcIdentityPoolId"}},
+                              "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated"}
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+     
+    
     
         "LambdaExecutionRole": {
             "Type": "AWS::IAM::Role",
@@ -301,6 +355,17 @@
             "Value": {
                 "Fn::GetAtt": [
                     "AdminGroupRole",
+                    "Arn"
+                ]
+            }
+        
+        },
+        
+      
+        "StudentGroupRole": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "StudentGroupRole",
                     "Arn"
                 ]
             }

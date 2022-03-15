@@ -51,16 +51,28 @@
   top: 0.4rem;
   width: 2rem;
 }
+
 .notification-icon {
   background-image: url("../../../../assets/bell.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 50px;
-  height: 100%;
   margin: auto;
   position: relative;
+  height: 100%;
   width: 100%;
+}
+.notification-number {
+  background-color: #5d8aa8;
+  border-radius: 80px;
+  color: #fff;
+  font-size: 11px;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 .notification-dropdown {
   background-color: #fff;
@@ -82,7 +94,9 @@
 
   max-height: 20rem;
 }
-.notification-list-container {
+.notification-list-unseen {
+  color: #5d8aa8;
+  width: 100%;
 }
 .notification-title {
   font-size: 14px;
@@ -91,6 +105,9 @@
 .notification-description {
   font-size: 14px;
   font-weight: normal;
+}
+.notification-created {
+  font-size: 10px;
 }
 
 .user-settings {

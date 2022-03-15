@@ -62,6 +62,7 @@ export const getNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -94,6 +95,7 @@ export const listNotificationss = /* GraphQL */ `
         description
         create_date
         create_time
+        seen
         institutionID
         institution {
           id

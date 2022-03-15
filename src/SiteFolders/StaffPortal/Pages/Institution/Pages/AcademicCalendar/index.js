@@ -6,6 +6,7 @@ import './academicCalendar.css';
 
 import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 import SideNavigation from '../../Components/SideNavigation';
+import AddCalendarForm from './Components/AddCalendarForm';
 
 
 function AcademicCalendar() {
@@ -17,6 +18,8 @@ function AcademicCalendar() {
     const [choosedCampus, setChoosedCampus] = useState(false);
 
     const [generalToggledBar, setGeneralToggledBar] = useState(false);
+
+    const [showAddCalendar, setShowAddCalendar] = useState(false);
 
     //automatically scroll to top
     useEffect(() => {
@@ -76,6 +79,11 @@ function AcademicCalendar() {
                 </div>
                 <hr className='staff-page-hr' />
 
+                <div 
+                    onClick={() => setShowAddCalendar(true)}
+                    className='add-calendar-icon' 
+                    title='Add a fee document' />
+
                 <div style={{marginLeft: '4rem'}}>
                     <div className='accCalendar-year'>Academic year: 2022</div>
                     <div style={{display: 'flex'}}>
@@ -99,6 +107,8 @@ function AcademicCalendar() {
                 }
 
             </div>
+
+            <AddCalendarForm showAddCalendar={showAddCalendar} setShowAddCalendar={setShowAddCalendar}/>
         </div>
     );
 }

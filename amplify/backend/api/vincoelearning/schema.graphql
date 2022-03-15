@@ -19,6 +19,7 @@ type Notifications
   description: String
   create_date: String!
   create_time: String!
+  seen: Boolean
   institutionID: ID!
   institution: Institution @connection(fields: ["institutionID"])
 }

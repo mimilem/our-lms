@@ -1,5 +1,5 @@
 var aws = require('aws-sdk')
-var ddb = new aws.DynamoDB()
+var ddb = new aws.DynamoDB({apiVersion: '2012-10-08'})
 
 exports.handler = async (event, context) => {
 
@@ -12,9 +12,12 @@ exports.handler = async (event, context) => {
         let params = {
             Item: {
                 'id': {S: event.request.userAttributes.sub},
-                '__typename': {S: 'User'},
+                '__typename': {S: 'Admin'},
                 'username': {S: event.userName},
                 'email': {S: event.request.userAttributes.email},
+                'name': {S: event.request.userAttributes.name},
+                'family_name': {S: event.request.userAttributes.family_name},
+                'phone_number': {S: event.request.userAttributes.phone_number},
                 'createdAt': {S: date.toISOString()},
                 'updatedAt': {S: date.toISOString()},
             },

@@ -31,14 +31,6 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
     return (
         generalToggledBar === false ? 
         <div className="intitution-full-side-navigation-container">
-            <Link to={{
-                pathname:'/Staff/AdminProfile',
-            }}
-                className={activeTab === 'adminProfile' ? 'institution-active' : '' } 
-            >
-                <div className='institution-profile-icon'/>
-                <div className='institution-side-navigation-text'>Admin Profile</div>
-            </Link>
             
             <Link to={{     
                     pathname:'/Staff/GeneralDetails',
@@ -47,6 +39,15 @@ function FullSideNavigation({generalToggledBar, setGeneralToggledBar, activeTab}
             >
                 <div className='institution-information-icon'/>
                 <div className='institution-side-navigation-text'>General Details</div>
+            </Link>
+            
+            <Link to={{
+                pathname:'/Staff/AdminProfile',
+            }}
+                className={activeTab === 'adminProfile' ? 'institution-active' : '' } 
+            >
+                <div className='institution-profile-icon'/>
+                <div className='institution-side-navigation-text'>Admin Profile</div>
             </Link>
 
             <Link to={{     
