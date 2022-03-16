@@ -8,8 +8,9 @@
 
 */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import { Auth } from 'aws-amplify';
 
@@ -26,13 +27,19 @@ function FullSideNavigation(props) {
     const handleToggledBar = () => {
         setToggledBar(true)
     }
+    const [signedOut, setSignedOut] = useState(false)
 
     async function signOut() {
         try {
-            await Auth.signOut();
+            await Auth.signOut().then(
+            setSignedOut(true))
         } catch (error) {
             console.log('error signing out: ', error);
         }
+    }
+
+    if (signedOut==='true') {
+        return <Redirect to='/Staff/Staff-login' />
     }
 
     return (
@@ -127,7 +134,6 @@ function FullSideNavigation(props) {
                     </Link>
 
                     <Link 
-                        to='/Staff-login' 
                         onClick={signOut}
                         className='logout-container'>
                         <div className='logout-icon'/>

@@ -61,7 +61,7 @@ function StaffLogin() {
     }
     if (formState==='signedIn') {
         return <Redirect to='/Staff/GeneralDetails' />
-      }
+    }
     return (
         formState === 'signIn' && (
             <div className='staff-loginPage-container'>
