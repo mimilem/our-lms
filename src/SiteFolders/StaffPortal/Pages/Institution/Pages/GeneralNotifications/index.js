@@ -99,6 +99,7 @@ function GeneralNotifications() {
             create_date: currentDate,
             create_time: currentTime,
             description: descriptionInput,
+            seen: false,
         };
         const newNotification = await API.graphql({ 
             query: mutations.createNotifications, 

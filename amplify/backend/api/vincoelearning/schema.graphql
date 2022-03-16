@@ -19,6 +19,7 @@ type Notifications
   description: String
   create_date: String!
   create_time: String!
+  seen: Boolean
   institutionID: ID!
   institution: Institution @connection(fields: ["institutionID"])
 }
@@ -49,6 +50,7 @@ type Events
 
 type Campus
   @model
+  @auth(rules: [{ allow: groups, groups: ["Admin"] }])
   @key(
     name: "byInstitution"
     fields: [
@@ -116,6 +118,7 @@ type Class
   departmentID: ID!
   department: Department @connection(fields: ["departmentID"])
   modules: [ClassModule] @connection(keyName: "byClass", fields: ["id"])
+  students: [Student] @connection(keyName: "byClass", fields: ["id"])
 }
 
 type ClassModule
@@ -205,7 +208,7 @@ type S3Object {
 type Student
   @model
   @key(
-    name: "byStudent"
+    name: "byClass"
     fields: [
       "classID"
       "studentFullname"
@@ -214,19 +217,30 @@ type Student
       "studentEmail"
       "studentCampusName"
       "studentDepartmentName"
-      "studentYear"
+      "studentQualificationName"
     ]
   ) {
   id: ID!
   studentFullname: String!
   studentSurname: String!
-  studentPhoneNumber: String!
-  studentEmail: String!
-  studentCampusName: String!
-  studentDepartmentName: String!
-  studentYear: Int!
+  studentPhoneNumber: String
+  studentEmail: String
+  studentNumber: String!
   pending: Boolean!
-  classID: ID
+
+  studentCampusName: String!
+  studentCampusID: String!
+
+  studentFacultyName: String!
+  studentFacultyID: String!
+
+  studentDepartmentName: String!
+  studentDepartmentID: String!
+
+  studentQualificationName: String!
+  studentQualificationID: String!
+
+  classID: ID!
   class: Class @connection(fields: ["classID"])
 }
 

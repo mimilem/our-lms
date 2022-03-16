@@ -24,12 +24,12 @@ function StaffLogin() {
      }, []);
 
     // Authentication states
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    const[formState, setFormState] = useState('signIn')
-    const [signInError, setSignInError] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+    const[formState, setFormState] = useState('signIn');
+    const [signInError, setSignInError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChangeUsername = (e) => {
         setUsername(e.target.value)
@@ -60,8 +60,8 @@ function StaffLogin() {
         }
     }
     if (formState==='signedIn') {
-        return <Redirect to='/Staff/SelectCampus' />
-      }
+        return <Redirect to='/Staff/GeneralDetails' />
+    }
     return (
         formState === 'signIn' && (
             <div className='staff-loginPage-container'>
@@ -111,7 +111,8 @@ function StaffLogin() {
                             </div>
                         </div>
                         <button 
-                            onClick={SignIn} 
+                            type="submit"
+                            onClick={SignIn}
                             className='staff-login-login-button'>
                             Login
                         </button>

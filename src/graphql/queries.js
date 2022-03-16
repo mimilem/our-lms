@@ -62,6 +62,7 @@ export const getNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -94,6 +95,7 @@ export const listNotificationss = /* GraphQL */ `
         description
         create_date
         create_time
+        seen
         institutionID
         institution {
           id
@@ -470,6 +472,29 @@ export const getClass = /* GraphQL */ `
         }
         nextToken
       }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -497,6 +522,9 @@ export const listClasss = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -533,6 +561,9 @@ export const getClassModule = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -908,10 +939,16 @@ export const getStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -928,6 +965,9 @@ export const getStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -951,10 +991,16 @@ export const listStudents = /* GraphQL */ `
         studentSurname
         studentPhoneNumber
         studentEmail
-        studentCampusName
-        studentDepartmentName
-        studentYear
+        studentNumber
         pending
+        studentCampusName
+        studentCampusID
+        studentFacultyName
+        studentFacultyID
+        studentDepartmentName
+        studentDepartmentID
+        studentQualificationName
+        studentQualificationID
         classID
         class {
           id

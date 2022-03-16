@@ -15,6 +15,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "aws-amplify": "^4.3.12",
+    "aws-sdk": "^2.1088.0",
     "npm": "^8.3.1",
     "pdfjs-dist": "2.6.347",
     "react": "^17.0.2",
@@ -29,6 +30,7 @@
     "react-select": "^5.2.1",
     "react-textarea-autosize": "^8.3.3",
     "sass": "^1.48.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1",
     "yarn": "^1.22.17"
   },

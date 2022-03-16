@@ -30,6 +30,10 @@ function AdminProfile() {
     const [currentUserRole, setCurrentUserRole] = useState('');
 
     useEffect(() => {
+        
+        //automatically scroll to top
+        window.scrollTo(0,0);
+
         try {
           setError(null);
     
@@ -48,11 +52,6 @@ function AdminProfile() {
         catch (e) {
           setError(e);
         }
-      }, []);
-
-    //automatically scroll to top
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, []);
 
     return (

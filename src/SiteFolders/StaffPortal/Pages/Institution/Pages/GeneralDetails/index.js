@@ -109,11 +109,11 @@ function GeneralDetails() {
                 </div>
 
                 <div className='generalDetails-input-container'>
-                    <div className='generalDetails-label'>Academic Year:</div>
+                    <div className='generalDetails-label'>Institution name:</div>
                     <input 
-                        type='text'
-                        value={institutionAcademicYear}
-                        onChange={e => setInstitutionAcademicYear(e.target.value)}
+                        type='text' 
+                        value={institutionName}
+                        onChange={e => setInstitutionName(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
                 <div className='generalDetails-input-container'>
@@ -138,6 +138,15 @@ function GeneralDetails() {
                         type='text' 
                         value={institutionPhone}
                         onChange={e => setInstitutionPhone(e.target.value)}
+                        className='generalDetails-input'/>
+                </div>
+
+                <div className='generalDetails-input-container'>
+                    <div className='generalDetails-label'>Academic Year:</div>
+                    <input 
+                        type='text'
+                        value={institutionAcademicYear}
+                        onChange={e => setInstitutionAcademicYear(e.target.value)}
                         className='generalDetails-input'/>
                 </div>
 

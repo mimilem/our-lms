@@ -32,7 +32,9 @@ function AllStudentsList({ studentFilterData }) {
     const closeQualificationDropdown = () => {
         setShowQualificationDropdown(false);
     }
-    const qualificationRef = useDetectClickOutside({ onTriggered: closeQualificationDropdown });
+    const qualificationRef = useDetectClickOutside({ 
+        onTriggered: closeQualificationDropdown 
+    });
 
     /* fetch the API data of students */
     useEffect( () => {
@@ -105,8 +107,9 @@ function AllStudentsList({ studentFilterData }) {
                                         onClick={()=> {
                                             setSelectedQualification(qualificationDataMap.qualificationName)
                                             setSelectedQualificationId(qualificationDataMap.id)
-                                            setSelectedQualificationYear(qualificationDataMap.qualificationYear) }}>
-                                        {qualificationDataMap.qualificationName} - {qualificationDataMap.qualificationYear}
+                                            setSelectedQualificationYear(qualificationDataMap.qualificationYear) }} >
+                                        {qualificationDataMap.qualificationName} - {
+                                        qualificationDataMap.qualificationYear}
                                     </div>)
                                 }
                             </div>
@@ -115,9 +118,14 @@ function AllStudentsList({ studentFilterData }) {
             </div>
             
             <ol>
-                <li className='pending-student-list-element' style={{marginBottom: '15px', fontSize: '16px'}}>
+                <li className='pending-student-list-element' 
+                    style={{marginBottom: '15px', fontSize: '16px'}} >
                     <div className='pending-student-name'><b>No.</b></div>
-                    <div className='pending-student-name' style={{marginRight: '80px'}}>Full Name + <b>Surname</b></div>
+                    <div 
+                        className='pending-student-name' 
+                        style={{marginRight: '80px'}} >
+                            Full Name + <b>Surname</b>
+                    </div>
                     <div className='pending-student-action-title'><b>Actions</b></div>
                 </li>
                 {
@@ -134,8 +142,8 @@ function AllStudentsList({ studentFilterData }) {
                             <div className='pending-student-name'>
                                 { index + 1 }. 
                             </div>
-                            <div
-                                className='pending-student-name'>{ studentItemMap.studentFullname } <b>{ 
+                            <div className='pending-student-name'>
+                                { studentItemMap.studentFullname } <b>{ 
                                 studentItemMap.studentSurname }</b>
                             </div>
 
@@ -143,12 +151,15 @@ function AllStudentsList({ studentFilterData }) {
                                 <Link to={{
                                         pathname: '/Staff/Students/Profile=',
                                         state: studentItemMap }} 
-                                    style={{color: '#000', marginRight: '20px'}} title='View Profile'
+                                    style={{color: '#000', marginRight: '20px'}} 
+                                    title='View Profile'
                                     onClick={()=>{
                                         setStudentId(studentItemMap.id)
                                         setShowDeleteStudent(true);
                                     }}>View Profile</Link>
-                                <div style={{color: 'red', marginRight: '20px'}} title='Delete student'
+                                <div 
+                                    style={{color: 'red', marginRight: '20px'}} 
+                                    title='Delete student'
                                     onClick={()=>{
                                         setStudentId(studentItemMap.id)
                                         setShowDeleteStudent(true);
@@ -167,20 +178,25 @@ function AllStudentsList({ studentFilterData }) {
                             <div className='pending-student-name'>
                                 { index + 1 }. 
                             </div>
-                            <div className='pending-student-name'>{ studentItemMap.studentFullname } <b>{ 
+                            <div className='pending-student-name'>
+                                { studentItemMap.studentFullname } <b>{ 
                                 studentItemMap.studentSurname }</b>
                             </div>
 
                             <div className="pending-student-action">
-                                <Link to={{
+                                <Link 
+                                    to={{
                                         pathname: '/Staff/Students/Profile=',
                                         state: studentItemMap }} 
-                                    style={{color: '#000', marginRight: '20px'}} title='View Profile'
+                                    style={{color: '#000', marginRight: '20px'}} 
+                                    title='View Profile'
                                     onClick={()=>{
                                         setStudentId(studentItemMap.id)
                                         setShowDeleteStudent(true);
                                     }}>View Profile</Link>
-                                <div style={{color: 'red', marginRight: '20px'}} title='Delete student'
+                                <div 
+                                    style={{color: 'red', marginRight: '20px'}} 
+                                    title='Delete student'
                                     onClick={()=>{
                                         setStudentId(studentItemMap.id)
                                         setShowDeleteStudent(true);

@@ -96,6 +96,7 @@ export const onCreateNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -123,6 +124,7 @@ export const onUpdateNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -150,6 +152,7 @@ export const onDeleteNotifications = /* GraphQL */ `
       description
       create_date
       create_time
+      seen
       institutionID
       institution {
         id
@@ -734,6 +737,29 @@ export const onCreateClass = /* GraphQL */ `
         }
         nextToken
       }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -779,6 +805,29 @@ export const onUpdateClass = /* GraphQL */ `
           courseCredit
           courseIsCompulsory
           courseDescription
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
           classID
           createdAt
           updatedAt
@@ -836,6 +885,29 @@ export const onDeleteClass = /* GraphQL */ `
         }
         nextToken
       }
+      students {
+        items {
+          id
+          studentFullname
+          studentSurname
+          studentPhoneNumber
+          studentEmail
+          studentNumber
+          pending
+          studentCampusName
+          studentCampusID
+          studentFacultyName
+          studentFacultyID
+          studentDepartmentName
+          studentDepartmentID
+          studentQualificationName
+          studentQualificationID
+          classID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -868,6 +940,9 @@ export const onCreateClassModule = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -917,6 +992,9 @@ export const onUpdateClassModule = /* GraphQL */ `
         modules {
           nextToken
         }
+        students {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -962,6 +1040,9 @@ export const onDeleteClassModule = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -1536,10 +1617,16 @@ export const onCreateStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1556,6 +1643,9 @@ export const onCreateStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt
@@ -1574,10 +1664,16 @@ export const onUpdateStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1596,6 +1692,9 @@ export const onUpdateStudent = /* GraphQL */ `
         modules {
           nextToken
         }
+        students {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -1612,10 +1711,16 @@ export const onDeleteStudent = /* GraphQL */ `
       studentSurname
       studentPhoneNumber
       studentEmail
-      studentCampusName
-      studentDepartmentName
-      studentYear
+      studentNumber
       pending
+      studentCampusName
+      studentCampusID
+      studentFacultyName
+      studentFacultyID
+      studentDepartmentName
+      studentDepartmentID
+      studentQualificationName
+      studentQualificationID
       classID
       class {
         id
@@ -1632,6 +1737,9 @@ export const onDeleteStudent = /* GraphQL */ `
           updatedAt
         }
         modules {
+          nextToken
+        }
+        students {
           nextToken
         }
         createdAt

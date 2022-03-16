@@ -77,13 +77,17 @@ function CreateUser({ showCreateUser, setShowCreateUser}) {
                     name: adminName,
                     family_name: adminFamilyName,
                     phone_number: adminPhoneNumber,
-                }
+                },
+                /*GroupName: 'Admin',
+                UserPoolId: 'us-east-2:efaf6e4d-899c-4805-a0cd-2dda6c7b0c21'*/
             });
+            
             window.location.reload(false);
         } catch (error) {
             console.log('error signing up:', error);
         }
     }
+
 
     async function signUpTeacher() {
         try {

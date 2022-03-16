@@ -1,23 +1,23 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Parameters": {
-        "authvincoElearningUserPoolId": {
+        "authvincoelearning062201dc062201dcUserPoolId": {
             "Type": "String",
-            "Default": "authvincoElearningUserPoolId"
+            "Default": "authvincoelearning062201dc062201dcUserPoolId"
         },
         
-        "authvincoElearningIdentityPoolId": {
+        "authvincoelearning062201dc062201dcIdentityPoolId": {
             "Type": "String",
-            "Default": "authvincoElearningIdentityPoolId"
+            "Default": "authvincoelearning062201dc062201dcIdentityPoolId"
         },
         
-        "authvincoElearningAppClientID": {
+        "authvincoelearning062201dc062201dcAppClientID": {
             "Type": "String",
-            "Default": "authvincoElearningAppClientID"
+            "Default": "authvincoelearning062201dc062201dcAppClientID"
         },
-        "authvincoElearningAppClientIDWeb": {
+        "authvincoelearning062201dc062201dcAppClientIDWeb": {
             "Type": "String",
-            "Default": "authvincoElearningAppClientIDWeb"
+            "Default": "authvincoelearning062201dc062201dcAppClientIDWeb"
         },
         "AuthRoleArn": {
             "Type": "String"
@@ -55,7 +55,7 @@
               },
               
               "UserPoolId" : {
-                "Ref": "authvincoElearningUserPoolId"
+                "Ref": "authvincoelearning062201dc062201dcUserPoolId"
               }
             }
         },
@@ -68,7 +68,7 @@
                         "",
                         [
                           {
-                            "Ref": "authvincoElearningUserPoolId"
+                            "Ref": "authvincoelearning062201dc062201dcUserPoolId"
                           },
                           "-AdminGroupRole"
                         ]
@@ -85,7 +85,61 @@
                             },
                             "Action": "sts:AssumeRoleWithWebIdentity",
                             "Condition": {
-                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authvincoElearningIdentityPoolId"}},
+                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authvincoelearning062201dc062201dcIdentityPoolId"}},
+                              "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated"}
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+     
+    
+        "StudentGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "Student",
+              "Precedence" : 2,
+              
+              "RoleArn" : {
+                "Fn::GetAtt": [
+                    "StudentGroupRole",
+                    "Arn"
+                ]
+              },
+              
+              "UserPoolId" : {
+                "Ref": "authvincoelearning062201dc062201dcUserPoolId"
+              }
+            }
+        },
+        
+        "StudentGroupRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName":{
+                    "Fn::Join": [
+                        "",
+                        [
+                          {
+                            "Ref": "authvincoelearning062201dc062201dcUserPoolId"
+                          },
+                          "-StudentGroupRole"
+                        ]
+                    ]
+                },
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Federated": "cognito-identity.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRoleWithWebIdentity",
+                            "Condition": {
+                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authvincoelearning062201dc062201dcIdentityPoolId"}},
                               "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated"}
                             }
                         }
@@ -111,7 +165,7 @@
                                 "",
                                 [
 
-                                  "vincoElearning",
+                                  "vincoelearning062201dc062201dc",
                                   "-ExecutionRole-",
                                   {
                                     "Ref": "env"
@@ -272,16 +326,16 @@
                     "Ref": "UnauthRoleArn"
                 },
                 "identityPoolId": {
-                    "Ref": "authvincoElearningIdentityPoolId"
+                    "Ref": "authvincoelearning062201dc062201dcIdentityPoolId"
                 },
                 "userPoolId": {
-                    "Ref": "authvincoElearningUserPoolId"
+                    "Ref": "authvincoelearning062201dc062201dcUserPoolId"
                 },
                 "appClientIDWeb": {
-                    "Ref": "authvincoElearningAppClientIDWeb"
+                    "Ref": "authvincoelearning062201dc062201dcAppClientIDWeb"
                 },
                 "appClientID": {
-                    "Ref": "authvincoElearningAppClientID"
+                    "Ref": "authvincoelearning062201dc062201dcAppClientID"
                 },
                 "region": {
                     "Ref": "AWS::Region"
@@ -301,6 +355,17 @@
             "Value": {
                 "Fn::GetAtt": [
                     "AdminGroupRole",
+                    "Arn"
+                ]
+            }
+        
+        },
+        
+      
+        "StudentGroupRole": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "StudentGroupRole",
                     "Arn"
                 ]
             }
