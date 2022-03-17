@@ -1,0 +1,14 @@
+{
+    "groupPermissionMap": {
+        "Admin": [
+            "create/update",
+            "read",
+            "delete"
+        ],
+        "Student": [
+            "create/update",
+            "read",
+            "delete"
+        ]
+    }
+}

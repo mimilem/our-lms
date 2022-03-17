@@ -56,5 +56,34 @@
       ],
       "customAuth": false
     }
+  },
+  "storage": {
+    "vincos3": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "vincoelearning062201dc062201dc",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "userPoolGroups",
+          "attributes": [
+            "AdminGroupRole"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "userPoolGroups",
+          "attributes": [
+            "StudentGroupRole"
+          ]
+        }
+      ]
+    }
   }
 }

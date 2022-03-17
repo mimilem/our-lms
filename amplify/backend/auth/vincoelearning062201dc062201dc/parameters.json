@@ -1,6 +1,6 @@
 {
     "identityPoolName": "vinco_idpool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "vincoe062201dc",
     "userPoolName": "vincoelearning062201dc_userpool_062201dc",
     "autoVerifiedAttributes": [

@@ -40,3 +40,39 @@
   height: 20px;
   width: 20px;
 }
+.success-message {
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  color: yellowgreen;
+  font-size: 16px;
+}
+.pdf-list-container {
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
+  height: 4rem;
+  width: 100%;
+}
+.pdf-list-element {
+  color: #000;
+  text-decoration: underline;
+  margin-left: 2rem;
+}
+.pdf-list-element:hover {
+  color: #96a9b6;
+}
+.pdf-icon {
+  background-image: url("../../../../../../assets/pdf.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+}

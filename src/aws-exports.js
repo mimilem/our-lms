@@ -10,7 +10,9 @@ const awsmobile = {
     "aws_cognito_region": "us-east-1",
     "aws_user_pools_id": "us-east-1_FAQf5oYGp",
     "aws_user_pools_web_client_id": "4aq45ckp2ot054ichndrp668b2",
-    "oauth": {}
+    "oauth": {},
+    "aws_user_files_s3_bucket": "vincolibrarys3100304-dev",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 
