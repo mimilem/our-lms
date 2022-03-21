@@ -6,7 +6,7 @@ import PendingStudentsList from './PendingStudentsList';
 import './studentsList.css';
 
 
-function StudentsList({ searchStudentsByNameFilter, studentFilterData, searchStudentByName }) {
+function StudentsList({ studentFilterData }) {
 
     const [activeTab, setActiveTab] = useState('allStudents');
 
