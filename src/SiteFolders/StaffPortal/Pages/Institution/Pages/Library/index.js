@@ -57,6 +57,7 @@ function Library(props) {
         setIsLoading(true)
         
         const response = await Storage.put(selectedFile.name, selectedFile, {contentType: 'application/pdf'})
+        
         setIsPuttingFiles(true);
         setIsLoading(false)
 
