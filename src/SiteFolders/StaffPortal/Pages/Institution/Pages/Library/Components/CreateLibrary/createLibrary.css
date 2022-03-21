@@ -1,0 +1,90 @@
+.addLibraryForm-container {
+  background-color: #fff;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  margin-top: 5rem;
+  bottom: 0;
+  top: 0;
+  position: fixed;
+  height: auto;
+  width: 20rem;
+  animation: zoom-in-zoom-out 0.4s ease;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.addLibraryForm {
+  width: 100%;
+}
+
+.addLibrary-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addLibrary-inputs {
+  width: 100%;
+  margin-top: 40px;
+}
+.addLibrary-input {
+  display: flex;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 10rem;
+}
+.addLibraryFile-input {
+  display: flex;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+
+  width: 10rem;
+}
+
+.addLibrary-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.addLibrary-save-btn {
+  border: 0;
+  color: #fff;
+  background-color: #000;
+  border-radius: 50px;
+  font-size: 16px;
+  margin-top: 30px;
+  height: 3rem;
+  width: 6rem;
+}
+
+.addLibrary-cancel-btn {
+  border: 0;
+  color: #000;
+  background-color: transparent;
+  border-radius: 50px;
+  font-size: 16px;
+  margin-top: 30px;
+  height: 3rem;
+  width: 6rem;
+}
