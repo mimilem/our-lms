@@ -170,5 +170,13 @@
   height: 2px;
 }
 .dropdown-menu a {
+  color: #000;
   text-decoration: none;
+}
+.dropdown-menu li a {
+  color: #000;
+  text-decoration: none;
+}
+.dropdown-menu li a:hover {
+  color: #5d8aa8;
 }
