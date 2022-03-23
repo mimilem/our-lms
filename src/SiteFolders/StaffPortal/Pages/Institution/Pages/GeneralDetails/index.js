@@ -30,6 +30,8 @@ function GeneralDetails() {
     const [institutionPhone, setInstitutionPhone] = useState('')
     const [institutionEmail, setInstitutionEmail] = useState('')
 
+    const [inputDisabled, setInputDisabled] = useState(true)
+
     let institutionID = "e99da62e-0b01-49d9-9dd6-53968544cd86"
 
     //automatically scroll to top
@@ -105,71 +107,80 @@ function GeneralDetails() {
                     <div className='generalDetails-institution-name'>
                         {institution.institutionName}
                     </div>
-                    <div className='generalDetails-institution-edit-icon' />
+                    <div 
+                        title='Edit Information'
+                        onClick={() => setInputDisabled(false)}
+                        className='generalDetails-institution-edit-icon' />
                 </div>
 
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Institution name:</div>
                     <input 
+                        disabled={inputDisabled && 'disabled'}
                         type='text' 
                         value={institutionName}
                         onChange={e => setInstitutionName(e.target.value)}
-                        className='generalDetails-input'/>
+                        className={
+                            inputDisabled === true ? 
+                            'generalDetails-input-disabled' 
+                            : 'generalDetails-input'} autoFocus />
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Adress:</div>
-                    <input 
+                    <input
+                        disabled={inputDisabled && 'disabled'} 
                         type='text' 
                         value={institutionAdress}
                         onChange={e => setInstitutionAdress(e.target.value)}
-                        className='generalDetails-input'/>
+                        className={
+                            inputDisabled === true ? 
+                            'generalDetails-input-disabled' 
+                            : 'generalDetails-input'} />
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Email:</div>
-                    <input 
+                    <input
+                        disabled={inputDisabled && 'disabled'} 
                         type='text' 
                         value={institutionEmail}
                         onChange={e => setInstitutionEmail(e.target.value)}
-                        className='generalDetails-input'/>
+                        className={
+                            inputDisabled === true ? 
+                            'generalDetails-input-disabled' 
+                            : 'generalDetails-input'} />
                 </div>
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Phone:</div>
-                    <input 
+                    <input
+                        disabled={inputDisabled && 'disabled'} 
                         type='text' 
                         value={institutionPhone}
                         onChange={e => setInstitutionPhone(e.target.value)}
-                        className='generalDetails-input'/>
+                        className={
+                            inputDisabled === true ? 
+                            'generalDetails-input-disabled' 
+                            : 'generalDetails-input'} />
                 </div>
-
                 <div className='generalDetails-input-container'>
                     <div className='generalDetails-label'>Academic Year:</div>
-                    <input 
+                    <input
+                        disabled={inputDisabled && 'disabled'} 
                         type='text'
                         value={institutionAcademicYear}
                         onChange={e => setInstitutionAcademicYear(e.target.value)}
-                        className='generalDetails-input'/>
+                        className={
+                            inputDisabled === true ? 
+                            'generalDetails-input-disabled' 
+                            : 'generalDetails-input'} />
                 </div>
 
                 <div className='btn-generalDetails-container'>
-                    <button className='btn-generalDetails-cancel'>Cancel</button>
+                    <button 
+                        onClick={() => setInputDisabled(true)}
+                        className='btn-generalDetails-cancel'>Cancel</button>
                     <button 
                         onClick={updateInstitution}
                         className='btn-generalDetails-save'>Save</button>
-                </div>
-
-                <div className='generalDetails-stats-container'>
-                    <div>
-                        Total number of campuses: <b>undefined</b>
-                    </div>
-                    <div>
-                        Total number of departments: <b>undefined</b>
-                    </div>
-                    <div>
-                        Total number of Staff: <b>undefined</b>
-                    </div>
-                    <div>
-                        Total number of Students: <b>undefined</b>
-                    </div>
                 </div>
             </div>
         </div>
