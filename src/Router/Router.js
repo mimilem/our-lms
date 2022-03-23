@@ -11,6 +11,7 @@ import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
 import Home from '../SiteFolders/HomeSite/Pages/Home';
 import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
+import HomeCampuses from '../SiteFolders/HomeSite/Pages/HomeCampuses';
 
 //import the StaffPortal site pages
 import AcademicCalendar from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AcademicCalendar';
@@ -66,6 +67,7 @@ function Router() {
                 <Route exact path='/Media/Article' component={Article} />
                 <Route exact path='/Register' component={RegistrationIndexPage} />
                 <Route exact path='/student-login' component={Login} />
+                <Route exact path='/campuses' component={HomeCampuses} />
 
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/SelectCampus' component={CampusPage}/>

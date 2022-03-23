@@ -8,7 +8,9 @@ import SideNavigation from '../../Components/SideNavigation';
 import AddFeesForm from './Components/AddFeesForm';
 
 
-function GeneralFees(props) {
+
+function GeneralFees() {
+    const baseS3FeesURL = 'https://vincolibrarys3100304-dev.s3.amazonaws.com/academicFeesFolder/'
 
     // Initiate a boolean state to check weither 
     // the bar is toggled and weither the tab is active.
@@ -29,7 +31,7 @@ function GeneralFees(props) {
     const [file, setFile] = useState('');
     const [fetchedFileName, setFetchedFName] = useState('');
     const [fileName, setFileName] = useState('');
-    const [files, setFiles] = useState([])
+    const [feesFiles, setFeesFiles] = useState([])
 
     function handleChangeDocument(e) {
         setFile(e.target.files[0]);
@@ -42,19 +44,17 @@ function GeneralFees(props) {
             console.log('successfully saved file')})
     }
 
-    useEffect(() => {
-        fetchImages()
+    useEffect( () => {
+        async function fetchFiles() {
+            Storage.list('') // for listing ALL files without prefix, pass '' instead
+                .then(result => {
+                    setFeesFiles(result)
+                    console.log(result)
+                })
+                .catch(err => console.log(err));
+        }
+        fetchFiles()
     }, [])
-    async function fetchImages() {
-    let fileKeys = await Storage.list('')
-    fileKeys = await Promise.all(fileKeys.map(async k => {
-        const key = await Storage.get(k.key)
-        setFetchedFName(k.key)
-        return key
-
-    }))
-    setFiles(fileKeys)
-    }
 
     return (
         <div className="campus-page-content">
@@ -98,12 +98,17 @@ function GeneralFees(props) {
                         </button>
                     </div>
 
-                    {files.map(file => (
-                    <div className='pdf-list' key={file}>
-                        download {fetchedFileName}
-                    </div>
-                ))
-                }
+                    {feesFiles.map(mapFeesFile => (
+                        <a 
+                            href={`${baseS3FeesURL}${mapFeesFile.key}`}
+                            target='_blank' rel='noreferrer'>
+                            
+                            <div className='feespdf-list-container'>
+                                <div className='pdf-icon'/>
+                                <div className='pdf-list-element'>{mapFeesFile.key}</div>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </div>
 

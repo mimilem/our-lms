@@ -8,9 +8,9 @@ import HeaderAndSideNav from '../../../../Components/HeaderAndSideNav';
 import CreateLibrary from './Components/CreateLibrary';
 
 
-const baseS3URL = 'https://vincolibrarys3100304-dev.s3.amazonaws.com/public/'
 
-function Library(props) {
+function Library() {
+    const baseS3URL = 'https://vincolibrarys3100304-dev.s3.amazonaws.com/public/'
 
     // Initiate a boolean state to check weither 
     // the bar is toggled and weither the tab is active.
@@ -57,6 +57,7 @@ function Library(props) {
         setIsLoading(true)
         
         const response = await Storage.put(selectedFile.name, selectedFile, {contentType: 'application/pdf'})
+        
         setIsPuttingFiles(true);
         setIsLoading(false)
 

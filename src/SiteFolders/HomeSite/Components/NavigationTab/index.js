@@ -17,6 +17,8 @@ import './navigationTab.css'
 
 function NavigationTab() {
 
+    const baseS3URL = 'https://vincolibrarys3100304-dev.s3.amazonaws.com/academicFeesFolder/Richfield-Pricing-Booklet.pdf'
+
     // navigation Tab dropdown states.
     const [isShown, setIsShown] = useState(false);
     const [isShown1, setIsShown1] = useState(false);
@@ -43,8 +45,15 @@ function NavigationTab() {
                             Home
                         </li>
                     </Link>
+                    <Link to='/campuses'>
+                        <li
+                            className={activeTab === 'tab2' ? 'active-tab-element' : "tab-element"}
+                            onClick={() => setActiveTab("tab2")} >
+                            Campuses
+                        </li>
+                    </Link>
 
-                    <div className='dropdown'
+                    {/* <div className='dropdown'
                         onMouseEnter={() => setIsShown(true)}
                         onMouseLeave={() => setIsShown(false)} > 
                         <li 
@@ -61,7 +70,7 @@ function NavigationTab() {
                             <li>Hybrid-Learning</li>
                         </ul> 
                         )}
-                    </div>
+                    </div> */}
 
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown1(true)}
@@ -81,7 +90,9 @@ function NavigationTab() {
                             <hr className='nav-tab-hr'/>
                             <li>International student</li>
                             <hr className='nav-tab-hr'/>
-                            <li>Tuition fees</li>
+                            <li>
+                                <a href={baseS3URL} target='_blank' rel='noreferrer'>Tuition fees</a>
+                            </li>
                         </ul> 
                         )}
                     </div>
