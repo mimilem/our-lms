@@ -136,7 +136,7 @@ function Library() {
                 </div>
                 <div className='library-search-container'>
                     <input
-                        placeholder='Search a document'
+                        placeholder='Search a document by name or faculty'
                         className='library-search' 
                         type='search' autoFocus
                         value={searchDocumentsByName}
