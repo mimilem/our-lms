@@ -45,8 +45,15 @@ function NavigationTab() {
                             Home
                         </li>
                     </Link>
+                    <Link to='/campuses'>
+                        <li
+                            className={activeTab === 'tab2' ? 'active-tab-element' : "tab-element"}
+                            onClick={() => setActiveTab("tab2")} >
+                            Campuses
+                        </li>
+                    </Link>
 
-                    <div className='dropdown'
+                    {/* <div className='dropdown'
                         onMouseEnter={() => setIsShown(true)}
                         onMouseLeave={() => setIsShown(false)} > 
                         <li 
@@ -63,7 +70,7 @@ function NavigationTab() {
                             <li>Hybrid-Learning</li>
                         </ul> 
                         )}
-                    </div>
+                    </div> */}
 
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown1(true)}
