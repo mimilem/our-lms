@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Auth } from 'aws-amplify';
+import { Redirect } from 'react-router-dom';
 
 //import the styling compnent(s).
 import './login.css';
@@ -27,6 +28,10 @@ function Login() {
 
     const [signedIn, setSignedIn] = useState(false)
 
+    const[formState, setFormState] = useState('signIn');
+    const [signInError, setSignInError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleChangeUsername = (e) => {
         setUsername(e.target.value)
     }
@@ -34,13 +39,21 @@ function Login() {
         setPassword(e.target.value)
     }
     
-    async function signIn() {
+    async function SignIn() {
         try {
-            const user = await Auth.signIn(username, password);
-            setSignedIn(true)
+            setIsLoading(true)
+            await Auth.signIn(username, password)
+            setFormState('signedIn')
+            setIsLoading(false)
         } catch (error) {
+            setSignInError(error)
             console.log('error signing in', error);
+            setIsLoading(false)
         }
+    }
+
+    if (formState==='signedIn') {
+        return <Redirect to='/Students/Dashboard' />
     }
 
     //Show Password function.
@@ -54,9 +67,16 @@ function Login() {
     }
     
     return (
+
+    formState === 'signIn' && (
         <div className='student-loginPage-container'>
-            
-            <div className='student-loginPage-backgroundImage' />
+            {isLoading ? 
+                <div className='loader-container'>
+                    <div className='loader' />
+                </div>
+            : '' }
+        
+            <div className='student-loginPage-backgroundImage'  style={{opacity: isLoading ? 0.4 : 1}} />
 
             <div className='student-login-card-container'>
                 <div className='student-login-card'>
@@ -94,16 +114,19 @@ function Login() {
                             </div>
                         </div>
                     </div>
+                    <button 
+                        onClick={SignIn} 
+                        className='student-login-login-button'>
+                        Login
+                    </button>
 
-                    <Link to={{     
-                        pathname:'/Students/Dashboard',
-                    }}>
-                        <button 
-                            onClick={signIn} 
-                            className='student-login-login-button'>
-                            Login
-                        </button>
-                    </Link>
+                    {
+                        signInError !== '' ? 
+                            <div style={{color:'red'}}>
+                                Incorrect username or password
+                            </div> 
+                        : ''
+                    }
                 </div>
 
                 <Link to='/'>
@@ -112,7 +135,7 @@ function Login() {
             </div>
 
         </div>
-    );
+    ));
 }
 
 export default Login;

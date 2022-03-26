@@ -50,7 +50,6 @@ type Events
 
 type Campus
   @model
-  @auth(rules: [{ allow: groups, groups: ["Admin"] }])
   @key(
     name: "byInstitution"
     fields: [
@@ -207,6 +206,7 @@ type S3Object {
 
 type Student
   @model
+  @auth(rules: [{ allow: owner, operations: [read, create, delete, update] }])
   @key(
     name: "byClass"
     fields: [

@@ -814,6 +814,7 @@ export const createClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -891,6 +892,7 @@ export const updateClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -968,6 +970,7 @@ export const deleteClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -1764,6 +1767,7 @@ export const createStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -1814,6 +1818,7 @@ export const updateStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -1864,6 +1869,7 @@ export const deleteStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;

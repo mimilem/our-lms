@@ -9,9 +9,10 @@ import { BrowserRouter as Routers, Route, Switch } from 'react-router-dom';
 import Article from '../SiteFolders/HomeSite/Pages/Media/Article';
 import ContactPage from '../SiteFolders/HomeSite/Pages/Contact';
 import Home from '../SiteFolders/HomeSite/Pages/Home';
+import HomeCampuses from '../SiteFolders/HomeSite/Pages/HomeCampuses';
 import MediaPage from '../SiteFolders/HomeSite/Pages/Media';
 import RegistrationIndexPage from '../SiteFolders/HomeSite/Pages/Register';
-import HomeCampuses from '../SiteFolders/HomeSite/Pages/HomeCampuses';
+import StudentSignUp from '../SiteFolders/HomeSite/Pages/Apply/Pages/StudentSignUp';
 
 //import the StaffPortal site pages
 import AcademicCalendar from '../SiteFolders/StaffPortal/Pages/Institution/Pages/AcademicCalendar';
@@ -43,6 +44,7 @@ import SubjectSelection from '../SiteFolders/StaffPortal/Pages/SubjectSelection'
 import TimeTablePage from '../SiteFolders/StaffPortal/Pages/TimeTablePage';
 
 //import the StudentPortal site pages
+import ChooseQualification from '../SiteFolders/HomeSite/Pages/Apply/Pages/ChooseQualification';
 import Login from '../SiteFolders/StudentPortal/Authentication/Login';
 import MyResults from '../SiteFolders/StudentPortal/Pages/MyResults';
 import StudentsDashboard from '../SiteFolders/StudentPortal/Pages/Dashboard';
@@ -68,6 +70,7 @@ function Router() {
                 <Route exact path='/Register' component={RegistrationIndexPage} />
                 <Route exact path='/student-login' component={Login} />
                 <Route exact path='/campuses' component={HomeCampuses} />
+                <Route exact path='/Apply-signUp' component={StudentSignUp} />
 
                 {/* Staff Portail Routes path */}
                 <Route exact path='/Staff/SelectCampus' component={CampusPage}/>
@@ -107,6 +110,7 @@ function Router() {
                 <Route exact path='/Students/Reports' component={StudentReports}/>
                 <Route exact path='/Students/Time-Table' component={StudentTimeTable}/>
                 <Route exact path='/Students/MyResult' component={MyResults}/>
+                <Route exact path='/ChooseQualification' component={ChooseQualification}/>
                 
             </Switch>
         </Routers>

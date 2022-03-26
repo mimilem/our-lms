@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Auth } from 'aws-amplify';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 //import the styling compnent(s).
 import './staffLogin.css';

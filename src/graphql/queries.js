@@ -492,6 +492,7 @@ export const getClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -975,6 +976,7 @@ export const getStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -1013,6 +1015,7 @@ export const listStudents = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

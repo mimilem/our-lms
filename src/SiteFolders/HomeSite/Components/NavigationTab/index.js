@@ -20,7 +20,6 @@ function NavigationTab() {
     const baseS3URL = 'https://vincolibrarys3100304-dev.s3.amazonaws.com/academicFeesFolder/Richfield-Pricing-Booklet.pdf'
 
     // navigation Tab dropdown states.
-    const [isShown, setIsShown] = useState(false);
     const [isShown1, setIsShown1] = useState(false);
     const [isShown2, setIsShown2] = useState(false);
     const [isShown3, setIsShown3] = useState(false);
@@ -53,25 +52,6 @@ function NavigationTab() {
                         </li>
                     </Link>
 
-                    {/* <div className='dropdown'
-                        onMouseEnter={() => setIsShown(true)}
-                        onMouseLeave={() => setIsShown(false)} > 
-                        <li 
-                            className="tab-element"
-                            onClick={() => setActiveTab("tab2")} >
-                            Courses
-                        </li>
-                        {isShown && (
-                        <ul className='dropdown-menu'>
-                            <li>Full-Time</li>
-                            <hr className='nav-tab-hr'/>
-                            <li>Flexi-Learning</li>
-                            <hr className='nav-tab-hr'/>
-                            <li>Hybrid-Learning</li>
-                        </ul> 
-                        )}
-                    </div> */}
-
                     <div className='dropdown'
                         onMouseEnter={() => setIsShown1(true)}
                         onMouseLeave={() => setIsShown1(false)} > 
@@ -83,7 +63,7 @@ function NavigationTab() {
                         {isShown1 && (
                         <ul className='dropdown-menu'>
 
-                            <Link to='/Register'>
+                            <Link to='/Apply-signUp'>
                                 <li>Apply</li>
                             </Link>
                             

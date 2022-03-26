@@ -41,10 +41,11 @@
   align-items: center;
   background-color: #5d8aa8;
   border-radius: 20px;
-  height: 35rem;
+  height: auto;
   justify-content: center;
   margin: auto;
   margin-top: 2rem;
+  padding-bottom: 2rem;
   text-align: center;
   width: 30rem;
 }
@@ -138,9 +139,11 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   text-align: center;
-  width: 20vh;
+  width: auto;
 }
 .student-login-login-button:hover {
   background-color: #dedede;

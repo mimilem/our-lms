@@ -757,6 +757,7 @@ export const onCreateClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -831,6 +832,7 @@ export const onUpdateClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -905,6 +907,7 @@ export const onDeleteClass = /* GraphQL */ `
           classID
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
@@ -1610,8 +1613,8 @@ export const onDeleteFile = /* GraphQL */ `
   }
 `;
 export const onCreateStudent = /* GraphQL */ `
-  subscription OnCreateStudent {
-    onCreateStudent {
+  subscription OnCreateStudent($owner: String!) {
+    onCreateStudent(owner: $owner) {
       id
       studentFullname
       studentSurname
@@ -1653,12 +1656,13 @@ export const onCreateStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateStudent = /* GraphQL */ `
-  subscription OnUpdateStudent {
-    onUpdateStudent {
+  subscription OnUpdateStudent($owner: String!) {
+    onUpdateStudent(owner: $owner) {
       id
       studentFullname
       studentSurname
@@ -1700,12 +1704,13 @@ export const onUpdateStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteStudent = /* GraphQL */ `
-  subscription OnDeleteStudent {
-    onDeleteStudent {
+  subscription OnDeleteStudent($owner: String!) {
+    onDeleteStudent(owner: $owner) {
       id
       studentFullname
       studentSurname
@@ -1747,6 +1752,7 @@ export const onDeleteStudent = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
