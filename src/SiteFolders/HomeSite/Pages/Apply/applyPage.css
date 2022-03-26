@@ -1,0 +1,35 @@
+.applyPage-container {
+  display: flex;
+}
+.applyPage-title {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 28px;
+}
+.applyPage-card {
+  align-items: center;
+  background-color: #5d8aa8;
+  border-radius: 20px;
+  height: auto;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  width: 30rem;
+}
+.applyPage-card-title {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 3rem;
+}
+
+.chooseQualification-pagination {
+  color: #fff;
+  margin-top: -20px;
+  margin-right: 0rem;
+  right: 0;
+  text-align: right;
+  width: 80%;
+}
